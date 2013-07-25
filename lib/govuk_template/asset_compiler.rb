@@ -13,6 +13,8 @@ module GovukTemplate
       @build_dir = @repo_root.join('build', 'assets')
 
       @manifests = YAML.load_file(@repo_root.join('manifests.yml'))
+      @stylesheet_assets = []
+      @static_assets = []
     end
 
     attr_reader :manifests
@@ -22,6 +24,7 @@ module GovukTemplate
       compile_javascripts
       compile_stylesheets
       copy_static_assets
+      copy_needed_toolkit_assets
     end
 
     def compile_javascripts
@@ -40,8 +43,11 @@ module GovukTemplate
       env = Sprockets::Environment.new(@repo_root)
       env.append_path "app/assets/stylesheets"
       env.append_path File.join(Gem.loaded_specs["govuk_frontend_toolkit"].full_gem_path, 'app', 'assets', 'stylesheets')
+
+      stylesheet_assets = [] # This has to be a local variable so that it's in scope for the asset_path method
       env.context_class.class_eval do
-        def asset_path(path, options = {})
+        define_method :asset_path do |path, options = {}|
+          stylesheet_assets << path
           path
         end
       end
@@ -52,6 +58,7 @@ module GovukTemplate
         abort "Asset #{stylesheet} not found" unless asset
         File.open(@build_dir.join('stylesheets', "#{stylesheet}.css"), 'w') {|f| f.write asset.to_s }
       end
+      @stylesheet_assets = stylesheet_assets.uniq
     end
 
     def copy_static_assets
@@ -67,6 +74,23 @@ module GovukTemplate
 
         output, status = Open3.capture2e("cp -r --parents #{files.shelljoin} #{@build_dir.to_s.shellescape}")
         abort "Error copying files:\n#{output}" if status.exitstatus > 0
+
+        # Strip leading path component to get logical path as referenced in stylesheets
+        @static_assets = files.map {|f| f.sub(%r{\A[^/]+/}, '') }
+      end
+    end
+
+    def copy_needed_toolkit_assets
+      needed_assets = @stylesheet_assets - @static_assets
+
+      env = Sprockets::Environment.new(@repo_root)
+      env.append_path File.join(Gem.loaded_specs["govuk_frontend_toolkit"].full_gem_path, 'app', 'assets', 'images')
+
+      needed_assets.each do |asset_name|
+        asset = env.find_asset(asset_name)
+        abort "Asset #{stylesheet} not found" unless asset
+
+        File.open(@build_dir.join('images', asset.logical_path), 'wb') {|f| f.write asset.source }
       end
     end
 
