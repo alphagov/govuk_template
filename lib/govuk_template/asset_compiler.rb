@@ -18,15 +18,13 @@ module GovukTemplate
     attr_reader :manifests
 
     def compile
+      prepare_build_dir
       compile_javascripts
       compile_stylesheets
       copy_static_assets
     end
 
     def compile_javascripts
-      target_dir = @build_dir.join('javascripts')
-      FileUtils.mkdir_p(target_dir)
-
       env = Sprockets::Environment.new(@repo_root)
       env.append_path "app/assets/javascripts"
 
@@ -34,14 +32,11 @@ module GovukTemplate
         asset = env.find_asset(javascript)
 
         abort "Asset #{javascript} not found" unless asset
-        File.open(target_dir.join("#{javascript}.js"), 'w') {|f| f.write asset.to_s }
+        File.open(@build_dir.join('javascripts', "#{javascript}.js"), 'w') {|f| f.write asset.to_s }
       end
     end
 
     def compile_stylesheets
-      target_dir = @build_dir.join('stylesheets')
-      FileUtils.mkdir_p(target_dir)
-
       env = Sprockets::Environment.new(@repo_root)
       env.append_path "app/assets/stylesheets"
       env.append_path File.join(Gem.loaded_specs["govuk_frontend_toolkit"].full_gem_path, 'app', 'assets', 'stylesheets')
@@ -50,15 +45,12 @@ module GovukTemplate
         asset = env.find_asset(stylesheet)
 
         abort "Asset #{stylesheet} not found" unless asset
-        File.open(target_dir.join("#{stylesheet}.css"), 'w') {|f| f.write asset.to_s }
+        File.open(@build_dir.join('stylesheets', "#{stylesheet}.css"), 'w') {|f| f.write asset.to_s }
       end
     end
 
     def copy_static_assets
       excluded_extensions = %w(.js .css .scss)
-
-      target_dir = File.expand_path('../build/assets', __FILE__)
-      FileUtils.mkdir_p(target_dir)
 
       Dir.chdir @repo_root.join("app", "assets") do
         files = []
@@ -71,6 +63,15 @@ module GovukTemplate
         output, status = Open3.capture2e("cp -r --parents #{files.shelljoin} #{@build_dir.to_s.shellescape}")
         abort "Error copying files:\n#{output}" if status.exitstatus > 0
       end
+    end
+
+    private
+
+    def prepare_build_dir
+      @build_dir.rmtree
+      @build_dir.mkpath
+      @build_dir.join('stylesheets').mkpath
+      @build_dir.join('javascripts').mkpath
     end
   end
 end
