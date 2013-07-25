@@ -40,6 +40,11 @@ module GovukTemplate
       env = Sprockets::Environment.new(@repo_root)
       env.append_path "app/assets/stylesheets"
       env.append_path File.join(Gem.loaded_specs["govuk_frontend_toolkit"].full_gem_path, 'app', 'assets', 'stylesheets')
+      env.context_class.class_eval do
+        def asset_path(path, options = {})
+          path
+        end
+      end
 
       manifests["stylesheets"].each do |stylesheet|
         asset = env.find_asset(stylesheet)

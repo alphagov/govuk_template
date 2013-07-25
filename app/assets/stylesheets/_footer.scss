@@ -1,0 +1,315 @@
+/* Global footer */
+
+#footer {
+  background-color: $grey-8;
+  border-top: 1px solid $grey-6;
+
+  .footer-wrapper {
+    max-width: 60em;
+    margin: 0 auto;
+    padding: 60px 1em 0 1em;
+
+    @include ie-lte(7) {
+      width: 928px; /* we want the width for IE to max out at 960px total (including padding) */
+    }
+
+    @include media-down(mobile) {
+      padding-top: 20px;
+    }
+  }
+
+  a {
+    color: $grey-3;
+
+    &:hover {
+      color: $grey-1;
+    }
+  }
+
+  h2 {
+    @include core-24;
+    color: $grey-3;
+    margin: 0;
+  }
+
+  .footer-categories {
+    font-size: 0;
+    float: left;
+
+    padding: 0 0 60px 0;
+
+    width: 100%;
+
+    @include media-down(mobile) {
+      padding: 20px 0;
+    }
+
+    .footer-explore {
+      float: left;
+
+      margin-right: 7%;
+      width: 62%;
+
+      @include media-down(mobile) {
+        display: block;
+        
+        margin: 0 0 30px 0;
+
+        width: 100%;
+      }
+    }
+  
+    ul {
+      @include core-16;
+      list-style: none;
+
+      border: 1px solid $grey-6;
+      border-width: 1px 0 0 0;
+
+      margin: 20px 0 0 0;
+
+      padding: 20px 0 0 0;
+
+      min-height: 210px;
+
+      vertical-align: top;
+
+      @include media-down(mobile) {
+        border-width: 0;
+        min-height: 0;
+      }
+    
+      li {
+        display: block;
+
+        float: left;
+        clear: left;
+
+        margin: 0 0 15px 0;
+
+        width: 45.5%;
+
+        &:nth-child(even) {
+          float: right;
+          clear: none;
+        }
+
+        @include ie-lte(8) {
+          display: inline;
+          min-height: 1.5em;
+          clear: none;
+        }
+
+        @include ie(6) {
+          height: 1.5em;
+        }
+
+        @include media-down(mobile) {
+          float: none;
+          width: 100%;
+          margin-left: 0;
+
+          &:nth-child(even) {
+            float: none;
+          }
+
+          &:first-child,
+          &:nth-child(2) {
+            border-top: none;
+            padding-top: 0;
+          }
+        }
+      }
+
+      @include ie(6) {
+        border-top: none;
+        zoom: 1;
+      }
+    }
+
+    .footer-inside-government {
+      float: left;
+      width: 31%;
+
+      ul {
+        margin-right: 0;
+
+        @include media-down(mobile) {
+          margin: 20px 0 0 0;
+
+          width: 100%;
+        }
+
+        li {
+          margin-right: 0;
+          width: 100%;
+
+          &:nth-child(even) {
+            float: none;
+            clear: none;
+          }
+        }
+      }
+
+      @include media-down(mobile) {
+        width: 100%;
+        display: block;
+        padding: 0;
+        margin: 0;
+        border: none;
+        min-height: 0;
+      }
+    }
+  }
+
+  .footer-meta {
+    clear: both;
+    font-size: 0;
+    color: $grey-3;
+
+    border: 1px solid $grey-6;
+    border-width: 1px 0 0 0;
+
+    margin: 60px 0 0 0;
+
+    padding: 30px 0 60px;
+
+    @include media-down(mobile) {
+      margin: 0;
+    }
+
+    .footer-meta-inner {
+      display: inline-block;
+      vertical-align: bottom;
+      width: 75%;
+
+      @include media-down(mobile) {
+        display: block;
+        width: 100%;
+      }
+
+      ul {
+        @include core-16($line-height: (24/16), $line-height-640: (24/16));
+        display: inline-block;
+        list-style: none;
+        margin: 0 0 1em;
+        padding: 0;
+
+        li {
+          display: inline-block;
+          margin: 0 15px 0 0;
+
+          @include ie-lte(7) {
+            display: inline;
+            margin-right: 0;
+            padding-right: 15px;
+          }
+        }
+
+        @include media-down(mobile) {
+          width: auto;
+          margin: 0 0 1.5em 0;
+        }
+      }
+
+      .open-government-licence {
+        clear: left;
+        position: relative;
+        padding-left: 53px;
+
+        @include media-down(mobile) {
+          padding-left: 0;
+        }
+
+        h2 {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 41px;
+          height: 100%;
+
+          @include media-down(mobile) {
+            position: static;
+            width: auto;
+            margin-bottom: 1em;
+          }
+
+          a, img {
+            display: block;
+            width: 43px;
+            height: 17px;
+          }
+        }
+
+        p {
+          @include core-16;
+          margin: 0;
+          padding-top: 0.1em;
+
+          a {
+            @include core-14;
+
+            @include media-down(mobile) {
+              font-size: 1em;
+            }
+          }
+        }
+      }
+    
+      @include ie-lte(7) {
+        display: block;
+        float: left;
+      }
+
+    }
+
+    .copyright {
+      @include core-16;
+
+      display: inline-block;
+      float: none;
+      text-align: inherit;
+      width: 25%;
+      padding-top: 15px;
+
+      @include ie-lte(7) {
+        display: block;
+        float: right;
+        height: 150px;
+        width: 24%;
+      }
+
+      a {
+        display: block;
+
+        padding: 115px 0 0 0;
+
+        background: transparent image-url("govuk-crest.png") no-repeat 100% 0;
+        text-align: right;
+        text-decoration: none;
+
+        @include ie(6) {
+          background-image: image-url("govuk-crest-ie.png");
+        }
+
+        @include device-pixel-ratio() {
+          background-image: image-url("govuk-crest-2x.png");
+          background-size: 125px 102px;
+        }
+      }
+
+      @include media-down(mobile) {
+        width: 100%;
+        display: block;
+        padding: 0;
+
+        margin: 30px 0 0 0;
+
+        a {
+          text-align: center;
+          background-position: 50% 0%;
+        }
+      }
+    }
+  }
+}

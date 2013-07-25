@@ -1,0 +1,546 @@
+@import '_shims';
+#global-header {
+  background-color: $black;
+  width: 100%;
+
+  .header-wrapper {
+    max-width: 990px;
+    margin: 0 auto;
+    padding: 0.5em 15px;
+    @extend %contain-floats;
+    @include media-down(mobile){
+      padding: 0.5em 0;
+    }
+
+    @include ie(6) {
+      width: 960px;
+    }
+
+    .header-global {
+      @extend %contain-floats;
+      .header-logo,
+      .site-search {
+        @extend %contain-floats;
+        width: 49%;
+        float: left;
+
+        @include media(desktop){
+          width: 33.33%;
+        }
+        @media screen and (max-width: 379px) {
+          width: auto;
+          float: none;
+        }
+
+        .content {
+          margin: 0 15px;
+        }
+      }
+      .header-logo {
+        margin: 5px 0 2px;
+      }
+      .site-search {
+        float: right;
+      }
+    }
+  }
+  &.with-proposition {
+    .header-wrapper {
+      .header-global {
+        @include media(desktop){
+          float: left;
+          width: 33.33%;
+
+          .header-logo,
+          .site-search {
+            width: 100%;
+          }
+        }
+      }
+      .header-proposition {
+        @include media(desktop){
+          width: 66.66%;
+          float: left;
+        }
+        .content {
+          margin: 0 15px;
+        }
+      }
+    }
+
+    #search {
+      margin-top: 4px;
+    }
+  }
+
+  #logo {
+    float: left;
+    position: relative;
+    width: 166px;
+    height: 30px;
+    overflow: hidden;
+
+    img {
+      position: absolute;
+      left: -166px;
+      top: 0;
+      border: none;
+
+      /* scale oversized image to container bounds */
+      width: 200%;
+      height: 300%;
+
+      @include ie(6){
+        left: 0;
+      }
+    }
+    &:hover img {
+      top: -30px;
+    }
+  }
+
+  .search-toggle {
+    display: none;
+
+    @media screen and (max-width: 379px) {
+      display: block;
+      float: right;
+      top: 0;
+      height: 30px;
+      width: 36px;
+      padding: 0;
+      margin: 0 15px;
+
+      overflow: hidden;
+      text-indent: -5000px;
+
+
+      background-color: $light-blue;
+      background-image: url("search-button.png");
+      background-repeat: no-repeat;
+      background-position: 0 50%;
+
+      @include device-pixel-ratio() {
+        background-size: 52.5px 35px;
+        background-position: 100% 50%;
+      }
+
+      @include border-radius(0);
+      @include box-shadow(none);
+
+      &:active {
+        top: 0;
+      }
+    }
+
+    &.js-hidden { display: none; }
+  }
+
+  form#search {
+    .content {
+      @extend %contain-floats;
+      position: relative;
+      background: #fff;
+    }
+    label {
+      float: left;
+      height: 35px;
+      line-height: 35px;
+      text-indent: 15px;
+      overflow: hidden;
+      display: block;
+      margin-right: 10px;
+
+      .js-enabled & {
+        float: none;
+        position: absolute;
+        left: 0;
+        top: 1px;
+        z-index: 1;
+        width: 100%;
+        margin-right: 0;
+      }
+    }
+    input {
+      @include box-sizing(border-box);
+      float: left;
+      width: 50%;
+      min-width: 0;
+      display: block;
+      margin: 0;
+      border: 0;
+      height: 35px;
+      padding: 6px 0;
+      @include ie-lte(7){
+        height: 23px;
+      }
+      @include appearance(none);
+    }
+
+    input#site-search-text {
+      @include core-16($line-height: (23/16), $line-height-640: (23/13));
+      position: relative;
+      padding: 6px;
+      z-index: 3;
+      background: transparent;
+
+      &.focus,
+      &:focus {
+        background: #fff;
+      }
+
+      @include ie-lte(7){
+        padding-left: 0;
+      }
+      .js-enabled & {
+        width: 86%;
+        @include calc(width, "100% - 37px");
+      }
+    }
+
+    input.submit {
+      position: absolute;
+      z-index: 4;
+      right: 0;
+      top: 0;
+      width: 35px;
+      height: 35px;
+
+      border: 1px solid $light-blue;
+      border-width: 0 0 0 1px;
+      @include ie-lte(7){
+        border-width: 1px;
+      }
+      border-left-color: #222;
+      @include border-radius(0);
+
+      overflow: hidden;
+      text-indent: -5000px;
+
+      color: $white;
+      background-color: $light-blue;
+      background-image: url("search-button.png");
+      background-repeat: no-repeat;
+      background-position: 0 50%;
+
+      @include device-pixel-ratio() {
+        background-size: 52.5px 35px;
+        background-position: 100% 50%;
+      }
+
+      @include ie-lte(7) {
+        background-image: none;
+        width: auto;
+      }
+
+      &:hover {
+        background-color: lighten($light-blue, 5%);
+      }
+    }
+
+    @include ie-lte(7) {
+      input.button-active {
+        background-color: #28A197;
+        top: 0;
+      }
+
+      input.button-hover {
+        background-color: #3ABAA8;
+      }
+    }
+
+
+    @media screen and (max-width: 379px) {
+      display: none;
+      width: 100%;
+
+      #site-search-text {
+        width: 80%;
+      }
+    }
+    &.js-visible { display: block; }
+  }
+
+  .header-proposition {
+    padding-top: 10px;
+    @include media(desktop){
+      padding-top: 0;
+    }
+    #proposition-name {
+      @include core-24;
+      font-weight: bold;
+      color: $white;
+      text-decoration: none;
+    }
+    a.menu {
+      @include core-16;
+      color: $white;
+      display: block;
+      float: right;
+      text-decoration: none;
+      padding-top: 6px;
+      @include media(desktop){
+        display: none;
+      }
+      &:hover {
+        text-decoration: underline;
+      }
+      &:after {
+        display: inline-block;
+        font-size: 8px;
+        height: 8px;
+        padding-left: 5px;
+        vertical-align: middle;
+        content: " \25BC";
+      }
+      &.js-hidden:after {
+        content: " \25B2";
+      }
+    }
+    #proposition-menu {
+      margin-top: 5px;
+    }
+    #proposition-links {
+      clear: both;
+      @extend %contain-floats;
+      margin: 2px 0 0 0;
+      padding: 0;
+
+      .js-enabled & {
+        display: none;
+        @include media(desktop){
+          display: block;
+        }
+        &.js-visible {
+          display: block;
+        }
+      }
+
+      li {
+        float: left;
+        width: 50%;
+        padding: 3px 0;
+        border-bottom: 1px solid $grey-2;
+
+        @include media(desktop){
+          display: block;
+          width: auto;
+          padding: 0 15px 0 0;
+          border-bottom: 0;
+
+          &.clear-child {
+            clear: left;
+          }
+        }
+
+        a {
+          color: $white;
+          text-decoration: none;
+          @include bold-14;
+
+          @include media(desktop) {
+            @include bold-16;
+            line-height: 23px;
+          }
+
+          &:hover {
+            text-decoration: underline;
+          }
+          &.active {
+            color: $turquoise;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Global cookie message
+   Global browser prompt message */
+
+.js-enabled #global-cookie-message {
+  display: none; /* shown with JS, always on for non-JS */
+}
+
+#global-browser-prompt {
+  display: none; /* shown with JS, always hidden for non-JS */
+}
+
+#global-cookie-message,
+.beta-notice,
+#global-browser-prompt {
+  padding: 0.5em 2em;
+
+  p {
+    @include core-19;
+    margin: 0 auto;
+    max-width: 960px;
+
+    @include ie-lte(6) {
+      width: 960px;
+    }
+  }
+
+  @include media-down(mobile) {
+    padding: 0.5em 1em;
+  }
+}
+
+#global-cookie-message,
+#global-browser-prompt {
+  background-color: $light-blue-25;
+}
+
+#global-browser-prompt p {
+  position: relative;
+  padding-right: 20px;
+  max-width: 940px;
+
+  @include ie(6) {
+    width: 940px;
+  }
+}
+
+#global-browser-prompt .dismiss{
+  background-image: image-url("close.png");
+  background-color:transparent;
+  background-repeat: no-repeat;
+  background-position: center right;
+  text-decoration:none;
+  height:22px;
+  width:10px;
+  text-indent:-9999px;
+  display:inline-block;
+  position: absolute;
+  right: 0;
+}
+
+
+.beta-notice{
+  background-color: $orange;
+  color: #fff;
+}
+
+#global-breadcrumb {
+  background-color: #fff;
+  max-width: 1020px;
+  margin:0 auto;
+  z-index: 50;
+
+  @include media-down(mobile) {
+    padding: 0 1em 0.75em;
+  }
+
+  @include ie(6) {
+    width: 960px;
+  }
+
+  ol {
+    border-top: 10px solid $light-blue;
+    max-width: 960px;
+    margin: 0 30px;
+    padding: 0.75em 0;
+
+    @include ie-lte(7) {
+      padding: 0.75em 16px 0;
+      width: 900px;
+    }
+
+    @include media-down(mobile) {
+      margin: 0;
+    }
+
+    li {
+      @include core-16;
+      background-image: image-url("separator.png");
+      background-position: 100% 50%;
+      background-repeat: no-repeat;
+      float: left;
+      list-style: none;
+      margin-left: 0;
+      margin-right: 0.5em;
+      padding-right: 1em;
+
+      @include device-pixel-ratio() {
+        background-image: image-url("separator-2x.png");
+        background-size: 6px 11px;
+      }
+
+      a {
+        color: $text-colour;
+      }
+
+      strong {
+        font-weight: normal;
+      }
+
+      &:last-child {
+        background-image: none;
+        margin-right: 0
+      }
+    }
+  }
+}
+
+#user-satisfaction-survey {
+  /**
+   * Hidden by default as we only want to show it to users who have
+   * JavaScript enabled.
+   */
+  display: none;
+  background-color: #2B358B;
+  padding: 0.5em 0;
+  color: #fff;
+
+  &.visible {
+    @include media(desktop) {
+      display: block;
+    }
+  }
+
+  .wrapper {
+    margin: 0 auto;
+    max-width: 990px;
+    clear: both;
+    padding: 0 15px;
+
+    h1 {
+      @include bold-19;
+
+      margin-left: 20px;
+    }
+
+    p {
+      @include core-14;
+
+      margin: 0 0 0 20px;
+
+      a {
+        &:link,
+        &:active,
+        &:visited {
+          color: #fff;
+        }
+
+        &:hover {
+          color: #fff;
+        }
+
+        &#take-survey {
+          @include core-19;
+
+          padding-right: 5px;
+        }
+      }
+
+      &.right {
+        float: right;
+        margin: -20px 20px 0 0;
+
+        @include ie-lte(7) {
+          margin-top: -25px;
+        }
+      }
+    }
+  }
+}
