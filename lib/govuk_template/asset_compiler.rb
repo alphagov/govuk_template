@@ -48,7 +48,7 @@ module GovukTemplate
       env.context_class.class_eval do
         define_method :asset_path do |path, options = {}|
           stylesheet_assets << path
-          path
+          "<%= asset_path '#{path}' %>"
         end
       end
 
@@ -56,7 +56,7 @@ module GovukTemplate
         asset = env.find_asset(stylesheet)
 
         abort "Asset #{stylesheet} not found" unless asset
-        File.open(@build_dir.join('stylesheets', asset.logical_path), 'w') {|f| f.write asset.to_s }
+        File.open(@build_dir.join('stylesheets', "#{asset.logical_path}.erb"), 'w') {|f| f.write asset.to_s }
       end
       @stylesheet_assets = stylesheet_assets.uniq
     end
