@@ -284,16 +284,16 @@
 
         padding: 115px 0 0 0;
 
-        background: transparent image-url("govuk-crest.png") no-repeat 100% 0;
+        background: transparent image-url("images/govuk-crest.png") no-repeat 100% 0;
         text-align: right;
         text-decoration: none;
 
         @include ie(6) {
-          background-image: image-url("govuk-crest-ie.png");
+          background-image: image-url("images/govuk-crest-ie.png");
         }
 
         @include device-pixel-ratio() {
-          background-image: image-url("govuk-crest-2x.png");
+          background-image: image-url("images/govuk-crest-2x.png");
           background-size: 125px 102px;
         }
       }

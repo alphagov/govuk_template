@@ -116,7 +116,7 @@
 
 
       background-color: $light-blue;
-      background-image: url("search-button.png");
+      background-image: image-url("images/search-button.png");
       background-repeat: no-repeat;
       background-position: 0 50%;
 
@@ -219,7 +219,7 @@
 
       color: $white;
       background-color: $light-blue;
-      background-image: url("search-button.png");
+      background-image: image-url("images/search-button.png");
       background-repeat: no-repeat;
       background-position: 0 50%;
 
@@ -402,7 +402,7 @@
 }
 
 #global-browser-prompt .dismiss{
-  background-image: image-url("close.png");
+  background-image: image-url("images/close.png");
   background-color:transparent;
   background-repeat: no-repeat;
   background-position: center right;
@@ -452,7 +452,7 @@
 
     li {
       @include core-16;
-      background-image: image-url("separator.png");
+      background-image: image-url("images/separator.png");
       background-position: 100% 50%;
       background-repeat: no-repeat;
       float: left;
@@ -462,7 +462,7 @@
       padding-right: 1em;
 
       @include device-pixel-ratio() {
-        background-image: image-url("separator-2x.png");
+        background-image: image-url("images/separator-2x.png");
         background-size: 6px 11px;
       }
 
