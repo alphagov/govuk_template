@@ -1,5 +1,8 @@
 ---
 stylesheets:
 - govuk-template
+- govuk-template-ie8
+- govuk-template-ie7
+- govuk-template-ie6
 javascripts:
 - test

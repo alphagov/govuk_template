@@ -88,7 +88,7 @@ module GovukTemplate
 
       needed_assets.each do |asset_name|
         asset = env.find_asset(asset_name)
-        abort "Asset #{stylesheet} not found" unless asset
+        abort "Asset #{asset_name} not found" unless asset
 
         File.open(@build_dir.join('images', asset.logical_path), 'wb') {|f| f.write asset.source }
       end
