@@ -5,4 +5,4 @@ stylesheets:
 - govuk-template-ie7
 - govuk-template-ie6
 javascripts:
-- test
+- govuk-template
