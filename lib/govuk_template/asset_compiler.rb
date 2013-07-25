@@ -35,7 +35,7 @@ module GovukTemplate
         asset = env.find_asset(javascript)
 
         abort "Asset #{javascript} not found" unless asset
-        File.open(@build_dir.join('javascripts', "#{javascript}.js"), 'w') {|f| f.write asset.to_s }
+        File.open(@build_dir.join('javascripts', asset.logical_path), 'w') {|f| f.write asset.to_s }
       end
     end
 
@@ -56,7 +56,7 @@ module GovukTemplate
         asset = env.find_asset(stylesheet)
 
         abort "Asset #{stylesheet} not found" unless asset
-        File.open(@build_dir.join('stylesheets', "#{stylesheet}.css"), 'w') {|f| f.write asset.to_s }
+        File.open(@build_dir.join('stylesheets', asset.logical_path), 'w') {|f| f.write asset.to_s }
       end
       @stylesheet_assets = stylesheet_assets.uniq
     end
