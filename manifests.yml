@@ -4,5 +4,7 @@ stylesheets:
 - govuk-template-ie8
 - govuk-template-ie7
 - govuk-template-ie6
+- fonts
+- fonts-ie8
 javascripts:
 - govuk-template

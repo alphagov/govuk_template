@@ -62,7 +62,7 @@ module GovukTemplate
     end
 
     def copy_static_assets
-      excluded_extensions = %w(.js .css .scss)
+      excluded_extensions = %w(.js .css .scss .erb)
 
       Dir.chdir @repo_root.join("app", "assets") do
         files = []
@@ -97,7 +97,7 @@ module GovukTemplate
     private
 
     def prepare_build_dir
-      @build_dir.rmtree
+      @build_dir.rmtree if @build_dir.exist?
       @build_dir.mkpath
       @build_dir.join('stylesheets').mkpath
       @build_dir.join('javascripts').mkpath
