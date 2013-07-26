@@ -10,7 +10,7 @@ module GovukTemplate
 
     def initialize
       @repo_root = Pathname.new(File.expand_path('../../..', __FILE__))
-      @build_dir = @repo_root.join('build', 'assets')
+      @build_dir = @repo_root.join('app', 'assets')
 
       @manifests = YAML.load_file(@repo_root.join('manifests.yml'))
       @stylesheet_assets = []
@@ -29,7 +29,7 @@ module GovukTemplate
 
     def compile_javascripts
       env = Sprockets::Environment.new(@repo_root)
-      env.append_path "app/assets/javascripts"
+      env.append_path "source/assets/javascripts"
 
       manifests["javascripts"].each do |javascript|
         asset = env.find_asset(javascript)
@@ -43,7 +43,7 @@ module GovukTemplate
 
     def compile_stylesheets
       env = Sprockets::Environment.new(@repo_root)
-      env.append_path "app/assets/stylesheets"
+      env.append_path "source/assets/stylesheets"
       env.append_path File.join(Gem.loaded_specs["govuk_frontend_toolkit"].full_gem_path, 'app', 'assets', 'stylesheets')
 
       stylesheet_assets = [] # This has to be a local variable so that it's in scope for the asset_path method
@@ -66,7 +66,7 @@ module GovukTemplate
     def copy_static_assets
       excluded_extensions = %w(.js .css .scss .erb)
 
-      Dir.chdir @repo_root.join("app", "assets") do
+      Dir.chdir @repo_root.join("source", "assets") do
         files = []
         Dir.glob("**/*") do |file|
           next if File.directory?(file)
