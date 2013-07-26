@@ -9,3 +9,4 @@ stylesheets:
 - fonts-ie8
 javascripts:
 - govuk-template
+- ie
