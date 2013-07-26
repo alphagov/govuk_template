@@ -35,7 +35,9 @@ module GovukTemplate
         asset = env.find_asset(javascript)
 
         abort "Asset #{javascript} not found" unless asset
-        File.open(@build_dir.join('javascripts', asset.logical_path), 'w') {|f| f.write asset.to_s }
+        target_file = @build_dir.join('javascripts', asset.logical_path)
+        target_file.dirname.mkpath
+        File.open(target_file, 'w') {|f| f.write asset.to_s }
       end
     end
 
