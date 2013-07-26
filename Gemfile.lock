@@ -30,6 +30,7 @@ GEM
     atomic (1.1.10)
     builder (3.1.4)
     erubis (2.7.0)
+    gem_publisher (1.2.0)
     govuk_frontend_toolkit (0.32.2)
       rails (>= 3.1.0)
       sass (>= 3.2.0)
@@ -82,6 +83,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  gem_publisher (= 1.2.0)
   govuk_frontend_toolkit (= 0.32.2)
   rake
   sass (= 3.2.9)
