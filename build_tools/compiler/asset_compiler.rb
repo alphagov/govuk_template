@@ -2,7 +2,7 @@ require 'yaml'
 require 'open3'
 require 'sprockets'
 
-module GovukTemplate
+module Compiler
   class AssetCompiler
     def self.compile
       new.compile
@@ -17,8 +17,6 @@ module GovukTemplate
       @static_assets = []
     end
 
-    attr_reader :manifests
-
     def compile
       prepare_build_dir
       compile_javascripts
@@ -31,7 +29,7 @@ module GovukTemplate
       env = Sprockets::Environment.new(@repo_root)
       env.append_path "source/assets/javascripts"
 
-      manifests["javascripts"].each do |javascript|
+      @manifests["javascripts"].each do |javascript|
         asset = env.find_asset(javascript)
 
         abort "Asset #{javascript} not found" unless asset
@@ -54,7 +52,7 @@ module GovukTemplate
         end
       end
 
-      manifests["stylesheets"].each do |stylesheet|
+      @manifests["stylesheets"].each do |stylesheet|
         asset = env.find_asset(stylesheet)
 
         abort "Asset #{stylesheet} not found" unless asset

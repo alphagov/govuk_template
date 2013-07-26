@@ -1,6 +1,6 @@
-$:.push File.expand_path('../lib', __FILE__)
+$:.unshift File.expand_path('../build_tools', __FILE__)
 
 task :compile do
-  require 'govuk_template/asset_compiler'
-  GovukTemplate::AssetCompiler.compile
+  require 'compiler/asset_compiler'
+  Compiler::AssetCompiler.compile
 end
