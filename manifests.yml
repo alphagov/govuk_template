@@ -1,4 +1,5 @@
 ---
+# If you make changes here, be sure to make corresponding changes in lib/govuk_template/engine.rb
 stylesheets:
 - govuk-template
 - govuk-template-ie8
