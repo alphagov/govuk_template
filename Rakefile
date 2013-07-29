@@ -16,13 +16,25 @@ task :build => ["build:gem", "build:tar"]
 namespace :build do
   desc "Build govuk_template-#{GovukTemplate::VERSION}.gem into the pkg directory"
   task :gem => :compile do
+    puts "Building pkg/govuk_template-#{GovukTemplate::VERSION}.gem"
     gem = GemPublisher::Builder.new.build('govuk_template.gemspec')
     FileUtils.mv(gem, "pkg")
   end
 
   desc "Build govuk_template-#{GovukTemplate::VERSION}.tgz into the pkg directory"
   task :tar => :compile do
+    puts "Building pkg/govuk_template-#{GovukTemplate::VERSION}.tar"
     require 'packager/tar_packager'
     Packager::TarPackager.build
+  end
+
+  desc "Release gem to gemfury if version has been updated"
+  task :and_release_if_updated => :compile do
+    if released_gem = GemPublisher.publish_if_updated('govuk_template.gemspec', :gemfury, :as => 'govuk')
+      puts "Pushed #{released_gem}"
+      # gem_publisher builds the gem in the root_dir
+      FileUtils.mv(released_gem, "pkg")
+      Rake::Task["build:tar"].invoke
+    end
   end
 end

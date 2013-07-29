@@ -23,4 +23,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'sass', '3.2.9'
   spec.add_development_dependency 'govuk_frontend_toolkit', '0.32.2'
   spec.add_development_dependency 'gem_publisher', '1.2.0'
+  spec.add_development_dependency 'gemfury', '0.4.17'
 end
