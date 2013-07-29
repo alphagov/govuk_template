@@ -41,43 +41,6 @@ function recordOutboundLink(e) {
   return false;
 }
 
-var ReportAProblem = {
-  handleErrorInSubmission: function (jqXHR) {
-    var response = $.parseJSON(jqXHR.responseText);
-    if (response.message !== '') {
-      $('.report-a-problem-container').html(response.message);
-    }
-  },
-
-  submit: function() {
-    $('.report-a-problem-container .error-notification').remove();
-
-    var submitButton = $(this).find('.button');
-    submitButton.attr("disabled", true);
-    $.ajax({
-      type: "POST",
-      url: "/feedback",
-      dataType: "json",
-      data: $('.report-a-problem-container form').serialize(),
-      success: function(data) {
-        $('.report-a-problem-container').html(data.message);
-      },
-      error: function(jqXHR) {
-        if (jqXHR.status == 422) {
-          submitButton.attr("disabled", false);
-          $('<p class="error-notification">Please enter details of what you were doing.</p>').insertAfter('.report-a-problem-container p:first-child');
-        } else {
-          ReportAProblem.handleErrorInSubmission(jqXHR);
-        }
-      },
-      statusCode: {
-        500: ReportAProblem.handleErrorInSubmission
-      }
-    });
-    return false;
-  }
-}
-
 $(document).ready(function() {
   $('.print-link a').attr('target', '_blank');
 
@@ -116,19 +79,6 @@ $(document).ready(function() {
       $("html, body").animate({scrollTop: $(hash).offset().top - $("#global-header").height()},10);
     }
   });
-
-  // toggle for reporting a problem (on all content pages)
-  $('.report-a-problem-toggle a').on('click', function() {
-    $('.report-a-problem-container').toggle();
-      return false;
-  });
-
-  // form submission for reporting a problem
-  var $forms = $('.report-a-problem-container form, .report-a-problem form');
-  $forms.append('<input type="hidden" name="javascript_enabled" value="true"/>');
-  $forms.append($('<input type="hidden" name="referrer">').val(document.referrer || "unknown"));
-
-  $('.report-a-problem-container form').submit(ReportAProblem.submit);
 
   // hover, active and focus states for buttons in IE<8
   if ($.browser.msie && $.browser.version < 8) {
@@ -169,23 +119,6 @@ $(document).ready(function() {
   if (window.GOVUK) {
     if (GOVUK.addCookieMessage) {
       GOVUK.addCookieMessage();
-    }
-
-    if (GOVUK.userSatisfaction){
-      var currentURL = window.location.pathname;
-
-      function stringContains(str, substr) {
-        return str.indexOf(substr) > -1;
-      }
-
-      // We don't want the satisfaction survey appearing for users who
-      // have completed a transaction as they may complete the survey with
-      // the department's transaction in mind as opposed to the GOV.UK content.
-      if (!stringContains(currentURL, "/done") &&
-          !stringContains(currentURL, "/transaction-finished") &&
-          !stringContains(currentURL, "/driving-transaction-finished")) {
-        GOVUK.userSatisfaction.randomlyShowSurveyBar();
-      }
     }
   }
 });
