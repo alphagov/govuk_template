@@ -355,20 +355,14 @@
   }
 }
 
-/* Global cookie message
-   Global browser prompt message */
+/* Global cookie message */
 
 .js-enabled #global-cookie-message {
   display: none; /* shown with JS, always on for non-JS */
 }
 
-#global-browser-prompt {
-  display: none; /* shown with JS, always hidden for non-JS */
-}
-
 #global-cookie-message,
-.beta-notice,
-#global-browser-prompt {
+.beta-notice {
   padding: 0.5em 2em;
 
   p {
@@ -386,35 +380,9 @@
   }
 }
 
-#global-cookie-message,
-#global-browser-prompt {
+#global-cookie-message {
   background-color: $light-blue-25;
 }
-
-#global-browser-prompt p {
-  position: relative;
-  padding-right: 20px;
-  max-width: 940px;
-
-  @include ie(6) {
-    width: 940px;
-  }
-}
-
-#global-browser-prompt .dismiss{
-  background-image: image-url("images/close.png");
-  background-color:transparent;
-  background-repeat: no-repeat;
-  background-position: center right;
-  text-decoration:none;
-  height:22px;
-  width:10px;
-  text-indent:-9999px;
-  display:inline-block;
-  position: absolute;
-  right: 0;
-}
-
 
 .beta-notice{
   background-color: $orange;
