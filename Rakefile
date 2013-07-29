@@ -17,8 +17,8 @@ namespace :build do
   desc "Build govuk_template-#{GovukTemplate::VERSION}.gem into the pkg directory"
   task :gem => :compile do
     puts "Building pkg/govuk_template-#{GovukTemplate::VERSION}.gem"
-    gem = GemPublisher::Builder.new.build('govuk_template.gemspec')
-    FileUtils.mv(gem, "pkg")
+    require 'packager/gem_packager'
+    Packager::GemPackager.build
   end
 
   desc "Build govuk_template-#{GovukTemplate::VERSION}.tgz into the pkg directory"
@@ -30,11 +30,14 @@ namespace :build do
 
   desc "Release gem to gemfury if version has been updated"
   task :and_release_if_updated => :compile do
-    if released_gem = GemPublisher.publish_if_updated('govuk_template.gemspec', :gemfury, :as => 'govuk')
-      puts "Pushed #{released_gem}"
-      # gem_publisher builds the gem in the root_dir
-      FileUtils.mv(released_gem, "pkg")
+    p = GemPublisher::Publisher.new('govuk_template.gemspec')
+    if p.version_released?
+      puts "govuk_template-#{GovukTemplate::VERSION} already released."
+    else
+      Rake::Task["build:gem"].invoke
       Rake::Task["build:tar"].invoke
+      p.pusher.push "pkg/govuk_template-#{GovukTemplate::VERSION}.gem", :gemfury, :as => 'govuk'
+      p.git_remote.add_tag "v#{GovukTemplate::VERSION}"
     end
   end
 end
