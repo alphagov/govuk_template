@@ -1,5 +1,5 @@
 .DS_Store
 .bundle
 .sass-cache
-app/assets
+app
 pkg

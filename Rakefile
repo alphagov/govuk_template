@@ -9,7 +9,7 @@ task :build => :compile
 desc "Compile assets from ./source into ./app/assets"
 task :compile do
   require 'compiler/asset_compiler'
-  puts "Compiling assets into app/assets"
+  puts "Compiling assets and templates into ./app"
   Compiler::AssetCompiler.compile
 end
 

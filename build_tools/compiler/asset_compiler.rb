@@ -10,7 +10,7 @@ module Compiler
 
     def initialize
       @repo_root = Pathname.new(File.expand_path('../../..', __FILE__))
-      @build_dir = @repo_root.join('app', 'assets')
+      @build_dir = @repo_root.join('app')
 
       @manifests = YAML.load_file(@repo_root.join('manifests.yml'))
       @stylesheet_assets = []
@@ -21,6 +21,7 @@ module Compiler
       prepare_build_dir
       compile_javascripts
       compile_stylesheets
+      copy_views
       copy_static_assets
       copy_needed_toolkit_assets
     end
@@ -33,7 +34,7 @@ module Compiler
         asset = env.find_asset(javascript)
 
         abort "Asset #{javascript} not found" unless asset
-        target_file = @build_dir.join('javascripts', asset.logical_path)
+        target_file = @build_dir.join('assets', 'javascripts', asset.logical_path)
         target_file.dirname.mkpath
         File.open(target_file, 'w') {|f| f.write asset.to_s }
       end
@@ -56,9 +57,22 @@ module Compiler
         asset = env.find_asset(stylesheet)
 
         abort "Asset #{stylesheet} not found" unless asset
-        File.open(@build_dir.join('stylesheets', "#{asset.logical_path}.erb"), 'w') {|f| f.write asset.to_s }
+        File.open(@build_dir.join('assets', 'stylesheets', "#{asset.logical_path}.erb"), 'w') {|f| f.write asset.to_s }
       end
       @stylesheet_assets = stylesheet_assets.uniq
+    end
+
+    def copy_views
+      Dir.chdir @repo_root.join("source", "views") do
+        files = []
+        Dir.glob("**/*") do |file|
+          next if File.directory?(file)
+          files << file
+        end
+
+        output, status = Open3.capture2e("cp -r --parents #{files.shelljoin} #{@build_dir.join('views').to_s.shellescape}")
+        abort "Error copying views:\n#{output}" if status.exitstatus > 0
+      end
     end
 
     def copy_static_assets
@@ -72,7 +86,7 @@ module Compiler
           files << file
         end
 
-        output, status = Open3.capture2e("cp -r --parents #{files.shelljoin} #{@build_dir.to_s.shellescape}")
+        output, status = Open3.capture2e("cp -r --parents #{files.shelljoin} #{@build_dir.join('assets').to_s.shellescape}")
         abort "Error copying files:\n#{output}" if status.exitstatus > 0
 
         # Strip leading path component to get logical path as referenced in stylesheets
@@ -90,7 +104,7 @@ module Compiler
         asset = env.find_asset(asset_name)
         abort "Asset #{asset_name} not found" unless asset
 
-        File.open(@build_dir.join('stylesheets', asset.logical_path), 'wb') {|f| f.write asset.source }
+        File.open(@build_dir.join('assets', 'stylesheets', asset.logical_path), 'wb') {|f| f.write asset.source }
       end
     end
 
@@ -99,8 +113,9 @@ module Compiler
     def prepare_build_dir
       @build_dir.rmtree if @build_dir.exist?
       @build_dir.mkpath
-      @build_dir.join('stylesheets').mkpath
-      @build_dir.join('javascripts').mkpath
+      @build_dir.join('assets', 'stylesheets').mkpath
+      @build_dir.join('assets', 'javascripts').mkpath
+      @build_dir.join('views').mkpath
     end
   end
 end
