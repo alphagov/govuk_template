@@ -28,8 +28,13 @@
 
   h2 {
     @include core-24;
-    color: $grey-3;
+    font-weight: bold;
+    color: $grey-1;
     margin: 0;
+
+    a {
+      color: inherit;
+    }
   }
 
   .footer-categories {
@@ -219,6 +224,10 @@
 
         @include media-down(mobile) {
           padding-left: 0;
+        }
+
+        @include ie(6) {
+          zoom: 1;
         }
 
         h2 {

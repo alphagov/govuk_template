@@ -261,7 +261,6 @@ img { max-width: 100% !important; }
 /* hide the unnecessary page elements */
 body footer,
 body #global-user-location,
-body .related-positioning,
 header.page-header div h1 span,
 body .actions,
 body nav,
@@ -274,11 +273,6 @@ body nav,
 .loading_location,
 .location_error,
 #global-cookie-message,
-#global-browser-prompt,
-#user-satisfaction-survey,
-.report-a-problem-toggle,
-.report-a-problem-container,
-.show-all-parts,
-.skip-to-related {
+.show-all-parts {
   display: none !important;
 }
