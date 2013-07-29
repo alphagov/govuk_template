@@ -17,4 +17,10 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency "rails", ">= 3.1"
+
+  spec.add_development_dependency 'rake'
+  spec.add_development_dependency 'sprockets', '2.10.0'
+  spec.add_development_dependency 'sass', '3.2.9'
+  spec.add_development_dependency 'govuk_frontend_toolkit', '0.32.2'
+  spec.add_development_dependency 'gem_publisher', '1.2.0'
 end

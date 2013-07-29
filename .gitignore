@@ -1,5 +1,6 @@
 .DS_Store
 .bundle
 .sass-cache
+Gemfile.lock
 app
 pkg
