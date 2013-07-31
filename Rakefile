@@ -28,16 +28,16 @@ namespace :build do
     Packager::TarPackager.build
   end
 
-  desc "Release gem to gemfury if version has been updated"
-  task :and_release_if_updated => :compile do
+  desc "Build and release gem to gemfury if version has been updated"
+  task :and_release_if_updated => :build do
     p = GemPublisher::Publisher.new('govuk_template.gemspec')
     if p.version_released?
-      puts "govuk_template-#{GovukTemplate::VERSION} already released."
+      puts "govuk_template-#{GovukTemplate::VERSION} already released.  Not pushing."
     else
-      Rake::Task["build:gem"].invoke
-      Rake::Task["build:tar"].invoke
+      puts "Pushing govuk_template-#{GovukTemplate::VERSION} to gemfury"
       p.pusher.push "pkg/govuk_template-#{GovukTemplate::VERSION}.gem", :gemfury, :as => 'govuk'
       p.git_remote.add_tag "v#{GovukTemplate::VERSION}"
+      puts "Done."
     end
   end
 end
