@@ -23,7 +23,7 @@ namespace :build do
 
   desc "Build govuk_template-#{GovukTemplate::VERSION}.tgz into the pkg directory"
   task :tar => :compile do
-    puts "Building pkg/govuk_template-#{GovukTemplate::VERSION}.tar"
+    puts "Building pkg/govuk_template-#{GovukTemplate::VERSION}.tgz"
     require 'packager/tar_packager'
     Packager::TarPackager.build
   end
