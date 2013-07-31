@@ -5,7 +5,7 @@ module Compiler
 
     def initialize(file)
       @file = file
-      @is_stylesheet = !! file =~ /\.css\.erb\z/
+      @is_stylesheet = !!(file =~ /\.css\.erb\z/)
     end
 
     def process
