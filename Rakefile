@@ -3,7 +3,7 @@ $:.unshift File.expand_path('../build_tools', __FILE__)
 require "govuk_template/version"
 require "gem_publisher"
 
-desc "Compile assets from ./source into ./app/assets"
+desc "Compile template and assets from ./source into ./app"
 task :compile do
   require 'compiler/asset_compiler'
   puts "Compiling assets and templates into ./app"
