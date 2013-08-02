@@ -83,7 +83,11 @@
     <!--end header-->
 
     <div id="global-cookie-message">
-      <p>GOV.UK uses cookies to make the site simpler. <a href="https://www.gov.uk/support/cookies">Find out more about cookies</a></p>
+      <% if content_for?(:cookie_message) %>
+        <%= yield :cookie_message %>
+      <% else %>
+        <p>GOV.UK uses cookies to make the site simpler. <a href="https://www.gov.uk/support/cookies">Find out more about cookies</a></p>
+      <% end %>
     </div>
 
     <%= content_for?(:content) ? yield(:content) : yield %>
