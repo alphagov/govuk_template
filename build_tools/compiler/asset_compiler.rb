@@ -9,10 +9,6 @@ module Compiler
       RbConfig::CONFIG['host_os'] =~ /darwin/
     end
 
-    def on_linux?
-      RbConfig::CONFIG['host_os'] =~ /linux/
-    end
-
     def self.compile
       new.compile
     end
@@ -79,8 +75,11 @@ module Compiler
           files << file
         end
 
-        output, status = Open3.capture2e("cp -r --parents #{files.shelljoin} #{@build_dir.join('views').to_s.shellescape}") if on_linux?
-        output, status = Open3.capture2e("rsync -R #{files.shelljoin} #{@build_dir.join('views').to_s.shellescape}") if on_darwin?
+        if on_darwin?
+          output, status = Open3.capture2e("rsync -R #{files.shelljoin} #{@build_dir.join('views').to_s.shellescape}")
+        else
+          output, status = Open3.capture2e("cp -r --parents #{files.shelljoin} #{@build_dir.join('views').to_s.shellescape}")
+        end
 
         abort "Error copying views:\n#{output}" if status.exitstatus > 0
       end
@@ -97,8 +96,11 @@ module Compiler
           files << file
         end
 
-        output, status = Open3.capture2e("cp -r --parents #{files.shelljoin} #{@build_dir.join('assets').to_s.shellescape}") if on_linux?
-        output, status = Open3.capture2e("rsync -R #{files.shelljoin} #{@build_dir.join('assets').to_s.shellescape}") if on_darwin?
+        if on_darwin?
+          output, status = Open3.capture2e("rsync -R #{files.shelljoin} #{@build_dir.join('assets').to_s.shellescape}")
+        else
+          output, status = Open3.capture2e("cp -r --parents #{files.shelljoin} #{@build_dir.join('assets').to_s.shellescape}")
+        end
         abort "Error copying files:\n#{output}" if status.exitstatus > 0
 
         # Strip leading path component to get logical path as referenced in stylesheets
