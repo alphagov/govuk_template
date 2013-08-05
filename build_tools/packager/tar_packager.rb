@@ -4,6 +4,14 @@ require 'compiler/template_processor'
 
 module Packager
   class TarPackager
+    def on_darwin?
+      RbConfig::CONFIG['host_os'] =~ /darwin/
+    end
+
+    def on_linux?
+      RbConfig::CONFIG['host_os'] =~ /linux/
+    end
+
     def self.build
       new.build
     end
@@ -46,7 +54,8 @@ module Packager
     end
 
     def copy_file(file)
-      output, status = Open3.capture2e("cp --parents #{file.shellescape} #{@target_dir.to_s.shellescape}")
+      output, status = Open3.capture2e("cp --parents #{file.shellescape} #{@target_dir.to_s.shellescape}") if on_linux?
+      output, status = Open3.capture2e("rsync -R #{file.shellescape} #{@target_dir.to_s.shellescape}") if on_darwin?
       abort "Error copying file #{file}:\n#{output}" if status.exitstatus > 0
     end
 
