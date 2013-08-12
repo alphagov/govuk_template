@@ -14,6 +14,10 @@ module Compiler
       end
     end
 
+    def raw html 
+      html
+    end 
+
     def render_erb
       ERB.new(File.read(@file)).result(binding)
     end

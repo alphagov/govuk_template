@@ -11,7 +11,7 @@ task :compile do
 end
 
 desc "Build both gem and tar version"
-task :build => ["build:gem", "build:tar"]
+task :build => ["build:gem", "build:tar", "build:play"]
 
 namespace :build do
   desc "Build govuk_template-#{GovukTemplate::VERSION}.gem into the pkg directory"
@@ -26,6 +26,13 @@ namespace :build do
     puts "Building pkg/govuk_template-#{GovukTemplate::VERSION}.tgz"
     require 'packager/tar_packager'
     Packager::TarPackager.build
+  end
+
+  desc "Build play_govuk_template-#{GovukTemplate::VERSION}.tgz into the pkg directory"
+  task :play => :compile do
+    puts "Building pkg/play_govuk_template-#{GovukTemplate::VERSION}.tgz"
+    require 'packager/play_packager'
+    Packager::PlayPackager.build
   end
 
   desc "Build and release gem to gemfury if version has been updated"
