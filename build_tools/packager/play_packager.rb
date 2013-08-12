@@ -1,43 +1,13 @@
 require 'open3'
 require 'govuk_template/version'
+require 'packager/tar_packager'
 require 'compiler/play_processor'
 
 module Packager
-  class PlayPackager
-    def on_darwin?
-      RbConfig::CONFIG['host_os'] =~ /darwin/
-    end
-
-    def self.build
-      new.build
-    end
-
+  class PlayPackager < TarPackager
     def initialize
-      @repo_root = Pathname.new(File.expand_path('../../..', __FILE__))
+      super
       @base_name = "play_govuk_template-#{GovukTemplate::VERSION}"
-    end
-
-    def build
-      Dir.mktmpdir("govuk_template") do |dir|
-        @target_dir = Pathname.new(dir).join(@base_name)
-        @target_dir.mkpath
-        prepare_contents
-        create_tarball
-      end
-    end
-
-    def prepare_contents
-      Dir.chdir @repo_root.join("app") do
-        Dir.glob("**/*") do |file|
-          next if File.directory?(file)
-          case File.extname(file)
-          when '.erb'
-            process_template(file)
-          else
-            copy_file(file)
-          end
-        end
-      end
     end
 
     def process_template(file)
@@ -46,24 +16,6 @@ module Packager
       target_file = File.basename(file, File.extname(file)).sub(/\.html\z/, '.scala.html') # /path/to/foo.html.erb -> foo.scala.html
       File.open(target_dir.join(target_file), 'wb') do |f|
         f.write Compiler::PlayProcessor.new(file).process
-      end
-    end
-
-    def copy_file(file)
-      if on_darwin?
-        output, status = Open3.capture2e("rsync -R #{file.shellescape} #{@target_dir.to_s.shellescape}")
-      else
-        output, status = Open3.capture2e("cp --parents #{file.shellescape} #{@target_dir.to_s.shellescape}")
-      end
-      abort "Error copying file #{file}:\n#{output}" if status.exitstatus > 0
-    end
-
-    def create_tarball
-      Dir.chdir(@target_dir.join('..')) do
-        @repo_root.join("pkg").mkpath
-        target_file = @repo_root.join("pkg", "#{@base_name}.tgz").to_s
-        output, status = Open3.capture2e("tar -czf #{target_file.shellescape} #{@base_name.shellescape}")
-        abort "Error creating tar:\n#{output}" if status.exitstatus > 0
       end
     end
   end
