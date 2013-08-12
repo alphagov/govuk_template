@@ -6,7 +6,7 @@ This is versioned following [Semantic Versioning](http://semver.org).
 
 ## Packaging
 
-At present this generates 2 output formats, a gem containing a Rails engine, and a tarball.
+At present this generates 3 output formats, a gem containing a Rails engine, a tarball containing Play Framework templates and a tarball.
 
 ### Gem version
 
@@ -22,6 +22,10 @@ And then execute:
     $ bundle
 
 You can then use the `govuk_template` layout in your app.  If you need to extend the layout you can use [nested layouts](http://guides.rubyonrails.org/layouts_and_rendering.html#using-nested-layouts).
+
+### Play version
+
+To generate the tarball of Play Framework templates run `build:play` rake task. This will produce a tarball in the `pkg` directory.
 
 ### Tarball version
 
