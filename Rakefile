@@ -28,6 +28,13 @@ namespace :build do
     Packager::TarPackager.build
   end
 
+  desc "Build play_govuk_template-#{GovukTemplate::VERSION}.tgz into the pkg directory"
+  task :play => :compile do
+    puts "Building pkg/play_govuk_template-#{GovukTemplate::VERSION}.tgz"
+    require 'packager/play_packager'
+    Packager::PlayPackager.build
+  end
+
   desc "Build and release gem to gemfury if version has been updated"
   task :and_release_if_updated => :build do
     p = GemPublisher::Publisher.new('govuk_template.gemspec')
