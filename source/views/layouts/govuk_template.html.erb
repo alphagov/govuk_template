@@ -1,3 +1,4 @@
+<%= yield :top_of_page %>
 <!DOCTYPE html>
 <!--[if lt IE 9]><html class="lte-ie8" lang="en"><![endif]-->
 <!--[if gt IE 8]><!--><html lang="en"><!--<![endif]-->
@@ -55,7 +56,7 @@
     <%= yield :head %>
   </head>
 
-  <body<%= content_for?(:body_classes) ? " class=\"#{yield(:body_classes)}\"".html_safe : '' %>>
+  <body<%= content_for?(:body_classes) ? raw(" class=\"#{yield(:body_classes)}\"") : '' %>>
     <script type="text/javascript">document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
 
     <a href="#content" class="visuallyhidden">Skip to main content</a>
