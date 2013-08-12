@@ -43,8 +43,7 @@ module Packager
     def process_template(file)
       target_dir = @target_dir.join(File.dirname(file))
       target_dir.mkpath
-      base_file = File.basename(file, File.extname(file))
-      target_file = File.extname(base_file).eql?("html") ? "#{File.basename(base_file, File.extname(base_file))}.scala.html" : base_file
+      target_file = File.basename(file, File.extname(file)).sub(/\.html\z/, '.scala.html') # /path/to/foo.html.erb -> foo.scala.html
       File.open(target_dir.join(target_file), 'wb') do |f|
         f.write Compiler::PlayProcessor.new(file).process
       end
