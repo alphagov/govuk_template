@@ -29,7 +29,7 @@ module Compiler
     end
 
     def content_for?(*args)
-      true
+      false
     end
 
     def asset_path(file, optons={})
