@@ -8,7 +8,7 @@ module Compiler
       when :layout
         "<!-- Page content goes here -->"
       when :page_title
-        "GOV.UK - @title.getOrElse('The best place to find government services and information)"
+        "GOV.UK - @title.getOrElse('The best place to find government services and information')"
       when :top_of_page
         "@(title: Option[String], bodyClasses: Option[String])(head:Html, bodyEnd:Html)(content:Html)"
       when :head
