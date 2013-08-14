@@ -5,7 +5,9 @@ module Compiler
   class PlayProcessor < TemplateProcessor
     
     def render_erb
-      ERB.new(File.read(@file)).result(binding)
+      f=File.read(@file) 
+      f.gsub!(/@/, "@@") if !@is_stylesheet 
+      ERB.new(f).result(binding)
     end
     
     def handle_yield(section = :layout)
