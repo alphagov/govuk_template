@@ -6,7 +6,7 @@ module Compiler
     
     def render_erb
       f=File.read(@file) 
-      f.gsub!(/@/, "@@") if !@is_stylesheet 
+      f.gsub!(/@/, "@@") unless @is_stylesheet
       ERB.new(f).result(binding)
     end
     
