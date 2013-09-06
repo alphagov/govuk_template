@@ -35,17 +35,7 @@ namespace :build do
     Packager::PlayPackager.build
   end
 
-  desc "Release play_govuk_template-#{GovukTemplate::VERSION}.tgz to github"
-  task :release_play => :play do
-    require 'publisher/play_publisher'
-    if Publisher::PlayPublisher.version_released?
-      puts "govuk_template_play v#{GovukTemplate::VERSION} already released. Not pushing."
-    else 
-      Publisher::PlayPublisher.publish
-    end
-  end
-
-  desc "Build and release gem to gemfury if version has been updated"
+  desc "Build and release gem to gemfury and github if version has been updated"
   task :and_release_if_updated => :build do
     p = GemPublisher::Publisher.new('govuk_template.gemspec')
     if p.version_released?
@@ -56,6 +46,14 @@ namespace :build do
       p.git_remote.add_tag "v#{GovukTemplate::VERSION}"
       puts "Done."
     end
+    require 'publisher/play_publisher'
+    q = Publisher::PlayPublisher.new
+    if q.version_released?
+      puts "govuk_template_play v#{GovukTemplate::VERSION} already released. Not pushing."
+    else 
+      q.publish
+    end
+    q.cleanup
   end
 end
 
