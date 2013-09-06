@@ -7,9 +7,13 @@ module Publisher
       new.publish
     end
 
+    def self.version_released?
+      new.version_released?
+    end
+
 		def publish
 			puts "Releasing play_govuk_template"
-			system "git clone -q git@github.com:michaeldfallen/govuk_template_play.git"
+			system "git clone -q git@github.com:alphagov/govuk_template_play.git"
 			system "tar -xf pkg/play_govuk_template-#{GovukTemplate::VERSION}.tgz"
 			system "cp -r play_govuk_template-#{GovukTemplate::VERSION}/ govuk_template_play"
 			system "rm -rf play_govuk_template-#{GovukTemplate::VERSION}"
@@ -22,6 +26,10 @@ module Publisher
   	
    		puts "Cleaning up"
    		system "rm -rf govuk_template_play"
+		end
+
+		def version_released? 
+			system "git tag | grep -o #{GovukTemplate::VERSION}"
 		end
 	end
 end

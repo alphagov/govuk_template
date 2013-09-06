@@ -38,7 +38,11 @@ namespace :build do
   desc "Release play_govuk_template-#{GovukTemplate::VERSION}.tgz to github"
   task :release_play => :play do
     require 'publisher/play_publisher'
-    Publisher::PlayPublisher.publish
+    if Publisher::PlayPublisher.version_released?
+      puts "govuk_template_play v#{GovukTemplate::VERSION} already released. Not pushing."
+    else 
+      Publisher::PlayPublisher.publish
+    end
   end
 
   desc "Build and release gem to gemfury if version has been updated"
