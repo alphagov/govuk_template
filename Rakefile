@@ -35,6 +35,12 @@ namespace :build do
     Packager::PlayPackager.build
   end
 
+  desc "Release play_govuk_template-#{GovukTemplate::VERSION}.tgz to github"
+  task :release_play => :play do
+    require 'publisher/play_publisher'
+    Publisher::PlayPublisher.publish
+  end
+
   desc "Build and release gem to gemfury if version has been updated"
   task :and_release_if_updated => :build do
     p = GemPublisher::Publisher.new('govuk_template.gemspec')
