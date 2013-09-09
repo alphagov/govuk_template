@@ -53,7 +53,6 @@ namespace :build do
     else 
       q.publish
     end
-    q.cleanup
   end
 end
 
