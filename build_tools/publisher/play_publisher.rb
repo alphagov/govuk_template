@@ -6,6 +6,8 @@ module Publisher
     def publish
       puts "Releasing play_govuk_template"
       system "git clone -q git@github.com:alphagov/govuk_template_play.git"
+      system "ls -1 | grep -v 'README.md' | xargs -I {} rm -rf {}"
+      
       system "tar -xf pkg/play_govuk_template-#{GovukTemplate::VERSION}.tgz"
       system "cp -r play_govuk_template-#{GovukTemplate::VERSION}/ govuk_template_play"
       system "rm -rf play_govuk_template-#{GovukTemplate::VERSION}"
