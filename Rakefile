@@ -46,6 +46,15 @@ namespace :build do
       p.git_remote.add_tag "v#{GovukTemplate::VERSION}"
       puts "Done."
     end
+
+    require 'publisher/play_publisher'
+    q = Publisher::PlayPublisher.new
+    if q.version_released?
+      puts "govuk_template_play #{GovukTemplate::VERSION} already released. Not pushing."
+    else
+      puts "Pushing govuk_template_play #{GovukTemplate::VERSION} to git repo"
+      q.publish
+    end
   end
 end
 

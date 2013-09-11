@@ -38,6 +38,7 @@ module Packager
           end
         end
       end
+      File.open(@target_dir.join('VERSION'), 'w') {|f| f.write "#{GovukTemplate::VERSION}\n" }
     end
 
     def process_template(file)
