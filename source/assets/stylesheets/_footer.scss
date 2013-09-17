@@ -58,30 +58,6 @@
         width: 100%;
       }
 
-      ul {
-        @include core-16($line-height: (24/16), $line-height-640: (24/16));
-        display: inline-block;
-        list-style: none;
-        margin: 0 0 1em;
-        padding: 0;
-
-        li {
-          display: inline-block;
-          margin: 0 15px 0 0;
-
-          @include ie-lte(7) {
-            display: inline;
-            margin-right: 0;
-            padding-right: 15px;
-          }
-        }
-
-        @include media-down(mobile) {
-          width: auto;
-          margin: 0 0 1.5em 0;
-        }
-      }
-
       .open-government-licence {
         clear: left;
         position: relative;

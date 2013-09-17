@@ -100,15 +100,7 @@
 
         <div class="footer-meta">
           <div class="footer-meta-inner">
-            <h2 class="visuallyhidden">Support links</h2>
-            <ul>
-              <li><a href="https://www.gov.uk/support">Support</a></li>
-              <li><a href="https://www.gov.uk/support/cookies">Cookies</a></li>
-              <li><a href="https://www.gov.uk/feedback">Feedback</a></li>
-              <li><a href="https://www.gov.uk/cymraeg">Cymraeg</a></li>
-              <li>Built by the <a href="http://digital.cabinetoffice.gov.uk/">Government Digital Service</a></li>
-            </ul>
-
+            <%= yield :footer_support_links %>
 
             <div class="open-government-licence">
               <h2><a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2"><img src="<%= asset_path 'open-government-licence_2x.png' %>" alt="OGL"></a></h2>
