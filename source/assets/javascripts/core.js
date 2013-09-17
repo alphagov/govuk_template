@@ -40,10 +40,8 @@ $(document).ready(function() {
     }
   }());
 
-  if (window.GOVUK) {
-    if (GOVUK.addCookieMessage) {
-      GOVUK.addCookieMessage();
-    }
+  if (window.GOVUK && GOVUK.addCookieMessage) {
+    GOVUK.addCookieMessage();
   }
 });
 
