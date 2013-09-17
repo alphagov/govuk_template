@@ -30,7 +30,7 @@
       return GOVUK.getCookie(name);
     }
   };
-  GOVUK.setCookie: function (name, value, options) {
+  GOVUK.setCookie = function (name, value, options) {
     if(typeof options === 'undefined') {
       options = {};
     }
