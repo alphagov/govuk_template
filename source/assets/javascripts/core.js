@@ -23,25 +23,6 @@ $(document).ready(function() {
     }
   });
 
-  // hover, active and focus states for buttons in IE<8
-  if ($.browser.msie && $.browser.version < 8) {
-    $('.button').not('a')
-      .on('click focus', function (e) {
-        $(this).addClass('button-active');
-      })
-      .on('blur', function (e) {
-        $(this).removeClass('button-active');
-      });
-
-    $('.button')
-      .on('mouseover', function (e) {
-        $(this).addClass('button-hover');
-      })
-      .on('mouseout', function (e) {
-        $(this).removeClass('button-hover');
-      });
-  }
-
   // fix for printing bug in Windows Safari
   (function () {
     var windows_safari = (window.navigator.userAgent.match(/(\(Windows[\s\w\.]+\))[\/\(\s\w\.\,\)]+(Version\/[\d\.]+)\s(Safari\/[\d\.]+)/) !== null),
