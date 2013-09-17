@@ -13,12 +13,11 @@ module Publisher
     end
 
     def publish
-      puts "Releasing play_govuk_template #{@version} to git repo"
       Dir.mktmpdir("govuk_template_play") do |dir|
         run "git clone -q #{GIT_URL.shellescape} #{dir.shellescape}"
         Dir.chdir(dir) do
           run "ls -1 | grep -v 'README.md' | xargs -I {} rm -rf {}"
-          run "cp -r #{@source_dir.to_s.shellescape}/ ."
+          run "cp -r #{@source_dir.to_s.shellescape}/* ."
           run "git add -A ."
           run "git commit -q -m 'deploying GOV.UK Play templates #{@version}'"
           run "git tag v#{@version}"
