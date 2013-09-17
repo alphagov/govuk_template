@@ -361,9 +361,9 @@
   display: none; /* shown with JS, always on for non-JS */
 }
 
-#global-cookie-message,
-.beta-notice {
+#global-cookie-message {
   padding: 0.5em 2em;
+  background-color: $light-blue-25;
 
   p {
     @include core-19;
@@ -378,13 +378,4 @@
   @include media-down(mobile) {
     padding: 0.5em 1em;
   }
-}
-
-#global-cookie-message {
-  background-color: $light-blue-25;
-}
-
-.beta-notice{
-  background-color: $orange;
-  color: #fff;
 }
