@@ -100,12 +100,10 @@ html {
  * 1. Font-size increased to compensate for change to html element font-size in
  *    order to support beta typography which was set in ems
  *    (62.5% * 160% = 100%)
- * 2. Addresses margins handled incorrectly in IE6/7
  */
 
 body {
   font-size: 160%; /* 1 */
-  margin: 0; /* 2 */
 }
 
 b,
