@@ -44,5 +44,3 @@ $(document).ready(function() {
     GOVUK.addCookieMessage();
   }
 });
-
-
