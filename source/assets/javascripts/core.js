@@ -23,20 +23,6 @@ $(document).ready(function() {
     }
   });
 
-  $("nav").delegate('a', 'click', function(){
-    var hash;
-    var href = $(this).attr('href');
-    if(href.charAt(0) === '#'){
-      hash = href;
-    }
-    else if(href.indexOf("#") > 0){
-      hash = "#" + href.split("#")[1];
-    }
-    if($(hash).length == 1){
-      $("html, body").animate({scrollTop: $(hash).offset().top - $("#global-header").height()},10);
-    }
-  });
-
   // hover, active and focus states for buttons in IE<8
   if ($.browser.msie && $.browser.version < 8) {
     $('.button').not('a')
