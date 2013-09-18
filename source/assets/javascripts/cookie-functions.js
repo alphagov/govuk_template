@@ -1,7 +1,6 @@
 (function () {
   "use strict"
-  var root = this,
-      $ = root.jQuery;
+  var root = this;
   if(typeof root.GOVUK === 'undefined') { root.GOVUK = {}; }
 
   /*
