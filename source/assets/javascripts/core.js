@@ -1,4 +1,4 @@
-$(document).ready(function() {
+(function() {
   // fix for printing bug in Windows Safari
   var windowsSafari = (window.navigator.userAgent.match(/(\(Windows[\s\w\.]+\))[\/\(\s\w\.\,\)]+(Version\/[\d\.]+)\s(Safari\/[\d\.]+)/) !== null),
       style;
@@ -15,4 +15,4 @@ $(document).ready(function() {
   if (window.GOVUK && GOVUK.addCookieMessage) {
     GOVUK.addCookieMessage();
   }
-});
+}).call(this);
