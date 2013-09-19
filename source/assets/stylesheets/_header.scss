@@ -18,8 +18,7 @@
 
     .header-global {
       @extend %contain-floats;
-      .header-logo,
-      .site-search {
+      .header-logo {
         @extend %contain-floats;
         width: 49%;
         float: left;
@@ -39,9 +38,6 @@
       .header-logo {
         margin: 5px 0 2px;
       }
-      .site-search {
-        float: right;
-      }
     }
   }
   &.with-proposition {
@@ -51,8 +47,7 @@
           float: left;
           width: 33.33%;
 
-          .header-logo,
-          .site-search {
+          .header-logo {
             width: 100%;
           }
         }
@@ -66,10 +61,6 @@
           margin: 0 15px;
         }
       }
-    }
-
-    #search {
-      margin-top: 4px;
     }
   }
 
@@ -97,168 +88,6 @@
     &:hover img {
       top: -30px;
     }
-  }
-
-  .search-toggle {
-    display: none;
-
-    @media screen and (max-width: 379px) {
-      display: block;
-      float: right;
-      top: 0;
-      height: 30px;
-      width: 36px;
-      padding: 0;
-      margin: 0 15px;
-
-      overflow: hidden;
-      text-indent: -5000px;
-
-
-      background-color: $light-blue;
-      background-image: image-url("images/search-button.png");
-      background-repeat: no-repeat;
-      background-position: 0 50%;
-
-      @include device-pixel-ratio() {
-        background-size: 52.5px 35px;
-        background-position: 100% 50%;
-      }
-
-      @include border-radius(0);
-      @include box-shadow(none);
-
-      &:active {
-        top: 0;
-      }
-    }
-
-    &.js-hidden { display: none; }
-  }
-
-  form#search {
-    .content {
-      @extend %contain-floats;
-      position: relative;
-      background: #fff;
-    }
-    label {
-      float: left;
-      height: 35px;
-      line-height: 35px;
-      text-indent: 15px;
-      overflow: hidden;
-      display: block;
-      margin-right: 10px;
-
-      .js-enabled & {
-        float: none;
-        position: absolute;
-        left: 0;
-        top: 1px;
-        z-index: 1;
-        width: 100%;
-        margin-right: 0;
-      }
-    }
-    input {
-      @include box-sizing(border-box);
-      float: left;
-      width: 50%;
-      min-width: 0;
-      display: block;
-      margin: 0;
-      border: 0;
-      height: 35px;
-      padding: 6px 0;
-      @include ie-lte(7){
-        height: 23px;
-      }
-      @include appearance(none);
-    }
-
-    input#site-search-text {
-      @include core-16($line-height: (23/16), $line-height-640: (23/13));
-      position: relative;
-      padding: 6px;
-      z-index: 3;
-      background: transparent;
-
-      &.focus,
-      &:focus {
-        background: #fff;
-      }
-
-      @include ie-lte(7){
-        padding-left: 0;
-      }
-      .js-enabled & {
-        width: 86%;
-        @include calc(width, "100% - 37px");
-      }
-    }
-
-    input.submit {
-      position: absolute;
-      z-index: 4;
-      right: 0;
-      top: 0;
-      width: 35px;
-      height: 35px;
-
-      border: 1px solid $light-blue;
-      border-width: 0 0 0 1px;
-      @include ie-lte(7){
-        border-width: 1px;
-      }
-      border-left-color: #222;
-      @include border-radius(0);
-
-      overflow: hidden;
-      text-indent: -5000px;
-
-      color: $white;
-      background-color: $light-blue;
-      background-image: image-url("images/search-button.png");
-      background-repeat: no-repeat;
-      background-position: 0 50%;
-
-      @include device-pixel-ratio() {
-        background-size: 52.5px 35px;
-        background-position: 100% 50%;
-      }
-
-      @include ie-lte(7) {
-        background-image: none;
-        width: auto;
-      }
-
-      &:hover {
-        background-color: lighten($light-blue, 5%);
-      }
-    }
-
-    @include ie-lte(7) {
-      input.button-active {
-        background-color: #28A197;
-        top: 0;
-      }
-
-      input.button-hover {
-        background-color: #3ABAA8;
-      }
-    }
-
-
-    @media screen and (max-width: 379px) {
-      display: none;
-      width: 100%;
-
-      #site-search-text {
-        width: 80%;
-      }
-    }
-    &.js-visible { display: block; }
   }
 
   .header-proposition {
@@ -361,9 +190,9 @@
   display: none; /* shown with JS, always on for non-JS */
 }
 
-#global-cookie-message,
-.beta-notice {
+#global-cookie-message {
   padding: 0.5em 2em;
+  background-color: $light-blue-25;
 
   p {
     @include core-19;
@@ -378,13 +207,4 @@
   @include media-down(mobile) {
     padding: 0.5em 1em;
   }
-}
-
-#global-cookie-message {
-  background-color: $light-blue-25;
-}
-
-.beta-notice{
-  background-color: $orange;
-  color: #fff;
 }
