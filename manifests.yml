@@ -11,5 +11,4 @@ stylesheets:
 javascripts:
 - govuk-template
 - ie
-- vendor/jquery/jquery-1.7.2.js
 - vendor/goog/webfont-debug.js

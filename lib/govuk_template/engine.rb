@@ -6,7 +6,6 @@ module GovukTemplate
         fonts*.css
         govuk-template.js
         ie.js
-        vendor/jquery/jquery-1.7.2.js
         vendor/goog/webfont-debug.js
       )
     end
