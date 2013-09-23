@@ -65,6 +65,7 @@
       </div>
     </div>
 
+    <% unless @omit_header %>
     <header role="banner" id="global-header">
       <div class="header-wrapper">
         <div class="header-global">
@@ -79,6 +80,7 @@
       </div>
     </header>
     <!--end header-->
+    <% end %>
 
     <div id="global-cookie-message">
       <% if content_for?(:cookie_message) %>
