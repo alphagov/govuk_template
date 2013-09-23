@@ -16,164 +16,6 @@ body {
   width: 100%;
 }
 
-section > header {
-  position: relative;
-
-  h1 {
-    @include core-24;
-    border-bottom: solid 1pt black;
-    padding-bottom: 6pt;
-    width: 80%;
-
-    &:after {
-      content: " from GOV.UK";
-    }
-  }
-
-  p {
-    @include core-14;
-    border-bottom: solid 1pt black;
-    bottom: -11pt;
-    position: absolute;
-    text-align: center;
-    text-transform: uppercase;
-    padding-bottom: 6pt;
-    right: 0;
-    width: 15%;
-  }
-}
-
-article {
-  margin-bottom: 1cm;
-  width: 80%;
-
-  header h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-weight: bold;
-  }
-
-  h2,
-  h3,
-  h4,
-  p,
-  ul {
-      orphans: 3;
-      widows: 3;
-  }
-
-  h2,
-  h3,
-  h4,
-  .info-notice {
-      page-break-after: avoid;
-  }
-
-  header h1 {
-    @include core-19;
-    border-bottom: 1pt solid rgb(127,127,127);
-    padding-top: 7pt;
-    padding-bottom: 7pt;
-  }
-
-  h2 {
-    @include core-19;
-    padding-top: 7pt;
-  }
-
-  h3 {
-    @include core-16;
-  }
-
-  h4 {
-    @include core-14;
-  }
-
-  p {
-    @include core-14;
-  }
-
-  ul,
-  ol {
-    @include core-14;
-    padding-left: 13pt;
-    list-style-image: none;
-    list-style-type: disc;
-  }
-
-  li {
-    line-height: 1.5em;
-
-    p {
-      margin: 0;
-    }
-  }
-
-  table {
-    border: 1pt solid rgb(125,125,125);
-    border-collapse: collapse;
-    width: 100%;
-
-    thead {
-      display: table-header-group;
-    }
-
-    th,
-    td {
-      border: 1pt solid rgb(125,125,125);
-      padding: 0.25em 0.5em;
-      text-align: left;
-    }
-
-    td:nth-child(n+2) {
-      text-align: right;
-    }
-
-    caption {
-      @include core-19;
-      margin: 14pt 0;
-    }
-  }
-
-  .contact,
-  .info-notice,
-  .help-notice {
-    border: 1pt solid rgb(125,125,125);
-    padding: 2pt;
-    margin: 14pt 0;
-  }
-
-  .info-notice,
-  .help-notice {
-    &:before {
-      content: "!";
-      float: left;
-      @include core-48;
-      font-weight: bold;
-      margin: 10pt 0 0 6pt;
-    }
-
-    p {
-      margin-left: 22pt;
-    }
-  }
-
-  .highlight-answer,
-  .highlighted-event {
-    p {
-      @include core-19;
-
-      em {
-        font-style: normal;
-        font-weight: 700;
-      }
-    }
-  }
-}
-
 a, a:visited {
   text-decoration: underline;
   word-wrap: break-word;
@@ -197,19 +39,7 @@ a[href^="#"]:after {
 
 img { max-width: 100% !important; }
 
-.print-link {
-  display: none;
-}
-
-.modified-date {
-  color: rgb(225,225,225);
-  @include core-14;
-
-  &:after {
-    content: "\00A9  Crown Copyright";
-    float: right;
-  }
-}
+select { background: white; }
 
 #global-header {
   background: transparent;
@@ -233,42 +63,13 @@ img { max-width: 100% !important; }
 
       border: none;
     }
-
-    &:after {
-      display: none;
-    }
   }
 }
 
-.done-questions {
-  .start-again {
-    display: none;
-  }
-
-  .question-number {
-    display: none;
-  }
-
-  li.done .undo {
-    display: none;
-  }
-}
 
 /* hide the unnecessary page elements */
 body footer,
-body #global-user-location,
-header.page-header div h1 span,
-body .actions,
-body nav,
 .visuallyhidden,
-#local-locator-form,
-#location-loading,
-#get-started,
-.finding_location,
-.found_location,
-.loading_location,
-.location_error,
-#global-cookie-message,
-.show-all-parts {
+#global-cookie-message {
   display: none !important;
 }
