@@ -17,7 +17,7 @@ module Compiler
       when :page_title
         "@title.getOrElse(\"GOV.UK - The best place to find government services and information\")"
       when :top_of_page
-        "@(title: Option[String], bodyClasses: Option[String])(head:Html, bodyEnd:Html)(content:Html)"
+        "@(title: Option[String], bodyClasses: Option[String])(head:Html, bodyEnd:Html, insideHeader:Html, footerTop:Html, footerLinks:Html)(content:Html)"
       when :head
         "@head"
       when :body_classes
@@ -26,6 +26,12 @@ module Compiler
         "@content"
       when :body_end
         "@bodyEnd"
+      when :inside_header
+        "@insideHeader"
+      when :footer_top
+        "@footerTop"
+      when :footer_support_links
+        "@footerLinks"
       else 
         ""
       end
@@ -44,7 +50,7 @@ module Compiler
     end
 
     def content_for?(*args)
-      [:page_title, :content, :head, :body_classes, :body_end, :top_of_page].include? args[0]
+      [:page_title, :content, :head, :body_classes, :body_end, :top_of_page, :inside_header, :footer_top, :footer_support_links].include? args[0]
     end
   end
 end
