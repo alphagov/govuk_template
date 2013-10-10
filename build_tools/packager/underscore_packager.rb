@@ -23,10 +23,15 @@ module Packager
     def process_template(file)
       target_dir = @target_dir.join(File.dirname(file))
       target_dir.mkpath
-      target_file = File.basename(file, File.extname(file)) # /path/to/foo.html.erb -> foo.scala.html
-      File.open(target_dir.join(target_file), 'wb') do |f|
+      File.open(target_dir.join(generated_file_name(file)), 'wb') do |f|
         f.write Compiler::UnderscoreProcessor.new(file).process
       end
+    end
+
+    private
+
+    def generated_file_name(file_path)
+      File.basename(file_path, File.extname(file_path))
     end
   end
 end
