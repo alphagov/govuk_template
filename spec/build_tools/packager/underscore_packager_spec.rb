@@ -11,7 +11,7 @@ describe Packager::UnderscorePackager do
   end
 
   context "functional" do
-    let(:example_template_path) {File.join(SPEC_ROOT, 'support/examples/govuk_template.html')}
+    let(:example_template_path) {File.join(SPEC_ROOT, 'support/examples/underscore_govuk_template.html')}
     it "should output the correct template" do
       subject.build( without_tarball = true )
       File.read(generated_template_path).should == File.read(example_template_path)
