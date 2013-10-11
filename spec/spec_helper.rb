@@ -8,6 +8,7 @@
 Dir[File.expand_path("../support/**/*.rb", __FILE__)].each {|f| require f}
 PROJECT_ROOT = File.expand_path(File.join(__FILE__, "../../"))
 SPEC_ROOT = File.expand_path(File.join(__FILE__, "../"))
+require File.join(PROJECT_ROOT, "build_tools/compiler/asset_compiler")
 
 require 'pry-debugger'
 
@@ -22,4 +23,12 @@ RSpec.configure do |config|
   # the seed, which is printed after each run.
   #     --seed 1234
   config.order = 'random'
+
+  config.before(:all) do
+    Compiler::AssetCompiler.compile
+  end
+  config.after(:all) do
+    FileUtils.rm_rf(File.join(PROJECT_ROOT, "app"))
+  end
+
 end

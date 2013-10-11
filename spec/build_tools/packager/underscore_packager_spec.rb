@@ -5,24 +5,22 @@ require File.join(PROJECT_ROOT, 'build_tools/packager/underscore_packager.rb')
 describe Packager::UnderscorePackager do
   let(:generated_template_path) {File.join(PROJECT_ROOT, "pkg/underscore_govuk_template-#{GovukTemplate::VERSION}/views/layouts/govuk_template.html")}
   let(:generated_directory_path) {File.join(PROJECT_ROOT, "pkg/underscore_govuk_template-#{GovukTemplate::VERSION}")}
-  let(:app_path) {File.join(PROJECT_ROOT, "app")}
   subject {described_class.new}
 
   after do
     FileUtils.rm_rf(generated_directory_path)
-    FileUtils.rm_rf(app_path)
   end
 
   context "functional" do
     describe "build" do
       let(:example_template_path) {File.join(SPEC_ROOT, 'support/examples/underscore_govuk_template.html')}
       it "should output the correct template" do
-        Compiler::AssetCompiler.compile
-        subject.build( without_tarball = true )
+        subject.build( without_package = true )
         File.read(generated_template_path).should == File.read(example_template_path)
-        #should test for all erb
-        #should test for all copied
-        #publish separately
+      end
+
+      it "should create an npm package when without_package is false" do
+        pending
       end
     end
   end

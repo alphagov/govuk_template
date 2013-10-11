@@ -10,14 +10,18 @@ module Packager
       @base_name = "underscore_govuk_template-#{GovukTemplate::VERSION}"
     end
 
-    def build( without_tarball = false )
+    def build( without_package = false )
       @target_dir = @repo_root.join('pkg', @base_name)
       @target_dir.rmtree if @target_dir.exist?
       @target_dir.mkpath
       Dir.chdir(@target_dir) do |dir|
         prepare_contents
-        create_tarball unless without_tarball
+        create_package unless without_package
       end
+    end
+
+    def create_package
+
     end
 
     def process_template(file)
