@@ -32,7 +32,6 @@ module Packager
           next if File.directory?(file)
           case File.extname(file)
           when '.erb'
-            p file
             process_template(file)
           else
             copy_file(file)

@@ -12,7 +12,9 @@ module Compiler
       body_end: "<%= bodyEnd %>",
       top_of_page: "<%= topOfPage %>",
       footer_top: "<%= footerTop %>",
-      footer_support_links: "<%= footerSupportLinks %>"
+      footer_support_links: "<%= footerSupportLinks %>",
+      inside_header: "<%= insideHeader %>",
+      cookie_message: "<%= cookieMessage %>"
     }
 
     def render_erb
