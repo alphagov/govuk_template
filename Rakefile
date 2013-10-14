@@ -11,7 +11,7 @@ task :compile do
 end
 
 desc "Build both gem and tar version"
-task :build => ["build:gem", "build:tar", "build:play"]
+task :build => ["build:gem", "build:tar", "build:play", "build:underscore"]
 
 namespace :build do
   desc "Build govuk_template-#{GovukTemplate::VERSION}.gem into the pkg directory"
@@ -33,6 +33,25 @@ namespace :build do
     puts "Building pkg/play_govuk_template-#{GovukTemplate::VERSION}.tgz"
     require 'packager/play_packager'
     Packager::PlayPackager.build
+  end
+
+  desc "Build underscore_govuk_template-#{GovukTemplate::VERSION} into the pkg directory"
+  task :underscore => :compile do
+    puts "Building pkg/underscore_govuk_template-#{GovukTemplate::VERSION}"
+    require 'packager/underscore_packager'
+    Packager::UnderscorePackager.build
+  end
+
+  desc "Build and release to github if version has been updated"
+  task :underscore_and_release_if_updated => :"build:underscore" do
+    require 'publisher/underscore_publisher'
+    q = Publisher::UnderscorePublisher.new
+    if q.version_released?
+      puts "govuk_template__underscore #{GovukTemplate::VERSION} already released. Not pushing."
+    else
+      puts "Pushing govuk_template__underscore #{GovukTemplate::VERSION} to git repo"
+      q.publish
+    end
   end
 
   desc "Build and release gem to gemfury if version has been updated"
