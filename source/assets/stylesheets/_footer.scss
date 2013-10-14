@@ -25,6 +25,10 @@
       color: $grey-1;
     }
   }
+  
+  img {
+    border: 0;
+  }
 
   h2 {
     @include core-24;
