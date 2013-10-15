@@ -11,7 +11,7 @@ task :compile do
 end
 
 desc "Build both gem and tar version"
-task :build => ["build:gem", "build:tar", "build:play", "build:underscore"]
+task :build => ["build:gem", "build:tar", "build:play", "build:mustache"]
 
 namespace :build do
   desc "Build govuk_template-#{GovukTemplate::VERSION}.gem into the pkg directory"
@@ -35,21 +35,21 @@ namespace :build do
     Packager::PlayPackager.build
   end
 
-  desc "Build underscore_govuk_template-#{GovukTemplate::VERSION} into the pkg directory"
-  task :underscore => :compile do
-    puts "Building pkg/underscore_govuk_template-#{GovukTemplate::VERSION}"
-    require 'packager/underscore_packager'
-    Packager::UnderscorePackager.build
+  desc "Build mustache_govuk_template-#{GovukTemplate::VERSION} into the pkg directory"
+  task :mustache => :compile do
+    puts "Building pkg/mustache_govuk_template-#{GovukTemplate::VERSION}"
+    require 'packager/mustache_packager'
+    Packager::MustachePackager.build
   end
 
   desc "Build and release to github if version has been updated"
-  task :underscore_and_release_if_updated => :"build:underscore" do
-    require 'publisher/underscore_publisher'
-    q = Publisher::UnderscorePublisher.new
+  task :mustache_and_release_if_updated => :"build:mustache" do
+    require 'publisher/mustache_publisher'
+    q = Publisher::MustachePublisher.new
     if q.version_released?
-      puts "govuk_template__underscore #{GovukTemplate::VERSION} already released. Not pushing."
+      puts "govuk_template_mustache #{GovukTemplate::VERSION} already released. Not pushing."
     else
-      puts "Pushing govuk_template__underscore #{GovukTemplate::VERSION} to git repo"
+      puts "Pushing govuk_template_mustache #{GovukTemplate::VERSION} to git repo"
       q.publish
     end
   end

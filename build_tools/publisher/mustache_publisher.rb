@@ -3,23 +3,23 @@ require 'tmpdir'
 require 'open3'
 
 module Publisher
-  class UnderscorePublisher
-    GIT_URL = "git@github.com:alphagov/govuk_template__underscore"
+  class MustachePublisher
+    GIT_URL = "git@github.com:alphagov/govuk_template_mustache"
 
     def initialize(version = GovukTemplate::VERSION)
       @version = version
       @repo_root = Pathname.new(File.expand_path('../../..', __FILE__))
-      @source_dir = @repo_root.join('pkg', "underscore_govuk_template-#{@version}")
+      @source_dir = @repo_root.join('pkg', "mustache_govuk_template-#{@version}")
     end
 
     def publish
-      Dir.mktmpdir("govuk_template__underscore") do |dir|
+      Dir.mktmpdir("govuk_template_mustache") do |dir|
         run "git clone -q #{GIT_URL.shellescape} #{dir.shellescape}"
         Dir.chdir(dir) do
           run "ls -1 | grep -v 'README.md' | xargs -I {} rm -rf {}"
           run "cp -r #{@source_dir.to_s.shellescape}/* ."
           run "git add -A ."
-          run "git commit -q -m 'deploying GOV.UK Underscore templates #{@version}'"
+          run "git commit -q -m 'deploying GOV.UK Mustache templates #{@version}'"
           run "git tag v#{@version}"
           run "git push --tags origin master"
         end
