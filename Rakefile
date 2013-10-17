@@ -42,18 +42,6 @@ namespace :build do
     Packager::MustachePackager.build
   end
 
-  desc "Build and release to github if version has been updated"
-  task :mustache_and_release_if_updated => :"build:mustache" do
-    require 'publisher/mustache_publisher'
-    q = Publisher::MustachePublisher.new
-    if q.version_released?
-      puts "govuk_template_mustache #{GovukTemplate::VERSION} already released. Not pushing."
-    else
-      puts "Pushing govuk_template_mustache #{GovukTemplate::VERSION} to git repo"
-      q.publish
-    end
-  end
-
   desc "Build and release gem to gemfury if version has been updated"
   task :and_release_if_updated => :build do
     p = GemPublisher::Publisher.new('govuk_template.gemspec')
@@ -72,6 +60,15 @@ namespace :build do
       puts "govuk_template_play #{GovukTemplate::VERSION} already released. Not pushing."
     else
       puts "Pushing govuk_template_play #{GovukTemplate::VERSION} to git repo"
+      q.publish
+    end
+
+    require 'publisher/mustache_publisher'
+    q = Publisher::MustachePublisher.new
+    if q.version_released?
+      puts "govuk_template_mustache #{GovukTemplate::VERSION} already released. Not pushing."
+    else
+      puts "Pushing govuk_template_mustache #{GovukTemplate::VERSION} to git repo"
       q.publish
     end
   end

@@ -19,8 +19,6 @@ module Compiler
 
     def render_erb
       f=File.read(@file) 
-      #why @@-ms-viewport, not @ms-viewport?
-      f.gsub!(/@-ms-viewport/, "@@-ms-viewport") unless @is_stylesheet
       ERB.new(f).result(binding)
     end
     
