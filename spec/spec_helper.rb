@@ -2,11 +2,14 @@
 # specs live under a `spec` directory, which RSpec adds to the `$LOAD_PATH`.
 # Require this file using `require "spec_helper"` to ensure that it is only
 # loaded once.
-#
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
 Dir[File.expand_path("../support/**/*.rb", __FILE__)].each {|f| require f}
+PROJECT_ROOT = File.expand_path(File.join(__FILE__, "../../"))
+SPEC_ROOT = File.expand_path(File.join(__FILE__, "../"))
+
+require 'pry-debugger'
 
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
@@ -19,4 +22,5 @@ RSpec.configure do |config|
   # the seed, which is printed after each run.
   #     --seed 1234
   config.order = 'random'
+
 end
