@@ -6,13 +6,13 @@ def valid_sections
     page_title: "{{ pageTitle }}",
     head: "{{{ head }}}",
     body_classes: "{{ bodyClasses }}",
-    content: "{{ content }}",
-    body_end: "{{ bodyEnd }}",
-    top_of_page: "{{ topOfPage }}",
-    footer_top: "{{ footerTop }}",
-    footer_support_links: "{{ footerSupportLinks }}",
-    inside_header: "{{ insideHeader }}",
-    cookie_message: "{{ cookieMessage }}"
+    content: "{{{ content }}}",
+    body_end: "{{{ bodyEnd }}}",
+    top_of_page: "{{{ topOfPage }}}",
+    footer_top: "{{{ footerTop }}}",
+    footer_support_links: "{{{ footerSupportLinks }}}",
+    inside_header: "{{{ insideHeader }}}",
+    cookie_message: "{{{ cookieMessage }}}"
   }
 end
 
