@@ -1,6 +1,6 @@
 require 'open3'
 require 'govuk_template/version'
-require 'compiler/template_processor'
+require_relative '../compiler/template_processor'
 
 module Packager
   class TarPackager

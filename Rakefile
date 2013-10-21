@@ -11,7 +11,7 @@ task :compile do
 end
 
 desc "Build both gem and tar version"
-task :build => ["build:gem", "build:tar", "build:play"]
+task :build => ["build:gem", "build:tar", "build:play", "build:mustache"]
 
 namespace :build do
   desc "Build govuk_template-#{GovukTemplate::VERSION}.gem into the pkg directory"
@@ -35,6 +35,13 @@ namespace :build do
     Packager::PlayPackager.build
   end
 
+  desc "Build mustache_govuk_template-#{GovukTemplate::VERSION} into the pkg directory"
+  task :mustache => :compile do
+    puts "Building pkg/mustache_govuk_template-#{GovukTemplate::VERSION}"
+    require 'packager/mustache_packager'
+    Packager::MustachePackager.build
+  end
+
   desc "Build and release gem to gemfury if version has been updated"
   task :and_release_if_updated => :build do
     p = GemPublisher::Publisher.new('govuk_template.gemspec')
@@ -53,6 +60,15 @@ namespace :build do
       puts "govuk_template_play #{GovukTemplate::VERSION} already released. Not pushing."
     else
       puts "Pushing govuk_template_play #{GovukTemplate::VERSION} to git repo"
+      q.publish
+    end
+
+    require 'publisher/mustache_publisher'
+    q = Publisher::MustachePublisher.new
+    if q.version_released?
+      puts "govuk_template_mustache #{GovukTemplate::VERSION} already released. Not pushing."
+    else
+      puts "Pushing govuk_template_mustache #{GovukTemplate::VERSION} to git repo"
       q.publish
     end
   end
