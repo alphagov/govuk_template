@@ -22,8 +22,7 @@ module Publisher
           run "git commit -q -m 'deploying GOV.UK Mustache templates #{@version}'"
           run "git tag v#{@version}"
           run "git push --tags origin master"
-          # Disabled until the jenkins creds are sorted
-          #run "npm publish ./"
+          run "npm publish ./"
         end
       end
     end
