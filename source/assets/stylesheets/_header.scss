@@ -44,26 +44,55 @@
   #logo {
     float: left;
     position: relative;
-    width: 166px;
+    top: 1px;
+
     height: 30px;
-    overflow: hidden;
+    overflow: visible;
+    vertical-align: baseline;
+
+    color: $white;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 1.25em;
+    text-decoration: none;
 
     img {
-      position: absolute;
-      left: -166px;
-      top: 0;
-      border: none;
+      position: relative;
+      top: -3px;
 
-      /* scale oversized image to container bounds */
-      width: 200%;
-      height: 300%;
+      width: auto;
+      height: 31px;
 
-      @include ie(6){
-        left: 0;
+      padding-right: 2px;
+
+      float: left;
+      display: inline;
+      line-height: inherit;
+    }
+
+    .logo-kern-before {
+      display: inline-block;
+      width: 1px;
+    }
+
+    .logo-kern-after {
+      display: inline-block;
+      width: 1px;
+    }
+
+    &:hover,
+    &:focus {
+      & span {
+        text-decoration: underline;
+      }
+
+      img {
+        text-decoration: none;
       }
     }
-    &:hover img {
-      top: -30px;
+
+    &:active {
+      color: $light-blue;
     }
   }
 }
