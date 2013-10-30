@@ -17,7 +17,6 @@ body {
 }
 
 a, a:visited {
-  text-decoration: underline;
   word-wrap: break-word;
 }
 
@@ -42,34 +41,31 @@ img { max-width: 100% !important; }
 select { background: white; }
 
 #global-header {
-  background: transparent;
+  color: #000;
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 1em;
 
-  #logo {
-    position: relative;
-    display: block;
-    width: 166px;
-    height: 30px;
+  .content {
+    margin: 0!important;
+  }
 
-    overflow: hidden;
+  a, a:visited {
+    text-decoration: none;
+  }
+  a:after {
+    content: "";
+  }
 
-    img {
-      position: absolute;
-      left: 0;
-      top: -60px;
-
-      /* scale oversized image to container bounds */
-      max-width: none !important;
-      width: 200%; height: 300%;
-
-      border: none;
-    }
+  img {
+    display: none;
   }
 }
-
 
 /* hide the unnecessary page elements */
 body footer,
 .visuallyhidden,
-#global-cookie-message {
+#global-cookie-message,
+#skiplink-container {
   display: none !important;
 }
