@@ -52,43 +52,34 @@
 
     color: $white;
     font-weight: bold;
-    font-size: 24px;
-    line-height: 1.25em;
+    font-size: 30px;
+    line-height: 1em;
     text-decoration: none;
+    margin-bottom: 1px;
 
     img {
       position: relative;
       top: -3px;
 
-      width: auto;
+      width: 35px;
       height: 31px;
 
-      padding-right: 2px;
+      padding-right: 5px;
 
       float: left;
       display: inline;
       line-height: inherit;
     }
 
-    .logo-kern-before {
-      display: inline-block;
-      width: 1px;
-    }
-
-    .logo-kern-after {
-      display: inline-block;
-      width: 1px;
+    span>span {
+      margin: 0 1px 0 -6px;
     }
 
     &:hover,
     &:focus {
-      & span {
-        text-decoration: underline;
-      }
-
-      img {
-        text-decoration: none;
-      }
+      text-decoration: none;
+      border-bottom: 1px solid;
+      margin-bottom: 0;
     }
 
     &:active {
