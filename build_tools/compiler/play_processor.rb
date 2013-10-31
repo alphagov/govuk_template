@@ -3,13 +3,13 @@ require 'compiler/template_processor'
 
 module Compiler
   class PlayProcessor < TemplateProcessor
-    
+
     def render_erb
-      f=File.read(@file) 
+      f=File.read(@file)
       f.gsub!(/@-ms-viewport/, "@@-ms-viewport") unless @is_stylesheet
       ERB.new(f).result(binding)
     end
-    
+
     def handle_yield(section = :layout)
       case section
       when :layout
@@ -28,11 +28,13 @@ module Compiler
         "@bodyEnd"
       when :inside_header
         "@insideHeader"
+      when :after_header
+        "@afterHeader"
       when :footer_top
         "@footerTop"
       when :footer_support_links
         "@footerLinks"
-      else 
+      else
         ""
       end
     end
@@ -50,7 +52,7 @@ module Compiler
     end
 
     def content_for?(*args)
-      [:page_title, :content, :head, :body_classes, :body_end, :top_of_page, :inside_header, :footer_top, :footer_support_links].include? args[0]
+      [:page_title, :content, :head, :body_classes, :body_end, :top_of_page, :inside_header, :after_header, :footer_top, :footer_support_links].include? args[0]
     end
   end
 end

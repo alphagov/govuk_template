@@ -3,7 +3,7 @@ require_relative 'template_processor'
 
 module Compiler
   class MustacheProcessor < TemplateProcessor
-    
+
     @@yield_hash = {
       page_title: "{{ pageTitle }}",
       head: "{{{ head }}}",
@@ -14,6 +14,7 @@ module Compiler
       footer_top: "{{{ footerTop }}}",
       footer_support_links: "{{{ footerSupportLinks }}}",
       inside_header: "{{{ insideHeader }}}",
+      after_header: "{{{ afterHeader }}}",
       cookie_message: "{{{ cookieMessage }}}"
     }
 

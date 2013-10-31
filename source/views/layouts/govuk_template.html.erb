@@ -82,6 +82,8 @@
     <!--end header-->
     <% end %>
 
+    <%= yield :after_header %>
+
     <div id="global-cookie-message">
       <% if content_for?(:cookie_message) %>
         <%= yield :cookie_message %>
