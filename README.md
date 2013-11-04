@@ -4,6 +4,10 @@ This provides a template containing the GOV.UK header and footer, and associated
 
 This is versioned following [Semantic Versioning](http://semver.org).
 
+## Requirements
+
+The Ruby language, the build tool [Rake](http://rake.rubyforge.org/) & the dependancy management tool [Bundler](http://bundler.io/)
+
 ## Packaging
 
 At present this generates 4 output formats:
@@ -27,15 +31,15 @@ You can then use the `govuk_template` layout in your app.  If you need to extend
 
 ### Play version
 
-To generate the tarball of Play Framework templates run `build:play` rake task. This will produce a tarball in the `pkg` directory.
+To generate the tarball of Play Framework templates run `bundle exec rake build:play` rake task. This will produce a tarball in the `pkg` directory.
 
 ### Mustache version
 
-To generate the folder of Mustache templates run `build:mustache` rake task. This will produce a folder in the `pkg` directory.
+To generate the folder of Mustache templates run `bundle exec rake build:mustache` rake task. This will produce a folder in the `pkg` directory.
 
 ### Tarball version
 
-To generate the tarball, run the `build:tar` rake task.  This will produce a tarball in the `pkg` directory.
+To generate the tarball, run the `bundle exec rake build:tar` rake task.  This will produce a tarball in the `pkg` directory.
 
 ## Development
 
