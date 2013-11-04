@@ -6,7 +6,12 @@ This is versioned following [Semantic Versioning](http://semver.org).
 
 ## Packaging
 
-At present this generates 3 output formats, a gem containing a Rails engine, a tarball containing Play Framework templates and a tarball.
+At present this generates 4 output formats:
+
+1. a gem containing a Rails engine
+2. a tarball containing Play Framework templates
+3. a folder containing mustache templates
+4. a tarball.
 
 ### Gem version
 
@@ -23,6 +28,10 @@ You can then use the `govuk_template` layout in your app.  If you need to extend
 ### Play version
 
 To generate the tarball of Play Framework templates run `build:play` rake task. This will produce a tarball in the `pkg` directory.
+
+### Mustache version
+
+To generate the folder of Mustache templates run `build:mustache` rake task. This will produce a folder in the `pkg` directory.
 
 ### Tarball version
 
