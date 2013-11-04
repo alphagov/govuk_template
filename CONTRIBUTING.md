@@ -1,3 +1,7 @@
+# Contribution Guidelines
+
+We welcome patches to the toolkit, as long as you follow these guidelines:
+
 ## Git workflow ##
 
 - Pull requests must contain a succint, clear summary of what the user need is driving this feature change.
@@ -20,3 +24,8 @@
 ## Testing ##
 
 Write tests.
+
+## Versioning ##
+
+We use [semantic versioning](http://semver.org/), and bump the version
+on master only. Please don't submit your own proposed version numbers.

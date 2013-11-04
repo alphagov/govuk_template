@@ -41,6 +41,14 @@ To generate the folder of Mustache templates run `bundle exec rake build:mustach
 
 To generate the tarball, run the `bundle exec rake build:tar`. This will produce a tarball in the `pkg` directory.
 
+## Publishing
+
+Accepted contributions (pull requests merged into master) will run builds for the Gem, Play and Mustache versions. These will then update the following:
+
+* Gemfury
+* [alphagov/govuk_template_play](https://github.com/alphagov/govuk_template_play)
+* [alphagov/govuk_template_mustache](https://github.com/alphagov/govuk_template_mustache) which updates the [NPM module](https://npmjs.org/package/govuk_template_mustache)
+
 ## Development
 
 The source files are in the `/source` directory.  The `compile` builds the `/app` contents from these sources.  This process involves the following:
@@ -72,3 +80,5 @@ See the `TemplateProcessor` class for details of this implementation.
 4. Run the tests (`bundle exec rake`)
 5. Push to the branch (`git push origin my-new-feature`)
 6. Create new Pull Request
+
+Please follow the [contributon guidelines](https://github.com/alphagov/govuk_template/CONTRIBUTING.md).
