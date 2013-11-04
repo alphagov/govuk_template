@@ -31,19 +31,19 @@ You can then use the `govuk_template` layout in your app.  If you need to extend
 
 ### Play version
 
-To generate the tarball of Play Framework templates run `bundle exec rake build:play` rake task. This will produce a tarball in the `pkg` directory.
+To generate the tarball of Play Framework templates run `bundle exec rake build:play`. This will produce a tarball in the `pkg` directory.
 
 ### Mustache version
 
-To generate the folder of Mustache templates run `bundle exec rake build:mustache` rake task. This will produce a folder in the `pkg` directory.
+To generate the folder of Mustache templates run `bundle exec rake build:mustache`. This will produce a folder in the `pkg` directory.
 
 ### Tarball version
 
-To generate the tarball, run the `bundle exec rake build:tar` rake task.  This will produce a tarball in the `pkg` directory.
+To generate the tarball, run the `bundle exec rake build:tar`. This will produce a tarball in the `pkg` directory.
 
 ## Development
 
-The source files are in the `/source` directory.  The `compile` rake task builds the `/app` contents from these sources.  This process involves the following:
+The source files are in the `/source` directory.  The `compile` builds the `/app` contents from these sources.  This process involves the following:
 
 * compiling all stylesheets referenced in `/manifests.yml` to plain css (actually css.erb, so the Rails asset pipeline can work in the gem).
 * combining all javascripts referenced in `/manifests.yml` (using Sprockets)
