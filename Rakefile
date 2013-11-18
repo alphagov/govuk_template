@@ -11,7 +11,7 @@ task :compile do
 end
 
 desc "Build both gem and tar version"
-task :build => ["build:gem", "build:tar", "build:play", "build:mustache", "build:liquid"]
+task :build => ["build:gem", "build:tar", "build:play", "build:mustache", "build:liquid", "build:mustache_inheritance"]
 
 namespace :build do
   desc "Build govuk_template-#{GovukTemplate::VERSION}.gem into the pkg directory"
@@ -47,6 +47,13 @@ namespace :build do
     puts "Building pkg/liquid_govuk_template-#{GovukTemplate::VERSION}"
     require 'packager/liquid_packager'
     Packager::LiquidPackager.build
+  end
+
+  desc "Build mustache_inheritance_govuk_template-#{GovukTemplate::VERSION} into the pkg directory"
+  task :mustache_inheritance => :compile do
+    puts "Building pkg/mustache_inheritance_govuk_template-#{GovukTemplate::VERSION}"
+    require 'packager/mustache_inheritance_packager'
+    Packager::MustacheInheritancePackager.build
   end
 
   desc "Build and release gem to gemfury if version has been updated"
