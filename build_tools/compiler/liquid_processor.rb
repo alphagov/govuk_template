@@ -10,10 +10,10 @@ module Compiler
       body_classes: "{% include layouts/_body_classes.html %}",
       content: "{{ content }}",
       body_end: "{% include layouts/_body.html %}",
-      footer_top: "{% include layouts/footer_top.html %}",
-      footer_support_links: "{% include layouts/footer_support_links.html %}",
-      inside_header: "{% include layouts/inside_header.html %}",
-      after_header: "{% include layouts/after_header.html %}",
+      footer_top: "{% include layouts/_footer_top.html %}",
+      footer_support_links: "{% include layouts/_footer_support_links.html %}",
+      inside_header: "{% include layouts/_inside_header.html %}",
+      after_header: "{% include layouts/_after_header.html %}",
       cookie_message: "{% include layouts/_cookie_message.html %}"
     }
 
