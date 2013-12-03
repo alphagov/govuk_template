@@ -42,6 +42,13 @@ namespace :build do
     Packager::MustachePackager.build
   end
 
+  desc "Build liquid_govuk_template-#{GovukTemplate::VERSION} into the pkg directory"
+  task :liquid => :compile do
+    puts "Building pkg/liquid_govuk_template-#{GovukTemplate::VERSION}"
+    require 'packager/liquid_packager'
+    Packager::LiquidPackager.build
+  end
+
   desc "Build and release gem to gemfury if version has been updated"
   task :and_release_if_updated => :build do
     p = GemPublisher::Publisher.new('govuk_template.gemspec')
