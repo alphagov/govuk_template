@@ -5,8 +5,8 @@ module Compiler
   class LiquidProcessor < TemplateProcessor
 
     @@yield_hash = {
-      page_title: "{% if page.title %}{{ page.title }}{% endif }",
-      head: "{% include layout/_head.html %}",
+      page_title: "{% if page.title %}{{ page.title }}{% endif %}",
+      head: "{% include layouts/_head.html %}",
       body_classes: "{% include layouts/_body_classes.html %}",
       content: "{{ content }}",
       body_end: "{% include layouts/_body.html %}",
@@ -25,11 +25,11 @@ module Compiler
       return file if @is_stylesheet
       case File.extname(file)
       when '.css'
-        "/govuk_template/stylesheets/#{file}"
+        "{{ site.govuk_template_assets }}/stylesheets/#{file}"
       when '.js'
-        "/govuk_template/javascripts/#{file}"
+        "{{ site.govuk_template_assets }}/javascripts/#{file}"
       else
-        "/govuk_template/images/#{file}"
+        "{{ site.govuk_template_assets }}/images/#{file}"
       end
     end
 
