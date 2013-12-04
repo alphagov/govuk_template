@@ -66,7 +66,7 @@
     </div>
 
     <% unless @omit_header %>
-    <header role="banner" id="global-header">
+    <header role="banner" id="global-header" class="<%= yield(:header_class) %>">
       <div class="header-wrapper">
         <div class="header-global">
           <div class="header-logo">
@@ -74,9 +74,9 @@
               <img src="<%= asset_path 'gov.uk_logotype_crown.png' %>" alt=""> <span>GOV&nbsp;<span>.</span>UK</span>
             </a>
           </div>
-
           <%= yield :inside_header %>
         </div>
+        <%= yield :proposition_header %>
       </div>
     </header>
     <!--end header-->
