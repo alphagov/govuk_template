@@ -27,5 +27,5 @@ Write tests.
 
 ## Versioning ##
 
-We use [semantic versioning](http://semver.org/), and bump the version
+We use [Semantic Versioning](http://semver.org/), and bump the version
 on master only. Please don't submit your own proposed version numbers.
