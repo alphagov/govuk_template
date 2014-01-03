@@ -49,7 +49,7 @@ namespace :build do
       puts "govuk_template-#{GovukTemplate::VERSION} already released.  Not pushing."
     else
       puts "Pushing govuk_template-#{GovukTemplate::VERSION} to gemfury"
-      p.pusher.push "pkg/govuk_template-#{GovukTemplate::VERSION}.gem", :gemfury, :as => 'govuk'
+      p.pusher.push "pkg/govuk_template-#{GovukTemplate::VERSION}.gem", :rubygems
       p.git_remote.add_tag "v#{GovukTemplate::VERSION}"
       puts "Done."
     end

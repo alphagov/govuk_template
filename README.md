@@ -10,10 +10,7 @@ At present this generates 3 output formats, a gem containing a Rails engine, a t
 
 ### Gem version
 
-This is currently released to our gemfury account, and not to rubygems.org.  Once the shape of this has stabilised (probably 
-when we release 1.0.0), it will be released to rubygems.org.
-
-To use it, add this line to your application's Gemfile (you'll need to add the gemfury source as well if it's not already in there):
+This is available on rubygems.org.  To use it, add this line to your application's Gemfile:
 
     gem 'govuk_template'
 
@@ -45,7 +42,7 @@ This resulting app directory is included in the gem and hooked in as a Rails eng
 
 The tarball build process takes the compiled template and assets from the `/app` directory, and performs some extra processing:
 
-* it compiles the `*.css.erb` files to plain css, replacing all calls to `asset_path` with the relative path to the asset.  
+* it compiles the `*.css.erb` files to plain css, replacing all calls to `asset_path` with the relative path to the asset.
   For this reason, all assets referenced in the stylesheets must be stored relative to the stylesheet.
 * it compiles the erb layout to plain html.
     * All `asset_path` calls are replaced by the the path to the assets, assuming the assets folder is served from /assets
