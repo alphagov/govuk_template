@@ -79,26 +79,23 @@
     font-size: 30px;
     line-height: 1em;
     text-decoration: none;
+    text-rendering: optimizeLegibility;
     margin-bottom: -1px;
     padding-bottom: 1px;
 
     img {
       position: relative;
-      top: -3px;
+      top: -2px;
 
       width: 35px;
       height: 31px;
 
-      padding-right: 8px;
+      padding-right: 6px;
 
       float: left;
       display: inline;
       line-height: inherit;
       border: none;
-    }
-
-    span>span {
-      margin: 0 1px 0 -6px;
     }
 
     &:hover,
