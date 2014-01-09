@@ -72,6 +72,27 @@ The tarball build process takes the compiled template and assets from the `/app`
 
 See the `TemplateProcessor` class for details of this implementation.
 
+## Usage
+
+### Propositional title and navigation
+
+You can get a propositional title and navigation by setting the content for `header_class` to `with-proposition` and `proposition_header` in the form:
+
+    <div class="header-proposition">
+      <div class="content">
+        <a href="#proposition-links" class="js-header-toggle menu">Menu</a>
+        <nav id="proposition-menu">
+          <a href="/" id="proposition-name">Service Name</a>
+          <ul id="proposition-links">
+            <li><a href="url-to-page-1" class="active">Navigation item #1</a></li>
+            <li><a href="url-to-page-2">Navigation item #2</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+This will then create a navigation block which is shown on desktop sized devices but collapsed down on smaller screens.
+
 ## Contributing
 
 Please follow the [contribution guidelines](https://github.com/alphagov/govuk_template/CONTRIBUTING.md).
