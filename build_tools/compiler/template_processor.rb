@@ -14,9 +14,9 @@ module Compiler
       end
     end
 
-    def raw html 
+    def raw html
       html
-    end 
+    end
 
     def render_erb
       ERB.new(File.read(@file)).result(binding)
@@ -32,7 +32,7 @@ module Compiler
       false
     end
 
-    def asset_path(file, optons={})
+    def asset_path(file, options={})
       return file if @is_stylesheet
       case File.extname(file)
       when '.css'
