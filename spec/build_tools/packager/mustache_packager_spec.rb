@@ -15,11 +15,14 @@ describe Packager::MustachePackager do
   context "functional" do
     describe "build" do
 
-      let(:example_template_path) {File.join(SPEC_ROOT, 'support/examples/mustache_govuk_template.html')}
       let(:example_package_json) {ERB.new(File.read(File.join(SPEC_ROOT, 'support/examples/package.json'))).result(binding)}
       it "should output the correct template" do
         subject.build
-        File.read(generated_template_path).should == File.read(example_template_path)
+
+        generated_template = File.read(generated_template_path)
+        generated_template.should =~ %r[\A{{{ topOfPage }}}]
+        generated_template.should =~ %r[href="{{ assetPath }}stylesheets/govuk-template\.css"]
+
         File.read(generated_package_json_path).should == example_package_json
       end
 
