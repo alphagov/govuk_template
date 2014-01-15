@@ -12,6 +12,7 @@ def valid_sections
     footer_top: "{{{ footerTop }}}",
     footer_support_links: "{{{ footerSupportLinks }}}",
     inside_header: "{{{ insideHeader }}}",
+    proposition_header: "{{{ propositionHeader }}}",
     cookie_message: "{{{ cookieMessage }}}"
   }
 end

@@ -14,6 +14,7 @@ module Compiler
       footer_top: "{{{ footerTop }}}",
       footer_support_links: "{{{ footerSupportLinks }}}",
       inside_header: "{{{ insideHeader }}}",
+      proposition_header: "{{{ propositionHeader }}}",
       after_header: "{{{ afterHeader }}}",
       cookie_message: "{{{ cookieMessage }}}"
     }
