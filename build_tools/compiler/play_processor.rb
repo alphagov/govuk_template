@@ -39,7 +39,7 @@ module Compiler
       end
     end
 
-    def asset_path(file, optons={})
+    def asset_path(file, options={})
       return file if @is_stylesheet
       case File.extname(file)
       when '.css'

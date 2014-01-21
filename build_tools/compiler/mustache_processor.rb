@@ -14,6 +14,7 @@ module Compiler
       footer_top: "{{{ footerTop }}}",
       footer_support_links: "{{{ footerSupportLinks }}}",
       inside_header: "{{{ insideHeader }}}",
+      proposition_header: "{{{ propositionHeader }}}",
       after_header: "{{{ afterHeader }}}",
       cookie_message: "{{{ cookieMessage }}}"
     }
@@ -23,14 +24,15 @@ module Compiler
     end
 
     def asset_path(file, options={})
-      return file if @is_stylesheet
+      query_string = GovukTemplate::VERSION
+      return "#{file}?#{query_string}" if @is_stylesheet
       case File.extname(file)
       when '.css'
-        "{{ assetPath }}stylesheets/#{file}"
+        "{{ assetPath }}stylesheets/#{file}?#{query_string}"
       when '.js'
-        "{{ assetPath }}javascripts/#{file}"
+        "{{ assetPath }}javascripts/#{file}?#{query_string}"
       else
-        "{{ assetPath }}images/#{file}"
+        "{{ assetPath }}images/#{file}?#{query_string}"
       end
     end
 
