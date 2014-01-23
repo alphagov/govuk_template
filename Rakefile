@@ -11,7 +11,7 @@ task :compile do
 end
 
 desc "Build both gem and tar version"
-task :build => ["build:gem", "build:tar", "build:play", "build:mustache"]
+task :build => ["build:gem", "build:tar", "build:play", "build:mustache", "build:liquid"]
 
 namespace :build do
   desc "Build govuk_template-#{GovukTemplate::VERSION}.gem into the pkg directory"
