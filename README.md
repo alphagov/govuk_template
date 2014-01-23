@@ -37,6 +37,10 @@ To generate the tarball of Play Framework templates run `bundle exec rake build:
 
 To generate the folder of Mustache templates run `bundle exec rake build:mustache`. This will produce a folder in the `pkg` directory.
 
+### Liquid version
+
+To generate the folder of Liquid templates run `bundle exec rake build:liquid`. This will produce a tarball in the `pkg` directory.
+
 ### Tarball version
 
 To generate the tarball, run the `bundle exec rake build:tar`. This will produce a tarball in the `pkg` directory.
