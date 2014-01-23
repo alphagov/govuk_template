@@ -95,4 +95,4 @@ This will then create a navigation block which is shown on desktop sized devices
 
 ## Contributing
 
-Please follow the [contribution guidelines](https://github.com/alphagov/govuk_template/CONTRIBUTING.md).
+Please follow the [contribution guidelines](https://github.com/alphagov/govuk_template/blob/master/CONTRIBUTING.md).
