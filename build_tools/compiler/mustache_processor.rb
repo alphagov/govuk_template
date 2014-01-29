@@ -5,18 +5,19 @@ module Compiler
   class MustacheProcessor < TemplateProcessor
 
     @@yield_hash = {
-      page_title: "{{ pageTitle }}",
-      head: "{{{ head }}}",
-      body_classes: "{{ bodyClasses }}",
-      content: "{{{ content }}}",
-      body_end: "{{{ bodyEnd }}}",
-      top_of_page: "{{{ topOfPage }}}",
-      footer_top: "{{{ footerTop }}}",
-      footer_support_links: "{{{ footerSupportLinks }}}",
-      inside_header: "{{{ insideHeader }}}",
-      proposition_header: "{{{ propositionHeader }}}",
       after_header: "{{{ afterHeader }}}",
-      cookie_message: "{{{ cookieMessage }}}"
+      body_classes: "{{ bodyClasses }}",
+      body_end: "{{{ bodyEnd }}}",
+      content: "{{{ content }}}",
+      cookie_message: "{{{ cookieMessage }}}",
+      footer_support_links: "{{{ footerSupportLinks }}}",
+      footer_top: "{{{ footerTop }}}",
+      head: "{{{ head }}}",
+      header_class: "{{{ headerClass }}}",
+      inside_header: "{{{ insideHeader }}}",
+      page_title: "{{ pageTitle }}",
+      proposition_header: "{{{ propositionHeader }}}",
+      top_of_page: "{{{ topOfPage }}}"
     }
 
     def handle_yield(section = :layout)

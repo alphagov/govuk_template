@@ -22,6 +22,10 @@ module Compiler
         "@head"
       when :body_classes
         "@bodyClasses.getOrElse(\"\")"
+      when :header_class
+        "@header_class"
+      when :propositional_header
+        "@proposition_header"
       when :content
         "@content"
       when :body_end

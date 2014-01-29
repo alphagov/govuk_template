@@ -5,17 +5,17 @@ module Compiler
   class MustacheInheritanceProcessor < TemplateProcessor
 
     @@yield_hash = {
-      page_title: "{{$pageTitle}}GOV.UK - The best place to find government services and information{{/pageTitle}}",
-      head: "{{$head}}{{/head}}",
-      body_classes: "{{$bodyClasses}}{{/bodyClasses}}",
-      content: "{{$content}}{{/content}}",
-      body_end: "{{$bodyEnd}}{{/bodyEnd}}",
-      footer_top: "{{$footerTop}}{{/footerTop}}",
-      footer_support_links: "{{$footerSupportLinks}}{{/footerSupportLinks}}",
-      inside_header: "{{$insideHeader}}{{/insideHeader}}",
       after_header: "{{$afterHeader}}{{/afterHeader}}",
+      body_classes: "{{$bodyClasses}}{{/bodyClasses}}",
+      body_end: "{{$bodyEnd}}{{/bodyEnd}}",
+      content: "{{$content}}{{/content}}",
       cookie_message: "{{$cookieMessage}}{{/cookieMessage}}",
+      footer_support_links: "{{$footerSupportLinks}}{{/footerSupportLinks}}",
+      footer_top: "{{$footerTop}}{{/footerTop}}",
+      head: "{{$head}}{{/head}}",
       header_class: "{{$headerClass}}{{/headerClass}}",
+      inside_header: "{{$insideHeader}}{{/insideHeader}}",
+      page_title: "{{$pageTitle}}GOV.UK - The best place to find government services and information{{/pageTitle}}",
       proposition_header: "{{$propositionHeader}}{{/propositionHeader}}"
     }
 
