@@ -5,18 +5,18 @@ module Compiler
   class LiquidProcessor < TemplateProcessor
 
     @@yield_hash = {
-      page_title: "{% if page.title %}{{ page.title }}{% endif %}",
-      head: "{% include layouts/_head.html %}",
-      body_classes: "{% include layouts/_body_classes.html %}",
-      content: "{{ content }}",
-      body_end: "{% include layouts/_body.html %}",
-      footer_top: "{% include layouts/_footer_top.html %}",
-      footer_support_links: "{% include layouts/_footer_support_links.html %}",
-      inside_header: "{% include layouts/_inside_header.html %}",
       after_header: "{% include layouts/_after_header.html %}",
+      body_classes: "{% include layouts/_body_classes.html %}",
+      body_end: "{% include layouts/_body.html %}",
+      content: "{{ content }}",
       cookie_message: "{% include layouts/_cookie_message.html %}",
-      proposition_header: "{% include layouts/_proposition_header.html %}",
-      header_class: "{% if page.header_class %}{{ page.header_class }}{% endif %}"
+      footer_support_links: "{% include layouts/_footer_support_links.html %}",
+      footer_top: "{% include layouts/_footer_top.html %}",
+      head: "{% include layouts/_head.html %}",
+      header_class: "{% if page.header_class %}{{ page.header_class }}{% endif %}",
+      inside_header: "{% include layouts/_inside_header.html %}",
+      page_title: "{% if page.title %}{{ page.title }}{% endif %}",
+      proposition_header: "{% include layouts/_proposition_header.html %}"
     }
 
     def handle_yield(section = :layout)
