@@ -15,7 +15,7 @@ module Compiler
       head: "{% include layouts/_head.html %}",
       header_class: "{% if page.header_class %}{{ page.header_class }}{% endif %}",
       inside_header: "{% include layouts/_inside_header.html %}",
-      page_title: "{% if page.title %}{{ page.title }}{% endif %}",
+      page_title: "{% include layouts/_page_title.html %}",
       proposition_header: "{% include layouts/_proposition_header.html %}"
     }
 
