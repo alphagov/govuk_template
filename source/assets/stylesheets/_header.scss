@@ -4,6 +4,7 @@
   width: 100%;
 
   .header-wrapper {
+    background-color: $black;
     max-width: 990px;
     margin: 0 auto;
     padding: 0.5em 15px;
@@ -12,7 +13,7 @@
       padding: 0.5em 0;
     }
 
-    @include ie(6) {
+    @include ie-lte(8) {
       width: 960px;
     }
 

@@ -5,12 +5,13 @@
   border-top: 1px solid $grey-6;
 
   .footer-wrapper {
-    max-width: 60em;
+    background-color: $grey-8;
+    max-width: 960px;
     margin: 0 auto;
-    padding: 60px 1em 0 1em;
+    padding: 60px 15px 0;
 
-    @include ie-lte(7) {
-      width: 928px; /* we want the width for IE to max out at 960px total (including padding) */
+    @include ie-lte(8) {
+      width: 960px; /* we want the width for IE to max out at 960px total (including padding) */
     }
 
     @include media-down(mobile) {
@@ -41,8 +42,7 @@
     clear: both;
     font-size: 0;
     color: $grey-3;
-
-    padding-bottom: 60px;
+    padding: 0 15px 60px;
 
     @include media-down(mobile) {
       margin: 0;
