@@ -11,7 +11,7 @@
     padding: 60px 15px 0;
 
     @include ie-lte(8) {
-      width: 960px; /* we want the width for IE to max out at 960px total (including padding) */
+      width: 960px;
     }
 
     @include media-down(mobile) {
