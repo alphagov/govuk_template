@@ -118,7 +118,9 @@ module Compiler
         asset = env.find_asset(asset_name)
         abort "Asset #{asset_name} not found" unless asset
 
-        File.open(@build_dir.join('assets', 'stylesheets', asset.logical_path), 'wb') {|f| f.write asset.source }
+        file_dest = @build_dir.join('assets', 'images', asset.logical_path)
+        file_dest.dirname.mkpath unless File.directory?(file_dest.dirname)
+        File.open(file_dest, 'wb') {|f| f.write asset.source }
       end
     end
 
