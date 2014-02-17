@@ -58,9 +58,12 @@ fieldset {
   padding: 0;
 }
 
-a,
-a:visited {
+a:link {
   color: $link-colour;
+}
+
+a:visited {
+  color: $link-visited-colour;
 }
 
 a:hover {
