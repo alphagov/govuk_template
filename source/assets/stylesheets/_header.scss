@@ -20,7 +20,6 @@
       @extend %contain-floats;
       .header-logo {
         @extend %contain-floats;
-        width: 49%;
         float: left;
 
         @include media(desktop){
