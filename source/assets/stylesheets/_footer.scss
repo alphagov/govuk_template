@@ -127,14 +127,6 @@
           @include core-16;
           margin: 0;
           padding-top: 0.1em;
-
-          a {
-            @include core-14;
-
-            @include media-down(mobile) {
-              font-size: 1em;
-            }
-          }
         }
       }
     
