@@ -6,16 +6,16 @@
 
   .footer-wrapper {
     background-color: $grey-8;
-    max-width: 960px;
+    max-width: 990px;
     margin: 0 auto;
-    padding: 60px 15px 0;
+    padding: 20px 0 0;
 
     @include ie-lte(8) {
       width: 960px;
     }
 
-    @include media-down(mobile) {
-      padding-top: 20px;
+    @include media(tablet) {
+      padding: 60px 15px 0;
     }
   }
 
