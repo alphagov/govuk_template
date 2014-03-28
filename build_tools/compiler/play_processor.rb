@@ -14,6 +14,8 @@ module Compiler
       case section
       when :layout
         "<!-- Page content goes here -->"
+      when :html_lang
+        "@html_lang.getOrElse(\"en\")"
       when :page_title
         "@title.getOrElse(\"GOV.UK - The best place to find government services and information\")"
       when :top_of_page

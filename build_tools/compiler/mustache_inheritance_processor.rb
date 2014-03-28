@@ -14,6 +14,7 @@ module Compiler
       footer_top: "{{$footerTop}}{{/footerTop}}",
       head: "{{$head}}{{/head}}",
       header_class: "{{$headerClass}}{{/headerClass}}",
+      html_lang: "{{$htmlLang}}en{{/htmlLang}}",
       inside_header: "{{$insideHeader}}{{/insideHeader}}",
       page_title: "{{$pageTitle}}GOV.UK - The best place to find government services and information{{/pageTitle}}",
       proposition_header: "{{$propositionHeader}}{{/propositionHeader}}"

@@ -14,6 +14,7 @@ module Compiler
       footer_top: "{% include layouts/_footer_top.html %}",
       head: "{% include layouts/_head.html %}",
       header_class: "{% if page.header_class %}{{ page.header_class }}{% endif %}",
+      html_lang: "{% if page.html_lang %}{{ page.html_lang }}{% else %}en{% endif %}",
       inside_header: "{% include layouts/_inside_header.html %}",
       page_title: "{% include layouts/_page_title.html %}",
       proposition_header: "{% include layouts/_proposition_header.html %}"

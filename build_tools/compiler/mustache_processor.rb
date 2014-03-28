@@ -14,6 +14,7 @@ module Compiler
       footer_top: "{{{ footerTop }}}",
       head: "{{{ head }}}",
       header_class: "{{{ headerClass }}}",
+      html_lang: "{{ htmlLang }}",
       inside_header: "{{{ insideHeader }}}",
       page_title: "{{ pageTitle }}",
       proposition_header: "{{{ propositionHeader }}}",
