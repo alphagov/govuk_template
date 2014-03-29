@@ -3,6 +3,7 @@ require File.join(PROJECT_ROOT, 'build_tools/compiler/mustache_processor.rb')
 
 def valid_sections
   {
+    html_lang: "{{ htmlLang }}",
     page_title: "{{ pageTitle }}",
     head: "{{{ head }}}",
     body_classes: "{{ bodyClasses }}",
