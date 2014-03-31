@@ -1,4 +1,6 @@
 @import '_shims';
+@import '_conditionals';
+
 #global-header {
   background-color: $black;
   width: 100%;
@@ -210,7 +212,7 @@
 }
 
 #global-cookie-message {
-  padding: 0.5em 2em;
+  padding: 8px 15px;
   background-color: $light-blue-25;
 
   p {
@@ -223,7 +225,8 @@
     }
   }
 
-  @include media-down(mobile) {
-    padding: 0.5em 1em;
+  @include media(tablet) {
+    padding-left: 30px;
+    padding-right: 30px;
   }
 }
