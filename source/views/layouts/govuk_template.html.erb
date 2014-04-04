@@ -85,12 +85,17 @@
     <%= yield :after_header %>
 
     <div id="global-cookie-message">
-      <% if content_for?(:cookie_message) %>
-        <%= yield :cookie_message %>
-      <% else %>
-        <p>GOV.UK uses cookies to make the site simpler. <a href="https://www.gov.uk/help/cookies">Find out more about cookies</a></p>
-      <% end %>
+      <div class="outer-block">
+        <div class="inner-block">
+          <% if content_for?(:cookie_message) %>
+            <%= yield :cookie_message %>
+          <% else %>
+            <p>GOV.UK uses cookies to make the site simpler. <a href="https://www.gov.uk/help/cookies">Find out more about cookies</a></p>
+          <% end %>
+        </div>
+      </div>
     </div>
+    <!--end global-cookie-message-->
 
     <%= content_for?(:content) ? yield(:content) : yield %>
 

@@ -1,5 +1,7 @@
 @import '_shims';
 @import '_conditionals';
+@import '_measurements';
+@import '_layout';
 
 #global-header {
   background-color: $black;
@@ -9,14 +11,15 @@
     background-color: $black;
     max-width: 990px;
     margin: 0 auto;
-    padding: 0.5em 15px;
+    padding-top: 8px;
+    padding-bottom: 8px;
     @extend %contain-floats;
-    @include media-down(mobile){
-      padding: 0.5em 0;
+    @include media(tablet){
+      padding-left: $gutter-half;
+      padding-right: $gutter-half;
     }
-
     @include ie-lte(8) {
-      width: 960px;
+      width: 990px;
     }
 
     .header-global {
@@ -212,21 +215,13 @@
 }
 
 #global-cookie-message {
-  padding: 8px 15px;
+  padding-top: 8px;
+  padding-bottom: 8px;
   background-color: $light-blue-25;
 
+  // Don't set a max-width for any content inside .inner-block
   p {
     @include core-19;
-    margin: 0 auto;
-    max-width: 960px;
-
-    @include ie-lte(6) {
-      width: 960px;
-    }
-  }
-
-  @include media(tablet) {
-    padding-left: 30px;
-    padding-right: 30px;
+    margin: 0;
   }
 }

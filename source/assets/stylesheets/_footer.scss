@@ -5,18 +5,13 @@
   border-top: 1px solid $grey-6;
 
   .footer-wrapper {
-    background-color: $grey-8;
-    max-width: 990px;
-    margin: 0 auto;
-    padding: 20px 0 0;
-
-    @include ie-lte(8) {
-      width: 960px;
-    }
-
+    @include outer-block;
+    padding-top: 20px;
     @include media(tablet) {
-      padding: 60px 15px 0;
+      padding-top: 60px;
     }
+    background-color: $grey-8;
+    margin: 0 auto;
   }
 
   a {
@@ -39,23 +34,20 @@
   }
 
   .footer-meta {
+    @include inner-block;
+    padding-top: 60px;
     clear: both;
     font-size: 0;
     color: $grey-3;
-    padding: 0 15px 60px;
-
-    @include media-down(mobile) {
-      margin: 0;
-    }
 
     .footer-meta-inner {
-      display: inline-block;
-      vertical-align: bottom;
-      width: 75%;
+      display: block;
+      width: 100%;
 
-      @include media-down(mobile) {
-        display: block;
-        width: 100%;
+      @include media(tablet) {
+        display: inline-block;
+        vertical-align: bottom;
+        width: 75%;
       }
 
       ul {
@@ -115,7 +107,7 @@
             overflow:hidden;
             text-indent: -999em;
             background: image-url("images/open-government-licence.png") 0 0 no-repeat;
-            
+
             @include device-pixel-ratio() {
               background-image: image-url("images/open-government-licence_2x.png");
               background-size: 41px 17px;
@@ -129,7 +121,7 @@
           padding-top: 0.1em;
         }
       }
-    
+
       @include ie-lte(7) {
         display: block;
         float: left;
