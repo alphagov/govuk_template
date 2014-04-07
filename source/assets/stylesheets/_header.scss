@@ -1,7 +1,7 @@
 @import '_shims';
 @import '_conditionals';
 @import '_measurements';
-@import '_layout';
+@import '_grid_layout';
 
 #global-header {
   background-color: $black;
@@ -219,7 +219,14 @@
   padding-bottom: 8px;
   background-color: $light-blue-25;
 
-  // Don't set a max-width for any content inside .inner-block
+  .outer-block {
+    @include outer-block;
+  }
+
+  .inner-block {
+    @include inner-block;
+  }
+
   p {
     @include core-19;
     margin: 0;

@@ -1,3 +1,5 @@
+@import '_grid_layout';
+
 /* Global footer */
 
 #footer {
@@ -35,7 +37,7 @@
 
   .footer-meta {
     @include inner-block;
-    padding-top: 60px;
+    padding-bottom: 60px;
     clear: both;
     font-size: 0;
     color: $grey-3;
