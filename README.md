@@ -48,6 +48,10 @@ There is a [proposal for Mustache to support template inheritance](https://githu
 
 To generate the tarball of the Mustache Inheritance templates run the `build:mustache_inheritance` rake task. This will produce a tarball in the `pkg` directory.
 
+### Jinja version
+
+To generate the folder of Jinja templates run `bundle exec rake build:jinja`. This will produce a tarball in the `pkg` directory.
+
 ### Tarball version
 
 To generate the tarball, run the `bundle exec rake build:tar`. This will produce a tarball in the `pkg` directory.
