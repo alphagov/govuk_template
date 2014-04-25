@@ -1,24 +1,13 @@
 {
   "name": "govuk_template_mustache",
-  "version": "<%=GovukTemplate::VERSION%>",
-  "description": "Temporary solution for publishing mustache templates based on govuk_template",
-  "main": "index.js",
-  "scripts": {
-    "test": "grunt jasmine"
-  },
+  "version": "<%= GovukTemplate::VERSION %>",
+  "description": "{{ mustache }} packaged version of the GOV.UK template",
+  "keywords": ["alphagov", "govuk", "mustache", "template"],
+  "bugs": "https://github.com/alphagov/govuk_template_mustache/issues",
+  "license": "MIT",
+  "author": "Government Digital Service developers (https://gds.blog.gov.uk/)",
   "repository": {
     "type": "git",
-    "url": "git://github.com/alphagov/govuk_template_mustache.git"
-  },
-  "author": {
-    "name": "Jacob Ashdown",
-    "email": "jacob.ashdown@digital.cabinet-office.gov.uk"
-  },
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/alphagov/govuk_template_mustache/issues"
-  },
-  "readme": "ERROR: No README data found!",
-  "_id": "govuk_template_mustache@<%=GovukTemplate::VERSION%>",
-  "_from": "govuk_template_mustache@<%=GovukTemplate::VERSION%>"
+    "url": "http://github.com/alphagov/govuk_template_mustache.git"
+  }
 }
