@@ -19,7 +19,7 @@ module Publisher
           run "ls -1 | grep -v 'README.md' | xargs -I {} rm -rf {}"
           run "cp -r #{@source_dir.to_s.shellescape}/* ."
           run "git add -A ."
-          run "git commit -q -m 'deploying GOV.UK Mustache templates #{@version}'"
+          run "git commit -q -m 'Publishing GOV.UK {{ mustache }} template version #{@version}'"
           run "git tag v#{@version}"
           run "git push --tags origin master"
           run "npm publish ./"
