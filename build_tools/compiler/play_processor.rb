@@ -15,11 +15,11 @@ module Compiler
       when :layout
         "<!-- Page content goes here -->"
       when :html_lang
-        "@html_lang.getOrElse(\"en\")"
+        "@htmlLang.getOrElse(\"en\")"
       when :page_title
         "@title.getOrElse(\"GOV.UK - The best place to find government services and information\")"
       when :top_of_page
-        "@(title: Option[String], bodyClasses: Option[String])(head:Html, bodyEnd:Html, insideHeader:Html, afterHeader:Html, footerTop:Html, footerLinks:Html, headerClass:Html = Html.empty, propositionHeader:Html = Html.empty)(content:Html)"
+        "@(title: Option[String], bodyClasses: Option[String], htmlLang: Option[String] = None)(head:Html, bodyEnd:Html, insideHeader:Html, afterHeader:Html, footerTop:Html, footerLinks:Html, headerClass:Html = Html.empty, propositionHeader:Html = Html.empty)(content:Html)"
       when :head
         "@head"
       when :body_classes
@@ -58,7 +58,10 @@ module Compiler
     end
 
     def content_for?(*args)
-      [:page_title, :content, :head, :body_classes, :body_end, :top_of_page, :inside_header, :after_header, :footer_top, :footer_support_links].include? args[0]
+      [:layout, :page_title, :content, :head, :body_classes, :body_end,
+        :top_of_page, :inside_header, :after_header, :footer_top,
+        :footer_support_links, :html_lang, :header_class, :propositional_header
+      ].include? args[0]
     end
   end
 end
