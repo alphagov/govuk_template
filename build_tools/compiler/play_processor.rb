@@ -19,15 +19,15 @@ module Compiler
       when :page_title
         "@title.getOrElse(\"GOV.UK - The best place to find government services and information\")"
       when :top_of_page
-        "@(title: Option[String], bodyClasses: Option[String])(head:Html, bodyEnd:Html, insideHeader:Html, afterHeader:Html, footerTop:Html, footerLinks:Html)(content:Html)"
+        "@(title: Option[String], bodyClasses: Option[String])(head:Html, bodyEnd:Html, insideHeader:Html, afterHeader:Html, footerTop:Html, footerLinks:Html, headerClass:Html = Html.empty, propositionHeader:Html = Html.empty)(content:Html)"
       when :head
         "@head"
       when :body_classes
         "@bodyClasses.getOrElse(\"\")"
       when :header_class
-        "@header_class"
+        "@headerClass"
       when :propositional_header
-        "@proposition_header"
+        "@propositionHeader"
       when :content
         "@content"
       when :body_end
