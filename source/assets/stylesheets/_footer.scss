@@ -37,27 +37,36 @@
 
   .footer-meta {
     @include inner-block;
+    @extend %contain-floats;
     padding-bottom: 60px;
     clear: both;
     font-size: 0;
     color: $grey-3;
 
     .footer-meta-inner {
-      display: block;
+      display: inline-block;
+      vertical-align: bottom;
       width: 100%;
 
       @include media(tablet) {
-        display: inline-block;
-        vertical-align: bottom;
         width: 75%;
+      }
+
+      @include ie-lte(7) {
+        float: left;
+        display: block;
       }
 
       ul {
         @include core-16($line-height: (24/16), $line-height-640: (24/16));
         display: inline-block;
         list-style: none;
-        margin: 0 0 1em;
+        margin: 0 0 1.5em 0;
         padding: 0;
+
+        @include media(tablet) {
+          margin: 0 0 1em 0;
+        }
 
         li {
           display: inline-block;
@@ -69,20 +78,14 @@
             padding-right: 15px;
           }
         }
-
-        @include media-down(mobile) {
-          width: auto;
-          margin: 0 0 1.5em 0;
-        }
       }
 
       .open-government-licence {
         clear: left;
         position: relative;
-        padding-left: 53px;
 
-        @include media-down(mobile) {
-          padding-left: 0;
+        @include media(tablet) {
+          padding-left: 53px;
         }
 
         @include ie(6) {
@@ -90,16 +93,13 @@
         }
 
         h2 {
-          position: absolute;
-          left: 0;
-          top: 0;
-          width: 41px;
-          height: 100%;
-
-          @include media-down(mobile) {
-            position: static;
-            width: auto;
-            margin-bottom: 1em;
+          margin-bottom: 1em;
+          @include media(tablet) {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 41px;
+            height: 100%;
           }
 
           a {
@@ -109,7 +109,6 @@
             overflow:hidden;
             text-indent: -999em;
             background: image-url("images/open-government-licence.png") 0 0 no-repeat;
-
             @include device-pixel-ratio() {
               background-image: image-url("images/open-government-licence_2x.png");
               background-size: 41px 17px;
@@ -123,25 +122,24 @@
           padding-top: 0.1em;
         }
       }
-
-      @include ie-lte(7) {
-        display: block;
-        float: left;
-      }
-
     }
 
     .copyright {
       @include core-16;
 
-      display: inline-block;
-      float: none;
-      text-align: inherit;
-      width: 25%;
-      padding-top: 15px;
+      margin: 30px 0 0 0;
+      width: 100%;
+      display: block;
+
+      @include media(tablet) {
+        display: inline-block;
+        text-align: inherit;
+        width: 25%;
+        padding-top: 15px;
+        margin-top: 0;
+      }
 
       @include ie-lte(7) {
-        display: block;
         float: right;
         height: 150px;
         width: 24%;
@@ -150,33 +148,32 @@
       a {
         display: block;
 
-        padding: 115px 0 0 0;
+        background-image: image-url("images/govuk-crest.png");
+        background-repeat: no-repeat;
+        background-position: 100% 0%;
 
-        background: transparent image-url("images/govuk-crest.png") no-repeat 100% 0;
-        text-align: right;
-        text-decoration: none;
-
-        @include ie(6) {
-          background-image: image-url("images/govuk-crest-ie.png");
+        @include media(mobile) {
+          background-position: 50% 0%;
         }
 
         @include device-pixel-ratio() {
           background-image: image-url("images/govuk-crest-2x.png");
           background-size: 125px 102px;
         }
-      }
 
-      @include media-down(mobile) {
-        width: 100%;
-        display: block;
-        padding: 0;
-
-        margin: 30px 0 0 0;
-
-        a {
-          text-align: center;
-          background-position: 50% 0%;
+        @include ie(6) {
+          background-image: image-url("images/govuk-crest-ie.png");
         }
+
+        text-align: center;
+        text-decoration: none;
+
+        padding: 115px 0 0 0;
+
+        @include media(tablet) {
+          text-align: right;
+        }
+
       }
     }
   }

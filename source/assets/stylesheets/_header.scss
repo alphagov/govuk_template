@@ -208,6 +208,22 @@
   }
 }
 
+/* Global header bar */
+
+#global-header-bar {
+  @include outer-block;
+  .inner-block {
+    @include inner-block;
+  }
+  .header-bar {
+    height: 10px;
+    background-color: $govuk-blue;
+    @include ie-lte(8) {
+      font-size: 0;
+    }
+  }
+}
+
 /* Global cookie message */
 
 .js-enabled #global-cookie-message {
@@ -215,20 +231,17 @@
 }
 
 #global-cookie-message {
-  padding-top: 8px;
-  padding-bottom: 8px;
   background-color: $light-blue-25;
-
+  padding-top: 10px;
+  padding-bottom: 10px;
   .outer-block {
     @include outer-block;
   }
-
   .inner-block {
     @include inner-block;
   }
-
   p {
-    @include core-19;
+    @include core-16;
     margin: 0;
   }
 }
