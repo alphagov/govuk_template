@@ -148,10 +148,10 @@
 
         background-image: image-url("images/govuk-crest.png");
         background-repeat: no-repeat;
-        background-position: 100% 0%;
+        background-position: 50% 0%;
 
-        @include media(mobile) {
-          background-position: 50% 0%;
+        @include media(tablet) {
+          background-position: 100% 0%;
         }
 
         @include device-pixel-ratio() {
@@ -166,11 +166,11 @@
         text-align: center;
         text-decoration: none;
 
-        padding: 115px 0 0 0;
-
         @include media(tablet) {
           text-align: right;
         }
+
+        padding: 115px 0 0 0;
 
       }
     }
