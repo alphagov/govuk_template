@@ -1,5 +1,6 @@
 @import '_shims';
 @import '_conditionals';
+@import '_measurements';
 
 #global-header {
   background-color: $black;
@@ -9,14 +10,15 @@
     background-color: $black;
     max-width: 990px;
     margin: 0 auto;
-    padding: 0.5em 15px;
+    padding-top: 8px;
+    padding-bottom: 8px;
     @extend %contain-floats;
-    @include media-down(mobile){
-      padding: 0.5em 0;
+    @include media(tablet){
+      padding-left: $gutter-half;
+      padding-right: $gutter-half;
     }
-
     @include ie-lte(8) {
-      width: 960px;
+      width: 990px;
     }
 
     .header-global {
@@ -205,6 +207,22 @@
   }
 }
 
+/* Global header bar */
+
+#global-header-bar {
+  @include outer-block;
+  .inner-block {
+    @include inner-block;
+  }
+  .header-bar {
+    height: 10px;
+    background-color: $govuk-blue;
+    @include ie-lte(8) {
+      font-size: 0;
+    }
+  }
+}
+
 /* Global cookie message */
 
 .js-enabled #global-cookie-message {
@@ -212,21 +230,17 @@
 }
 
 #global-cookie-message {
-  padding: 8px 15px;
   background-color: $light-blue-25;
-
-  p {
-    @include core-19;
-    margin: 0 auto;
-    max-width: 960px;
-
-    @include ie-lte(6) {
-      width: 960px;
-    }
+  padding-top: 10px;
+  padding-bottom: 10px;
+  .outer-block {
+    @include outer-block;
   }
-
-  @include media(tablet) {
-    padding-left: 30px;
-    padding-right: 30px;
+  .inner-block {
+    @include inner-block;
+  }
+  p {
+    @include core-16;
+    margin: 0;
   }
 }
