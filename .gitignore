@@ -4,3 +4,14 @@
 Gemfile.lock
 app
 pkg
+.ruby-version
+
+*.rb
+
+*.gemspec
+
+build_tools/publisher/mustache_publisher.rb
+
+govuk_template.gemspec
+
+source/assets/stylesheets/govuk-template.scss
