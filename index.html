@@ -53,66 +53,112 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta property="og:image" content="assets/images/opengraph-image.png">
 
-    <style>
-    /*
-    Styles here are to line up the main page content.
-    Find the Sass mixins for these in the govuk_frontend_toolkit
-    https://github.com/alphagov/govuk_frontend_toolkit/blob/master/stylesheets/_grid_layout.scss
-    */
+    <style type="text/css">
 
-    .outer-block {
-      margin: 0 auto;
-      width: auto;
-      max-width: 1020px;
-    }
-
-    .outer-block:after {
-      content: "";
-      display: block;
-      clear: both;
-    }
-
-    .lte-ie8 .outer-block {
-      width: 1020px;
-    }
-
-    .inner-block {
-      padding-left: 15px;
-      padding-right: 15px;
-    }
-
-    @media (min-width: 641px) {
-      .inner-block {
-        padding-left: 30px;
-        padding-right: 30px;
-      }
-    }
-
-    /* Use .prose to wrap long lines of text */
-    .prose {
-      max-width: 30em;
-    }
-
-    #main {
-
-      /* Create spacing for main content area */
-      padding: 30px 0 90px 0;
-
-       /* Increase font size to 19px */
-      font-family: "nta", Arial, sans-serif;
-      font-size: 19px;
-      line-height: 1.31579;
-      font-weight: 400;
-      text-transform: none;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    @media (max-width: 640px) {
       #main {
-        font-size: 16px;
-        line-height: 1.25; }
+        /* Create spacing for main content area */
+        padding: 30px 0 90px 0;
+        /* Increase font size to 19px */
+        font-family: "nta", Arial, sans-serif;
+        font-size: 19px;
+        line-height: 1.31579;
+        font-weight: 400;
+        text-transform: none;
+        -webkit-font-smoothing: antialiased;
       }
-    }
+
+      @media (max-width: 640px) {
+        #main {
+          font-size: 16px;
+          line-height: 1.25;
+        }
+      }
+
+      /*
+      Styles here are to line up the main page content.
+      Find the Sass mixins for these in the govuk_frontend_toolkit
+      https://github.com/alphagov/govuk_frontend_toolkit/blob/master/stylesheets/_grid_layout.scss
+      */
+
+      .outer-block {
+        margin: 0 auto;
+        width: auto;
+        max-width: 1020px;
+      }
+
+      .outer-block:after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+
+      .lte-ie8 .outer-block {
+        width: 1020px;
+      }
+
+      .inner-block {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+
+      @media (min-width: 641px) {
+        .inner-block {
+          padding-left: 30px;
+          padding-right: 30px;
+        }
+      }
+
+      /* Use GOV.UK heading sizes */
+      .heading-48 {
+        font-family: "nta", Arial, sans-serif;
+        font-size: 48px;
+        line-height: 1.04167;
+        font-weight: 400;
+        text-transform: none;
+        font-weight: 700;
+        margin-top: 15px;
+        margin-bottom: 30px;
+      }
+      @media (max-width: 640px) {
+        .heading-48 {
+          font-size: 32px;
+          line-height: 1.09375;
+        }
+      }
+      @media (min-width: 641px) {
+        .heading-48 {
+          margin-top: 30px;
+          margin-bottom: 60px;
+        }
+      }
+
+      .heading-36 {
+        font-family: "nta", Arial, sans-serif;
+        font-size: 36px;
+        line-height: 1.11111;
+        font-weight: 400;
+        text-transform: none;
+        font-weight: 700;
+        margin-top: 25px;
+        margin-bottom: 10px;
+      }
+      @media (max-width: 640px) {
+        .heading-36 {
+          font-size: 24px;
+          line-height: 1.04167;
+        }
+      }
+      @media (min-width: 641px) {
+        .heading-36 {
+          margin-top: 45px;
+          margin-bottom: 20px;
+        }
+      }
+
+      /* Use .prose to wrap long lines of text */
+      .prose {
+        max-width: 30em;
+      }
 
     </style>
 
@@ -166,22 +212,22 @@
       <div class="outer-block">
         <div class="inner-block">
           <div class="prose">
-            <h1>GOV.UK template</h1>
+            <h1 class="heading-48">GOV.UK template</h1>
             <p>
               This page shows the three variants of the GOV.UK template.
             </p>
 
-            <h2><a href="govuk_template_1.html">GOV.UK standard header</a></h2>
+            <h2 class="heading-36"><a href="govuk_template_1.html">GOV.UK standard header</a></h2>
             <p>
               The standard header for information pages on GOV.UK.
             </p>
 
-            <h2><a href="govuk_template_2.html">GOV.UK standard header - with service title</a></h2>
+            <h2 class="heading-36"><a href="govuk_template_2.html">GOV.UK standard header – with service title</a></h2>
             <p>
               If your service is more than a few pages long, you can help users understand where they are by adding the service title.
             </p>
 
-            <h2><a href="govuk_template_3.html">GOV.UK standard header - with propositional navigation</a></h2>
+            <h2 class="heading-36"><a href="govuk_template_3.html">GOV.UK standard header – with propositional navigation</a></h2>
             <p>
               If you need to include contact or account management links, use this example.
             </p>
