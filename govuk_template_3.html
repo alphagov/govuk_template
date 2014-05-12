@@ -53,52 +53,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta property="og:image" content="assets/images/opengraph-image.png">
 
-    <style>
-    /*
-    Styles here are to line up the main page content.
-    Find the Sass mixins for these in the govuk_frontend_toolkit
-    https://github.com/alphagov/govuk_frontend_toolkit/blob/master/stylesheets/_grid_layout.scss
-    */
-
-    .outer-block {
-      margin: 0 auto;
-      width: auto;
-      max-width: 1020px;
-    }
-
-    .outer-block:after {
-      content: "";
-      display: block;
-      clear: both;
-    }
-
-    .lte-ie8 .outer-block {
-      width: 1020px;
-    }
-
-    .inner-block {
-      padding-left: 15px;
-      padding-right: 15px;
-    }
-
-    @media (min-width: 641px) {
-      .inner-block {
-        padding-left: 30px;
-        padding-right: 30px;
-      }
-    }
-
-    /* Use .prose to wrap long lines of text */
-    .prose {
-      max-width: 30em;
-    }
-
-    /* Create spacing for main content area */
-    #main {
-      padding: 30px 0 90px 0;
-    }
-
-    </style>
 
   </head>
 
@@ -112,7 +66,7 @@
     </div>
 
 
-    <header role="banner" id="global-header" class="">
+    <header role="banner" id="global-header" class="with-proposition"><!-- Note: 'with-proposition' -->
       <div class="header-wrapper">
         <div class="header-global">
           <div class="header-logo">
@@ -120,12 +74,25 @@
               <img src="assets/images/gov.uk_logotype_crown.png" width="35" height="31" alt=""> GOV.UK
             </a>
           </div>
-
         </div>
-
+        <div class="header-proposition">
+          <div class="content">
+            <a href="#proposition-links" class="js-header-toggle menu">Menu</a>
+            <nav id="proposition-menu">
+              <a href="/" id="proposition-name">Service Name</a>
+              <ul id="proposition-links">
+                <li><a href="url-to-page-1" class="active">Navigation item #1</a></li>
+                <li><a href="url-to-page-2">Navigation item #2</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
       </div>
     </header>
     <!--end header-->
+
+
+
 
     <div id="global-cookie-message">
       <div class="outer-block">
@@ -146,34 +113,6 @@
     <!--end global-header-bar-->
 
     <!-- Page content goes here -->
-    <main id="main">
-      <div class="outer-block">
-        <div class="inner-block">
-          <div class="prose">
-            <h1>GOV.UK template</h1>
-            <p>
-              This page shows the three variants of the GOV.UK template.
-            </p>
-
-            <h2><a href="govuk_template_1.html">GOV.UK standard header</a></h2>
-            <p>
-              The standard header for information pages on GOV.UK.
-            </p>
-
-            <h2><a href="govuk_template_2.html">GOV.UK standard header - with service title</a></h2>
-            <p>
-              If your service is more than a few pages long, you can help users understand where they are by adding the service title.
-            </p>
-
-            <h2><a href="govuk_template_3.html">GOV.UK standard header - with propositional navigation</a></h2>
-            <p>
-              If you need to include contact or account management links, use this example.
-            </p>
-          </div>
-        </div>
-      </div>
-    </main>
-    <!--end page content -->
 
     <footer class="group js-footer" id="footer" role="contentinfo">
 
