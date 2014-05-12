@@ -93,9 +93,25 @@
       max-width: 30em;
     }
 
-    /* Create spacing for main content area */
     #main {
+
+      /* Create spacing for main content area */
       padding: 30px 0 90px 0;
+
+       /* Increase font size to 19px */
+      font-family: "nta", Arial, sans-serif;
+      font-size: 19px;
+      line-height: 1.31579;
+      font-weight: 400;
+      text-transform: none;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    @media (max-width: 640px) {
+      #main {
+        font-size: 16px;
+        line-height: 1.25; }
+      }
     }
 
     </style>
