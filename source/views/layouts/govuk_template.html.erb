@@ -65,6 +65,19 @@
       </div>
     </div>
 
+    <div id="global-cookie-message">
+      <div class="outer-block">
+        <div class="inner-block">
+          <% if content_for?(:cookie_message) %>
+            <%= yield :cookie_message %>
+          <% else %>
+            <p>GOV.UK uses cookies to make the site simpler. <a href="https://www.gov.uk/help/cookies">Find out more about cookies</a></p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <!--end global-cookie-message-->
+
     <% unless @omit_header %>
     <header role="banner" id="global-header" class="<%= yield(:header_class) %>">
       <div class="header-wrapper">
@@ -83,19 +96,6 @@
     <% end %>
 
     <%= yield :after_header %>
-
-    <div id="global-cookie-message">
-      <div class="outer-block">
-        <div class="inner-block">
-          <% if content_for?(:cookie_message) %>
-            <%= yield :cookie_message %>
-          <% else %>
-            <p>GOV.UK uses cookies to make the site simpler. <a href="https://www.gov.uk/help/cookies">Find out more about cookies</a></p>
-          <% end %>
-        </div>
-      </div>
-    </div>
-    <!--end global-cookie-message-->
 
     <div id="global-header-bar">
       <div class="inner-block">
