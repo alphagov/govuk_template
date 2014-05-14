@@ -30,11 +30,11 @@ module Compiler
       return "#{file}?#{query_string}" if @is_stylesheet
       case File.extname(file)
       when '.css'
-        "{{ assetPath }}stylesheets/#{file}?#{query_string}"
+        "{{{ assetPath }}}stylesheets/#{file}?#{query_string}"
       when '.js'
-        "{{ assetPath }}javascripts/#{file}?#{query_string}"
+        "{{{ assetPath }}}javascripts/#{file}?#{query_string}"
       else
-        "{{ assetPath }}images/#{file}?#{query_string}"
+        "{{{ assetPath }}}images/#{file}?#{query_string}"
       end
     end
 
