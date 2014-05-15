@@ -62,20 +62,20 @@ describe Compiler::MustacheProcessor do
       context "if css file path passed in" do
         let(:css_asset_file) {"a/file.css"}
         it "should return the correct path for a stylesheet" do
-          subject.asset_path(css_asset_file).should == "{{ assetPath }}stylesheets/#{css_asset_file}?#{GovukTemplate::VERSION}"
+          subject.asset_path(css_asset_file).should == "{{{ assetPath }}}stylesheets/#{css_asset_file}?#{GovukTemplate::VERSION}"
         end
       end
       context "if javascript file path passed in" do
         let(:js_asset_file) {"a/file.js"}
         #up for debate - whole project is js
         it "should return the correct path for a javascript file" do
-          subject.asset_path(js_asset_file).should == "{{ assetPath }}javascripts/#{js_asset_file}?#{GovukTemplate::VERSION}"
+          subject.asset_path(js_asset_file).should == "{{{ assetPath }}}javascripts/#{js_asset_file}?#{GovukTemplate::VERSION}"
         end
       end
       context "if other file path passed in" do
         let(:other_asset_file) {"a/file.png"}
         it "should return the correct path for an image" do
-          subject.asset_path(other_asset_file).should == "{{ assetPath }}images/#{other_asset_file}?#{GovukTemplate::VERSION}"
+          subject.asset_path(other_asset_file).should == "{{{ assetPath }}}images/#{other_asset_file}?#{GovukTemplate::VERSION}"
         end
       end
     end

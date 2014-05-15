@@ -28,11 +28,11 @@ module Compiler
       return file if @is_stylesheet
       case File.extname(file)
       when '.css'
-        "{{assetPath}}stylesheets/#{file}"
+        "{{{ assetPath }}}stylesheets/#{file}"
       when '.js'
-        "{{assetPath}}javascripts/#{file}"
+        "{{{ assetPath }}}javascripts/#{file}"
       else
-        "{{assetPath}}images/#{file}"
+        "{{{ assetPath }}}images/#{file}"
       end
     end
 
