@@ -198,8 +198,11 @@
           &:hover {
             text-decoration: underline;
           }
+          &:focus {
+            color: $black;
+          }
           &.active {
-            color: $turquoise;
+            color: $proposition-active-nav;
           }
         }
       }
