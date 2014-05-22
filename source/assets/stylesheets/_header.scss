@@ -151,6 +151,14 @@
     }
     #proposition-menu {
       margin-top: 5px;
+
+      // Some headers (Whitehall) don't have a propsition name, offset as if they did.
+      &.no-proposition-name {
+        @include media(desktop){
+          margin-top: 37px;
+          // 37px is the amount of margin required to line up the nav list with the top of the search box
+        }
+      }
     }
     #proposition-links {
       clear: both;
