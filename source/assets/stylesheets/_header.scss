@@ -206,11 +206,11 @@
           &:hover {
             text-decoration: underline;
           }
-          &:focus {
-            color: $black;
-          }
           &.active {
             color: $proposition-active-nav;
+          }
+          &:focus {
+            color: $black;
           }
         }
       }
