@@ -124,6 +124,9 @@
       color: $white;
       text-decoration: none;
     }
+    a#proposition-name:hover {
+      text-decoration: underline;
+    }
     a.menu {
       @include core-16;
       color: $white;
