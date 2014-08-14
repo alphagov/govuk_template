@@ -126,8 +126,10 @@ img {
   border: 0;
 }
 
-button {
-  *overflow:visible;
+@include ie-lte(7) {
+  button {
+    overflow:visible;
+  }
 }
 
 abbr[title] {
