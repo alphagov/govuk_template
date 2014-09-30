@@ -1,3 +1,7 @@
+# 0.9.1
+
+- Bump govuk_frontend_toolkit to reset font for print stylesheets
+
 # 0.9.0
 
 - Bump govuk_frontend_toolkit to get new visited link colour
