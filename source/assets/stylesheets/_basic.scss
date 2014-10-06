@@ -39,10 +39,11 @@ html, body, div, h1, h2, h3, h4, h5, h6, article, aside, footer, header, hgroup,
 html {
   -webkit-text-size-adjust: 100%; /* 1 */
   -ms-text-size-adjust: 100%; /* 1 */
-  background: $white;
+  background-color: $grey-8;
 }
 
 body {
+  background: $white;
   color: $text-colour;
   line-height: 1.5;
   font-weight: 400;
