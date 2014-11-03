@@ -1,3 +1,9 @@
+# 0.10.0
+- Update OGL link text and destination in footer
+- Removing h2 from footer
+- Add HTML5 display definition
+- Set page background to match footer background
+
 # 0.9.1
 
 - Bump govuk_frontend_toolkit to reset font for print stylesheets
