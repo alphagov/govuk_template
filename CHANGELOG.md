@@ -1,3 +1,7 @@
+# 0.9.2
+- Bump govuk_frontend_toolkit to add new grid helpers and support for selection-button events
+- Update OGL link text and destination
+
 # 0.9.1
 
 - Bump govuk_frontend_toolkit to reset font for print stylesheets
