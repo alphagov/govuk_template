@@ -1,8 +1,8 @@
 # 0.10.0
 - Update OGL link text and destination in footer
-- Removing h2 from footer
-- Add HTML5 display definition
-- Set page background to match footer background
+- Remove h2 from footer, replacing with <p> tag
+- Add display: block to HTML5 <main> tags
+- Set page background colour to match footer background colour
 
 # 0.9.1
 
