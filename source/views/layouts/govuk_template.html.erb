@@ -8,7 +8,7 @@
     <title><%= content_for?(:page_title) ? yield(:page_title) : "GOV.UK - The best place to find government services and information" %></title>
 
     <script type="text/javascript">
-      (function(d){d.className=H.className.replace(/\bjs-disabled\b/,'js-enabled')})(document.documentElement);
+      (function(H){H.className=H.className.replace(/\bjs-disabled\b/,'js-enabled')})(document.documentElement);
     </script>
 
     <script type="text/javascript">
