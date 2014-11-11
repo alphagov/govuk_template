@@ -1,0 +1,39 @@
+assetPath: "/govuk_template/assets/"
+head: >
+  <style>
+    main { max-width: 960px; margin: 0 15px; }
+    @media (min-width: 641px) { main { margin: 0 30px; } }
+    @media (min-width: 1020px) { main { margin: 0 auto; } }
+  </style>
+content: >
+  <main role="main">
+    <h1>govuk_template Examples</h1>
+
+    <p>These are a collection of auto-generated examples of the current govuk_template release.</p>
+
+    <ul>
+      <li>
+        <strong><a href='/govuk_template/example-mvp.html'>GOV.UK standard header</a></strong><br>
+        The standard header for information pages on GOV.UK.
+      </li>
+      <li>
+        <strong><a href='/govuk_template/example-proposition-title.html'>GOV.UK standard header – with service title</a></strong><br>
+        If your service is more than a few pages long, you can help users understand where they are by adding the service title.
+      </li>
+      <li>
+        <strong><a href='/govuk_template/example-proposition-menu.html'>GOV.UK standard header – with propositional navigation</a></strong><br>
+        If you need to include basic navigation, contact or account management links.
+      </li>
+    </ul>
+
+    <h2>Releases</h2>
+    <p>The following tarball releases can be downloaded:</p>
+    <ul>
+      <li><a href='https://github.com/alphagov/govuk_template/releases/download/vVERSION_NAME/govuk_template-VERSION_NAME.tgz'>Plain html</a></li>
+      <li><a href='https://github.com/alphagov/govuk_template/releases/download/vVERSION_NAME/mustache_govuk_template-VERSION_NAME.tgz'>Mustache</a></li>
+      <li><a href='https://github.com/alphagov/govuk_template/releases/download/vVERSION_NAME/mustache_inheritance_govuk_template-VERSION_NAME.tgz'>Mustache inheritance</a></li>
+      <li><a href='https://github.com/alphagov/govuk_template/releases/download/vVERSION_NAME/play_govuk_template-VERSION_NAME.tgz'>Play</a></li>
+      <li><a href='https://github.com/alphagov/govuk_template/releases/download/vVERSION_NAME/liquid_govuk_template-VERSION_NAME.tgz'>Liquid</a></li>
+      <li><a href='https://github.com/alphagov/govuk_template/releases/download/vVERSION_NAME/jinja_govuk_template-VERSION_NAME.tgz'>Jinja</a></li>
+    </ul>
+  </main>

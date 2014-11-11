@@ -1,0 +1,8 @@
+assetPath: "/govuk_template/assets/"
+headerClass: "with-proposition"
+propositionHeader: >
+  <div class='header-proposition'>
+    <div class='content'>
+      <a href='/govuk_template/' id='proposition-name'>Service Name</a>
+    </div>
+  </div>
