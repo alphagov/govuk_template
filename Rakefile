@@ -92,6 +92,15 @@ namespace :build do
       puts "Pushing govuk_template_mustache #{GovukTemplate::VERSION} to git repo"
       q.publish
     end
+
+    require 'publisher/docs_publisher'
+    q = Publisher::DocsPublisher.new
+    if q.version_released?
+      puts "docs #{GovukTemplate::VERSION} already released. Not pushing."
+    else
+      puts "Pushing docs #{GovukTemplate::VERSION} to git repo"
+      q.publish
+    end
   end
 end
 
