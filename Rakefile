@@ -73,6 +73,12 @@ namespace :build do
       p.pusher.push "pkg/govuk_template-#{GovukTemplate::VERSION}.gem", :rubygems
       p.git_remote.add_tag "v#{GovukTemplate::VERSION}"
       puts "Done."
+
+      require 'publisher/docs_publisher'
+      q = Publisher::DocsPublisher.new
+      puts "Pushing docs #{GovukTemplate::VERSION} to git repo"
+      q.publish
+      puts "Done."
     end
 
     require 'publisher/release_publisher'
@@ -99,15 +105,6 @@ namespace :build do
       puts "govuk_template_mustache #{GovukTemplate::VERSION} already released. Not pushing."
     else
       puts "Pushing govuk_template_mustache #{GovukTemplate::VERSION} to git repo"
-      q.publish
-    end
-
-    require 'publisher/docs_publisher'
-    q = Publisher::DocsPublisher.new
-    if q.version_released?
-      puts "docs #{GovukTemplate::VERSION} already released. Not pushing."
-    else
-      puts "Pushing docs #{GovukTemplate::VERSION} to git repo"
       q.publish
     end
   end
