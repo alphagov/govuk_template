@@ -17,15 +17,13 @@ module Publisher
 
     def publish
       Dir.mktmpdir("govuk_template_docs") do |dir|
-        run "git clone -q #{GIT_URL.shellescape} #{dir.shellescape}"
+        run "git clone -q #{GIT_URL.shellescape} #{dir.shellescape} --branch gh-pages"
         Dir.chdir(dir) do
-          run "git checkout gh-pages"
-
           # Remove old assets
           FileUtils.rm_r("assets", force: true)
 
           # Copy assets folder to current path
-          FileUtils.cp_r("#{@mustache_dir.to_s.shellescape}/assets", "./")
+          FileUtils.cp_r("#{@mustache_dir}/assets", "./")
 
           # Copy the pkg tarballs to the releases folder
           FileUtils.cp(Dir["#{@pkg_dir}/*.tgz"], "release/")
