@@ -25,9 +25,6 @@ module Publisher
           # Copy assets folder to current path
           FileUtils.cp_r("#{@mustache_dir}/assets", "./")
 
-          # Copy the pkg tarballs to the releases folder
-          FileUtils.cp(Dir["#{@pkg_dir}/*.tgz"], "release/")
-
           # Load mustache template
           mustache_template = File.read("#{@mustache_dir}/views/layouts/govuk_template.html")
 

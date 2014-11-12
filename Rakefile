@@ -75,6 +75,15 @@ namespace :build do
       puts "Done."
     end
 
+    require 'publisher/release_publisher'
+    q = Publisher::ReleasePublisher.new
+    if q.version_released?
+      puts "Github release v#{GovukTemplate::VERSION} already released. Not pushing."
+    else
+      puts "Pushing Github release v#{GovukTemplate::VERSION}"
+      q.publish
+    end
+
     require 'publisher/play_publisher'
     q = Publisher::PlayPublisher.new
     if q.version_released?
