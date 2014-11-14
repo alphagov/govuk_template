@@ -7,14 +7,18 @@ head: >
   </style>
 content: >
   <main role="main">
-    <h1>govuk_template Examples</h1>
+    <h1>govuk_template</h1>
 
-    <p>These are a collection of auto-generated examples of the current govuk_template release.</p>
+    <h2>Examples</h2>
+
+    <p>
+      These are a collection of auto-generated examples of the current govuk_template release showing how you can use the template.
+    </p>
 
     <ul>
       <li>
         <strong><a href='/govuk_template/example-mvp.html'>GOV.UK standard header</a></strong><br>
-        The standard header for information pages on GOV.UK.
+        The standard header as used on information pages on GOV.UK.
       </li>
       <li>
         <strong><a href='/govuk_template/example-proposition-title.html'>GOV.UK standard header – with service title</a></strong><br>
@@ -26,8 +30,17 @@ content: >
       </li>
     </ul>
 
-    <h2>Releases</h2>
-    <p>The following tarball releases can be downloaded:</p>
+    <h2>Downloads</h2>
+
+    <p>
+      You can get a development version of the template from <a href="https://github.com/alphagov/govuk_template">github.com/alphagov/govuk_template<a>.
+    </p>
+
+    <p>
+      View the <a href="https://github.com/alphagov/govuk_template/blob/master/CHANGELOG.md">changelog</a> to find out what has changed in version VERSION_NAME.
+    </p>
+
+    <p>Download compiled versions of the govuk_template (vVERSION_NAME):</p>
     <ul>
       <li><a href='https://github.com/alphagov/govuk_template/releases/download/vVERSION_NAME/govuk_template-VERSION_NAME.tgz'>Plain html</a></li>
       <li><a href='https://github.com/alphagov/govuk_template/releases/download/vVERSION_NAME/mustache_govuk_template-VERSION_NAME.tgz'>Mustache</a></li>
@@ -36,4 +49,12 @@ content: >
       <li><a href='https://github.com/alphagov/govuk_template/releases/download/vVERSION_NAME/liquid_govuk_template-VERSION_NAME.tgz'>Liquid</a></li>
       <li><a href='https://github.com/alphagov/govuk_template/releases/download/vVERSION_NAME/jinja_govuk_template-VERSION_NAME.tgz'>Jinja</a></li>
     </ul>
+
+    <p>
+      For Rails projects govuk_template is pushed to <a href="http://rubygems.org/gems/govuk_template">rubygems</a>.
+    </p>
+
+    <p>
+      For node.js projects govuk_template is pushed to <a href="https://www.npmjs.org/package/govuk_template_mustache">npm</a>.
+    </p>
   </main>
