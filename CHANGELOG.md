@@ -1,4 +1,12 @@
+# 0.10.1
+
+- Add 16x16 favicon for non-retina screens
+- Force scrollbar to always display on IE10/11
+- Release documents in gh-pages branch
+- Fix chunky Firefox fonts
+
 # 0.10.0
+
 - Update OGL link text and destination in footer
 - Remove h2 from footer, replacing with `<p>` tag
 - Add display: block to HTML5 `<main>` tags
