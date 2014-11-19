@@ -4,6 +4,10 @@ This provides a template containing the GOV.UK header and footer, and associated
 
 This is versioned following [Semantic Versioning](http://semver.org).
 
+## Previewing the template
+
+You can [view a collection of auto-generated examples](http://alphagov.github.io/govuk_template/) of the current govuk_template release, which show how you can use the template.
+
 ## Requirements
 
 The Ruby language (1.9.3+), the build tool [Rake](http://rake.rubyforge.org/) & the dependancy management tool [Bundler](http://bundler.io/)
@@ -73,10 +77,6 @@ The source files are in the `/source` directory.  The `compile` rake task builds
 * copying the images across (including any needed images from the toolkit)
 
 This resulting app directory is included in the gem and hooked in as a Rails engine
-
-## Previewing the template
-
-You can [view a collection of auto-generated examples](http://alphagov.github.io/govuk_template/) of the current govuk_template release, which show how you can use the template.
 
 ### Extra details for the tarball build
 
