@@ -74,6 +74,10 @@ The source files are in the `/source` directory.  The `compile` rake task builds
 
 This resulting app directory is included in the gem and hooked in as a Rails engine
 
+## Previewing the template
+
+You can [view a collection of auto-generated examples](http://alphagov.github.io/govuk_template/) of the current govuk_template release, which show how you can use the template.
+
 ### Extra details for the tarball build
 
 The tarball build process takes the compiled template and assets from the `/app` directory, and performs some extra processing:
