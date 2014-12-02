@@ -1,13 +1,13 @@
 require 'open3'
 require 'govuk_template/version'
 require_relative 'tar_packager'
-require_relative '../compiler/mustache_processor'
+require_relative '../compiler/ejs_processor'
 
 module Packager
-  class MustachePackager < TarPackager
+  class EJSPackager < TarPackager
     def initialize
       super
-      @base_name = "mustache_govuk_template-#{GovukTemplate::VERSION}"
+      @base_name = "ejs_govuk_template-#{GovukTemplate::VERSION}"
     end
 
     def build
@@ -22,8 +22,8 @@ module Packager
     end
 
     def generate_package_json
-      template_abbreviation = "mustache"
-      template_name = "{{ mustache }}"
+      template_abbreviation = "ejs"
+      template_name = "Embedded JavaScript"
       contents = ERB.new(File.read(File.join(@repo_root, "source/package.json.erb"))).result(binding)
       File.open(File.join(@target_dir, "package.json"), "w") do |f|
         f.write contents
@@ -34,7 +34,7 @@ module Packager
       target_dir = @target_dir.join(File.dirname(file))
       target_dir.mkpath
       File.open(target_dir.join(generated_file_name(file)), 'wb') do |f|
-        f.write Compiler::MustacheProcessor.new(file).process
+        f.write Compiler::EJSProcessor.new(file).process
       end
     end
 

@@ -11,7 +11,7 @@ task :compile do
 end
 
 desc "Build both gem and tar version"
-task :build => ["build:gem", "build:tar", "build:play", "build:mustache", "build:liquid", "build:mustache_inheritance", "build:jinja"]
+task :build => ["build:gem", "build:tar", "build:play", "build:mustache", "build:liquid", "build:mustache_inheritance", "build:jinja", "build:ejs"]
 
 namespace :build do
   desc "Build govuk_template-#{GovukTemplate::VERSION}.gem into the pkg directory"
@@ -63,6 +63,13 @@ namespace :build do
     Packager::JinjaPackager.build
   end
 
+  desc "Build ejs_govuk_template-#{GovukTemplate::VERSION} into the pkg directory"
+  task :ejs => :compile do
+    puts "Building pkg/ejs_govuk_template-#{GovukTemplate::VERSION}"
+    require 'packager/ejs_packager'
+    Packager::EJSPackager.build
+  end
+
   desc "Build and release gem to gemfury if version has been updated"
   task :and_release_if_updated => :build do
     p = GemPublisher::Publisher.new('govuk_template.gemspec')
@@ -105,6 +112,15 @@ namespace :build do
       puts "govuk_template_mustache #{GovukTemplate::VERSION} already released. Not pushing."
     else
       puts "Pushing govuk_template_mustache #{GovukTemplate::VERSION} to git repo"
+      q.publish
+    end
+
+    require 'publisher/ejs_publisher'
+    q = Publisher::EJSPublisher.new
+    if q.version_released?
+      puts "govuk_template_ejs #{GovukTemplate::VERSION} already released. Not pushing."
+    else
+      puts "Pushing govuk_template_ejs #{GovukTemplate::VERSION} to git repo"
       q.publish
     end
   end
