@@ -14,13 +14,16 @@ The Ruby language (1.9.3+), the build tool [Rake](http://rake.rubyforge.org/) & 
 
 ## Packaging
 
-At present this generates 4 output formats:
+At present this generates 8 output formats:
 
 1. a gem containing a Rails engine
 2. a tarball containing Play Framework templates
 3. a folder containing Mustache templates
-4. a tarball containing Mustache Inheritance templates
-5. a tarball
+4. a tarball containing Liquid templates
+5. a tarball containing Mustache Inheritance templates
+6. a tarball containing Jinja templates
+7. a tarball
+8. a tarball containing EJS (Embedded JavaScript) templates
 
 ### Gem version
 
@@ -60,6 +63,10 @@ To generate the folder of Jinja templates run `bundle exec rake build:jinja`. Th
 
 To generate the tarball, run the `bundle exec rake build:tar`. This will produce a tarball in the `pkg` directory.
 
+### Embedded JavaScript version
+
+To generate the folder of Embedded JavaScript templates run `bundle exec rake build:ejs`. This will produce a tarball in the `pkg` directory.
+
 ## Publishing
 
 Accepted contributions (pull requests merged into master) will run builds for the Gem, Play and Mustache versions. These will then update the following:
@@ -67,6 +74,8 @@ Accepted contributions (pull requests merged into master) will run builds for th
 * RubyGems.org
 * [alphagov/govuk_template_play](https://github.com/alphagov/govuk_template_play)
 * [alphagov/govuk_template_mustache](https://github.com/alphagov/govuk_template_mustache) which updates the [npm package](https://npmjs.org/package/govuk_template_mustache)
+* [alphagov/govuk_template_ejs](https://github.com/alphagov/govuk_template_ejs) which updates the [npm package](https://npmjs.org/package/govuk_template_ejs)
+
 
 ## Development
 
