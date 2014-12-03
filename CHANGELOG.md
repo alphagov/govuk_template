@@ -1,3 +1,7 @@
+# 0.11.0
+
+- Add support for Embedded JavaScript templates
+
 # 0.10.1
 
 - Add 16x16 favicon for non-retina screens

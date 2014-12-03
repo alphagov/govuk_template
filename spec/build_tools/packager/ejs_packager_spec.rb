@@ -20,7 +20,7 @@ describe Packager::EJSPackager do
         subject.build
 
         generated_template = File.read(generated_template_path)
-        generated_template.should =~ %r[href="<%= govuk_template_asset_path %>stylesheets/govuk-template\.css\?#{Regexp.escape(GovukTemplate::VERSION)}"]
+        generated_template.should =~ %r[href="<%= govukTemplateAssetPath %>stylesheets/govuk-template\.css\?#{Regexp.escape(GovukTemplate::VERSION)}"]
 
         File.read(generated_package_json_path).should == example_package_json
       end

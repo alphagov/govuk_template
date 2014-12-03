@@ -3,11 +3,11 @@ require File.join(PROJECT_ROOT, 'build_tools/compiler/ejs_processor.rb')
 
 def valid_sections
   {
-    html_lang: "<% if page.html_lang { %><%= html_lang %><% } else { %>en<% } %>",
+    html_lang: "<% if (htmlLang) { %><%= htmlLang %><% } else { %>en<% } %>",
     page_title: "<%- partial('partials/_page_title') %>",
     head: "<%- partial('partials/_head') %>",
-    body_classes: "<%- partial('partials/_body_classes') %>",
-    content: "<%= content %>",
+    body_classes: "<%= bodyClasses %>",
+    content: "<%- partial('partials/_content') %>",
     body_end: "<%- partial('partials/_body_end') %>",
     footer_top: "<%- partial('partials/_footer_top') %>",
     footer_support_links: "<%- partial('partials/_footer_support_links') %>",
@@ -61,20 +61,20 @@ describe Compiler::EJSProcessor do
       context "if css file path passed in" do
         let(:css_asset_file) {"a/file.css"}
         it "should return the correct path for a stylesheet" do
-          subject.asset_path(css_asset_file).should == "<%= govuk_template_asset_path %>stylesheets/#{css_asset_file}?#{GovukTemplate::VERSION}"
+          subject.asset_path(css_asset_file).should == "<%= govukTemplateAssetPath %>stylesheets/#{css_asset_file}?#{GovukTemplate::VERSION}"
         end
       end
       context "if javascript file path passed in" do
         let(:js_asset_file) {"a/file.js"}
         #up for debate - whole project is js
         it "should return the correct path for a javascript file" do
-          subject.asset_path(js_asset_file).should == "<%= govuk_template_asset_path %>javascripts/#{js_asset_file}?#{GovukTemplate::VERSION}"
+          subject.asset_path(js_asset_file).should == "<%= govukTemplateAssetPath %>javascripts/#{js_asset_file}?#{GovukTemplate::VERSION}"
         end
       end
       context "if other file path passed in" do
         let(:other_asset_file) {"a/file.png"}
         it "should return the correct path for an image" do
-          subject.asset_path(other_asset_file).should == "<%= govuk_template_asset_path %>images/#{other_asset_file}?#{GovukTemplate::VERSION}"
+          subject.asset_path(other_asset_file).should == "<%= govukTemplateAssetPath %>images/#{other_asset_file}?#{GovukTemplate::VERSION}"
         end
       end
     end
