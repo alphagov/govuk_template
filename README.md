@@ -121,6 +121,19 @@ You can get a propositional title and navigation by setting the content for `hea
 
 This will then create a navigation block which is shown on desktop sized devices but collapsed down on smaller screens.
 
+For menus with only one item, the collapsible functionality is not necessary, it is recommended that you use the following markup
+
+    <div class='header-proposition'>
+      <div class='content'>
+        <nav id='proposition-menu'>
+          <a href='/' id='proposition-name'>Service Name</a>
+          <p id='proposition-link'>
+            <a href='url-to-page-1'>Navigation item #1</a>
+          </p>
+        </nav>
+      </div>
+    </div>
+
 ## Contributing
 
 Please follow the [contribution guidelines](https://github.com/alphagov/govuk_template/blob/master/CONTRIBUTING.md).
