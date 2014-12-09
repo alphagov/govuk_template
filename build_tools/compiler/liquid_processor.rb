@@ -7,6 +7,7 @@ module Compiler
     @@yield_hash = {
       after_header: "{% include layouts/_after_header.html %}",
       body_classes: "{% include layouts/_body_classes.html %}",
+      body_start: "{% include layouts/_body_start.html %}",
       body_end: "{% include layouts/_body.html %}",
       content: "{{ content }}",
       cookie_message: "{% include layouts/_cookie_message.html %}",

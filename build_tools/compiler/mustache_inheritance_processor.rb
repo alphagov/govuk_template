@@ -7,6 +7,7 @@ module Compiler
     @@yield_hash = {
       after_header: "{{$afterHeader}}{{/afterHeader}}",
       body_classes: "{{$bodyClasses}}{{/bodyClasses}}",
+      body_start: "{{$bodyStart}}{{/bodyStart}}",
       body_end: "{{$bodyEnd}}{{/bodyEnd}}",
       content: "{{$content}}{{/content}}",
       cookie_message: "{{$cookieMessage}}{{/cookieMessage}}",
