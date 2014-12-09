@@ -7,6 +7,7 @@ module Compiler
     @@yield_hash = {
       after_header: "<%- partial('partials/_after_header') %>",
       body_classes: "<%= bodyClasses %>",
+      body_start: "<%- partial('partials/_body_start') %>",
       body_end: "<%- partial('partials/_body_end') %>",
       content: "<%- partial('partials/_content') %>",
       cookie_message: "<%- partial('partials/_cookie_message') %>",

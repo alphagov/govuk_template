@@ -7,6 +7,7 @@ module Compiler
     @@yield_hash = {
       after_header: "{% block after_header %}{% endblock %}",
       body_classes: "{% block body_classes %}{% endblock %}",
+      body_start: "{% block body_start %}{% endblock %}",
       body_end: "{% block body_end %}{% endblock %}",
       content: "{% block content %}{% endblock %}",
       cookie_message: "{% block cookie_message %}{% endblock %}",
