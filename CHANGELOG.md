@@ -1,3 +1,8 @@
+# 0.12.0
+
+- Add: `body_start` to enable html to be placed at the first element of the body
+- Add: option to have a single navigation link rather than a full menu
+
 # 0.11.0
 
 - Add support for Embedded JavaScript templates
