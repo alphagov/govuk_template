@@ -163,6 +163,7 @@
         }
       }
     }
+    #proposition-link,
     #proposition-links {
       clear: both;
       @extend %contain-floats;
@@ -195,27 +196,38 @@
             clear: left;
           }
         }
+      }
 
-        a {
-          color: $white;
-          text-decoration: none;
-          @include bold-14;
+      a {
+        color: $white;
+        text-decoration: none;
+        @include bold-14;
 
-          @include media(desktop) {
-            @include bold-16;
-            line-height: 23px;
-          }
-
-          &:hover {
-            text-decoration: underline;
-          }
-          &.active {
-            color: $proposition-active-nav;
-          }
-          &:focus {
-            color: $black;
-          }
+        @include media(desktop) {
+          @include bold-16;
+          line-height: 23px;
         }
+
+        &:hover {
+          text-decoration: underline;
+        }
+        &.active {
+          color: $proposition-active-nav;
+        }
+        &:focus {
+          color: $black;
+        }
+      }
+    }
+
+    #proposition-link {
+      float: right;
+      line-height: 22px;
+      .js-enabled & {
+        display:block;
+      }
+      @include media(desktop) {
+        float:none;
       }
     }
   }
