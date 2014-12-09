@@ -28,6 +28,10 @@ content: >
         <strong><a href='/govuk_template/example-proposition-menu.html'>GOV.UK standard header – with propositional navigation</a></strong><br>
         If you need to include basic navigation, contact or account management links.
       </li>
+      <li>
+        <strong><a href='/govuk_template/example-proposition-link.html'>GOV.UK standard header – with propositional link</a></strong><br>
+        If you need to include a single navigation link.
+      </li>
     </ul>
 
     <h2>Downloads</h2>
