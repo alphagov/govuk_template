@@ -23,7 +23,7 @@ module Packager
 
     def generate_package_json
       template_abbreviation = "mustache"
-      template_name = "{{ mustache }}"
+      template_name = "{{mustache}}"
       contents = ERB.new(File.read(File.join(@repo_root, "source/package.json.erb"))).result(binding)
       File.open(File.join(@target_dir, "package.json"), "w") do |f|
         f.write contents

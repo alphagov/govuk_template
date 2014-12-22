@@ -20,8 +20,8 @@ describe Packager::MustachePackager do
         subject.build
 
         generated_template = File.read(generated_template_path)
-        generated_template.should =~ %r[\A{{{ topOfPage }}}]
-        generated_template.should =~ %r[href="{{{ assetPath }}}stylesheets/govuk-template\.css\?#{Regexp.escape(GovukTemplate::VERSION)}"]
+        generated_template.should =~ %r[\A{{{topOfPage}}}]
+        generated_template.should =~ %r[href="{{{assetPath}}}stylesheets/govuk-template\.css\?#{Regexp.escape(GovukTemplate::VERSION)}"]
 
         File.read(generated_package_json_path).should == example_package_json
       end

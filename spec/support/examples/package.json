@@ -1,7 +1,7 @@
 {
   "name": "govuk_template_mustache",
   "version": "<%= GovukTemplate::VERSION %>",
-  "description": "{{ mustache }} packaged version of the GOV.UK template",
+  "description": "{{mustache}} packaged version of the GOV.UK template",
   "keywords": ["alphagov", "govuk", "mustache", "template"],
   "bugs": "https://github.com/alphagov/govuk_template_mustache/issues",
   "license": "MIT",
