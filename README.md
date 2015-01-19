@@ -102,6 +102,10 @@ See the `TemplateProcessor` class for details of this implementation.
 
 ## Usage
 
+### Skip link
+
+The [govuk_template sets a skip link](https://github.com/alphagov/govuk_template/blob/master/source/views/layouts/govuk_template.html.erb#L64-L68) to `#content`, but doesn't provide an element with `id="content"`. You'll need to add `id="content"` to your main content area, to ensure the skip link will work.
+
 ### Propositional title and navigation
 
 You can get a propositional title and navigation by setting the content for `header_class` to `with-proposition` and `proposition_header` in the form:
