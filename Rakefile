@@ -10,7 +10,7 @@ task :compile do
   Compiler::AssetCompiler.compile
 end
 
-desc "Build both gem and tar version"
+desc "Build all versions"
 task :build => ["build:gem", "build:tar", "build:play", "build:mustache", "build:liquid", "build:mustache_inheritance", "build:jinja", "build:ejs"]
 
 namespace :build do

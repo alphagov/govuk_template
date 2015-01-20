@@ -10,5 +10,8 @@ stylesheets:
 - fonts-ie8
 javascripts:
 - govuk-template
+- ie-8
+- ie-mobile-10
 - ie
+- js-enabled
 - vendor/goog/webfont-debug.js
