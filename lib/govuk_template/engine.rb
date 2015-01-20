@@ -5,7 +5,10 @@ module GovukTemplate
         govuk-template*.css
         fonts*.css
         govuk-template.js
+        ie-8.js
+        ie-mobile-10.js
         ie.js
+        js-enabled.js
         vendor/goog/webfont-debug.js
       )
     end
