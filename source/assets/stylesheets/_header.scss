@@ -236,16 +236,11 @@
 /* Global header bar */
 
 #global-header-bar {
-  @include outer-block;
-  .inner-block {
-    @include inner-block;
-  }
-  .header-bar {
-    height: 10px;
-    background-color: $govuk-blue;
-    @include ie-lte(8) {
-      font-size: 0;
-    }
+  @extend %site-width-container;
+  height: 10px;
+  background-color: $govuk-blue;
+  @include ie-lte(8) {
+    font-size: 0;
   }
 }
 
@@ -256,17 +251,14 @@
 }
 
 #global-cookie-message {
+  width: 100%;
   background-color: $light-blue-25;
   padding-top: 10px;
   padding-bottom: 10px;
-  .outer-block {
-    @include outer-block;
-  }
-  .inner-block {
-    @include inner-block;
-  }
   p {
+    @extend %site-width-container;
     @include core-16;
-    margin: 0;
+    margin-top: 0;
+    margin-bottom: 0;
   }
 }
