@@ -18,10 +18,12 @@
   visibility: hidden;
 }
 
-/* Hide only visually, but have it available for screenreaders */
+/* Hide only visually, but have it available for screenreaders and print */
 .visuallyhidden {
-  position: absolute;
-  left: -9999em;
+  @if $is-print != true {
+    position: absolute;
+    left: -9999em;
+  }
 
   /*
    * Extends the .visuallyhidden class to allow the element to be
