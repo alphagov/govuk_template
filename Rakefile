@@ -93,6 +93,13 @@ namespace :build do
     Packager::WebJarPackager.build
   end
 
+  desc "Build GovUK.Template.Razor.#{GovukTemplate::VERSION}.nupkg into the pkg directory"
+  task :razor => :compile do
+    puts "Building pkg/GovUK.Template.Razor.#{GovukTemplate::VERSION}.nupkg"
+    require 'packager/razor_packager'
+    Packager::RazorPackager.build
+  end
+
   desc "Build and release gem to gemfury if version has been updated"
   task :and_release_if_updated => :build do
     p = GemPublisher::Publisher.new('govuk_template.gemspec')
