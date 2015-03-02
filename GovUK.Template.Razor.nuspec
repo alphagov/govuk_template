@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>GovUK.Template.Razor</id>
+        <version>1.0.0</version>
+        <authors>David Raine</authors>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<licenseUrl>https://github.com/alphagov/govuk_template/blob/master/LICENCE.txt</licenseUrl>
+		<projectUrl>https://github.com/alphagov/govuk_template</projectUrl>
+        <description>Razor template supplying the GOV.UK header/footer</description>
+		<tags>GOV.UK ASP.NET Razor Template</tags>
+    </metadata>
+	<files>
+		<file src="assets/images/**" target="content/Content/govuk/images/" />
+		<file src="assets/stylesheets/**" target="content/Content/govuk/stylesheets/" />
+		<file src="assets/javascripts/**" target="content/Scripts/govuk/" />
+		<file src="views/layouts/govuk_template.cshtml" target="content/Views/Shared/_Layout.GovUK.cshtml" />
+	</files>
+</package>
