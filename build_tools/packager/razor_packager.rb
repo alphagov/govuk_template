@@ -16,9 +16,16 @@ module Packager
       @target_dir.rmtree if @target_dir.exist?
       @target_dir.mkpath
       Dir.chdir(@target_dir) do |dir|
+        generate_package_nuspec
         prepare_contents
         create_tarball
-        package_nuget
+      end
+    end
+
+    def generate_package_nuspec
+      contents = ERB.new(File.read(File.join(@repo_root, "source/GovUK.Template.Razor.nuspec.erb"))).result(binding)
+      File.open(File.join(@target_dir, "GovUK.Template.Razor.nuspec"), "w") do |f|
+        f.write contents
       end
     end
 
@@ -31,14 +38,10 @@ module Packager
       end
     end
 
-    def package_nuget
-      FileUtils.cp("#{@repo_root}/GovUK.Template.Razor.nuspec", ".")
+    def prepare_contents
+      super
       run "mono #{@repo_root}/tools/nuget.exe pack GovUK.Template.Razor.nuspec -Version #{GovukTemplate::VERSION}"
       FileUtils.mv("GovUK.Template.Razor.#{GovukTemplate::VERSION}.nupkg", @repo_root.join('pkg'))
-      # Remove unrequired files and folders
-      FileUtils.rm("GovUK.Template.Razor.nuspec")
-      FileUtils.rm(@repo_root.join("pkg/razor_govuk_template-#{GovukTemplate::VERSION}.tgz"))
-      FileUtils.rm_rf(@repo_root.join("pkg/razor_govuk_template-#{GovukTemplate::VERSION}"))
     end
 
     def run(command)
