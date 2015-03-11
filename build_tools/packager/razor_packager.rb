@@ -40,7 +40,7 @@ module Packager
 
     def prepare_contents
       super
-      run "mono #{@repo_root}/tools/nuget.exe pack GovUK.Template.Razor.nuspec -Version #{GovukTemplate::VERSION}"
+      run "mono #{@repo_root}/tools/nuget.exe pack GovUK.Template.Razor.nuspec"
       FileUtils.mv("GovUK.Template.Razor.#{GovukTemplate::VERSION}.nupkg", @repo_root.join('pkg'))
     end
 
