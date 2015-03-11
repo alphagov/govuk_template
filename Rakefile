@@ -20,7 +20,8 @@ task :build => ["build:gem",
                 "build:jinja",
                 "build:ejs",
                 "build:webjar",
-                "build:django"]
+                "build:django",
+                "build:razor"]
 
 namespace :build do
   desc "Build govuk_template-#{GovukTemplate::VERSION}.gem into the pkg directory"
