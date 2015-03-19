@@ -11,7 +11,7 @@ task :compile do
 end
 
 desc "Build both gem and tar version"
-task :build => ["build:gem", "build:tar", "build:play", "build:mustache", "build:liquid", "build:mustache_inheritance", "build:jinja", "build:ejs"]
+task :build => ["build:gem", "build:tar", "build:play", "build:mustache", "build:liquid", "build:mustache_inheritance", "build:jinja", "build:ejs", "build:webjar"]
 
 namespace :build do
   desc "Build govuk_template-#{GovukTemplate::VERSION}.gem into the pkg directory"
@@ -68,6 +68,13 @@ namespace :build do
     puts "Building pkg/ejs_govuk_template-#{GovukTemplate::VERSION}"
     require 'packager/ejs_packager'
     Packager::EJSPackager.build
+  end
+  
+  desc "Build govuk_template-#{GovukTemplate::VERSION}.jar into the pkg directory"
+  task :webjar => :compile do
+    puts "Building pkg/govuk_template-#{GovukTemplate::VERSION}.jar"
+    require 'packager/webjar_packager'
+    Packager::WebJarPackager.build
   end
 
   desc "Build and release gem to gemfury if version has been updated"

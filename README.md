@@ -14,7 +14,7 @@ The Ruby language (1.9.3+), the build tool [Rake](http://rake.rubyforge.org/) & 
 
 ## Packaging
 
-At present this generates 8 output formats:
+At present this generates 9 output formats:
 
 1. a gem containing a Rails engine
 2. a tarball containing Play Framework templates
@@ -24,6 +24,7 @@ At present this generates 8 output formats:
 6. a tarball containing Jinja templates
 7. a tarball
 8. a tarball containing EJS (Embedded JavaScript) templates
+9. a JAR file containing assets structured as per [WebJars](http://www.webjars.org/)
 
 ### Gem version
 
@@ -66,6 +67,10 @@ To generate the tarball, run the `bundle exec rake build:tar`. This will produce
 ### Embedded JavaScript version
 
 To generate the folder of Embedded JavaScript templates run `bundle exec rake build:ejs`. This will produce a tarball in the `pkg` directory.
+
+### WebJar version
+
+To generate a JAR file of assets in WebJar format run `bundle exec rake build:webjar`. This will produce a JAR file in the `pkg` directory.
 
 ## Publishing
 
