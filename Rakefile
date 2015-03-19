@@ -11,7 +11,7 @@ task :compile do
 end
 
 desc "Build both gem and tar version"
-task :build => ["build:gem", "build:tar", "build:play", "build:mustache", "build:liquid", "build:mustache_inheritance", "build:jinja", "build:ejs", "build:mustache_jar",]
+task :build => ["build:gem", "build:tar", "build:play", "build:mustache", "build:liquid", "build:mustache_inheritance", "build:jinja", "build:ejs", "build:webjar"]
 
 namespace :build do
   desc "Build govuk_template-#{GovukTemplate::VERSION}.gem into the pkg directory"
@@ -37,13 +37,6 @@ namespace :build do
 
   desc "Build mustache_govuk_template-#{GovukTemplate::VERSION} into the pkg directory"
   task :mustache => :compile do
-    puts "Building pkg/mustache_govuk_template-#{GovukTemplate::VERSION}"
-    require 'packager/mustache_packager'
-    Packager::MustachePackager.build
-  end
-  
-  desc "Build mustache_govuk_template-#{GovukTemplate::VERSION} into the pkg directory"
-  task :mustache_jar => :compile do
     puts "Building pkg/mustache_govuk_template-#{GovukTemplate::VERSION}"
     require 'packager/mustache_packager'
     Packager::MustachePackager.build
