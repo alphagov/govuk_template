@@ -70,9 +70,9 @@ namespace :build do
     Packager::EJSPackager.build
   end
   
-  desc "Build webjar_govuk_template-#{GovukTemplate::VERSION} into the pkg directory"
+  desc "Build govuk_template-#{GovukTemplate::VERSION}.jar into the pkg directory"
   task :webjar => :compile do
-    puts "Building pkg/webjar_govuk_template-#{GovukTemplate::VERSION}"
+    puts "Building pkg/govuk_template-#{GovukTemplate::VERSION}.jar"
     require 'packager/webjar_packager'
     Packager::WebJarPackager.build
   end
