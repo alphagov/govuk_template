@@ -63,7 +63,7 @@
 
     <div id="skiplink-container">
       <div>
-        <a href="#content" class="skiplink">Skip to main content</a>
+        <a href="#content" class="skiplink"><%= content_for?(:skip_link_message) ? yield(:skip_link_message) : "Skip to main content" %></a>
       </div>
     </div>
 
@@ -81,7 +81,7 @@
       <div class="header-wrapper">
         <div class="header-global">
           <div class="header-logo">
-            <a href="https://www.gov.uk/" title="Go to the GOV.UK homepage" id="logo" class="content">
+            <a href="https://www.gov.uk/" title="<%= content_for?(:logo_link_title) ? yield(:logo_link_title) : "Go to the GOV.UK homepage" %>" id="logo" class="content">
               <img src="<%= asset_path 'gov.uk_logotype_crown.png' %>" width="35" height="31" alt=""> GOV.UK
             </a>
           </div>
@@ -111,12 +111,16 @@
 
             <div class="open-government-licence">
               <p class="logo"><a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence</a></p>
-              <p>All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated</p>
+              <% if content_for?(:licence_message) %>
+                <%= yield :licence_message %>
+              <% else %>
+                <p>All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated</p>
+              <% end %>
             </div>
           </div>
 
           <div class="copyright">
-            <a href="https://www.nationalarchives.gov.uk/information-management/our-services/crown-copyright.htm">&copy; Crown copyright</a>
+            <a href="https://www.nationalarchives.gov.uk/information-management/our-services/crown-copyright.htm"><%= content_for?(:crown_copyright_message) ? yield(:crown_copyright_message) : "&copy; Crown copyright" %></a>
           </div>
         </div>
       </div>
