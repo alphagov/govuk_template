@@ -20,6 +20,10 @@ module Compiler
       page_title: "<%- partial('partials/_page_title') %>",
       proposition_header: "<%- partial('partials/_proposition_header') %>",
       top_of_page: "<%- partial('partials/_top_of_page') %>",
+      skip_link_message: "<% if (skipLinkMessage) { %><%= skipLinkMessage %><% } else { %>Skip to main content<% } %>",
+      logo_link_title: "<% if (logoLinkTitle) { %><%= logoLinkTitle %><% } else { %>Go to the GOV.UK homepage<% } %>",
+      licence_message: "<%- partial('partials/_licence_message') %>",
+      crown_copyright_message: "<% if (crownCopyrightMessage) { %><%= crownCopyrightMessage %><% } else { %>&copy; Crown copyright<% } %>"
     }
 
     def handle_yield(section = :layout)

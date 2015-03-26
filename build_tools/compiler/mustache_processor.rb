@@ -19,7 +19,11 @@ module Compiler
       inside_header: "{{{ insideHeader }}}",
       page_title: "{{ pageTitle }}",
       proposition_header: "{{{ propositionHeader }}}",
-      top_of_page: "{{{ topOfPage }}}"
+      top_of_page: "{{{ topOfPage }}}",
+      skip_link_message: "{{ skipLinkMessage }}",
+      logo_link_title: "{{ logoLinkTitle }}",
+      licence_message: "{{{ licenceMessage }}}",
+      crown_copyright_message: "{{ crownCopyrightMessage }}"
     }
 
     def handle_yield(section = :layout)

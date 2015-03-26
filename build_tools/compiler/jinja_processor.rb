@@ -19,7 +19,11 @@ module Compiler
       inside_header: "{% block inside_header %}{% endblock %}",
       page_title: "{% block page_title %}GOV.UK - The best place to find government services and information{% endblock %}",
       proposition_header: "{% block proposition_header %}{% endblock %}",
-      top_of_page: "{% block top_of_page %}{% endblock %}"
+      top_of_page: "{% block top_of_page %}{% endblock %}",
+      skip_link_message: "{{ skip_link_message|default('Skip to main content') }}",
+      logo_link_title: "{{ logo_link_title|default('Go to the GOV.UK homepage') }}",
+      licence_message: "{% block licence_message %}<p>All content is available under the <a href=\"https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/\" rel=\"license\">Open Government Licence v3.0</a>, except where otherwise stated</p>{% endblock %}",
+      crown_copyright_message: "{{ crown_copyright_message|default('&copy; Crown copyright') }}"
     }
 
     def handle_yield(section = :layout)

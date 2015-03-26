@@ -42,6 +42,14 @@ module Compiler
         "@footerTop"
       when :footer_support_links
         "@footerLinks"
+      when :skip_link_message
+        "@skip_link_message.getOrElse(\"Skip to main content\")"
+      when :logo_link_title
+        "@logo_link_title.getOrElse(\"Go to the GOV.UK homepage\")"
+      when :licence_message
+        "@licence_message"
+      when :crown_copyright_message
+        "@crown_copyright_message.getOrElse(\"&copy; Crown copyright\")"
       else
         ""
       end

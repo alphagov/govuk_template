@@ -18,7 +18,11 @@ module Compiler
       html_lang: "{% if page.html_lang %}{{ page.html_lang }}{% else %}en{% endif %}",
       inside_header: "{% include layouts/_inside_header.html %}",
       page_title: "{% include layouts/_page_title.html %}",
-      proposition_header: "{% include layouts/_proposition_header.html %}"
+      proposition_header: "{% include layouts/_proposition_header.html %}",
+      skip_link_message: "{% if page.skip_link_message %}{{ page.skip_link_message }}{% else %}Skip to main content{% endif %}",
+      logo_link_title: "{% if page.logo_link_title %}{{ page.logo_link_title }}{% else %}Go to the GOV.UK homepage{% endif %}",
+      licence_message: "{% include layouts/_licence_message.html %}",
+      crown_copyright_message: "{% if page.crown_copyright_message %}{{ page.crown_copyright_message }}{% else %}&copy; Crown copyright{% endif %}"
     }
 
     def handle_yield(section = :layout)
