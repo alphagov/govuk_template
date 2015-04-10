@@ -49,8 +49,8 @@ a {
 }
 
 a:focus {
-  background-color: #ffbf47;
-  outline: 3px solid #ffbf47;
+  background-color: $focus-colour;
+  outline: 3px solid $focus-colour;
 }
 
 /* Make skiplinks visible when they are tabbed to */
@@ -85,7 +85,7 @@ textarea:focus,
 select:focus,
 button:focus,
 #global-header input:focus {
-  outline: 3px solid #ffbf47;
+  outline: 3px solid $focus-colour;
 }
 
 #global-header {
