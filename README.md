@@ -38,6 +38,16 @@ And then execute:
 
 You can then use the `govuk_template` layout in your app.  If you need to extend the layout you can use [nested layouts](http://guides.rubyonrails.org/layouts_and_rendering.html#using-nested-layouts).
 
+### Python version
+
+This is availible on pypi.python.org. To use it add this line to your applications requirements.txt file
+
+    govuk-template
+
+And then execute:
+
+    $ pip install -r requirements.txt
+
 ### Play version
 
 To generate the tarball of Play Framework templates run `bundle exec rake build:play`. This will produce a tarball in the `pkg` directory.
