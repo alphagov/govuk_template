@@ -17,6 +17,7 @@ module Compiler
       cookie_message:       tag_for(:cookieMessage),
       footer_support_links: tag_for(:footerSupportLinks),
       footer_top:           tag_for(:footerTop),
+      homepage_url:         "{{homepageUrl}}https://www.gov.uk/{{/homepageUrl}}",
       head:                 tag_for(:head),
       header_class:         tag_for(:headerClass),
       html_lang:            "{{$htmlLang}}en{{/htmlLang}}",
