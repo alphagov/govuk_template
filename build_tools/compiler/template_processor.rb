@@ -23,25 +23,15 @@ module Compiler
     end
 
     def handle_yield(section = :layout)
-      if section == :layout
-        "<!-- Page content goes here -->"
-      end
+      raise "Not implemented on the base class"
     end
 
     def content_for?(*args)
-      false
+      raise "Not implemented on the base class"
     end
 
     def asset_path(file, options={})
-      return file if @is_stylesheet
-      case File.extname(file)
-      when '.css'
-        "/assets/stylesheets/#{file}"
-      when '.js'
-        "/assets/javascripts/#{file}"
-      else
-        "/assets/images/#{file}"
-      end
+      raise "Not implemented on the base class"
     end
 
     def method_missing(name, *args)
