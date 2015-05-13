@@ -1,5 +1,5 @@
 require 'erb'
-require 'compiler/template_processor'
+require_relative 'template_processor'
 
 module Compiler
   class PlayProcessor < TemplateProcessor
