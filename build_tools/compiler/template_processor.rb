@@ -9,6 +9,8 @@ module Compiler
     end
 
     def process
+      # The block supplied to render_erb is invoked every time yield is called
+      # in the template. This happens via the `binding`.
       render_erb do |section = :layout|
         handle_yield(section)
       end

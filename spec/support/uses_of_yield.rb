@@ -5,6 +5,8 @@ class UsesOfYieldInTemplate
 
   def call
     uses_of_yield = []
+    # The block supplied to render_erb is invoked every time yield is called in
+    # the template. This happens via the `binding`.
     render_erb do |section|
       uses_of_yield << section
     end
