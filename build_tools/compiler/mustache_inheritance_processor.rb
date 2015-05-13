@@ -18,7 +18,8 @@ module Compiler
       html_lang: "{{$htmlLang}}en{{/htmlLang}}",
       inside_header: "{{$insideHeader}}{{/insideHeader}}",
       page_title: "{{$pageTitle}}GOV.UK - The best place to find government services and information{{/pageTitle}}",
-      proposition_header: "{{$propositionHeader}}{{/propositionHeader}}"
+      proposition_header: "{{$propositionHeader}}{{/propositionHeader}}",
+      top_of_page: "{{$topOfPage}}{{/topOfPage}}",
     }
 
     def handle_yield(section = :layout)

@@ -12,7 +12,7 @@ module Compiler
       head: '@head',
       body_classes: '@bodyClasses.getOrElse("")',
       header_class: '@headerClass',
-      propositional_header: '@propositionHeader',
+      proposition_header: '@propositionHeader',
       content: '@content',
       body_start: '@bodyStart',
       body_end: '@bodyEnd',
@@ -20,6 +20,13 @@ module Compiler
       after_header: '@afterHeader',
       footer_top: '@footerTop',
       footer_support_links: '@footerLinks',
+      cookie_message: <<-HTML
+        if(@cookieMessage) {
+          @cookieMessage
+        } else {
+          <p>GOV.UK uses cookies to make the site simpler. <a href="https://www.gov.uk/help/cookies">Find out more about cookies</a></p>
+        }
+      HTML
     }
 
     def render_erb

@@ -18,7 +18,8 @@ module Compiler
       html_lang: "{% if page.html_lang %}{{ page.html_lang }}{% else %}en{% endif %}",
       inside_header: "{% include layouts/_inside_header.html %}",
       page_title: "{% include layouts/_page_title.html %}",
-      proposition_header: "{% include layouts/_proposition_header.html %}"
+      proposition_header: "{% include layouts/_proposition_header.html %}",
+      top_of_page: "{% include layouts/_top_of_page.html %}",
     }
 
     def handle_yield(section = :layout)
