@@ -7,7 +7,11 @@ module Compiler
     @@yield_hash = {
       layout: '<!-- Page content goes here -->',
       html_lang: '@htmlLang.getOrElse("en")',
+      # NOTE: the mismatch between page_title and @title
       page_title: '@title.getOrElse("GOV.UK - The best place to find government services and information")',
+      # top_of_page has a special purpose: it is required by Play to define the
+      # parameters to pass when rendering
+      # https://www.playframework.com/documentation/2.2.x/ScalaTemplates#Template-parameters
       top_of_page: '@(title: Option[String], bodyClasses: Option[String], htmlLang: Option[String] = None)(head:Html, bodyStart:Html, bodyEnd:Html, insideHeader:Html, afterHeader:Html, footerTop:Html, footerLinks:Html, headerClass:Html = Html.empty, propositionHeader:Html = Html.empty)(content:Html)',
       head: '@head',
       body_classes: '@bodyClasses.getOrElse("")',
