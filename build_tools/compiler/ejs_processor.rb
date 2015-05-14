@@ -4,23 +4,28 @@ require_relative 'template_processor'
 module Compiler
   class EJSProcessor < TemplateProcessor
 
+    def self.partial_for(key)
+      "<%- partial('partials/_#{key}') %>"
+    end
+
     @@yield_hash = {
-      after_header: "<%- partial('partials/_after_header') %>",
-      body_classes: "<%= bodyClasses %>",
-      body_start: "<%- partial('partials/_body_start') %>",
-      body_end: "<%- partial('partials/_body_end') %>",
-      content: "<%- partial('partials/_content') %>",
-      cookie_message: "<%- partial('partials/_cookie_message') %>",
-      footer_support_links: "<%- partial('partials/_footer_support_links') %>",
-      footer_top: "<%- partial('partials/_footer_top') %>",
-      head: "<%- partial('partials/_head') %>",
-      header_class: "<% if (headerClass) { %><%= headerClass %><% } %>",
-      html_lang: "<% if (htmlLang) { %><%= htmlLang %><% } else { %>en<% } %>",
-      inside_header: "<%- partial('partials/_inside_header') %>",
-      page_title: "<%- partial('partials/_page_title') %>",
-      proposition_header: "<%- partial('partials/_proposition_header') %>",
-      top_of_page: "<%- partial('partials/_top_of_page') %>",
+      after_header:         partial_for(:after_header),
+      body_classes:         "<%= bodyClasses %>",
+      body_start:           partial_for(:body_start),
+      body_end:             partial_for(:body_end),
+      content:              partial_for(:content),
+      cookie_message:       partial_for(:cookie_message),
+      footer_support_links: partial_for(:footer_support_links),
+      footer_top:           partial_for(:footer_top),
+      head:                 partial_for(:head),
+      header_class:         "<% if (headerClass) { %><%= headerClass %><% } %>",
+      html_lang:            "<% if (htmlLang) { %><%= htmlLang %><% } else { %>en<% } %>",
+      inside_header:        partial_for(:inside_header),
+      page_title:           partial_for(:page_title),
+      proposition_header:   partial_for(:proposition_header),
+      top_of_page:          partial_for(:top_of_page),
     }
+
 
     def handle_yield(section = :layout)
       @@yield_hash[section]

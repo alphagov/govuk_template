@@ -4,22 +4,26 @@ require_relative 'template_processor'
 module Compiler
   class MustacheInheritanceProcessor < TemplateProcessor
 
+    def self.tag_for(lowerCamelCaseKey)
+      "{{$#{lowerCamelCaseKey}}}{{/#{lowerCamelCaseKey}}}"
+    end
+
     @@yield_hash = {
-      after_header: "{{$afterHeader}}{{/afterHeader}}",
-      body_classes: "{{$bodyClasses}}{{/bodyClasses}}",
-      body_start: "{{$bodyStart}}{{/bodyStart}}",
-      body_end: "{{$bodyEnd}}{{/bodyEnd}}",
-      content: "{{$content}}{{/content}}",
-      cookie_message: "{{$cookieMessage}}{{/cookieMessage}}",
-      footer_support_links: "{{$footerSupportLinks}}{{/footerSupportLinks}}",
-      footer_top: "{{$footerTop}}{{/footerTop}}",
-      head: "{{$head}}{{/head}}",
-      header_class: "{{$headerClass}}{{/headerClass}}",
-      html_lang: "{{$htmlLang}}en{{/htmlLang}}",
-      inside_header: "{{$insideHeader}}{{/insideHeader}}",
-      page_title: "{{$pageTitle}}GOV.UK - The best place to find government services and information{{/pageTitle}}",
-      proposition_header: "{{$propositionHeader}}{{/propositionHeader}}",
-      top_of_page: "{{$topOfPage}}{{/topOfPage}}",
+      after_header:         tag_for(:afterHeader),
+      body_classes:         tag_for(:bodyClasses),
+      body_start:           tag_for(:bodyStart),
+      body_end:             tag_for(:bodyEnd),
+      content:              tag_for(:content),
+      cookie_message:       tag_for(:cookieMessage),
+      footer_support_links: tag_for(:footerSupportLinks),
+      footer_top:           tag_for(:footerTop),
+      head:                 tag_for(:head),
+      header_class:         tag_for(:headerClass),
+      html_lang:            "{{$htmlLang}}en{{/htmlLang}}",
+      inside_header:        tag_for(:insideHeader),
+      page_title:           "{{$pageTitle}}GOV.UK - The best place to find government services and information{{/pageTitle}}",
+      proposition_header:   tag_for(:propositionHeader),
+      top_of_page:          tag_for(:topOfPage),
     }
 
     def handle_yield(section = :layout)
