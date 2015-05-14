@@ -37,9 +37,5 @@ module Compiler
         "{{ site.govuk_template_assets }}/images/#{file}"
       end
     end
-
-    def content_for?(*args)
-      @@yield_hash.include? args[0]
-    end
   end
 end

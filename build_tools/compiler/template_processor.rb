@@ -29,7 +29,7 @@ module Compiler
     end
 
     def content_for?(*args)
-      raise "Not implemented on the base class"
+      true
     end
 
     def asset_path(file, options={})

@@ -50,9 +50,5 @@ module Compiler
         %Q{@routes.Template.at("images/#{file}")}
       end
     end
-
-    def content_for?(*args)
-      @@yield_hash.has_key?(args[0])
-    end
   end
 end

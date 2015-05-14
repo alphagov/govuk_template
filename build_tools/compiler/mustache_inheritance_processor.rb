@@ -37,9 +37,5 @@ module Compiler
         "{{{ assetPath }}}images/#{file}"
       end
     end
-
-    def content_for?(*args)
-      @@yield_hash.include? args[0]
-    end
   end
 end

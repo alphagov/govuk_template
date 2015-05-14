@@ -38,9 +38,5 @@ module Compiler
         "<%= govukTemplateAssetPath %>images/#{file}?#{query_string}"
       end
     end
-
-    def content_for?(*args)
-      @@yield_hash.include? args[0]
-    end
   end
 end
