@@ -82,7 +82,7 @@
         <div class="header-global">
           <div class="header-logo">
             <a href="<%= content_for?(:homepage_url) ? yield(:homepage_url) : "https://www.gov.uk/" %>" title="Go to the GOV.UK homepage" id="logo" class="content">
-              <img src="<%= asset_path 'gov.uk_logotype_crown.png' %>" width="35" height="31" alt=""> GOV.UK
+              <img src="<%= asset_path 'gov.uk_logotype_crown.png' %>" width="35" height="31" alt=""> <%= content_for?(:global_header_text) ? yield(:global_header_text) : "GOV.UK" %>
             </a>
           </div>
           <%= yield :inside_header %>

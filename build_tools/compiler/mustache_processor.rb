@@ -22,6 +22,7 @@ module Compiler
       footer_support_links: unescaped_html_tag_for(:footerSupportLinks),
       footer_top:           unescaped_html_tag_for(:footerTop),
       homepage_url:         unescaped_html_tag_for(:homepageUrl),
+      global_header_text:   unescaped_html_tag_for(:globalHeaderText),
       head:                 unescaped_html_tag_for(:head),
       header_class:         unescaped_html_tag_for(:headerClass),
       html_lang:            tag_for(:htmlLang),
