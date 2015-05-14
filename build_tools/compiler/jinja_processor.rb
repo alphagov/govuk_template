@@ -4,22 +4,26 @@ require_relative 'template_processor'
 module Compiler
   class JinjaProcessor < TemplateProcessor
 
+    def self.block_for(key)
+      "{% block #{key} %}{% endblock %}"
+    end
+
     @@yield_hash = {
-      after_header: "{% block after_header %}{% endblock %}",
-      body_classes: "{% block body_classes %}{% endblock %}",
-      body_start: "{% block body_start %}{% endblock %}",
-      body_end: "{% block body_end %}{% endblock %}",
-      content: "{% block content %}{% endblock %}",
-      cookie_message: "{% block cookie_message %}{% endblock %}",
-      footer_support_links: "{% block footer_support_links %}{% endblock %}",
-      footer_top: "{% block footer_top %}{% endblock %}",
-      head: "{% block head %}{% endblock %}",
-      header_class: "{% block header_class %}{% endblock %}",
-      html_lang: "{{ html_lang|default('en') }}",
-      inside_header: "{% block inside_header %}{% endblock %}",
-      page_title: "{% block page_title %}GOV.UK - The best place to find government services and information{% endblock %}",
-      proposition_header: "{% block proposition_header %}{% endblock %}",
-      top_of_page: "{% block top_of_page %}{% endblock %}"
+      after_header:         block_for(:after_header),
+      body_classes:         block_for(:body_classes),
+      body_start:           block_for(:body_start),
+      body_end:             block_for(:body_end),
+      content:              block_for(:content),
+      cookie_message:       block_for(:cookie_message),
+      footer_support_links: block_for(:footer_support_links),
+      footer_top:           block_for(:footer_top),
+      head:                 block_for(:head),
+      header_class:         block_for(:header_class),
+      html_lang:            "{{ html_lang|default('en') }}",
+      inside_header:        block_for(:inside_header),
+      page_title:           "{% block page_title %}GOV.UK - The best place to find government services and information{% endblock %}",
+      proposition_header:   block_for(:proposition_header),
+      top_of_page:          block_for(:top_of_page),
     }
 
     def handle_yield(section = :layout)
@@ -37,10 +41,6 @@ module Compiler
       else
         "{{ asset_path }}images/#{file}?#{query_string}"
       end
-    end
-
-    def content_for?(*args)
-      @@yield_hash.include? args[0]
     end
   end
 end

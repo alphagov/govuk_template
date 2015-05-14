@@ -4,21 +4,26 @@ require_relative 'template_processor'
 module Compiler
   class LiquidProcessor < TemplateProcessor
 
+    def self.include_for(key)
+      "{% include layouts/_#{key}.html %}"
+    end
+
     @@yield_hash = {
-      after_header: "{% include layouts/_after_header.html %}",
-      body_classes: "{% include layouts/_body_classes.html %}",
-      body_start: "{% include layouts/_body_start.html %}",
-      body_end: "{% include layouts/_body.html %}",
-      content: "{{ content }}",
-      cookie_message: "{% include layouts/_cookie_message.html %}",
-      footer_support_links: "{% include layouts/_footer_support_links.html %}",
-      footer_top: "{% include layouts/_footer_top.html %}",
-      head: "{% include layouts/_head.html %}",
-      header_class: "{% if page.header_class %}{{ page.header_class }}{% endif %}",
-      html_lang: "{% if page.html_lang %}{{ page.html_lang }}{% else %}en{% endif %}",
-      inside_header: "{% include layouts/_inside_header.html %}",
-      page_title: "{% include layouts/_page_title.html %}",
-      proposition_header: "{% include layouts/_proposition_header.html %}"
+      after_header:         include_for(:after_header),
+      body_classes:         include_for(:body_classes),
+      body_start:           include_for(:body_start),
+      body_end:             include_for(:body), # Note that this differs from the key!
+      content:              "{{ content }}",
+      cookie_message:       include_for(:cookie_message),
+      footer_support_links: include_for(:footer_support_links),
+      footer_top:           include_for(:footer_top),
+      head:                 include_for(:head),
+      header_class:         "{% if page.header_class %}{{ page.header_class }}{% endif %}",
+      html_lang:            "{% if page.html_lang %}{{ page.html_lang }}{% else %}en{% endif %}",
+      inside_header:        include_for(:inside_header),
+      page_title:           include_for(:page_title),
+      proposition_header:   include_for(:proposition_header),
+      top_of_page:          include_for(:top_of_page),
     }
 
     def handle_yield(section = :layout)
@@ -35,10 +40,6 @@ module Compiler
       else
         "{{ site.govuk_template_assets }}/images/#{file}"
       end
-    end
-
-    def content_for?(*args)
-      @@yield_hash.include? args[0]
     end
   end
 end

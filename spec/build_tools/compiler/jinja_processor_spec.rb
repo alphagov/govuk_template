@@ -35,22 +35,6 @@ describe Compiler::JinjaProcessor do
     end
   end
 
-  describe "#content_for?" do
-    valid_sections.each do |k,v|
-      it "should return true for #{k}" do
-        subject.content_for?(k).should be_true
-      end
-    end
-
-    context "when the yield is not handled" do
-      let(:invalid_yield) {:hello_there}
-
-      it "should be false for an invalid yield key" do
-        subject.content_for?(invalid_yield).should be_false
-      end
-    end
-  end
-
   describe "#asset_path" do
     context "if file is stylesheet" do
       let(:asset_file) {"a/file.css"}
