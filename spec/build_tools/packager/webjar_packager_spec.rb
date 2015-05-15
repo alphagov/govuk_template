@@ -16,10 +16,10 @@ describe Packager::WebJarPackager do
         subject.build
         
         output, status = Open3.capture2e("jar -tvf #{generated_jar} | grep META-INF/resources/webjars/govuk_template/#{GovukTemplate::VERSION}/stylesheets/govuk-template.css")
-        status.exitstatus.should == 0
+        expect(status.exitstatus).to eql(0)
         
         output, status = Open3.capture2e("jar -tvf #{generated_jar} | grep META-INF/resources/webjars/govuk_template/#{GovukTemplate::VERSION}/images/opengraph-image.png")
-        status.exitstatus.should == 0
+        expect(status.exitstatus).to eql(0)
       end
     end
   end
