@@ -24,6 +24,8 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'govuk_frontend_toolkit', '3.5.1'
   spec.add_development_dependency 'gem_publisher', '1.3.0'
   spec.add_development_dependency 'rspec', '3.2.0'
+  spec.add_development_dependency 'rspec-html-matchers', '0.7.0'
   spec.add_development_dependency 'mustache', '0.99.7'
+  spec.add_development_dependency 'nokogiri', '1.6.6.2'
   spec.add_development_dependency 'octokit', '3.4.2'
 end
