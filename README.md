@@ -105,6 +105,19 @@ The tarball build process takes the compiled template and assets from the `/app`
 
 See the `TemplateProcessor` class for details of this implementation.
 
+
+### Testing
+
+Run the tests with:
+
+    bundle exec rake
+
+The integration tests are run separately with:
+
+    bundle exec rake integration_tests
+
+For more details, see [integration_tests/README.md](integration_tests/README.md).
+
 ## Usage
 
 ### Skip link
