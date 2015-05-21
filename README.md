@@ -10,7 +10,9 @@ You can [view a collection of auto-generated examples](http://alphagov.github.io
 
 ## Requirements
 
-The Ruby language (1.9.3+), the build tool [Rake](http://rake.rubyforge.org/) & the dependancy management tool [Bundler](http://bundler.io/)
+* Ruby (see .ruby-version for the version requirement)
+* [Bundler](http://bundler.io/) - used for managing the Ruby dependencies
+* [Mono](http://www.mono-project.com/) - used for building the mono package)
 
 ## Packaging
 
