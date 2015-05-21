@@ -12,7 +12,7 @@ module Compiler
       # top_of_page has a special purpose: it is required by Play to define the
       # parameters to pass when rendering
       # https://www.playframework.com/documentation/2.2.x/ScalaTemplates#Template-parameters
-      top_of_page: '@(title: Option[String], bodyClasses: Option[String], htmlLang: Option[String] = None)(head:Html, bodyStart:Html, bodyEnd:Html, insideHeader:Html, afterHeader:Html, footerTop:Html, footerLinks:Html, headerClass:Html = Html.empty, propositionHeader:Html = Html.empty, cookieMessage:Html = Html.empty)(content:Html)',
+      top_of_page: '@(title: Option[String], bodyClasses: Option[String], htmlLang: Option[String] = None)(head:Html, bodyStart:Html, bodyEnd:Html, insideHeader:Html, afterHeader:Html, footerTop:Html, footerLinks:Html, headerClass:Html = Html.empty, propositionHeader:Html = Html.empty, homepageUrl:Html = Html.empty, cookieMessage:Html = Html.empty)(content:Html)',
       head: '@head',
       body_classes: '@bodyClasses.getOrElse("")',
       header_class: '@headerClass',
@@ -24,6 +24,7 @@ module Compiler
       after_header: '@afterHeader',
       footer_top: '@footerTop',
       footer_support_links: '@footerLinks',
+      homepage_url: "@homepageUrl.getOrElse(\"https://www.gov.uk/\")",
       cookie_message: <<-HTML
         if(@cookieMessage) {
           @cookieMessage

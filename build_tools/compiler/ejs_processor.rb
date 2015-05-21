@@ -17,6 +17,7 @@ module Compiler
       cookie_message:       partial_for(:cookie_message),
       footer_support_links: partial_for(:footer_support_links),
       footer_top:           partial_for(:footer_top),
+      homepage_url:         "{% if (homepageUrl) { %><%= homepageUrl %><% } else { %>https://www.gov.uk/<% } %>",
       head:                 partial_for(:head),
       header_class:         "<% if (headerClass) { %><%= headerClass %><% } %>",
       html_lang:            "<% if (htmlLang) { %><%= htmlLang %><% } else { %>en<% } %>",
