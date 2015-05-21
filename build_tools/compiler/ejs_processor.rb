@@ -18,6 +18,7 @@ module Compiler
       footer_support_links: partial_for(:footer_support_links),
       footer_top:           partial_for(:footer_top),
       homepage_url:         "{% if (homepageUrl) { %><%= homepageUrl %><% } else { %>https://www.gov.uk/<% } %>",
+      global_header_text:   "<% if (globalHeaderText) { %><%= globalHeaderText %><% } %>",
       head:                 partial_for(:head),
       header_class:         "<% if (headerClass) { %><%= headerClass %><% } %>",
       html_lang:            "<% if (htmlLang) { %><%= htmlLang %><% } else { %>en<% } %>",

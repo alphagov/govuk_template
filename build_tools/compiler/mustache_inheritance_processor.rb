@@ -18,6 +18,7 @@ module Compiler
       footer_support_links: tag_for(:footerSupportLinks),
       footer_top:           tag_for(:footerTop),
       homepage_url:         "{{homepageUrl}}https://www.gov.uk/{{/homepageUrl}}",
+      global_header_text:   "{{$globalHeaderText}}GOV.UK{{/globalHeaderText}}",
       head:                 tag_for(:head),
       header_class:         tag_for(:headerClass),
       html_lang:            "{{$htmlLang}}en{{/htmlLang}}",
