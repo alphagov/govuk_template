@@ -15,34 +15,38 @@ module Compiler
       when :layout
         "<!-- Page content goes here -->"
       when :html_lang
-        "@(ViewBag.HtmlLang ?? \"en\")"
+        '@(ViewBag.HtmlLang ?? "en")'
       when :page_title
-        "@(ViewBag.Title ?? \"GOV.UK - The best place to find government services and information\")"
+        '@(ViewBag.Title ?? "GOV.UK - The best place to find government services and information")'
       when :top_of_page
-        "@RenderSection(\"top_of_page\", required: false)"
+        render_section_for(:top_of_page)
       when :head
-        "@RenderSection(\"head\", required: false)"
+        render_section_for(:head)
       when :body_classes
         "@(ViewBag.BodyClasses ?? string.Empty)"
       when :header_class
         "@(ViewBag.HeaderClass ?? string.Empty)"
       when :proposition_header
-        "@RenderSection(\"proposition_header\", required: false)"
+        render_section_for(:proposition_header)
       when :content
         "@RenderBody()"
       when :body_end
-        "@RenderSection(\"body_end\", required: false)"
+        render_section_for(:body_end)
       when :inside_header
-        "@RenderSection(\"inside_header\", required: false)"
+        render_section_for(:inside_header)
       when :after_header
-        "@RenderSection(\"after_header\", required: false)"
+        render_section_for(:after_header)
       when :footer_top
-        "@RenderSection(\"footer_top\", required: false)"
+        render_section_for(:footer_top)
       when :footer_support_links
-        "@RenderSection(\"footer_support_links\", required: false)"
+        render_section_for(:footer_support_links)
       else
         ""
       end
+    end
+
+    def render_section_for(label)
+      %Q{@RenderSection("#{label}", required: false)}
     end
 
     def asset_path(file, options={})
