@@ -17,7 +17,7 @@ module Compiler
       cookie_message:       block_for(:cookie_message),
       footer_support_links: block_for(:footer_support_links),
       footer_top:           block_for(:footer_top),
-      homepage_url:         "{% homepage_url|default('https://www.gov.uk/')",
+      homepage_url:         "{% homepage_url|default('https://www.gov.uk/') %}",
       global_header_text:   "{{ global_header_text|default('GOV.UK') }}",
       head:                 block_for(:head),
       header_class:         block_for(:header_class),
