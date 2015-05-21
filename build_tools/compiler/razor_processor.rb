@@ -24,8 +24,14 @@ module Compiler
         render_section_for(:head)
       when :body_classes
         "@(ViewBag.BodyClasses ?? string.Empty)"
+      when :body_start
+        render_section_for(:body_start)
+      when :cookie_message
+        '@(ViewBag.CookieMessage ?? "<p>GOV.UK uses cookies to make the site simpler. <a href=\"https://www.gov.uk/help/cookies\">Find out more about cookies</a></p>")'
       when :header_class
         "@(ViewBag.HeaderClass ?? string.Empty)"
+      when :homepage_url
+        '@(ViewBag.HomepageUrl ?? "https://www.gov.uk/")'
       when :proposition_header
         render_section_for(:proposition_header)
       when :content
@@ -41,7 +47,7 @@ module Compiler
       when :footer_support_links
         render_section_for(:footer_support_links)
       else
-        ""
+        raise "Unexpected section: #{section.inspect}"
       end
     end
 
