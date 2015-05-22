@@ -8,6 +8,10 @@ module Compiler
       "{% block #{key} %}{% endblock %}"
     end
 
+    def self.statement_tag_for(key, default_value)
+      "{{ #{key}|default('#{default_value}') }}"
+    end
+
     @@yield_hash = {
       after_header:         block_for(:after_header),
       body_classes:         block_for(:body_classes),
@@ -17,11 +21,11 @@ module Compiler
       cookie_message:       block_for(:cookie_message),
       footer_support_links: block_for(:footer_support_links),
       footer_top:           block_for(:footer_top),
-      homepage_url:         "{{ homepage_url|default('https://www.gov.uk/') }}",
-      global_header_text:   "{{ global_header_text|default('GOV.UK') }}",
+      homepage_url:         statement_tag_for(:homepage_url, 'https://www.gov.uk'),
+      global_header_text:   statement_tag_for(:global_header_text, 'GOV.UK'),
       head:                 block_for(:head),
       header_class:         block_for(:header_class),
-      html_lang:            "{{ html_lang|default('en') }}",
+      html_lang:            statement_tag_for(:html_lang, 'en'),
       inside_header:        block_for(:inside_header),
       page_title:           "{% block page_title %}GOV.UK - The best place to find government services and information{% endblock %}",
       proposition_header:   block_for(:proposition_header),
