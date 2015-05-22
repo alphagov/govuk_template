@@ -4,8 +4,8 @@ require_relative 'template_processor'
 module Compiler
   class JinjaProcessor < TemplateProcessor
 
-    def self.block_for(key)
-      "{% block #{key} %}{% endblock %}"
+    def self.block_for(key, default_value="")
+      "{% block #{key} %}#{default_value}{% endblock %}"
     end
 
     def self.statement_tag_for(key, default_value)
@@ -27,7 +27,7 @@ module Compiler
       header_class:         block_for(:header_class),
       html_lang:            statement_tag_for(:html_lang, 'en'),
       inside_header:        block_for(:inside_header),
-      page_title:           "{% block page_title %}GOV.UK - The best place to find government services and information{% endblock %}",
+      page_title:           block_for(:page_title, "GOV.UK - The best place to find government services and information"),
       proposition_header:   block_for(:proposition_header),
       top_of_page:          block_for(:top_of_page),
     }
