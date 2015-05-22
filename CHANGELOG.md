@@ -1,3 +1,11 @@
+# 0.13.0
+
+- Add WebJar package
+- Bump govuk_frontend_toolkit to 3.5.1
+- Add `homepage_url` for overriding the href for the header logo link ("https://www.gov.uk" by default)
+- Add `global_header_text` for overriding the header logo text ("GOV.UK" by default)
+- Removed deprecated grid layout mixins: https://github.com/alphagov/govuk_template/pull/129
+
 # 0.12.0
 
 - Add: `body_start` to enable html to be placed at the first element of the body
