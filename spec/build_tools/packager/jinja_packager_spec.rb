@@ -18,8 +18,8 @@ describe Packager::JinjaPackager do
         subject.build
 
         generated_template = File.read(generated_template_path)
-        generated_template.should =~ %r[\A{% block top_of_page %}{% endblock %}]
-        generated_template.should =~ %r[href="{{ asset_path }}stylesheets/govuk-template\.css\?#{Regexp.escape(GovukTemplate::VERSION)}"]
+        expect(generated_template).to match(%r[\A{% block top_of_page %}{% endblock %}])
+        expect(generated_template).to match(%r[href="{{ asset_path }}stylesheets/govuk-template\.css\?#{Regexp.escape(GovukTemplate::VERSION)}"])
       end
 
     end

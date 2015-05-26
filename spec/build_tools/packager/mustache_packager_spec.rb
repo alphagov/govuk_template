@@ -20,10 +20,10 @@ describe Packager::MustachePackager do
         subject.build
 
         generated_template = File.read(generated_template_path)
-        generated_template.should =~ %r[\A{{{ topOfPage }}}]
-        generated_template.should =~ %r[href="{{{ assetPath }}}stylesheets/govuk-template\.css\?#{Regexp.escape(GovukTemplate::VERSION)}"]
+        expect(generated_template).to match(%r[\A{{{ topOfPage }}}])
+        expect(generated_template).to match(%r[href="{{{ assetPath }}}stylesheets/govuk-template\.css\?#{Regexp.escape(GovukTemplate::VERSION)}"])
 
-        File.read(generated_package_json_path).should == example_package_json
+        expect(File.read(generated_package_json_path)).to eql(example_package_json)
       end
 
     end
