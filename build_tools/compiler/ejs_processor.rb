@@ -26,9 +26,9 @@ module Compiler
       page_title:           partial_for(:page_title),
       proposition_header:   partial_for(:proposition_header),
       top_of_page:          partial_for(:top_of_page),
-      skip_link_message: "<% if (skipLinkMessage) { %><%= skipLinkMessage %><% } else { %>Skip to main content<% } %>",
-      logo_link_title: "<% if (logoLinkTitle) { %><%= logoLinkTitle %><% } else { %>Go to the GOV.UK homepage<% } %>",
-      licence_message: "<%- partial('partials/_licence_message') %>",
+      skip_link_message:    "<% if (skipLinkMessage) { %><%= skipLinkMessage %><% } else { %>Skip to main content<% } %>",
+      logo_link_title:      "<% if (logoLinkTitle) { %><%= logoLinkTitle %><% } else { %>Go to the GOV.UK homepage<% } %>",
+      licence_message:      partial_for(:licence_message),
       crown_copyright_message: "<% if (crownCopyrightMessage) { %><%= crownCopyrightMessage %><% } else { %>&copy; Crown copyright<% } %>",
     }
 
