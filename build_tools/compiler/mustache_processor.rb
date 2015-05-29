@@ -4,26 +4,36 @@ require_relative 'template_processor'
 module Compiler
   class MustacheProcessor < TemplateProcessor
 
+    def self.tag_for(lowerCamelCaseKey)
+      "{{ #{lowerCamelCaseKey} }}"
+    end
+
+    def self.unescaped_html_tag_for(lowerCamelCaseKey)
+      "{{{ #{lowerCamelCaseKey} }}}"
+    end
+
     @@yield_hash = {
-      after_header: "{{{ afterHeader }}}",
-      body_classes: "{{ bodyClasses }}",
-      body_start: "{{{ bodyStart }}}",
-      body_end: "{{{ bodyEnd }}}",
-      content: "{{{ content }}}",
-      cookie_message: "{{{ cookieMessage }}}",
-      footer_support_links: "{{{ footerSupportLinks }}}",
-      footer_top: "{{{ footerTop }}}",
-      head: "{{{ head }}}",
-      header_class: "{{{ headerClass }}}",
-      html_lang: "{{ htmlLang }}",
-      inside_header: "{{{ insideHeader }}}",
-      page_title: "{{ pageTitle }}",
-      proposition_header: "{{{ propositionHeader }}}",
-      top_of_page: "{{{ topOfPage }}}",
+      after_header:         unescaped_html_tag_for(:afterHeader),
+      body_classes:         tag_for(:bodyClasses),
+      body_start:           unescaped_html_tag_for(:bodyStart),
+      body_end:             unescaped_html_tag_for(:bodyEnd),
+      content:              unescaped_html_tag_for(:content),
+      cookie_message:       unescaped_html_tag_for(:cookieMessage),
+      footer_support_links: unescaped_html_tag_for(:footerSupportLinks),
+      footer_top:           unescaped_html_tag_for(:footerTop),
+      homepage_url:         unescaped_html_tag_for(:homepageUrl),
+      global_header_text:   unescaped_html_tag_for(:globalHeaderText),
+      head:                 unescaped_html_tag_for(:head),
+      header_class:         unescaped_html_tag_for(:headerClass),
+      html_lang:            tag_for(:htmlLang),
+      inside_header:        unescaped_html_tag_for(:insideHeader),
+      page_title:           tag_for(:pageTitle),
+      proposition_header:   unescaped_html_tag_for(:propositionHeader),
+      top_of_page:          unescaped_html_tag_for(:topOfPage),
       skip_link_message: "{{ skipLinkMessage }}",
       logo_link_title: "{{ logoLinkTitle }}",
       licence_message: "{{{ licenceMessage }}}",
-      crown_copyright_message: "{{ crownCopyrightMessage }}"
+      crown_copyright_message: "{{ crownCopyrightMessage }}",
     }
 
     def handle_yield(section = :layout)
@@ -41,10 +51,6 @@ module Compiler
       else
         "{{{ assetPath }}}images/#{file}?#{query_string}"
       end
-    end
-
-    def content_for?(*args)
-      @@yield_hash.include? args[0]
     end
   end
 end

@@ -4,25 +4,32 @@ require_relative 'template_processor'
 module Compiler
   class MustacheInheritanceProcessor < TemplateProcessor
 
+    def self.tag_for(lowerCamelCaseKey, default_value="")
+      "{{$#{lowerCamelCaseKey}}}#{default_value}{{/#{lowerCamelCaseKey}}}"
+    end
+
     @@yield_hash = {
-      after_header: "{{$afterHeader}}{{/afterHeader}}",
-      body_classes: "{{$bodyClasses}}{{/bodyClasses}}",
-      body_start: "{{$bodyStart}}{{/bodyStart}}",
-      body_end: "{{$bodyEnd}}{{/bodyEnd}}",
-      content: "{{$content}}{{/content}}",
-      cookie_message: "{{$cookieMessage}}{{/cookieMessage}}",
-      footer_support_links: "{{$footerSupportLinks}}{{/footerSupportLinks}}",
-      footer_top: "{{$footerTop}}{{/footerTop}}",
-      head: "{{$head}}{{/head}}",
-      header_class: "{{$headerClass}}{{/headerClass}}",
-      html_lang: "{{$htmlLang}}en{{/htmlLang}}",
-      inside_header: "{{$insideHeader}}{{/insideHeader}}",
-      page_title: "{{$pageTitle}}GOV.UK - The best place to find government services and information{{/pageTitle}}",
-      proposition_header: "{{$propositionHeader}}{{/propositionHeader}}",
+      after_header:         tag_for(:afterHeader),
+      body_classes:         tag_for(:bodyClasses),
+      body_start:           tag_for(:bodyStart),
+      body_end:             tag_for(:bodyEnd),
+      content:              tag_for(:content),
+      cookie_message:       tag_for(:cookieMessage),
+      footer_support_links: tag_for(:footerSupportLinks),
+      footer_top:           tag_for(:footerTop),
+      homepage_url:         tag_for(:homepageUrl, "https://www.gov.uk/"),
+      global_header_text:   tag_for(:globalHeaderText, "GOV.UK"),
+      head:                 tag_for(:head),
+      header_class:         tag_for(:headerClass),
+      html_lang:            tag_for(:htmlLang, "en"),
+      inside_header:        tag_for(:insideHeader),
+      page_title:           tag_for(:pageTitle, "GOV.UK - The best place to find government services and information"),
+      proposition_header:   tag_for(:propositionHeader),
+      top_of_page:          tag_for(:topOfPage),
       skip_link_message: "{{$skipLinkMessage}}Skip to main content{{/skipLinkMessage}}",
       logo_link_title: "{{$logoLinkTitle}}Go to the GOV.UK homepage{{/logoLinkTitle}}",
       licence_message: "{{$licenceMessage}}<p>All content is available under the <a href=\"https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/\" rel=\"license\">Open Government Licence v3.0</a>, except where otherwise stated</p>{{/licenceMessage}}",
-      crown_copyright_message: "{{$crownCopyrightMessage}}&copy; Crown copyright{{/crownCopyrightMessage}}"
+      crown_copyright_message: "{{$crownCopyrightMessage}}&copy; Crown copyright{{/crownCopyrightMessage}}",
     }
 
     def handle_yield(section = :layout)
@@ -39,10 +46,6 @@ module Compiler
       else
         "{{{ assetPath }}}images/#{file}"
       end
-    end
-
-    def content_for?(*args)
-      @@yield_hash.include? args[0]
     end
   end
 end

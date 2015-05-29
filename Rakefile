@@ -136,5 +136,44 @@ end
 require 'rspec/core/rake_task'
 
 RSpec::Core::RakeTask.new(:spec)
+
+
+desc "Run integration tests against all languages/frameworks with an integration testing app"
+task :integration_tests => ["integration_tests:test_html"]
+
+namespace :integration_tests do
+  desc "Clear the HTML rendered by each app"
+  task :clean_html do
+    FileUtils.rm Dir.glob('integration_tests/html_for_testing/*.html')
+  end
+
+  desc "Run the build.sh in each app to run its tests and generate the HTML for testing"
+  task :build_all_test_integrations => [:build, :clean_html] do
+    Dir["integration_tests/integrations/*"].each do |app_directory_name|
+      # We need to run each app in isolation from our Bundler environment
+      Bundler.with_clean_env do
+        Dir.chdir(app_directory_name) do
+          require "open3"
+          _stdin, stdout, stderr, wait_thr = Open3.popen3("./build.sh")
+          exit_status = wait_thr.value.to_i
+          if exit_status != 0
+            STDERR.puts "Running #{app_directory_name}/build.sh failed with exit status: #{exit_status}"
+            STDERR.puts "stdout:"
+            STDERR.puts stdout.read
+            STDERR.puts "stderr:\n"
+            STDERR.puts stderr.read
+            fail # Make sure that we exit with non-zero
+          end
+        end
+      end
+    end
+  end
+
+  desc "Test HTML from each integration testing app"
+  RSpec::Core::RakeTask.new(:test_html => :build_all_test_integrations) do |t|
+    t.pattern = 'integration_tests/*_spec.rb'
+  end
+end
+
 task :spec => :compile
 task :default => :spec

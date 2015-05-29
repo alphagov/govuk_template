@@ -1,7 +1,7 @@
 require 'open3'
 require 'govuk_template/version'
 require 'tmpdir'
-require_relative '../compiler/template_processor'
+require_relative '../compiler/plain_processor'
 
 module Packager
   class WebJarPackager
@@ -48,7 +48,7 @@ module Packager
       target_dir.mkpath
       target_file = File.basename(file, File.extname(file))
       File.open(target_dir.join(target_file), 'wb') do |f|
-        f.write Compiler::TemplateProcessor.new(file).process
+        f.write Compiler::PlainProcessor.new(file).process
       end
     end
 

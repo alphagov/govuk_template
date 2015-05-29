@@ -22,9 +22,9 @@ At present this generates 9 output formats:
 4. a tarball containing Liquid templates
 5. a tarball containing Mustache Inheritance templates
 6. a tarball containing Jinja templates
-7. a tarball
+7. a tarball containing plain HTML and assets
 8. a tarball containing EJS (Embedded JavaScript) templates
-9. a JAR file containing assets structured as per [WebJars](http://www.webjars.org/)
+9. a JAR file containing assets (but no templates) structured as per [WebJars](http://www.webjars.org/)
 
 ### Gem version
 
@@ -104,6 +104,19 @@ The tarball build process takes the compiled template and assets from the `/app`
     * yields in the template are removed except for the main layout one which is replaced with an HTML comment.
 
 See the `TemplateProcessor` class for details of this implementation.
+
+
+### Testing
+
+Run the tests with:
+
+    bundle exec rake
+
+The integration tests are run separately with:
+
+    bundle exec rake integration_tests
+
+For more details, see [integration_tests/README.md](integration_tests/README.md).
 
 ## Usage
 
