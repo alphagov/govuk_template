@@ -83,6 +83,22 @@ describe "HTML rendered by each integration testing app" do
           with_tag "body-end"
         end
       end
+
+      it "should support a skip_link_message" do
+        expect(subject).to have_tag("#skiplink-container", text: "Custom skip link text")
+      end
+
+      it "should support a logo_link_title" do
+        expect(subject).to have_tag(".header-logo a", with: { title: "Custom logo link title text" })
+      end
+
+      it "should support a licence_message" do
+        expect(subject).to have_tag(".open-government-licence", text: /Custom license message text/)
+      end
+
+      it "should support a crown_copyright_message" do
+        expect(subject).to have_tag(".copyright", text: "Custom crown copyright message text")
+      end
     end
   end
 end

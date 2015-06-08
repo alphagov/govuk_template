@@ -34,6 +34,10 @@ compiledTemplate = Hogan.compile("\
   {{$footerTop}}<footer-top></footer-top>{{/footerTop}} \
   {{$footerSupportLinks}}<footer-support-links></footer-support-links>{{/footerSupportLinks}} \
   {{$bodyEnd}}<body-end></body-end{{/bodyEnd}} \
+  {{$skipLinkMessage}}Custom skip link text{{/skipLinkMessage}} \
+  {{$logoLinkTitle}}Custom logo link title text{{/logoLinkTitle}} \
+  {{$licenceMessage}}Custom license message text{{/licenceMessage}} \
+  {{$crownCopyrightMessage}}Custom crown copyright message text{{/crownCopyrightMessage}} \
 \
 {{/layout}} \
 ");

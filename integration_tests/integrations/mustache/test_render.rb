@@ -21,6 +21,10 @@ parameters = {
   footerTop: "<footer-top></footer-top>",
   footerSupportLinks: "<footer-support-links></footer-support-links>",
   bodyEnd: "<body-end></body-end>",
+  skipLinkMessage: "Custom skip link text",
+  logoLinkTitle: "Custom logo link title text",
+  licenceMessage: "Custom license message text",
+  crownCopyrightMessage: "Custom crown copyright message text",
 }
 
 output = Mustache.render(File.read(path_to_template), parameters)

@@ -26,6 +26,10 @@ module Compiler
       page_title:           tag_for(:pageTitle, "GOV.UK - The best place to find government services and information"),
       proposition_header:   tag_for(:propositionHeader),
       top_of_page:          tag_for(:topOfPage),
+      skip_link_message:    tag_for(:skipLinkMessage, 'Skip to main content'),
+      logo_link_title:      tag_for(:logoLinkTitle, 'Go to the GOV.UK homepage'),
+      licence_message:      tag_for(:licenceMessage, '<p>All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated</p>'),
+      crown_copyright_message: tag_for(:crownCopyrightMessage, '&copy; Crown copyright'),
     }
 
     def handle_yield(section = :layout)

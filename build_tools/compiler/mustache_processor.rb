@@ -30,6 +30,10 @@ module Compiler
       page_title:           tag_for(:pageTitle),
       proposition_header:   unescaped_html_tag_for(:propositionHeader),
       top_of_page:          unescaped_html_tag_for(:topOfPage),
+      skip_link_message:    tag_for(:skipLinkMessage),
+      logo_link_title:      tag_for(:logoLinkTitle),
+      licence_message:      unescaped_html_tag_for(:licenceMessage),
+      crown_copyright_message: tag_for(:crownCopyrightMessage),
     }
 
     def handle_yield(section = :layout)
