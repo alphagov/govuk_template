@@ -1,3 +1,8 @@
+# 0.14.0
+
+- Update the font-files and move woffs into CSS
+- All user-visible text in the template can now be overridden. Some template languages which don't support default values (such as plain mustache) will therefore lose that text and require you to handle supplying the default.
+
 # 0.13.0
 
 - Add WebJar package
