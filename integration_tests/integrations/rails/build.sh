@@ -1,6 +1,6 @@
 #! /bin/bash
 set -e
 
-bundle install
+bundle install --path vendor/bundle
 
 bundle exec ruby simplicity.rb
