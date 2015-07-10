@@ -12,7 +12,7 @@ module Compiler
       # top_of_page has a special purpose: it is required by Play to define the
       # parameters to pass when rendering
       # https://www.playframework.com/documentation/2.2.x/ScalaTemplates#Template-parameters
-      top_of_page: '@(title: Option[String], bodyClasses: Option[String], htmlLang: Option[String] = None)(head:Html, bodyStart:Html, bodyEnd:Html, insideHeader:Html, afterHeader:Html, footerTop:Html, footerLinks:Html, headerClass:Html = Html.empty, propositionHeader:Html = Html.empty, homepageUrl:Html = Html.empty, globalHeaderText:Html = Html.empty, cookieMessage:Html = Html.empty, skipLinkMessage:Html, logoLinkTitle:Html, licenceMessage:Html, crownCopyrightMessage:Html)(content:Html)',
+      top_of_page: '@(title: Option[String], bodyClasses: Option[String], htmlLang: Option[String] = None)(head:Html, bodyStart:Html, bodyEnd:Html, insideHeader:Html, afterHeader:Html, footerTop:Html, footerLinks:Html, headerClass:Html = Html.empty, propositionHeader:Html = Html.empty, homepageUrl:Html = Html.empty, cookieMessage:Html = Html.empty, skipLinkMessage:Html, logoLinkTitle:Html, licenceMessage:Html, crownCopyrightMessage:Html)(content:Html)',
       head: '@head',
       body_classes: '@bodyClasses.getOrElse("")',
       header_class: '@headerClass',
@@ -25,7 +25,6 @@ module Compiler
       footer_top: '@footerTop',
       footer_support_links: '@footerLinks',
       homepage_url: '@homepageUrl.getOrElse("https://www.gov.uk/")',
-      global_header_text: '@globalHeaderText.getOrElse("GOV.UK")',
       cookie_message: '@cookieMessage.getOrElse(\'<p>GOV.UK uses cookies to make the site simpler. <a href="https://www.gov.uk/help/cookies">Find out more about cookies</a></p>\')',
       skip_link_message: '@skipLinkMessage.getOrElse("Skip to main content")',
       logo_link_title: '@logoLinkTitle.getOrElse("Go to the GOV.UK homepage")',
