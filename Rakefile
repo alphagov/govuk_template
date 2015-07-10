@@ -11,7 +11,16 @@ task :compile do
 end
 
 desc "Build both gem and tar version"
-task :build => ["build:gem", "build:tar", "build:play", "build:mustache", "build:liquid", "build:mustache_inheritance", "build:jinja", "build:ejs", "build:webjar"]
+task :build => ["build:gem",
+                "build:tar",
+                "build:play",
+                "build:mustache",
+                "build:liquid",
+                "build:mustache_inheritance",
+                "build:jinja",
+                "build:ejs",
+                "build:webjar",
+                "build:django"]
 
 namespace :build do
   desc "Build govuk_template-#{GovukTemplate::VERSION}.gem into the pkg directory"
@@ -61,6 +70,13 @@ namespace :build do
     puts "Building pkg/jinja_govuk_template-#{GovukTemplate::VERSION}"
     require 'packager/jinja_packager'
     Packager::JinjaPackager.build
+  end
+
+  desc "Build django_govuk_template-#{GovukTemplate::VERSION} into the pkg directory"
+  task :django => :compile do
+    puts "Building pkg/django_govuk_template-#{GovukTemplate::VERSION}"
+    require 'packager/django_packager'
+    Packager::DjangoPackager.build
   end
 
   desc "Build ejs_govuk_template-#{GovukTemplate::VERSION} into the pkg directory"
