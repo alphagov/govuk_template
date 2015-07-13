@@ -9,11 +9,6 @@ mkdir -p vendor/django_govuk_template
 # TODO: Pick the latest, not every matching tgz file!
 tar -zxf ../../../pkg/django_govuk_template-*.tgz -C vendor/django_govuk_template --strip-components 1
 
-pip install virtualenv
-
-virtualenv .env
-source .env/bin/activate
-
 pip install Django
 
 python build.py
