@@ -9,7 +9,7 @@ module Compiler
     end
 
     def self.statement_tag_for(key, default_value)
-      "{{ #{key}|default('#{default_value}') }}"
+      "{{ #{key}|default:'#{default_value}' }}"
     end
 
     @@yield_hash = {

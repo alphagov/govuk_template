@@ -12,7 +12,7 @@ def valid_sections
     footer_top: "{% block footer_top %}{% endblock %}",
     head: "{% block head %}{% endblock %}",
     header_class: "{% block header_class %}{% endblock %}",
-    html_lang: "{{ html_lang|default('en') }}",
+    html_lang: "{{ html_lang|default:'en' }}",
     inside_header: "{% block inside_header %}{% endblock %}",
     page_title: "{% block page_title %}GOV.UK - The best place to find government services and information{% endblock %}",
     proposition_header: "{% block proposition_header %}{% endblock %}",
