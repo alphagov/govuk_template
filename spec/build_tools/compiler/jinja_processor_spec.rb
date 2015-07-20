@@ -16,7 +16,8 @@ def valid_sections
     inside_header: "{% block inside_header %}{% endblock %}",
     page_title: "{% block page_title %}GOV.UK - The best place to find government services and information{% endblock %}",
     proposition_header: "{% block proposition_header %}{% endblock %}",
-    top_of_page: "{% block top_of_page %}{% endblock %}"
+    top_of_page: "{% block top_of_page %}{% endblock %}",
+    crown_copyright_message: "{{ crown_copyright_message|default('&copy; Crown copyright')|safe }}"
 
   }
 end
