@@ -1,3 +1,8 @@
+# 0.14.1
+
+- Stop copyright entity being escaped in Jinja template
+- Update Crown Copyright link to new URL
+
 # 0.14.0
 
 - Update the font-files and move woffs into CSS
