@@ -1,3 +1,8 @@
+# 0.14.2
+
+- Drop Windows Safari font printing workaround as the font is no longer used in print
+- Update the logo to print black-on-white instead of white-on-black
+
 # 0.14.1
 
 - Stop copyright entity being escaped in Jinja template
