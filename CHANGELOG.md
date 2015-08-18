@@ -1,3 +1,7 @@
+# 0.14.3
+
+- Fix jumping logo on hover
+
 # 0.14.2
 
 - Drop Windows Safari font printing workaround as the font is no longer used in print
