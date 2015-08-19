@@ -46,6 +46,21 @@ select { background: white; }
   font-size: 24px;
   margin-bottom: 1em;
 
+  #logo {
+    @include core-48;
+    font-size: 28pt;
+    font-weight: bold;
+    text-rendering: optimizeLegibility;
+
+    img {
+      width: 46px;
+      height: 40px;
+      padding-right: 6px;
+      display: block;
+      float: left;
+    }
+  }
+
   .content {
     margin: 0!important;
   }
@@ -61,6 +76,7 @@ select { background: white; }
     border: 0;
     vertical-align: middle;
   }
+
 }
 
 /* hide the unnecessary page elements */
