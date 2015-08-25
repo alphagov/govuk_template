@@ -1,3 +1,7 @@
+# 0.15.0
+
+- Add print specific logo styles
+
 # 0.14.3
 
 - Fix jumping logo on hover
