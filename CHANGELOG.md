@@ -1,3 +1,7 @@
+# 0.15.1
+
+- Fix copyright logo in Ruby version
+
 # 0.15.0
 
 - Add print specific logo styles
