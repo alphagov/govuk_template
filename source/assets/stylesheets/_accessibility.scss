@@ -25,6 +25,8 @@
 .visuallyhidden {
   position: absolute;
   left: -9999em;
+  height: 0;
+  overflow: hidden;
 
   /*
    * Extends the .visuallyhidden class to allow the element to be
