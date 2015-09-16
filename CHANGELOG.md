@@ -1,3 +1,7 @@
+# 0.16.0
+
+- Add Django template
+
 # 0.15.1
 
 - Fix copyright logo in Ruby version
