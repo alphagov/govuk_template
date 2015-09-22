@@ -25,6 +25,7 @@ At present this generates 9 output formats:
 7. a tarball containing plain HTML and assets
 8. a tarball containing EJS (Embedded JavaScript) templates
 9. a JAR file containing assets (but no templates) structured as per [WebJars](http://www.webjars.org/)
+10. a tarball containing Django templates
 
 ### Gem version
 
@@ -71,6 +72,10 @@ To generate the folder of Embedded JavaScript templates run `bundle exec rake bu
 ### WebJar version
 
 To generate a JAR file of assets in WebJar format run `bundle exec rake build:webjar`. This will produce a JAR file in the `pkg` directory.
+
+### Django version
+
+To generate the folder of Django templates run `bundle exec rake build:django`. This will produce a tarball in the `pkg` directory.
 
 ## Publishing
 
