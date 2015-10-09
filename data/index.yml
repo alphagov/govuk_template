@@ -53,6 +53,7 @@ content: >
       <li><a href='https://github.com/alphagov/govuk_template/releases/download/vVERSION_NAME/liquid_govuk_template-VERSION_NAME.tgz'>Liquid</a></li>
       <li><a href='https://github.com/alphagov/govuk_template/releases/download/vVERSION_NAME/jinja_govuk_template-VERSION_NAME.tgz'>Jinja</a></li>
       <li><a href='https://github.com/alphagov/govuk_template/releases/download/vVERSION_NAME/ejs_govuk_template-VERSION_NAME.tgz'>Embeded JavaScript</a></li>
+      <li><a href='https://github.com/alphagov/govuk_template/releases/download/vVERSION_NAME/django_govuk_template-VERSION_NAME.tgz'>Django</a></li>
     </ul>
 
     <p>
