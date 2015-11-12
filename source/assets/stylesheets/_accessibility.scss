@@ -19,6 +19,7 @@
 }
 
 /* Hide only visually, but have it available for screenreaders */
+.visually-hidden,
 .visuallyhidden {
   position: absolute;
   left: -9999em;
