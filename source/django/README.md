@@ -6,22 +6,22 @@ You can add it to your Django application's dependencies from here.
 
 ## Installation
 
-Add package to your requirements:
+Add the package to your requirements:
 ```
 git+https://github.com/alphagov/govuk_template_django.git
 ```
 
-Add package to your installed apps:
+Add the package to your installed apps:
 ```python
 INSTALLED_APPS = [
 	...,
-	'govuk_template_django'
+	'govuk_template'
 ]
 ```
 
-Now you can extend your templates:
+Now you can extend the GOV.UK base in your templates:
 ```django
-{% extends "govuk_template_django/base.html" %}
+{% extends "govuk_template/base.html" %}
 ```
 
 ## Build
