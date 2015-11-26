@@ -85,6 +85,7 @@ Accepted contributions (pull requests merged into master) will run builds for th
 * [alphagov/govuk_template_play](https://github.com/alphagov/govuk_template_play)
 * [alphagov/govuk_template_mustache](https://github.com/alphagov/govuk_template_mustache) which updates the [npm package](https://npmjs.org/package/govuk_template_mustache)
 * [alphagov/govuk_template_ejs](https://github.com/alphagov/govuk_template_ejs) which updates the [npm package](https://npmjs.org/package/govuk_template_ejs)
+* [alphagov/govuk_template_django](https://github.com/alphagov/govuk_template_django)
 
 
 ## Development
