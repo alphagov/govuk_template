@@ -19,6 +19,7 @@ module Packager
         prepare_contents
         parse_folders
         generate_package_files
+        generate_setup_py
         create_tarball
       end
     end
@@ -37,6 +38,16 @@ module Packager
       File.rename @target_dir.join('assets'), package_dir.join('static')
       File.rename @target_dir.join('views'), package_dir.join('templates')
       File.rename package_dir.join('templates', 'layouts'), package_dir.join('templates', 'govuk_template')
+    end
+
+    def generate_setup_py
+      template_abbreviation = "django"
+      template_name = "Django"
+      contents = ERB.new(File.read(File.join(@repo_root, "source/django/setup.py.erb"))).result(binding)
+      File.open(File.join(@target_dir, "setup.py"), "w") do |f|
+        f.write contents
+      end
+      output, status = Open3.capture2e("cp #{File.join(@repo_root, "source/MANIFEST.in").shellescape} #{@target_dir.to_s.shellescape}")
     end
 
     def generate_package_files
