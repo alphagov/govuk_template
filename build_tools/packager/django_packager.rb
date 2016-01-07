@@ -58,6 +58,15 @@ module Packager
       File.new(@target_dir.join("govuk_template", "__init__.py"), "w").close
     end
 
+    def create_tarball
+      Dir.chdir(@target_dir.join('..')) do
+        @repo_root.join("pkg").mkpath
+        target_file = @repo_root.join("pkg", "#{@base_name}.tgz").to_s
+        output, status = Open3.capture2e("tar -czf #{target_file.shellescape} -C #{@base_name.shellescape} .")
+        abort "Error creating tar:\n#{output}" if status.exitstatus > 0
+      end
+    end
+
     private
 
     def generated_file_name(file_path)
