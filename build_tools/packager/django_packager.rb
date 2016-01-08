@@ -47,11 +47,10 @@ module Packager
       File.open(File.join(@target_dir, "setup.py"), "w") do |f|
         f.write contents
       end
-      output, status = Open3.capture2e("cp #{File.join(@repo_root, "source/MANIFEST.in").shellescape} #{@target_dir.to_s.shellescape}")
     end
 
     def generate_package_files
-      files = [@repo_root.join("source/django", "README.md"), @repo_root.join("source/django", "MANIFEST.in"), @repo_root.join("LICENCE.txt")]
+      files = [@repo_root.join("source/django", "MANIFEST.in"), @repo_root.join("LICENCE.txt")]
       files.each do |f|
         FileUtils.cp(f, @target_dir)
       end
