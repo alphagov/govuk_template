@@ -1,4 +1,8 @@
 language: ruby
+before_install:
+   # Travis bundler versions are quite out of date and can cause install errors
+   # see: https://github.com/rubygems/rubygems/issues/1419
+   - gem update bundler
 install:
   # Ensure that Travis install is a no-op because `jenkins.sh`
   # installs dependencies.
