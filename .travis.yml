@@ -1,4 +1,5 @@
 language: ruby
+sudo: false
 install:
   # Ensure that Travis install is a no-op because `jenkins.sh`
   # installs dependencies.
