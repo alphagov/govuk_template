@@ -1,3 +1,7 @@
+# 0.16.1
+
+- Fix colour of logo when in `:active` state
+
 # 0.16.0
 
 - Add Django template
