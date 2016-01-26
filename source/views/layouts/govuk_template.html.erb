@@ -110,7 +110,12 @@
             <%= yield :footer_support_links %>
 
             <div class="open-government-licence">
-              <p class="logo"><a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence</a></p>
+              <% if content_for?(:licence_logo) %>
+                <%= yield :licence_logo %>
+              <% else %>
+                <p class="logo"><a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence</a></p>
+              <% end %>
+
               <% if content_for?(:licence_message) %>
                 <%= yield :licence_message %>
               <% else %>

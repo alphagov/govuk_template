@@ -29,6 +29,7 @@ module Compiler
       cookie_message: '@cookieMessage.getOrElse(\'<p>GOV.UK uses cookies to make the site simpler. <a href="https://www.gov.uk/help/cookies">Find out more about cookies</a></p>\')',
       skip_link_message: '@skipLinkMessage.getOrElse("Skip to main content")',
       logo_link_title: '@logoLinkTitle.getOrElse("Go to the GOV.UK homepage")',
+      licence_logo: '@licenceLogo',
       licence_message: '@licenceMessage',
       crown_copyright_message: '@crownCopyrightMessage.getOrElse("&copy; Crown copyright")',
     }
