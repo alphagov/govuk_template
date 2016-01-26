@@ -1,3 +1,8 @@
+# 0.16.2
+
+- more static assets added to `assets.precompile` to improve
+  compatibility with apps running rails > 4.2.5
+
 # 0.16.1
 
 - Fix colour of logo when in `:active` state
