@@ -5,7 +5,7 @@ from django.template.loader import render_to_string
 settings.configure(
     TEMPLATES=[{
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": ["vendor/django_govuk_template/views/layouts", "templates"],
+        "DIRS": ["vendor/django_govuk_template/govuk_template/templates", "templates"],
     }],
     INSTALLED_APPS=["django.contrib.staticfiles"],
     STATIC_URL="/static/"
