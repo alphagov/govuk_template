@@ -20,6 +20,15 @@ module Packager
       end
     end
 
+    def generate_package_json
+      template_abbreviation = "jinja"
+      template_name = "Jinja"
+      contents = ERB.new(File.read(File.join(@repo_root, "source/package.json.erb"))).result(binding)
+      File.open(File.join(@target_dir, "package.json"), "w") do |f|
+        f.write contents
+      end
+    end
+
     def process_template(file)
       target_dir = @target_dir.join(File.dirname(file))
       target_dir.mkpath
