@@ -1,3 +1,9 @@
+# 0.16.3
+
+- make the Django version of the template into a proper Python package
+- publish the Jinja version of the template with a `package.json` for those
+  consuming it with NPM
+
 # 0.16.2
 
 - more static assets added to `assets.precompile` to improve
