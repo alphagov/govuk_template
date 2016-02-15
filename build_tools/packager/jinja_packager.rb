@@ -16,6 +16,7 @@ module Packager
       @target_dir.mkpath
       Dir.chdir(@target_dir) do |dir|
         prepare_contents
+        generate_package_json
         create_tarball
       end
     end
