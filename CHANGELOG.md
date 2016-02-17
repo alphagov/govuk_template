@@ -1,3 +1,8 @@
+# 0.16.4
+
+- Fix publish the Jinja version of the template with a `package.json` for those
+  consuming it with NPM
+
 # 0.16.3
 
 - make the Django version of the template into a proper Python package
