@@ -1,3 +1,8 @@
+# 0.17.0
+
+- Add CSS hook (`.js-hidden`) for hiding content when JS is enabled. Some apps
+  have an equivalent hook, which can be removed once upgraded to this version
+
 # 0.16.4
 
 - Fix publish the Jinja version of the template with a `package.json` for those
