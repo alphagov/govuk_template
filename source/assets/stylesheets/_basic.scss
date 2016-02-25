@@ -91,9 +91,9 @@ a:active {
 
 a[rel="external"] {
   @include external-link-default;
-  @include external-link-19;
-  @include media-down(mobile) {
-    @include external-link-16;
+  @include external-link-16;
+  @include media(tablet) {
+    @include external-link-19;
   }
 }
 
