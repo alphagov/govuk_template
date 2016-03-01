@@ -1,8 +1,8 @@
 /* Global footer */
 
 #footer {
-  background-color: $grey-8;
-  border-top: 1px solid $grey-6;
+  background-color: $footer-background;
+  border-top: 1px solid $footer-border-top;
 
   .footer-wrapper {
     @include outer-block;
@@ -10,22 +10,22 @@
     @include media(tablet) {
       padding-top: 60px;
     }
-    background-color: $grey-8;
+    background-color: $footer-background;
     margin: 0 auto;
   }
 
   a {
-    color: $grey-3;
+    color: $footer-link;
 
     &:hover {
-      color: $grey-1;
+      color: $footer-link-hover;
     }
   }
 
   h2 {
     @include core-24;
     font-weight: bold;
-    color: $grey-1;
+    color: $footer-text;
     margin: 0;
 
     a {
@@ -39,7 +39,7 @@
     padding-bottom: 60px;
     clear: both;
     font-size: 0;
-    color: $grey-3;
+    color: $footer-text;
 
     .footer-meta-inner {
       display: inline-block;
