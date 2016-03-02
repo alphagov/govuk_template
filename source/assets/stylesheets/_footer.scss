@@ -5,13 +5,13 @@
   border-top: 1px solid $footer-border-top;
 
   .footer-wrapper {
-    @include outer-block;
+    @extend %site-width-container;
+    background-color: $footer-background;
     padding-top: 20px;
+
     @include media(tablet) {
       padding-top: 60px;
     }
-    background-color: $footer-background;
-    margin: 0 auto;
   }
 
   a {
@@ -34,7 +34,6 @@
   }
 
   .footer-meta {
-    @include inner-block;
     @extend %contain-floats;
     padding-bottom: 60px;
     clear: both;
