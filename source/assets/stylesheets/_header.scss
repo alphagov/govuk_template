@@ -88,7 +88,7 @@
     padding-top: 2px;
     border-bottom: 1px solid transparent;
 
-    background: image-url('images/gov.uk_logotype_crown.png') no-repeat;
+    background: image-url('images/gov.uk_logotype_crown.svg') no-repeat;
     background-size: 35px 31px;
     background-position: 0 0;
     @include ie-lte(8) {
