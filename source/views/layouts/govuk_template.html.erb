@@ -4,14 +4,12 @@
 <!--[if gt IE 8]><!--><html lang="<%= content_for?(:html_lang) ? yield(:html_lang) : "en" %>"><!--<![endif]-->
   <head>
     <meta charset="utf-8" />
-
     <title><%= content_for?(:page_title) ? yield(:page_title) : "GOV.UK - The best place to find government services and information" %></title>
 
     <!--[if gt IE 8]><!--><link href="<%= asset_path "govuk-template.css" %>" media="screen" rel="stylesheet" type="text/css" /><!--<![endif]-->
     <!--[if IE 6]><link href="<%= asset_path "govuk-template-ie6.css" %>" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
     <!--[if IE 7]><link href="<%= asset_path "govuk-template-ie7.css" %>" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
     <!--[if IE 8]><link href="<%= asset_path "govuk-template-ie8.css" %>" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
-
     <link href="<%= asset_path "govuk-template-print.css" %>" media="print" rel="stylesheet" type="text/css" />
 
     <!--[if IE 8]>
@@ -26,14 +24,8 @@
       })()
     </script>
     <![endif]-->
-    <!--[if gte IE 9]><!-->
-      <link href="<%= asset_path "fonts.css" %>" media="all" rel="stylesheet" type="text/css" />
-    <!--<![endif]-->
-
-
-    <!--[if lt IE 9]>
-      <script src="<%= asset_path "ie.js" %>"></script>
-    <![endif]-->
+    <!--[if gte IE 9]><!--><link href="<%= asset_path "fonts.css" %>" media="all" rel="stylesheet" type="text/css" /><!--<![endif]-->
+    <!--[if lt IE 9]><script src="<%= asset_path "ie.js" %>"></script><![endif]-->
 
     <link rel="shortcut icon" href="<%= asset_path 'favicon.ico' %>" type="image/x-icon" />
     <link rel="mask-icon" href="<%= asset_path 'gov.uk_logotype_crown.svg' %>" color="#0b0c0c">
