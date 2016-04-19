@@ -37,14 +37,9 @@
 
     <link rel="shortcut icon" href="<%= asset_path 'favicon.ico' %>" type="image/x-icon" />
     <link rel="mask-icon" href="<%= asset_path 'gov.uk_logotype_crown.svg' %>" color="#0b0c0c">
-
-    <!-- Size for iPad and iPad mini (high resolution) -->
     <link rel="apple-touch-icon-precomposed" sizes="152x152" href="<%= asset_path "apple-touch-icon-152x152.png" %>">
-    <!-- Size for iPhone and iPod touch (high resolution) -->
     <link rel="apple-touch-icon-precomposed" sizes="120x120" href="<%= asset_path "apple-touch-icon-120x120.png" %>">
-    <!-- Size for iPad 2 and iPad mini (standard resolution) -->
     <link rel="apple-touch-icon-precomposed" sizes="76x76" href="<%= asset_path "apple-touch-icon-76x76.png" %>">
-    <!-- Default non-defined size, also used for Android 2.1+ devices -->
     <link rel="apple-touch-icon-precomposed" href="<%= asset_path "apple-touch-icon-60x60.png" %>">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -71,7 +66,6 @@
         <p>GOV.UK uses cookies to make the site simpler. <a href="https://www.gov.uk/help/cookies">Find out more about cookies</a></p>
       <% end %>
     </div>
-    <!--end global-cookie-message-->
 
     <% unless @omit_header %>
     <header role="banner" id="global-header" class="<%= yield(:header_class) %>">
@@ -87,13 +81,11 @@
         <%= yield :proposition_header %>
       </div>
     </header>
-    <!--end header-->
     <% end %>
 
     <%= yield :after_header %>
 
     <div id="global-header-bar"></div>
-    <!--end global-header-bar-->
 
     <%= content_for?(:content) ? yield(:content) : yield %>
 
@@ -122,8 +114,6 @@
         </div>
       </div>
     </footer>
-
-    <!--end footer-->
 
     <div id="global-app-error" class="app-error hidden"></div>
 
