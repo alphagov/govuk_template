@@ -1,3 +1,12 @@
+# 0.17.1
+
+- Reduce file size of template: removes HTML comments, `type` attributes on
+  scripts, and uses HTML5 charset declaration. #208
+- Switch external link media query to be mobile first #205
+- Sass file cleanups
+  - Replace old grid mixins with newer grid from frontend toolkit #134
+  - Remove duplicate grey variables #201
+
 # 0.17.0
 
 - Add CSS hook (`.js-hidden`) for hiding content when JS is enabled. Some apps
