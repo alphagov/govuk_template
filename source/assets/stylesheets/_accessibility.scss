@@ -25,7 +25,9 @@
 .visuallyhidden {
   position: absolute;
   left: -9999em;
-  height: 0;
+  top: auto;
+  width: 1px;
+  height: 1px;
   overflow: hidden;
 
   /*
