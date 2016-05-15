@@ -1,3 +1,11 @@
+@-ms-viewport {
+  width: device-width;
+}
+
+@-o-viewport {
+  width: device-width;
+}
+
 html, body, button, input, table, td, th { font-family: $NTA-Light; }
 
 // basic styles for HTML5 and other elements
