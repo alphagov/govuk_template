@@ -64,7 +64,8 @@ a:focus {
 }
 
 .skiplink:focus {
-  position: static;
+  left: 0;
+  z-index: 1;
 }
 
 #skiplink-container {
