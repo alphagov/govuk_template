@@ -1,8 +1,5 @@
+// needed for IE10 desktop snap mode: http://menacingcloud.com/?c=cssViewportOrMetaTag
 @-ms-viewport {
-  width: device-width;
-}
-
-@-o-viewport {
   width: device-width;
 }
 
