@@ -1,3 +1,8 @@
+// needed for IE10 desktop snap mode: http://menacingcloud.com/?c=cssViewportOrMetaTag
+@-ms-viewport {
+  width: device-width;
+}
+
 html, body, button, input, table, td, th { font-family: $NTA-Light; }
 
 // basic styles for HTML5 and other elements
