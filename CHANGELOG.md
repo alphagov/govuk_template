@@ -1,3 +1,8 @@
+# 0.17.2
+
+- Fix a bug with the skip-to-content link and iOS Voiceover
+- Migrate @viewport statement from govuk_frontend_toolkit
+
 # 0.17.1
 
 - Reduce file size of template: removes HTML comments, `type` attributes on
