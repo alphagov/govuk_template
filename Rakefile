@@ -20,7 +20,8 @@ task :build => ["build:gem",
                 "build:jinja",
                 "build:ejs",
                 "build:webjar",
-                "build:django"]
+                "build:django",
+                "build:razor"]
 
 namespace :build do
   desc "Build govuk_template-#{GovukTemplate::VERSION}.gem into the pkg directory"
@@ -91,6 +92,13 @@ namespace :build do
     puts "Building pkg/govuk_template-#{GovukTemplate::VERSION}.jar"
     require 'packager/webjar_packager'
     Packager::WebJarPackager.build
+  end
+
+  desc "Build GovUK.Template.Razor.#{GovukTemplate::VERSION}.nupkg into the pkg directory"
+  task :razor => :compile do
+    puts "Building pkg/GovUK.Template.Razor.#{GovukTemplate::VERSION}.nupkg"
+    require 'packager/razor_packager'
+    Packager::RazorPackager.build
   end
 
   desc "Build and release gem to gemfury if version has been updated"

@@ -1,5 +1,7 @@
 language: ruby
 sudo: false
+mono:
+  - latest
 install:
   # Ensure that Travis install is a no-op because `jenkins.sh`
   # installs dependencies.
