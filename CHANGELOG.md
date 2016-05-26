@@ -1,3 +1,7 @@
+# 0.17.3
+
+- Fix colour of H2 headings in footer
+
 # 0.17.2
 
 - Fix a bug with the skip-to-content link and iOS Voiceover
