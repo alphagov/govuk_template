@@ -11,4 +11,3 @@ stylesheets:
 javascripts:
 - govuk-template
 - ie
-- vendor/goog/webfont-debug.js

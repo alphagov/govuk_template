@@ -7,7 +7,6 @@ module GovukTemplate
         fonts*.css
         govuk-template.js
         ie.js
-        vendor/goog/webfont-debug.js
         apple-touch-icon-120x120.png
         apple-touch-icon-152x152.png
         apple-touch-icon-60x60.png
