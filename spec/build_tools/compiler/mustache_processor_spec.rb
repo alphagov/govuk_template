@@ -27,6 +27,7 @@ describe Compiler::MustacheProcessor do
   describe "#handle_yield" do
     valid_sections.each do |key, content|
       it "should render #{content} for #{key}" do
+        binding.pry
         expect(subject.handle_yield(key)).to eql(content)
       end
     end

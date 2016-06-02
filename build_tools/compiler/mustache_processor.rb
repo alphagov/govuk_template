@@ -4,12 +4,21 @@ require_relative 'template_processor'
 module Compiler
   class MustacheProcessor < TemplateProcessor
 
-    def self.tag_for(lowerCamelCaseKey)
-      "{{ #{lowerCamelCaseKey} }}"
+    def self.tag_for(key, default=nil)
+      tag = "{{ #{key} }}"
+      if default
+        default = CGI.escapeHTML(default)
+        tag = "{{# #{key} }} #{tag} {{/key}}{{^ #{key} }} #{default} {{/key}}"
+      end
+      tag
     end
 
-    def self.unescaped_html_tag_for(lowerCamelCaseKey)
-      "{{{ #{lowerCamelCaseKey} }}}"
+    def self.unescaped_html_tag_for(key, default=nil)
+      tag = "{{{ #{key} }}}"
+      if default
+        tag = "{{# #{key} }} #{tag} {{/key}}{{^ #{key} }} #{default} {{/key}}"
+      end
+      tag
     end
 
     @@yield_hash = {
@@ -21,13 +30,13 @@ module Compiler
       cookie_message:       unescaped_html_tag_for(:cookieMessage),
       footer_support_links: unescaped_html_tag_for(:footerSupportLinks),
       footer_top:           unescaped_html_tag_for(:footerTop),
-      homepage_url:         unescaped_html_tag_for(:homepageUrl),
+      homepage_url:         unescaped_html_tag_for(:homepageUrl, 'https://www.gov.uk'),
       global_header_text:   unescaped_html_tag_for(:globalHeaderText),
       head:                 unescaped_html_tag_for(:head),
       header_class:         unescaped_html_tag_for(:headerClass),
       html_lang:            tag_for(:htmlLang),
       inside_header:        unescaped_html_tag_for(:insideHeader),
-      page_title:           tag_for(:pageTitle),
+      page_title:           tag_for(:pageTitle, 'GOV.UK - The best place to find government services and information'),
       proposition_header:   unescaped_html_tag_for(:propositionHeader),
       top_of_page:          unescaped_html_tag_for(:topOfPage),
       skip_link_message:    tag_for(:skipLinkMessage),
