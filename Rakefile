@@ -2,12 +2,19 @@ $:.unshift File.expand_path('../lib', __FILE__)
 $:.unshift File.expand_path('../build_tools', __FILE__)
 require "govuk_template/version"
 require "gem_publisher"
+require 'publisher/docs_publisher'
 
 desc "Compile template and assets from ./source into ./app"
 task :compile do
   require 'compiler/asset_compiler'
   puts "Compiling assets and templates into ./app"
   Compiler::AssetCompiler.compile
+end
+
+desc "Build docs"
+task :generate_docs do
+  q = Publisher::DocsPublisher.new
+  q.generate
 end
 
 desc "Build both gem and tar version"
@@ -105,7 +112,7 @@ namespace :build do
       puts "Done."
 
       require 'publisher/docs_publisher'
-      q = Publisher::DocsPublisher.new
+      q = Publisher::DocsPublisher.new(GovukTemplate::VERSION, '/govuk_template/')
       puts "Pushing docs #{GovukTemplate::VERSION} to git repo"
       q.publish
       puts "Done."
