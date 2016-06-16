@@ -13,6 +13,7 @@ module GovukTemplate
         apple-touch-icon-76x76.png
         gov.uk_logotype_crown_invert.png
         gov.uk_logotype_crown_invert_trans.png
+        gov.uk_logotype_crown.svg
         opengraph-image.png
       )
     end
