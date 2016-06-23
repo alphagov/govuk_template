@@ -95,12 +95,13 @@ namespace :build do
 
   desc "Build and release gem to gemfury if version has been updated"
   task :and_release_if_updated => :build do
-    require 'publisher/gem_publisher'
-    q = Publisher::GemPublisher.new
+
+    require 'publisher/release_publisher'
+    q = Publisher::ReleasePublisher.new
     if q.version_released?
       puts "Github release v#{GovukTemplate::VERSION} already released. Not pushing."
     else
-      puts "Pushing Github release v#{GovukTemplate::VERSION} to ruby gems"
+      puts "Pushing Github release v#{GovukTemplate::VERSION}"
       q.publish
 
       require 'publisher/docs_publisher'
@@ -109,12 +110,12 @@ namespace :build do
       q.publish
     end
 
-    require 'publisher/release_publisher'
-    q = Publisher::ReleasePublisher.new
+    require 'publisher/gem_publisher'
+    q = Publisher::GemPublisher.new
     if q.version_released?
       puts "Github release v#{GovukTemplate::VERSION} already released. Not pushing."
     else
-      puts "Pushing Github release v#{GovukTemplate::VERSION}"
+      puts "Pushing Github release v#{GovukTemplate::VERSION} to ruby gems"
       q.publish
     end
 
