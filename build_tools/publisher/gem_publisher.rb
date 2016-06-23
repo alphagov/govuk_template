@@ -1,3 +1,4 @@
+require 'gem_publisher'
 require 'govuk_template/version'
 
 module Publisher

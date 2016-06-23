@@ -1,7 +1,6 @@
 $:.unshift File.expand_path('../lib', __FILE__)
 $:.unshift File.expand_path('../build_tools', __FILE__)
 require "govuk_template/version"
-require "gem_publisher"
 
 desc "Compile template and assets from ./source into ./app"
 task :compile do
