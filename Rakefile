@@ -146,6 +146,15 @@ namespace :build do
       puts "Pushing govuk_template_ejs #{GovukTemplate::VERSION} to git repo"
       q.publish
     end
+
+    require 'publisher/jinja_publisher'
+    q = Publisher::JinjaPublisher.new
+    if q.version_released?
+      puts "govuk_template_jinja #{GovukTemplate::VERSION} already released. Not pushing."
+    else
+      puts "Pushing govuk_template_jinja #{GovukTemplate::VERSION} to git repo"
+      q.publish
+    end
   end
 end
 
