@@ -1,3 +1,9 @@
+# 0.18.0
+
+- Publish the Jinja version of the template to NPM
+- Update HTML5 Shiv to the latest version
+- Remove an errant font loader script that was only being used for IE8
+
 # 0.17.3
 
 - Fix colour of H2 headings in footer
