@@ -1,3 +1,5 @@
+require 'gem_publisher'
+
 module Packager
   class GemPackager
     def self.build
