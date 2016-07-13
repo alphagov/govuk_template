@@ -94,19 +94,6 @@ a:active {
   color: $link-active-colour;
 }
 
-a[rel="external"] {
-  @include external-link-default;
-  @include external-link-16;
-  @include media(tablet) {
-    @include external-link-19;
-  }
-}
-
-.external-link {
-  @include external-link-12-no-hover;
-  @include external-link-heading;
-}
-
 // adjustments to normalize.css
 
 /*
