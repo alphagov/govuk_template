@@ -80,7 +80,7 @@
     color: $white;
     font-weight: bold;
     font-size: 30px;
-    line-height: 1em;
+    line-height: 1;
     text-decoration: none;
     text-rendering: optimizeLegibility;
     margin-bottom: -3px;
@@ -101,7 +101,7 @@
       width: 35px;
       height: 31px;
 
-      padding-right: 6px;
+      margin-right: 6px;
 
       float: left;
       display: inline;
