@@ -1,10 +1,10 @@
 # Contribution Guidelines
 
-We welcome patches to the toolkit, as long as you follow these guidelines:
+We welcome patches as long as you follow these guidelines:
 
 ## Git workflow ##
 
-- Pull requests must contain a succint, clear summary of what the user need is driving this feature change.
+- Pull requests must contain a succinct, clear summary of what the user need is driving this feature change.
 - Follow our [Git styleguide](https://github.com/alphagov/styleguides/blob/master/git.md)
 - Make a feature branch
 - Ensure your branch contains logical atomic commits before sending a pull request - follow our [Git styleguide](https://github.com/alphagov/styleguides/blob/master/git.md)
@@ -23,9 +23,20 @@ We welcome patches to the toolkit, as long as you follow these guidelines:
 
 ## Testing ##
 
-Write tests.
+Write tests when adding or changing functionality.
+
+Run the tests with:
+
+```bash
+bundle exec rake spec integration_tests
+```
 
 ## Versioning ##
 
-We use [Semantic Versioning](http://semver.org/), and bump the version
-on master only. Please don't submit your own proposed version numbers.
+We use [Semantic Versioning](http://semver.org/).
+
+### Releasing a new version ###
+
+1. Create a branch that proposes a new [version number](/lib/govuk_template/version.rb#L2), and [`CHANGELOG`](CHANGELOG.md)
+2. Open a Pull Request - here is a [good example](https://github.com/alphagov/govuk_template/pull/204/)
+3. Once merged into master a new version will be built and [published](docs/publishing.md)
