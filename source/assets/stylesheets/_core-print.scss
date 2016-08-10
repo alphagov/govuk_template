@@ -37,7 +37,7 @@ img { max-width: 100% !important; }
 select { background: white; }
 
 #global-header {
-  margin-bottom: 1em;
+  margin: 3px 0 1em; // 3px additional space at top for countering -3px re-positioning of #logo img
 
   #logo {
     @include bold-48;
@@ -47,10 +47,11 @@ select { background: white; }
     text-rendering: optimizeLegibility;
 
     img {
-      width: 46px;
+      width: 45px;
       height: 40px;
-      margin-right: 6px;
-      float: left;
+      position: relative;
+      top: -3px; // aligns bottom of img with bottom of "G"
+      vertical-align: bottom;
     }
   }
 
