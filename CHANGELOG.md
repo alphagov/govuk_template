@@ -1,3 +1,8 @@
+# 0.18.1
+
+- Remove gov.uk prefix from relative links when printing ([PR #234](https://github.com/alphagov/govuk_template/pull/234))
+- Fix a `.visually-hidden` bug on GOV.UK ([PR #177](https://github.com/alphagov/govuk_template/pull/177))
+
 # 0.18.0
 
 - Publish the Jinja version of the template to NPM
