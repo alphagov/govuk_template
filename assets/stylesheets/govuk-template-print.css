@@ -37,10 +37,7 @@ body {
 a, a:visited {
   word-wrap: break-word; }
 
-a[href^="/"]:after {
-  content: " (https://www.gov.uk" attr(href) ")";
-  font-size: 90%; }
-
+a[href^="/"]:after,
 a[href^="http://"]:after,
 a[href^="https://"]:after {
   content: " (" attr(href) ")";
