@@ -1,6 +1,7 @@
 require 'yaml'
 require 'open3'
 require 'sprockets'
+require 'digest'
 
 module Compiler
   class AssetCompiler
@@ -20,6 +21,7 @@ module Compiler
       @manifests = YAML.load_file(@repo_root.join('manifests.yml'))
       @stylesheet_assets = []
       @static_assets = []
+      @integrity_attributes = {}
     end
 
     def compile
@@ -41,7 +43,10 @@ module Compiler
         abort "Asset #{javascript} not found" unless asset
         target_file = @build_dir.join('assets', 'javascripts', asset.logical_path)
         target_file.dirname.mkpath
-        File.open(target_file, 'w') {|f| f.write asset.to_s }
+        File.open(target_file, 'w') do |f|
+          @integrity_attributes[asset.logical_path] = generate_integrity_attribute f
+          f.write asset.to_s
+        end
       end
     end
 
@@ -62,7 +67,10 @@ module Compiler
         asset = env.find_asset(stylesheet)
 
         abort "Asset #{stylesheet} not found" unless asset
-        File.open(@build_dir.join('assets', 'stylesheets', "#{asset.logical_path}.erb"), 'w') {|f| f.write asset.to_s }
+        File.open(@build_dir.join('assets', 'stylesheets', "#{asset.logical_path}.erb"), 'w') do |f|
+          @integrity_attributes[asset.logical_path] = generate_integrity_attribute f
+          f.write asset.to_s
+        end
       end
       @stylesheet_assets = stylesheet_assets.uniq
     end
@@ -133,6 +141,13 @@ module Compiler
       @build_dir.join('assets', 'stylesheets').mkpath
       @build_dir.join('assets', 'javascripts').mkpath
       @build_dir.join('views').mkpath
+    end
+
+    def generate_integrity_attribute file
+      attribute = 'integrity="sha256-'
+      attribute << Digest::SHA256.hexdigest(file.to_s)
+      attribute << '"'
+      attribute
     end
   end
 end
