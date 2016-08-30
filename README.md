@@ -23,6 +23,7 @@ The Ruby language (1.9.3+), the build tool [Rake](http://rake.rubyforge.org/) & 
 
 ## Usage
 
+* [Using with Rails](docs/using-with-rails.md)
 * [GOV.UK template blocks and their default values (how to customise the template)](docs/template-blocks.md)
 * [Setting a Skip link](docs/usage.md#skip-link)
 * [Propositional title and navigation](docs/usage.md#propositional-title-and-navigation)
