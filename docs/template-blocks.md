@@ -17,7 +17,7 @@
 | inside_header             | Inside parent `.header-global`                  | Insertion point
 | proposition_header        | Inside parent `.header-wrapper`                 | Add a [propositional title and navigation links](docs/usage.md#propositional-title-and-navigation)
 | after_header              | After closing `</header>` element               | Insertion point
-| content                   | Main content goes in here                       | Insertion point. Note: A wrapper with an ID of #content is needed here for the skiplink to work correctly
+| content                   | Main content goes in here                       | Insertion point. Content must be wrapped with `id="content"` for the [skiplink to work](docs/usage.md#skip-link).
 | footer_top                | Inside parent `#footer-wrapper`                 | Insertion point
 | footer_support_links      | Inside parent `.footer-meta-inner`              | Insertion point
 | licence_message           | Open Government Licence text and link           | `<p>All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated</p>`
