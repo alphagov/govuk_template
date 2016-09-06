@@ -29,6 +29,7 @@ module Compiler
       compile_javascripts
       compile_stylesheets
       copy_views
+      add_integrity_to_views
       copy_static_assets
       copy_needed_toolkit_assets
     end
@@ -90,6 +91,23 @@ module Compiler
         end
 
         abort "Error copying views:\n#{output}" if status.exitstatus > 0
+      end
+    end
+
+    def add_integrity_to_views
+      Dir.chdir @repo_root.join("app", "views") do
+        Dir.glob("**/*") do |file|
+          next if File.directory?(file)
+          original = File.open(file)
+          modified = File.open(original.path + '.tmp', 'w')
+          contents = original.read
+          @integrity_attributes.each do |key, value|
+            contents.gsub! "#{key}\" %>\"", "#{key}\" %>\" #{value}"
+          end
+          modified.puts contents
+          File.delete(file)
+          File.rename(modified, file)
+        end
       end
     end
 
