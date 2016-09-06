@@ -102,7 +102,8 @@ module Compiler
           modified = File.open(original.path + '.tmp', 'w')
           contents = original.read
           @integrity_attributes.each do |key, value|
-            contents.gsub! "#{key}\" %>\"", "#{key}\" %>\" #{value}"
+            asset_expression = Regexp.new "#{key}(.*?)integrity=\"\"(.*?)>"
+            contents.gsub! asset_expression, "#{key}\\1#{value}\\2>"
           end
           modified.puts contents
           File.delete(file)
