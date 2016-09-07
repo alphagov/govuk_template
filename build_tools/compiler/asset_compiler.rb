@@ -106,6 +106,7 @@ module Compiler
             contents.gsub! asset_expression, "#{key}\\1#{value}\\2>"
           end
           modified.puts contents
+          modified.close
           File.delete(file)
           File.rename(modified, file)
         end

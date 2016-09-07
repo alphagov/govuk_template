@@ -4,6 +4,7 @@ The source files are in the `/source` directory.  The `compile` rake task builds
 
 * compiling all stylesheets referenced in `/manifests.yml` to plain CSS (actually css.erb, so the Rails asset pipeline can work in the gem).
 * combining all JavaScript files referenced in `/manifests.yml` (using Sprockets)
+* inserting integrity values for the above CSS/JS into empty integrity attributes in the template
 * copying the images across (including any needed images from the toolkit)
 
 This resulting app directory is included in the gem and hooked in as a Rails engine

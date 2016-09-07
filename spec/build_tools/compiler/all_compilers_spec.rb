@@ -28,3 +28,19 @@ describe "Behaviours all compilers must support every value that gets yielded in
     end
   end
 end
+
+describe 'Integrity attribute values' do
+  it 'should be generated correctly' do
+    compiler = Compiler::AssetCompiler.new
+    content = 'Testing integrity attributes'
+    sha = 'sha256-43c990e55eb6eeb7b219b85c158c587617117c9d80c43bd9f362c38c32933c74'
+    expect(compiler.send(:generate_integrity_attribute, content)).to eq(sha)
+  end
+
+  it 'should be added to the layout template' do
+    compiler = Compiler::AssetCompiler.new
+    compiler.compile
+    output = File.open(repo_root.join('app', 'views', 'layouts', 'govuk_template.html.erb')).read
+    expect(output).to match(/integrity="sha256-\h*?"/)
+  end
+end
