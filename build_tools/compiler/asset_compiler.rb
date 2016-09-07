@@ -102,7 +102,7 @@ module Compiler
           modified = File.open(original.path + '.tmp', 'w')
           contents = original.read
           @integrity_attributes.each do |key, value|
-            asset_expression = Regexp.new "#{key}(.*?)integrity=\"\"(.*?)>"
+            asset_expression = Regexp.new "#{key}(.*?integrity=\")(\".*?)>"
             contents.gsub! asset_expression, "#{key}\\1#{value}\\2>"
           end
           modified.puts contents
@@ -163,9 +163,8 @@ module Compiler
     end
 
     def generate_integrity_attribute file
-      attribute = 'integrity="sha256-'
+      attribute = 'sha256-'
       attribute << Digest::SHA256.hexdigest(file.to_s)
-      attribute << '"'
       attribute
     end
   end
