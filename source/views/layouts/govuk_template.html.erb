@@ -101,5 +101,8 @@
     <script src="<%= asset_path "govuk-template.js" %>"></script>
 
     <%= yield :body_end %>
+
+    <%# if no GOVUK-namespaced module has loaded we can assume JS has failed and remove the class %>
+    <script>if (typeof window.GOVUK === 'undefined') document.body.className = document.body.className.replace('js-enabled', '');</script>
   </body>
 </html>
