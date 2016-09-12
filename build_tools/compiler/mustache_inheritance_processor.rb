@@ -28,6 +28,7 @@ module Compiler
       top_of_page:          tag_for(:topOfPage),
       skip_link_message:    tag_for(:skipLinkMessage, 'Skip to main content'),
       logo_link_title:      tag_for(:logoLinkTitle, 'Go to the GOV.UK homepage'),
+      licence_logo:         tag_for(:licenceLogo, '<p class="logo"><a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence</a></p>'),
       licence_message:      tag_for(:licenceMessage, '<p>All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated</p>'),
       crown_copyright_message: tag_for(:crownCopyrightMessage, '&copy; Crown copyright'),
     }

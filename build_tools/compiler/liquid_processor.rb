@@ -28,6 +28,7 @@ module Compiler
       top_of_page:          include_for(:top_of_page),
       skip_link_message:    "{% if page.skip_link_message %}{{ page.skip_link_message }}{% else %}Skip to main content{% endif %}",
       logo_link_title:      "{% if page.logo_link_title %}{{ page.logo_link_title }}{% else %}Go to the GOV.UK homepage{% endif %}",
+      licence_logo:         include_for(:licence_logo),
       licence_message:      include_for(:licence_message),
       crown_copyright_message: "{% if page.crown_copyright_message %}{{ page.crown_copyright_message }}{% else %}&copy; Crown copyright{% endif %}",
     }
