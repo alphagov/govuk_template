@@ -1,3 +1,7 @@
+# 0.18.2
+
+- Degrade gracefully when external JS can’t be loaded ([PR #248](https://github.com/alphagov/govuk_template/pull/248))
+
 # 0.18.1
 
 - Remove gov.uk prefix from relative links when printing ([PR #234](https://github.com/alphagov/govuk_template/pull/234))
