@@ -1,3 +1,8 @@
+# 0.18.3
+
+- Add docs for adding `tabindex="-1"` to fix the skiplink ([PR #250](https://github.com/alphagov/govuk_template/pull/250))
+- Logo fixes: Fix logo breaking layout when increasing font size, fix invalid or non-standard CSS and remove obsolete CSS around logo, adjust logo dimensions slightly ([PR #237](https://github.com/alphagov/govuk_template/pull/237))
+
 # 0.18.2
 
 - Degrade gracefully when external JS can’t be loaded ([PR #248](https://github.com/alphagov/govuk_template/pull/248))
