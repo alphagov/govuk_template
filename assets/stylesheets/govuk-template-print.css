@@ -54,29 +54,27 @@ select {
   background: white; }
 
 #global-header {
-  color: #000;
-  font-weight: bold;
-  font-size: 24px;
-  margin-bottom: 1em; }
+  margin: 3px 0 1em; }
   #global-header #logo {
     font-family: sans-serif;
     font-size: 18pt;
     line-height: 1.04167;
-    font-weight: 400;
+    font-weight: 700;
     text-transform: none;
     font-size: 28pt;
-    font-weight: bold;
+    /* `bold-80` can be used instead when govuk_frontend_toolkit gem is >= 4.18.2,
+       see https://github.com/alphagov/govuk_frontend_toolkit/pull/328 */
     text-rendering: optimizeLegibility; }
     @media (max-width: 640px) {
       #global-header #logo {
         font-size: 32px;
         line-height: 1.09375; } }
     #global-header #logo img {
-      width: 46px;
+      width: 45px;
       height: 40px;
-      padding-right: 6px;
-      display: block;
-      float: left; }
+      position: relative;
+      top: -3px;
+      vertical-align: bottom; }
   #global-header .content {
     margin: 0 !important; }
   #global-header a, #global-header a:visited {
