@@ -93,13 +93,13 @@ namespace :build do
     Packager::WebJarPackager.build
   end
 
-  desc "Build and release gem to gemfury if version has been updated"
+  desc "Build and release gem if version has been updated"
   task :and_release_if_updated => :build do
     p = GemPublisher::Publisher.new('govuk_template.gemspec')
     if p.version_released?
       puts "govuk_template-#{GovukTemplate::VERSION} already released.  Not pushing."
     else
-      puts "Pushing govuk_template-#{GovukTemplate::VERSION} to gemfury"
+      puts "Pushing govuk_template-#{GovukTemplate::VERSION}"
       p.pusher.push "pkg/govuk_template-#{GovukTemplate::VERSION}.gem", :rubygems
       p.git_remote.add_tag "v#{GovukTemplate::VERSION}"
       puts "Done."
