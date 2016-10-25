@@ -1,3 +1,9 @@
+# 0.19.0
+
+- Remove external link styles ([PR #231](https://github.com/alphagov/govuk_template/pull/231))
+- Remove extraneous copy of HTML5shiv that wasn’t being used ([PR #254](https://github.com/alphagov/govuk_template/pull/254))
+- Update govuk_frontend_toolkit to latest version ([PR #256](https://github.com/alphagov/govuk_template/pull/256))
+
 # 0.18.3
 
 - Add docs for adding `tabindex="-1"` to fix the skiplink ([PR #250](https://github.com/alphagov/govuk_template/pull/250))
