@@ -94,6 +94,7 @@ select:focus,
 button:focus,
 #global-header input:focus {
   outline: 3px solid $focus-colour;
+  outline-offset: 0;
 }
 
 #global-header {
