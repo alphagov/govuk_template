@@ -91,12 +91,19 @@ a:focus {
 input:focus,
 textarea:focus,
 select:focus,
-button:focus,
-#global-header input:focus {
+button:focus {
   outline: 3px solid $focus-colour;
+  outline-offset: 0;
 }
 
 #global-header {
+
+  input[type=search]:focus {
+    outline: 3px solid $focus-colour;
+    /* Focus appears inside the input */
+    outline-offset: -2px;
+  }
+
   h1 a:focus {
     background-color: transparent;
     outline: none;
