@@ -1,3 +1,7 @@
+# 0.19.1
+
+- Have focus outline appear outside of element rather than covering it in Safari and Chrome ([PR #259](https://github.com/alphagov/govuk_template/pull/259))
+
 # 0.19.0
 
 - Remove external link styles ([PR #231](https://github.com/alphagov/govuk_template/pull/231))
