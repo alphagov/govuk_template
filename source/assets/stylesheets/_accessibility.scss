@@ -101,7 +101,7 @@ button:focus {
   input[type=search]:focus {
     outline: 3px solid $focus-colour;
     /* Focus appears inside the input */
-    outline-offset: -3px;
+    outline-offset: -2px;
   }
 
   h1 a:focus {
