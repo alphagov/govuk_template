@@ -1,3 +1,8 @@
+# 0.19.2
+
+- Increase skiplink colour contrast ([PR #263](https://github.com/alphagov/govuk_template/pull/263))
+- Fix Scala compile issues for Play template ([PR #261](https://github.com/alphagov/govuk_template/pull/261))
+
 # 0.19.1
 
 - Have focus outline appear outside of element rather than covering it in Safari and Chrome ([PR #259](https://github.com/alphagov/govuk_template/pull/259))
