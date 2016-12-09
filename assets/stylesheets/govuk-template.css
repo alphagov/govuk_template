@@ -214,7 +214,10 @@ a:focus {
 /* Make skiplinks visible when they are tabbed to */
 .skiplink {
   position: absolute;
-  left: -9999em; }
+  left: -9999em;
+  /* Default link colour doesn't have enough contrast against $focus-colour */ }
+  .skiplink:focus, .skiplink:visited {
+    color: #0b0c0c; }
 
 .skiplink:focus {
   left: 0;
@@ -304,7 +307,7 @@ button:focus {
     text-decoration: none;
     text-rendering: optimizeLegibility;
     border-bottom: 1px solid transparent;
-    background: url(images/gov.uk_logotype_crown.png?0.19.1) no-repeat;
+    background: url(images/gov.uk_logotype_crown.png?0.19.2) no-repeat;
     background-size: 36px 32px;
     background-position: 0 0; }
     #global-header #logo img {
@@ -556,10 +559,10 @@ button:focus {
             height: 17px;
             overflow: hidden;
             text-indent: -999em;
-            background: url(images/open-government-licence.png?0.19.1) 0 0 no-repeat; }
+            background: url(images/open-government-licence.png?0.19.2) 0 0 no-repeat; }
             @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
               #footer .footer-meta .footer-meta-inner .open-government-licence .logo a {
-                background-image: url(images/open-government-licence_2x.png?0.19.1);
+                background-image: url(images/open-government-licence_2x.png?0.19.2);
                 background-size: 41px 17px; } }
         #footer .footer-meta .footer-meta-inner .open-government-licence p {
           font-family: "nta", Arial, sans-serif;
@@ -595,7 +598,7 @@ button:focus {
           margin-top: 0; } }
       #footer .footer-meta .copyright a {
         display: block;
-        background-image: url(images/govuk-crest.png?0.19.1);
+        background-image: url(images/govuk-crest.png?0.19.2);
         background-repeat: no-repeat;
         background-position: 50% 0%;
         text-align: center;
@@ -606,7 +609,7 @@ button:focus {
             background-position: 100% 0%; } }
         @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
           #footer .footer-meta .copyright a {
-            background-image: url(images/govuk-crest-2x.png?0.19.1);
+            background-image: url(images/govuk-crest-2x.png?0.19.2);
             background-size: 125px 102px; } }
         @media (min-width: 641px) {
           #footer .footer-meta .copyright a {
