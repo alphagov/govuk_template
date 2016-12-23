@@ -1,11 +1,27 @@
 language: ruby
 sudo: false
+env:
+  global:
+    - secure: "gxjwgl9l9ZP/1t86odZyMzWyiVBkG1oFzeL+Kb6z9Dtfu954l9RbytlenTTcnRw1KtaDBZVBs0ix3K45b8T2S6JFzLQ88Z/36DmXGIN6vxctfnVD9sqbbyOuP++RhibK+qUqbPRHo6a3wBsMQ87DMj5S6pJe3dxbCKRXa8zcMd0="
+before_install:
+  - openssl aes-256-cbc -K $encrypted_df4ab1bff570_key -iv $encrypted_df4ab1bff570_iv -in .travis/secrets.tar.enc -out .travis/secrets.tar -d
+  - tar xvf .travis/secrets.tar
+  - mkdir -p ~/.gem/
+  - mv secrets/gem_credentials ~/.gem/credentials
+  - mv secrets/npmrc ~/.npmrc
+  - git config --global user.name "Travis CI"
+  - git config --global user.email "travis@travis-ci.org"
+  - rm -f Gemfile.lock
+  - git clean -fdx
 install:
-  # Ensure that Travis install is a no-op because `jenkins.sh`
-  # installs dependencies.
-  - echo "Not running Travis installation"
+  - bundle install
 script:
-  - ./jenkins.sh
+  - bundle exec rake spec integration_tests
+deploy:
+- provider: script
+  script: 'bundle exec rake build:and_release_if_updated'
+  on:
+    branch: master
 notifications:
   email:
     on_success: never

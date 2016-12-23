@@ -4,7 +4,7 @@ require 'open3'
 
 module Publisher
   class MustachePublisher
-    GIT_URL = "git@github.com:alphagov/govuk_template_mustache"
+    GIT_URL = "https://#{ENV['GITHUB_TOKEN']}@github.com/alphagov/govuk_template_mustache.git"
 
     def initialize(version = GovukTemplate::VERSION)
       @version = version
