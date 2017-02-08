@@ -14,6 +14,9 @@ It is recommended to use the main element, with a role of main (to support older
 
 You can see an [example of this working in GOV.UK elements](https://github.com/alphagov/govuk_elements/blob/master/app/views/index.html#L9).
 
+If you need to link to an `id` other than `content`, you can override it
+by setting `skip_link_target`.
+
 
 ## Propositional title and navigation
 

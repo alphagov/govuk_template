@@ -13,6 +13,7 @@ fs.writeFileSync(
   env.render('test_template.html', {
       'html_lang': 'rb',
       'skip_link_message': 'Custom skip link text',
+      'skip_link_target': 'custom',
       'logo_link_title': 'Custom logo link title text',
       'crown_copyright_message': 'Custom crown copyright message text',
   }),

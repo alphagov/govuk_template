@@ -31,6 +31,7 @@ module Compiler
       proposition_header:   unescaped_html_tag_for(:propositionHeader),
       top_of_page:          unescaped_html_tag_for(:topOfPage),
       skip_link_message:    tag_for(:skipLinkMessage),
+      skip_link_target:     tag_for(:skipLinkTarget),
       logo_link_title:      tag_for(:logoLinkTitle),
       licence_message:      unescaped_html_tag_for(:licenceMessage),
       crown_copyright_message: tag_for(:crownCopyrightMessage),
