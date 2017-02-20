@@ -17,12 +17,18 @@
     <!--[if lt IE 9]><script src="<%= asset_path "ie.js" %>"></script><![endif]-->
 
     <link rel="shortcut icon" href="<%= asset_path 'favicon.ico' %>" type="image/x-icon" />
+    <%# the colour used for mask-icon is the standard palette $black from 
+        https://github.com/alphagov/govuk_frontend_toolkit/blob/master/stylesheets/colours/_palette.scss %>
     <link rel="mask-icon" href="<%= asset_path 'gov.uk_logotype_crown.svg' %>" color="#0b0c0c">
     <link rel="apple-touch-icon-precomposed" sizes="152x152" href="<%= asset_path "apple-touch-icon-152x152.png" %>">
     <link rel="apple-touch-icon-precomposed" sizes="120x120" href="<%= asset_path "apple-touch-icon-120x120.png" %>">
     <link rel="apple-touch-icon-precomposed" sizes="76x76" href="<%= asset_path "apple-touch-icon-76x76.png" %>">
     <link rel="apple-touch-icon-precomposed" href="<%= asset_path "apple-touch-icon-60x60.png" %>">
 
+    <%# the colour used for theme-color is the standard palette $black from 
+        https://github.com/alphagov/govuk_frontend_toolkit/blob/master/stylesheets/colours/_palette.scss %>
+    <meta name="theme-color" content="#0b0c0c" />
+    
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta property="og:image" content="<%= asset_path "opengraph-image.png" %>">
 
