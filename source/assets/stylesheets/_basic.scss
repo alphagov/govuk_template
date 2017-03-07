@@ -3,10 +3,33 @@
   width: device-width;
 }
 
-html, body, button, input, table, td, th { font-family: $NTA-Light; }
+html,
+body,
+button,
+input,
+table,
+td,
+th {
+  font-family: $nta-light;
+}
 
 // basic styles for HTML5 and other elements
-html, body, div, h1, h2, h3, h4, h5, h6, article, aside, footer, header, hgroup, nav, section {
+html,
+body,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+article,
+aside,
+footer,
+header,
+hgroup,
+nav,
+section {
   margin: 0;
   padding: 0;
   vertical-align: baseline;
@@ -20,17 +43,18 @@ main {
 // self clearing floats
 .group:before,
 .group:after {
-    content: "\0020";
-    display: block;
-    height: 0;
-    overflow: hidden;
- }
+  content: "\0020";
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
 
 .group:after {
-    clear: both;
+  clear: both;
 }
+
 .group {
-    zoom: 1;
+  zoom: 1;
 }
 
 // make elements stick at top of viewport when scrolling
@@ -38,24 +62,21 @@ main {
   top: 0;
   position: fixed;
 }
+
 .shim {
   display: block;
 }
 
-/*
- * 1. Prevents iOS text size adjust after orientation change, without disabling
- *    user zoom.
- */
+// 1. Prevents iOS text size adjust after orientation change, without disabling
+//    user zoom.
 html {
-  -webkit-text-size-adjust: 100%; /* 1 */
-  -ms-text-size-adjust: 100%; /* 1 */
+  -webkit-text-size-adjust: 100%; // 1
+  -ms-text-size-adjust: 100%; // 1
   // Set background colour to match footer background
   background-color: $footer-background;
 }
 
-/*
-  Force the scrollbar to always display in IE10/11
- */
+// Force the scrollbar to always display in IE10/11
 html {
   -ms-overflow-style: scrollbar;
 }
@@ -69,7 +90,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-ol, ul, nav ol, nav ul {
+ol,
+ul,
+nav ol,
+nav ul {
   list-style: inherit;
 }
 
@@ -95,33 +119,30 @@ a:active {
 }
 
 // adjustments to normalize.css
-
-/*
- * 1. Corrects text resizing oddly in IE6/7 when body font-size is set using em units
- *    http://clagnut.com/blog/348/#c790
- *    note - font-size reduced to 62.5% to allow simple rem/px font-sizing and fallback
- *    http://snook.ca/archives/html_and_css/font-size-with-rem
- * 2. Keeps page centred in all browsers regardless of content height
- * 3. Removes Android and iOS tap highlight color to prevent entire container being highlighted
- *    www.yuiblog.com/blog/2010/10/01/quick-tip-customizing-the-mobile-safari-tap-highlight-color/
- */
-
+//
+// 1. Corrects text resizing oddly in IE6/7 when body font-size is set using em units
+//    http://clagnut.com/blog/348/#c790
+//    note - font-size reduced to 62.5% to allow simple rem/px font-sizing and fallback
+//    http://snook.ca/archives/html_and_css/font-size-with-rem
+// 2. Keeps page centred in all browsers regardless of content height
+// 3. Removes Android and iOS tap highlight color to prevent entire container being highlighted
+//    www.yuiblog.com/blog/2010/10/01/quick-tip-customizing-the-mobile-safari-tap-highlight-color/
 html {
-  font-size: 62.5%; /* 1 */
-  overflow-y: scroll; /* 2 */
-  -webkit-tap-highlight-color: rgba(0,0,0,0); /* 3 */
+  font-size: 62.5%; // 1
+  overflow-y: scroll; // 2
+
+  // scss-lint:disable ColorVariable
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); // 3
+  // scss-lint:enable ColorVariable
 }
 
-/*
- * 1. Font-size increased to compensate for change to html element font-size in
- *    order to support beta typography which was set in ems
- *    (62.5% * 160% = 100%)
- * 2. Addresses margins handled incorrectly in IE6/7
- */
-
+// 1. Font-size increased to compensate for change to html element font-size in
+//    order to support beta typography which was set in ems
+//    (62.5% * 160% = 100%)
+// 2. Addresses margins handled incorrectly in IE6/7
 body {
-  font-size: 160%; /* 1 */
-  margin: 0; /* 2 */
+  font-size: 160%; // 1
+  margin: 0; // 2
 }
 
 b,
@@ -135,7 +156,7 @@ img {
 
 @include ie-lte(7) {
   button {
-    overflow:visible;
+    overflow: visible;
   }
 }
 
@@ -143,18 +164,16 @@ abbr[title] {
   cursor: help;
 }
 
-/*
- * 1. Addresses `appearance` set to `searchfield` in Safari 5 and Chrome.
- * 2. Addresses `box-sizing` set to `border-box` in Safari 5 and Chrome
- *    (include `-moz` to future-proof).
- */
-
+// 1. Addresses `appearance` set to `searchfield` in Safari 5 and Chrome.
+// 2. Addresses `box-sizing` set to `border-box` in Safari 5 and Chrome
+//    (include `-moz` to future-proof).
 input[type="search"] {
-    -webkit-appearance: textfield; /* 1 */
-    -moz-box-sizing: content-box;
-    -webkit-box-sizing: content-box; /* 2 */
-    box-sizing: content-box;
+  -webkit-appearance: textfield; // 1
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box; // 2
+  box-sizing: content-box;
 }
+
 input[type="search"]::-webkit-search-cancel-button {
   -webkit-appearance: searchfield-cancel-button;
   margin-right: 2px;

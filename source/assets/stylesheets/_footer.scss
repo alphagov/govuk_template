@@ -1,4 +1,5 @@
-/* Global footer */
+// scss-lint:disable IdSelector
+// Global footer
 
 #footer {
   background-color: $footer-background;
@@ -55,7 +56,7 @@
       }
 
       ul {
-        @include core-16($line-height: (24/16), $line-height-640: (24/16));
+        @include core-16($line-height: (24 / 16), $line-height-640: (24 / 16));
         display: inline-block;
         list-style: none;
         margin: 0 0 1.5em 0;
@@ -92,6 +93,7 @@
         .logo {
           margin-bottom: 1em;
           padding-top: 0;
+
           @include media(tablet) {
             position: absolute;
             left: 0;
@@ -100,18 +102,21 @@
             height: 100%;
           }
 
+          // scss-lint:disable NestingDepth
           a {
             display: block;
             width: 41px;
             height: 17px;
-            overflow:hidden;
+            overflow: hidden;
             text-indent: -999em;
             background: image-url("images/open-government-licence.png") 0 0 no-repeat;
+
             @include device-pixel-ratio() {
               background-image: image-url("images/open-government-licence_2x.png");
               background-size: 41px 17px;
             }
           }
+          // scss-lint:enable NestingDepth
         }
 
         p {
@@ -171,7 +176,6 @@
         }
 
         padding: 115px 0 0 0;
-
       }
     }
   }
