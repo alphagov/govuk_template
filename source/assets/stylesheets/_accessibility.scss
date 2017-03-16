@@ -72,7 +72,7 @@ a:link:focus {
   left: -9999em;
 
   /* Default link colour doesn't have enough contrast against $focus-colour */
-  &:focus, 
+  &:focus,
   &:visited {
     color: $text-colour;
   }
