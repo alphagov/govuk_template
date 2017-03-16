@@ -80,6 +80,7 @@ fieldset {
 
 a:link {
   color: $link-colour;
+  text-decoration-skip: ink;
 }
 
 a:visited {
