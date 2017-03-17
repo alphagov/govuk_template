@@ -42,7 +42,7 @@ module Packager
       end
       File.open(@target_dir.join('VERSION'), 'w') {|f| f.write "#{GovukTemplate::VERSION}\n" }
     end
-    
+
     def process_template(file)
       target_dir = @internal_dir.join(File.dirname(file))
       target_dir.mkpath

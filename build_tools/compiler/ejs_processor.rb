@@ -11,6 +11,7 @@ module Compiler
     @@yield_hash = {
       after_header:         partial_for(:after_header),
       body_classes:         "<%= bodyClasses %>",
+      body_attributes:      "<%= bodyAttributes %>",
       body_start:           partial_for(:body_start),
       body_end:             partial_for(:body_end),
       content:              partial_for(:content),

@@ -11,6 +11,7 @@ parameters = {
   pageTitle: "This is a custom page title",
   head: "<inserted-into-head></inserted-into-head>",
   bodyClasses: "custom_body_class",
+  bodyAttributes: 'custom_body_attribute="test"',
   bodyStart: "<inserted-into-body-start></inserted-into-body-start>",
   cookieMessage: "Custom cookie message",
   headerClass: "custom_header_class",
