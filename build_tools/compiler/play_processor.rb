@@ -12,9 +12,10 @@ module Compiler
       # top_of_page has a special purpose: it is required by Play to define the
       # parameters to pass when rendering
       # https://www.playframework.com/documentation/2.2.x/ScalaTemplates#Template-parameters
-      top_of_page: '@(title: Option[String], bodyClasses: Option[String], htmlLang: Option[String] = None)(head:Html, bodyStart:Html, bodyEnd:Html, insideHeader:Html, afterHeader:Html, footerTop:Html, footerLinks:Html, headerClass:Html = HtmlFormat.empty, propositionHeader:Html = HtmlFormat.empty, homepageUrl:Option[Html] = None, globalHeaderText:Option[Html] = None, cookieMessage: Option[Html] = None, skipLinkMessage:Option[Html], logoLinkTitle:Option[Html] = None, licenceMessage:Html, crownCopyrightMessage:Option[Html])(content:Html)',
+      top_of_page: '@(title: Option[String], bodyClasses: Option[String], bodyAttributes: Option[String], htmlLang: Option[String] = None)(head:Html, bodyStart:Html, bodyEnd:Html, insideHeader:Html, afterHeader:Html, footerTop:Html, footerLinks:Html, headerClass:Html = HtmlFormat.empty, propositionHeader:Html = HtmlFormat.empty, homepageUrl:Option[Html] = None, globalHeaderText:Option[Html] = None, cookieMessage: Option[Html] = None, skipLinkMessage:Option[Html], logoLinkTitle:Option[Html] = None, licenceMessage:Html, crownCopyrightMessage:Option[Html])(content:Html)',
       head: '@head',
       body_classes: '@bodyClasses.getOrElse("")',
+      body_attributes: '@bodyAttributes.getOrElse("")',
       header_class: '@headerClass',
       proposition_header: '@propositionHeader',
       content: '@content',

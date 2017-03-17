@@ -30,6 +30,10 @@ describe "HTML rendered by each integration testing app" do
         expect(subject).to have_tag("body", with: { class: "custom_body_class" })
       end
 
+      it "should allow setting_body_attributes" do
+        expect(subject).to have_tag("body", with: { class: "custom_body_attribute" })
+      end
+
       it "should allow inserting content into body_start" do
         expect(subject).to have_tag("body") do
           with_tag "inserted-into-body-start"
