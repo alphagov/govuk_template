@@ -10,6 +10,8 @@ install:
   - bundle install
 script:
   - bundle exec rake spec integration_tests
+before_deploy:
+- test $TRAVIS_TEST_RESULT = 0
 deploy:
 - provider: script
   script: ./config.sh
