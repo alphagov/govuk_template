@@ -29,7 +29,7 @@
     <%= yield :head %>
   </head>
 
-  <body<%= content_for?(:body_classes) ? raw(" class=\"#{yield(:body_classes)}\"") : '' %>>
+  <body<%= content_for?(:body_classes) ? raw(" class=\"#{yield(:body_classes)}\"") : '' %> <%= content_for?(:body_attributes) ? raw("#{yield(:body_attributes)}") : '' %>>
     <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
 
     <%= yield :body_start %>

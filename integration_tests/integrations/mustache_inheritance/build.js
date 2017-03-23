@@ -24,6 +24,7 @@ compiledTemplate = Hogan.compile("\
   {{$pageTitle}}This is a custom page title{{/pageTitle}} \
   {{$head}}<inserted-into-head></inserted-into-head>{{/head}} \
   {{$bodyClasses}}custom_body_class{{/bodyClasses}} \
+  {{$bodyAttributes}}custom_body_attribute=\"test\"{{/bodyAttributes}} \
   {{$bodyStart}}<inserted-into-body-start></inserted-into-body-start>{{/bodyStart}} \
   {{$cookieMessage}}Custom cookie message{{/cookieMessage}} \
   {{$headerClass}}custom_header_class{{/headerClass}} \

@@ -15,6 +15,7 @@ module Compiler
     @@yield_hash = {
       after_header:         unescaped_html_tag_for(:afterHeader),
       body_classes:         tag_for(:bodyClasses),
+      body_attributes:      unescaped_html_tag_for(:bodyAttributes),
       body_start:           unescaped_html_tag_for(:bodyStart),
       body_end:             unescaped_html_tag_for(:bodyEnd),
       content:              unescaped_html_tag_for(:content),
