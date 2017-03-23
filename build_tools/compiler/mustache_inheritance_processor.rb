@@ -11,6 +11,7 @@ module Compiler
     @@yield_hash = {
       after_header:         tag_for(:afterHeader),
       body_classes:         tag_for(:bodyClasses),
+      body_attributes:      tag_for(:bodyAttributes),
       body_start:           tag_for(:bodyStart),
       body_end:             tag_for(:bodyEnd),
       content:              tag_for(:content),
