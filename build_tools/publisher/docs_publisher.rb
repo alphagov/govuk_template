@@ -6,7 +6,7 @@ require 'yaml'
 
 module Publisher
   class DocsPublisher
-    GIT_URL = "git@github.com:alphagov/govuk_template"
+    GIT_URL = "https://#{ENV['GITHUB_TOKEN']}@github.com/alphagov/govuk_template.git"
 
     def initialize(version = GovukTemplate::VERSION)
       @version = version

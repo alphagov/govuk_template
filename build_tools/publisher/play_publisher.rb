@@ -4,7 +4,7 @@ require 'open3'
 
 module Publisher
   class PlayPublisher
-    GIT_URL = "git@github.com:alphagov/govuk_template_play"
+    GIT_URL = "https://#{ENV['GITHUB_TOKEN']}@github.com/alphagov/govuk_template_play.git"
 
     def initialize(version = GovukTemplate::VERSION)
       @version = version
