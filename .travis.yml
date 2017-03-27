@@ -11,13 +11,12 @@ script:
   - bundle exec rake spec integration_tests
 before_deploy:
 - test $TRAVIS_TEST_RESULT = 0
-- bundle install
 deploy:
 - provider: script
   script: ./config.sh
   on: master
 - provider: script
-  script: 'bundle exec rake build:and_release_if_updated'
+  script: 'bundle install && bundle exec rake build:and_release_if_updated'
   on:
     branch: master
 notifications:
