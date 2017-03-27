@@ -1,3 +1,7 @@
+# 0.19.3
+
+- Add block variable for body attributes
+
 # 0.19.2
 
 - Increase skiplink colour contrast ([PR #263](https://github.com/alphagov/govuk_template/pull/263))

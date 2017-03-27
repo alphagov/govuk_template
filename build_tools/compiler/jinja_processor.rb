@@ -19,6 +19,7 @@ module Compiler
     @@yield_hash = {
       after_header:         block_for(:after_header),
       body_classes:         block_for(:body_classes),
+      body_attributes:      block_for(:body_attributes),
       body_start:           block_for(:body_start),
       body_end:             block_for(:body_end),
       content:              block_for(:content),

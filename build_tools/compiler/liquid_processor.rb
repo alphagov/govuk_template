@@ -11,6 +11,7 @@ module Compiler
     @@yield_hash = {
       after_header:         include_for(:after_header),
       body_classes:         include_for(:body_classes),
+      body_attributes:      include_for(:body_attributes),
       body_start:           include_for(:body_start),
       body_end:             include_for(:body), # Note that this differs from the key!
       content:              "{{ content }}",
