@@ -17,8 +17,10 @@ deploy:
   on: master
 - provider: script
   script: 'bundle install && bundle exec rake build:and_release_if_updated'
-  on:
-    branch: master
+  on: master
+after_deploy:
+  - rm -rf pkg
+  - rm -rf app
 notifications:
   email:
     on_success: never
