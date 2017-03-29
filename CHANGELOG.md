@@ -1,3 +1,11 @@
+# 0.20.0
+
+- Fix EJS template ([PR #270](https://github.com/alphagov/govuk_template/pull/270))
+- Add `theme-color` support to make the page surround in Chrome’s tab view on Android match the black GOV.UK header ([PR #278](https://github.com/alphagov/govuk_template/pull/278))
+- Add `text-decoration-skip: ink` to all links on GOV.UK ([PR #281](https://github.com/alphagov/govuk_template/pull/281))
+- Improve contrast of links when focused ([PR #272](https://github.com/alphagov/govuk_template/pull/272))
+- Make header text colour black when focused ([PR #274](https://github.com/alphagov/govuk_template/pull/274))
+
 # 0.19.2
 
 - Increase skiplink colour contrast ([PR #263](https://github.com/alphagov/govuk_template/pull/263))
