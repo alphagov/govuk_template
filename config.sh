@@ -14,4 +14,5 @@ openssl aes-256-cbc -K $encrypted_ed23d39ae37d_key -iv $encrypted_ed23d39ae37d_i
 tar xvf .travis/secrets.tar
 mkdir -p ~/.gem/
 mv secrets/gem_credentials ~/.gem/credentials
+chmod 0600 ~/.gem/credentials
 mv secrets/npmrc ~/.npmrc
