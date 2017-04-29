@@ -1,0 +1,3 @@
+include LICENCE.txt
+include README.md
+recursive-include govuk_template *

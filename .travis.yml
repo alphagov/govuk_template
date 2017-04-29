@@ -1,0 +1,27 @@
+language: ruby
+cache: bundler
+sudo: false
+env:
+  global:
+    - secure: "gxjwgl9l9ZP/1t86odZyMzWyiVBkG1oFzeL+Kb6z9Dtfu954l9RbytlenTTcnRw1KtaDBZVBs0ix3K45b8T2S6JFzLQ88Z/36DmXGIN6vxctfnVD9sqbbyOuP++RhibK+qUqbPRHo6a3wBsMQ87DMj5S6pJe3dxbCKRXa8zcMd0="
+before_install:
+  - rm -f Gemfile.lock
+  - git clean -fdx
+script:
+  - bundle exec rake spec integration_tests
+before_deploy:
+- test $TRAVIS_TEST_RESULT = 0
+deploy:
+- provider: script
+  script: ./config.sh
+  on: master
+- provider: script
+  script: 'bundle install && bundle exec rake build:and_release_if_updated'
+  on: master
+after_deploy:
+  - rm -rf pkg
+  - rm -rf app
+notifications:
+  email:
+    on_success: never
+    on_failure: always

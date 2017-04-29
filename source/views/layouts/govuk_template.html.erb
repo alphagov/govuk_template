@@ -1,0 +1,114 @@
+<%= yield :top_of_page %>
+<!DOCTYPE html>
+<!--[if lt IE 9]><html class="lte-ie8" lang="<%= content_for?(:html_lang) ? yield(:html_lang) : "en" %>"><![endif]-->
+<!--[if gt IE 8]><!--><html lang="<%= content_for?(:html_lang) ? yield(:html_lang) : "en" %>"><!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <title><%= content_for?(:page_title) ? yield(:page_title) : "GOV.UK - The best place to find government services and information" %></title>
+
+    <!--[if gt IE 8]><!--><link href="<%= asset_path "govuk-template.css" %>" media="screen" rel="stylesheet" /><!--<![endif]-->
+    <!--[if IE 6]><link href="<%= asset_path "govuk-template-ie6.css" %>" media="screen" rel="stylesheet" /><![endif]-->
+    <!--[if IE 7]><link href="<%= asset_path "govuk-template-ie7.css" %>" media="screen" rel="stylesheet" /><![endif]-->
+    <!--[if IE 8]><link href="<%= asset_path "govuk-template-ie8.css" %>" media="screen" rel="stylesheet" /><![endif]-->
+    <link href="<%= asset_path "govuk-template-print.css" %>" media="print" rel="stylesheet" />
+
+    <!--[if IE 8]><link href="<%= asset_path "fonts-ie8.css" %>" media="all" rel="stylesheet" /><![endif]-->
+    <!--[if gte IE 9]><!--><link href="<%= asset_path "fonts.css" %>" media="all" rel="stylesheet" /><!--<![endif]-->
+    <!--[if lt IE 9]><script src="<%= asset_path "ie.js" %>"></script><![endif]-->
+
+    <link rel="shortcut icon" href="<%= asset_path 'favicon.ico' %>" type="image/x-icon" />
+    <%# the colour used for mask-icon is the standard palette $black from 
+        https://github.com/alphagov/govuk_frontend_toolkit/blob/master/stylesheets/colours/_palette.scss %>
+    <link rel="mask-icon" href="<%= asset_path 'gov.uk_logotype_crown.svg' %>" color="#0b0c0c">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="<%= asset_path "apple-touch-icon-152x152.png" %>">
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="<%= asset_path "apple-touch-icon-120x120.png" %>">
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="<%= asset_path "apple-touch-icon-76x76.png" %>">
+    <link rel="apple-touch-icon-precomposed" href="<%= asset_path "apple-touch-icon-60x60.png" %>">
+
+    <%# the colour used for theme-color is the standard palette $black from 
+        https://github.com/alphagov/govuk_frontend_toolkit/blob/master/stylesheets/colours/_palette.scss %>
+    <meta name="theme-color" content="#0b0c0c" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:image" content="<%= asset_path "opengraph-image.png" %>">
+
+    <%= yield :head %>
+  </head>
+
+  <body<%= content_for?(:body_classes) ? raw(" class=\"#{yield(:body_classes)}\"") : '' %>>
+    <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+
+    <%= yield :body_start %>
+
+    <div id="skiplink-container">
+      <div>
+        <a href="#content" class="skiplink"><%= content_for?(:skip_link_message) ? yield(:skip_link_message) : "Skip to main content" %></a>
+      </div>
+    </div>
+
+    <div id="global-cookie-message">
+      <% if content_for?(:cookie_message) %>
+        <%= yield :cookie_message %>
+      <% else %>
+        <p>GOV.UK uses cookies to make the site simpler. <a href="https://www.gov.uk/help/cookies">Find out more about cookies</a></p>
+      <% end %>
+    </div>
+
+    <% unless @omit_header %>
+    <header role="banner" id="global-header" class="<%= yield(:header_class) %>">
+      <div class="header-wrapper">
+        <div class="header-global">
+          <div class="header-logo">
+            <a href="<%= content_for?(:homepage_url) ? yield(:homepage_url) : "https://www.gov.uk/" %>" title="<%= content_for?(:logo_link_title) ? yield(:logo_link_title) : "Go to the GOV.UK homepage" %>" id="logo" class="content">
+              <img src="<%= asset_path 'gov.uk_logotype_crown_invert_trans.png' %>" width="36" height="32" alt=""> <%= content_for?(:global_header_text) ? yield(:global_header_text) : "GOV.UK" %>
+            </a>
+          </div>
+          <%= yield :inside_header %>
+        </div>
+        <%= yield :proposition_header %>
+      </div>
+    </header>
+    <% end %>
+
+    <%= yield :after_header %>
+
+    <div id="global-header-bar"></div>
+
+    <%= content_for?(:content) ? yield(:content) : yield %>
+
+    <footer class="group js-footer" id="footer" role="contentinfo">
+
+      <div class="footer-wrapper">
+        <%= yield :footer_top %>
+
+        <div class="footer-meta">
+          <div class="footer-meta-inner">
+            <%= yield :footer_support_links %>
+
+            <div class="open-government-licence">
+              <p class="logo"><a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence</a></p>
+              <% if content_for?(:licence_message) %>
+                <%= yield :licence_message %>
+              <% else %>
+                <p>All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated</p>
+              <% end %>
+            </div>
+          </div>
+
+          <div class="copyright">
+            <a href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/copyright-and-re-use/crown-copyright/"><%= content_for?(:crown_copyright_message) ? yield(:crown_copyright_message) : "© Crown copyright" %></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div id="global-app-error" class="app-error hidden"></div>
+
+    <script src="<%= asset_path "govuk-template.js" %>"></script>
+
+    <%= yield :body_end %>
+
+    <%# if no GOVUK-namespaced module has loaded we can assume JS has failed and remove the class %>
+    <script>if (typeof window.GOVUK === 'undefined') document.body.className = document.body.className.replace('js-enabled', '');</script>
+  </body>
+</html>

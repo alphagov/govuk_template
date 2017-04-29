@@ -1,0 +1,126 @@
+/* For image replacement */
+.ir {
+  display: block;
+  text-indent: -999em;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  text-align: left;
+  direction: ltr;
+
+  br {
+    display: none;
+  }
+}
+
+/* Hide for both screenreaders and browsers */
+.hidden,
+/* Hide for both screenreaders and browsers when JS enabled */
+.js-enabled .js-hidden {
+  display: none;
+  visibility: hidden;
+}
+
+/* Hide only visually, but have it available for screenreaders */
+.visually-hidden,
+.visuallyhidden {
+  position: absolute;
+  left: -9999em;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+
+  /*
+   * Extends the .visuallyhidden class to allow the element to be
+   * focusable when navigated to via the keyboard
+   */
+  &.focusable:active,
+  &.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+  }
+}
+
+/* Hide visually and from screenreaders, but maintain layout */
+.invisible {
+  visibility: hidden;
+}
+
+/* Give a strong clear visual idea as to what is currently in focus */
+a {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);
+}
+
+a:focus {
+  background-color: $focus-colour;
+  outline: 3px solid $focus-colour;
+}
+
+/* Make links slightly darker when focused to improve contrast. */
+a:link:focus {
+  color: darken( $link-colour, 2.5%)
+}
+
+/* Make skiplinks visible when they are tabbed to */
+
+.skiplink {
+  position: absolute;
+  left: -9999em;
+
+  /* Default link colour doesn't have enough contrast against $focus-colour */
+  &:focus,
+  &:visited {
+    color: $text-colour;
+  }
+}
+
+.skiplink:focus {
+  left: 0;
+  z-index: 1;
+}
+
+#skiplink-container {
+  text-align: center;
+  background: $black;
+
+  div {
+    text-align: left;
+    margin: 0 auto;
+    max-width: 1020px;
+  }
+
+  .skiplink {
+    @include inline-block;
+    margin: 0.75em 0 0 30px;
+  }
+}
+
+input:focus,
+textarea:focus,
+select:focus,
+button:focus {
+  outline: 3px solid $focus-colour;
+  outline-offset: 0;
+}
+
+#global-header {
+
+  input[type=search]:focus {
+    outline: 3px solid $focus-colour;
+    /* Focus appears inside the input */
+    outline-offset: -2px;
+  }
+
+  h1 a:focus {
+    background-color: transparent;
+    outline: none;
+  }
+
+  a:focus {
+	  color: $black;
+  }
+}
