@@ -1,0 +1,53 @@
+<%
+  active ||= nil
+%>
+
+<nav id="proposition-menu" class="no-proposition-name">
+  <ul id="proposition-links">
+    <li>
+      <a class="<%= 'active' if active == 'departments' %>" href="/government/organisations">
+        <%= t("govuk_component.government_navigation.departments", default: "Departments") %>
+      </a>
+    </li>
+    <li>
+      <a class="<%= 'active' if active == 'worldwide' %>" href="/government/world">
+        <%= t("govuk_component.government_navigation.worldwide", default: "Worldwide") %>
+      </a>
+    </li>
+    <li>
+      <a class="<%= 'active' if active == 'how-government-works' %>" href="/government/how-government-works">
+        <%= t("govuk_component.government_navigation.how-government-works", default: "How government works") %>
+      </a>
+    </li>
+    <li>
+      <a class="<%= 'active' if active == 'get-involved' %>" href="/government/get-involved">
+        <%= t("govuk_component.government_navigation.get-involved", default: "Get involved") %>
+      </a>
+    </li>
+    <li class="clear-child">
+      <a class="<%= 'active' if active == 'policies' %>" href="/government/policies">
+        <%= t("govuk_component.government_navigation.policies", default: "Policies") %>
+      </a>
+    </li>
+    <li>
+      <a class="<%= 'active' if active == 'publications' %>" href="/government/publications">
+        <%= t("govuk_component.government_navigation.publications", default: "Publications") %>
+      </a>
+    </li>
+    <li>
+      <a class="<%= 'active' if active == 'consultations' %>" href="/government/publications?publication_filter_option=consultations">
+        <%= t("govuk_component.government_navigation.consultations", default: "Consultations") %>
+      </a>
+    </li>
+    <li>
+      <a class="<%= 'active' if active == 'statistics' %>" href="/government/statistics">
+        <%= t("govuk_component.government_navigation.statistics", default: "Statistics") %>
+      </a>
+    </li>
+    <li>
+      <a class="<%= 'active' if active == 'announcements' %>" href="/government/announcements">
+        <%= t("govuk_component.government_navigation.announcements", default: "Announcements") %>
+      </a>
+    </li>
+  </ul>
+</nav>

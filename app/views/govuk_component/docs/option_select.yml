@@ -1,0 +1,96 @@
+name: Option select
+description: A scrollable list of checkboxes to be displayed on a form where one might
+  otherwise use a multi-select
+fixtures:
+  default:
+    key: market_sector
+    title: Market sector
+    options_container_id: list_of_sectors
+    options:
+    - value: aerospace
+      label: Aerospace
+      id: aerospace
+    - value: agriculture-environment-and-natural-resources
+      label: Agriculture, environment and natural resources
+      id: agriculture-environment-and-natural-resources
+    - value: building-and-construction
+      label: Building and construction
+      id: building-and-construction
+    - value: chemicals
+      label: Chemicals
+      id: chemicals
+    - value: clothing-footwear-and-fashion
+      label: Clothing, footwear and fashion
+      id: clothing-footwear-and-fashion
+    - value: defence
+      label: Defence
+      id: defence
+    - value: distribution-and-service-industries
+      label: Distribution and Service Industries
+      id: distribution-and-service-industries
+    - value: electronics-industry
+      label: Electronics Industry
+      id: electronics-industry
+    - value: energy
+      label: Energy
+      id: energy
+    - value: engineering
+      label: Engineering
+      id: engineering
+    - value: financial-services
+      label: Financial services
+      id: financial-services
+    - value: fire-police-and-security
+      label: Fire, police, and security
+      id: fire-police-and-security
+    - value: food-manufacturing
+      label: Food manufacturing
+      id: food-manufacturing
+    - value: giftware-jewellery-and-tableware
+      label: Giftware, jewellery and tableware
+      id: giftware-jewellery-and-tableware
+  with_option_pre_checked:
+    key: with_checked_value_set
+    title: List of options
+    options_container_id: list_of_vegetables
+    options:
+    - value: potatoes
+      label: Potatoes
+      name: potatoes
+      checked: true
+    - value: carrots
+      label: Carrots
+      id: carrots
+    - value: mash
+      label: Mash
+      id: mash
+  with_aria_controls:
+    key: with_aria-control_set
+    title: List of options
+    aria_controls_id: js-update-region-id
+    options_container_id: list_of_countries
+    options:
+    - value: britain
+      label: Britain
+      id: britain
+    - value: france
+      label: France
+      id: france
+    - value: spain
+      label: Spain
+      id: spain
+  closed_on_load:
+    key: closed_on_load
+    title: List of hats
+    closed_on_load: true
+    options_container_id: list_of_hats
+    options:
+    - value: bobble_hat
+      label: Bobble hat
+      id: bobble_hat
+    - value: fez
+      label: Fez
+      id: fez
+    - value: sombrero
+      label: Sombrero
+      id: sombrero

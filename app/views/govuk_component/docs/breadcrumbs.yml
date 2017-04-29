@@ -1,0 +1,48 @@
+name: "Breadcrumbs"
+description: "Navigational breadcrumbs, showing page hierarchy"
+body: |
+  Accepts an array of breadcrumb objects. Each crumb must have a title and a URL.
+fixtures:
+  default:
+    breadcrumbs:
+    - title: 'Section'
+      url: '/section'
+    - title: 'Sub-section'
+      url: '/section/sub-section'
+  no_breadcrumbs:
+    breadcrumbs: []
+  single_section:
+    breadcrumbs:
+    - title: 'Section'
+      url: '/section'
+  many_breadcrumbs:
+    breadcrumbs:
+    - title: 'Home'
+      url: '/'
+    - title: 'Section'
+      url: '/section'
+    - title: 'Sub-section'
+      url: '/section/sub-section'
+    - title: 'Sub Sub-section'
+      url: '/section/sub-section/sub-sub-section'
+  no_home:
+    breadcrumbs:
+    - title: 'Service Manual'
+      url: '/service-manual'
+    - title: 'Agile Delivery'
+      url: '/service-manual/agile-delivery'
+  real:
+    breadcrumbs:
+    - title: 'Home'
+      url: '/'
+    - title: 'Passports, travel and living abroad'
+      url: '/browse/abroad'
+    - title: 'Travel abroad'
+      url: '/browse/abroad/travel-abroad'
+  last_breadcrumb_is_current_page:
+    breadcrumbs:
+    - title: 'Home'
+      url: '/'
+    - title: 'Passports, travel and living abroad'
+      url: '/browse/abroad'
+    - title: 'Travel abroad'

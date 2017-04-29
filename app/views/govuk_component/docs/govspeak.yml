@@ -1,0 +1,535 @@
+name: Govspeak content
+description: To display long form text which has been converted from Govspeak
+body: |
+  [Govspeak](https://github.com/alphagov/govspeak) is GOV.UK's extension of Markdown.
+
+  This component has no control over markup, which is passed in to the component pre-generated. It only applies CSS/JS.
+
+  It applies styling to standard Markdown content, eg; paragraphs, headings and lists. It also applies styling to Govspeak specific markup, like [callouts](https://github.com/alphagov/govspeak#callouts), [contacts](https://github.com/alphagov/govspeak#points-of-contact) and [highlights](https://github.com/alphagov/govspeak#highlights).
+
+  In addition to styling, it also applies some Javascript behaviours.
+
+  - Progressively enhanced, accessible charts (using [Magna Charta](https://github.com/alphagov/magna-charta), derived from tabular data (see example below)
+  - Progressively enhanced, accessible embedded YouTube player (using [AccessibleMediaPlayer](https://github.com/alphagov/Accessible-Media-Player)
+fixtures:
+  basic_content:
+    content: |
+      <h2>This is a title</h2>
+      <p>This is some body text with <a href=#>a link</a></p>
+  heading_levels:
+    content: |
+      <h2>This is a h2 title</h2>
+      <h3>This is a h3 title</h3>
+      <h4>This is a h4 title</h4>
+      <h5>This is a h5 title</h5>
+      <h6>This is a h6 title</h6>
+  lists:
+    content: |
+      <h2>ordered list:</h2>
+      <ol>
+        <li>one</li>
+        <li>two</li>
+        <li>three</li>
+      </ol>
+      <h2>unordered list:</h2>
+      <ul>
+        <li>one</li>
+        <li>two</li>
+        <li>three</li>
+      </ul>
+  nested_lists:
+    content: |
+      <h2>ordered list:</h2>
+      <ol>
+        <li>
+          <ul>
+            <li>one</li>
+            <li>two</li>
+          </ul>
+        </li>
+        <li>three</li>
+      </ol>
+      <h2>unordered list:</h2>
+      <ul>
+        <li>
+          <ul>
+            <li>one</li>
+            <li>two</li>
+          </ul>
+        </li>
+        <li>three</li>
+      </ul>
+  legislative_lists:
+    content: |
+      <h2>ordered list:</h2>
+      <ol class="legislative-list">
+        <li>one</li>
+        <li>two</li>
+        <li>three</li>
+      </ol>
+  image_fractions:
+    content: |
+      <h3 id="number---fractions-1">Number - fractions</h3>
+
+      <p>Pupils should be taught to:</p>
+
+      <ul>
+      <li>recognise, find, name and write fractions <span class="fraction">
+        <img alt="1/3" height="27" src="https://assets.digital.cabinet-office.gov.uk/government/assets/fractions/1_3-9003d7f3d7cd4433647a5f6525aa7eda.png"></span>
+      , <span class="fraction">
+        <img alt="1/4" height="27" src="https://assets.digital.cabinet-office.gov.uk/government/assets/fractions/1_4-b6128849c8da3b46b9cb5a6918cfe084.png"></span>
+      , <span class="fraction">
+        <img alt="2/4" height="27" src="https://assets.digital.cabinet-office.gov.uk/government/assets/fractions/2_4-e071530a44f0d7980f3442c23e3edd3b.png"></span>
+       and <span class="fraction">
+        <img alt="3/4" height="27" src="https://assets.digital.cabinet-office.gov.uk/government/assets/fractions/3_4-cded12d0389211f864dcb27e640c64d4.png"></span>
+       of a length, shape, set of objects or quantity</li>
+        <li>write simple fractions, for example <span class="fraction">
+        <img alt="1/2" height="27" src="https://assets.digital.cabinet-office.gov.uk/government/assets/fractions/1_2-6e6f542bec97cb8ea3acf39cd25690ee.png"></span>
+       of 6 = 3 and recognise the equivalence of <span class="fraction">
+        <img alt="2/4" height="27" src="https://assets.digital.cabinet-office.gov.uk/government/assets/fractions/2_4-e071530a44f0d7980f3442c23e3edd3b.png"></span>
+      and <span class="fraction">
+        <img alt="1/2" height="27" src="https://assets.digital.cabinet-office.gov.uk/government/assets/fractions/1_2-6e6f542bec97cb8ea3acf39cd25690ee.png"></span>
+      </li>
+      </ul>
+      <div class="call-to-action">
+        <h4>Notes and guidance (non-statutory)</h4>
+
+        <p>Pupils use fractions as ‘fractions of’ discrete and continuous quantities by solving problems using shapes, objects and quantities. They connect unit fractions to equal sharing and grouping, to numbers when they can be calculated, and to measures, finding fractions of lengths, quantities, sets of objects or shapes. They meet <span class="fraction">
+          <img alt="3/4" height="27" src="https://assets.digital.cabinet-office.gov.uk/government/assets/fractions/3_4-cded12d0389211f864dcb27e640c64d4.png"></span>
+         as the first example of a non-unit fraction.<br><br>
+        Pupils should count in fractions up to 10, starting from any number and using the <span class="fraction">
+            <img alt="1/2" height="27" src="https://assets.digital.cabinet-office.gov.uk/government/assets/fractions/1_2-6e6f542bec97cb8ea3acf39cd25690ee.png"></span>
+         and <span class="fraction">
+            <img alt="2/4" height="27" src="https://assets.digital.cabinet-office.gov.uk/government/assets/fractions/2_4-e071530a44f0d7980f3442c23e3edd3b.png"></span>
+          equivalence on the number line (for example, 1<span class="fraction">
+            <img alt="1/4" height="27" src="https://assets.digital.cabinet-office.gov.uk/government/assets/fractions/1_4-b6128849c8da3b46b9cb5a6918cfe084.png"></span>
+        , 1<span class="fraction">
+            <img alt="2/4" height="27" src="https://assets.digital.cabinet-office.gov.uk/government/assets/fractions/2_4-e071530a44f0d7980f3442c23e3edd3b.png"></span>
+         (or 1<span class="fraction">
+            <img alt="1/2" height="27" src="https://assets.digital.cabinet-office.gov.uk/government/assets/fractions/1_2-6e6f542bec97cb8ea3acf39cd25690ee.png"></span>
+        ), 1<span class="fraction">
+            <img alt="3/4" height="27" src="https://assets.digital.cabinet-office.gov.uk/government/assets/fractions/3_4-cded12d0389211f864dcb27e640c64d4.png"></span>
+        , 2). This reinforces the concept of fractions as numbers and that they can add up to more than 1.
+        </p>
+      </div>
+  text_fractions:
+    content: |
+      <p>If an image is not available for a particular fraction, then we'll fallback to text based fraction using <code>sup</code>/<code>sub</code>, like this <span class="fraction"><sup>1</sup>&frasl;<sub>100</sub></span> example.</p>
+  blockquote:
+    content: |
+      <blockquote>
+        <p>My quote</p>
+        <p class="last-child">about things</p>
+      </blockquote>
+  tables:
+    content: |
+      <table>
+        <caption>A table with data</caption>
+        <thead>
+          <tr>
+            <th>Heading 1</th><th>Heading 2</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>cell 1</td><td>cell 2</td>
+          </tr>
+          <tr>
+            <td>cell 3</td><td>cell 4</td>
+          </tr>
+        </tbody>
+      </table>
+  charts:
+    content: |
+      <table class='js-barchart-table mc-auto-outdent'>
+        <caption>A table with numerical data</caption>
+        <tbody>
+          <tr>
+            <td>row 1</td><td>10</td>
+          </tr>
+          <tr>
+            <td>row 2</td><td>15</td>
+          </tr>
+        </tbody>
+      </table>
+  contact:
+    content: |
+      <div class="contact" id="contact_1017">
+        <div class="content">
+          <h3>Media enquiries</h3>
+          <div class="vcard contact-inner">
+            <p class="adr">
+              <span class="street-address">2 Marsham Street<br>London</span><br>
+              <span class="postal-code">SW1P 4DF</span>
+            </p>
+            <div class="email-url-number">
+              <p class="tel"><span class="type">Press enquiries</span> 020 7XXX XXXX</p>
+              <p class="tel"><span class="type">Out of hours</span> 020 7XXX XXXX</p>
+            </div>
+            <p class="comments">A comment about the contact</p>
+          </div>
+        </div>
+      </div>
+  contact_with_surrounding_text:
+    content: |
+      <h2>This is a title</h2>
+      <div class="contact" id="contact_1018">
+        <div class="content">
+          <h3>Media enquiries</h3>
+          <div class="vcard contact-inner">
+            <p class="adr">
+              <span class="street-address">2 Marsham Street<br>London</span><br>
+              <span class="postal-code">SW1P 4DF</span>
+            </p>
+            <div class="email-url-number">
+              <p class="tel"><span class="type">Press enquiries</span> 020 7XXX XXXX</p>
+              <p class="tel"><span class="type">Out of hours</span> 020 7XXX XXXX</p>
+            </div>
+            <p class="comments">A comment about the contact</p>
+          </div>
+        </div>
+      </div>
+      <p>This is a paragraph.</p>
+      <div class="contact" id="contact_1019">
+        <div class="content">
+          <h3>Media enquiries</h3>
+          <div class="vcard contact-inner">
+            <p class="adr">
+              <span class="street-address">2 Marsham Street<br>London</span><br>
+              <span class="postal-code">SW1P 4DF</span>
+            </p>
+            <div class="email-url-number">
+              <p class="tel"><span class="type">Press enquiries</span> 020 7XXX XXXX</p>
+              <p class="tel"><span class="type">Out of hours</span> 020 7XXX XXXX</p>
+            </div>
+            <p class="comments">A comment about the contact</p>
+          </div>
+        </div>
+      </div>
+  footnotes:
+    content: |
+      <p>This is a text with a footnote<sup id="fnref:1a"><a href="#fn:1a" class="footnote">1</a></sup>.</p>
+
+      <div class="footnotes">
+        <ol>
+          <li id="fn:1a">
+            <p>And here is the definition. <a href="#fnref:1a" class="reversefootnote">&#8617;</a></p>
+          </li>
+        </ol>
+      </div>
+  rtl_content:
+    direction: rtl
+    content: |
+      <p>قال وزير الخارجية، ويليام هيغ:</p>
+      <blockquote>
+        <p>مع بدء هذا الشهر الفضيل أتمنى للمسلمين في أنحاء العالم - في آسيا وأفريقيا والشرق الأوسط وأوروبا وغيرها من مناطق العالم - شهر رمضان مبارك.</p>
+        <p class="last-child">في المملكة المتحدة يُحتفل بشهر رمضان منذ أجيال عديدة، ونفتخر بروابطنا القوية مع العالم الإسلامي، سواء مع شركائنا المعهودين في الشرق الأوسط أو روابطنا التاريخية المتينة في آسيا وأفريقيا أو مواطنينا المسلمين البريطانيين المفعمين بالحيوية والنشاط.</p>
+      </blockquote>
+      <h2>ordered list</h2>
+      <ol>
+        <li>تابع الوزير أليستر بيرت عبر تويتر </li>
+        <li>تابعنا باللغة العربية عبر</li>
+        <li>تابعنا باللغة العربية عبر تويتر </li>
+      </ol>
+      <h2>unordered list</h2>
+      <ul>
+        <li>تابع الوزير أليستر بيرت عبر تويتر </li>
+        <li>تابعنا باللغة العربية عبر</li>
+        <li>تابعنا باللغة العربية عبر تويتر </li>
+      </ul>
+  with_bold_unstyled:
+    content: |
+      <p>This content has <strong>text in strong tags</strong>, but they are not styled as bold</p>
+  with_rich_govspeak:
+    rich_govspeak: true
+    content: |
+      <p>This content uses rich govspeak and has <strong>text in strong tags</strong> that are styled as bold</p>
+  with_youtube_embed:
+    content: |
+      <p>This content has a YouTube video link, converted to an accessible embedded player by component JavaScript.</p>
+      <p><a href="https://www.youtube.com/watch?v=y6hbrS3DheU">Operations: a developer's guide, by Anna Shipman</a></p>
+  statistic_headlines:
+    content: |
+      <aside class="stat-headline">
+        <p><em>£6bn</em>
+        Total Departmental Expenditure Limit (<abbr title="Departmental Expenditure Limit">DEL</abbr>) in financial year 2015 to 2016</p>
+      </aside>
+      <p>This includes £5.8 billion Resource <abbr title="Departmental Expenditure Limit">DEL</abbr> and £0.2 billion Capital <abbr title="Departmental Expenditure Limit">DEL</abbr>. In addition, <abbr title="Department for Work and Pensions">DWP</abbr> Annually Managed Expenditure (<abbr title="Annually Managed Expenditure">AME</abbr>) in financial year 2015 to 2016 is £170.5 billion, as forecast by the Office for Budget Responsibility.</p>
+      <aside class="stat-headline">
+        <p>UK employment rate
+        <em>74.1%</em>
+        between October and December 2015</p>
+      </aside>
+  specialist_content:
+    content: |
+      <h2 id="bisphosphonates">Bisphosphonates</h2>
+      <p>Bisphosphonates are used to treat osteoporosis, Paget’s disease, and as part of some cancer regimens, particularly for metastatic bone cancer and multiple myeloma. Individual bisphosphonates have different indications (see individual Summaries of Product Characteristics<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>). The following bisphosphonates are available in the UK:</p>
+
+      <ul>
+        <li>Alendronic acid</li>
+        <li>Ibandronic acid</li>
+        <li>Pamidronate disodium</li>
+        <li>Risedronate sodium</li>
+        <li>Sodium clodronate</li>
+        <li>Zoledronic acid</li>
+      </ul>
+
+      <h2 id="osteonecrosis-of-the-external-auditory-canal">Osteonecrosis of the external auditory canal</h2>
+      <p>Benign idiopathic osteonecrosis of the external auditory canal is a rare condition that can occur in the absence of antiresorptive therapy and is sometimes associated with local trauma.</p>
+
+      <div class="call-to-action">
+        <p>Advice for healthcare professionals:</p>
+        <ul>
+          <li>The possibility of osteonecrosis of the external auditory canal should be considered in patients receiving bisphosphonates who present with ear symptoms, including chronic ear infections, or in patients with suspected cholesteatoma</li>
+          <li>Possible risk factors include steroid use and chemotherapy, with or without local risk factors such as infection or trauma</li>
+          <li>Patients should be advised to report any ear pain, discharge from the ear, or an ear infection during bisphosphonate treatment</li>
+          <li>Report any cases of osteonecrosis of the external auditory canal suspected to be associated with bisphosphonates or any other medicines, including denosumab, on a <a rel="external" href="http://www.mhra.gov.uk/yellowcard">Yellow Card</a>
+        </li>
+        </ul>
+      </div>
+
+      <h2 id="evidence-for-an-association-with-bisphosphonate-treatment">Evidence for an association with bisphosphonate treatment</h2>
+      <p>Evidence from the clinical literature and from cases reported to medicines regulators, including one report received via the UK Yellow Card scheme, supports a causal association between bisphosphonates and osteonecrosis of the external auditory canal. Product information is being updated to include advice for healthcare professionals and patients.</p>
+
+      <p>A total of 29 reports indicative of osteonecrosis of the external auditory canal in association with bisphosphonates have been identified worldwide, including 11 cases reported in the clinical literature.<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup> <sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup> <sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup> <sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup> <sup id="fnref:6"><a href="#fn:6" class="footnote">6</a></sup> <sup id="fnref:7"><a href="#fn:7" class="footnote">7</a></sup> <sup id="fnref:8"><a href="#fn:8" class="footnote">8</a></sup> Cases have been reported with use of both intravenous or oral bisphosphonates for both cancer-related or osteoporosis indications; there is currently insufficient evidence to determine whether there is any increased risk with higher doses used for cancer-related conditions. Most cases were associated with long-term bisphosphonate therapy for 2 years or longer, and most cases had possible risk factors including: steroid use; chemotherapy; and possible local risk factors such as infection, an ear operation, or cotton-bud use. Bilateral osteonecrosis of the external ear canal was reported in some patients, as was osteonecrosis of the jaw.</p>
+
+      <p>The number of cases of osteonecrosis of the external auditory canal reported in association with bisphosphonates is low compared with the number of cases reported of bisphosphonate-related osteonecrosis of the jaw, a <a href="https://www.gov.uk/drug-safety-update/denosumab-xgeva-prolia-intravenous-bisphosphonates-osteonecrosis-of-the-jaw-further-measures-to-minimise-risk">well-established side effect of bisphosphonates</a>.<sup id="fnref:9"><a href="#fn:9" class="footnote">9</a></sup></p>
+
+      <h2 id="evidence-for-an-association-with-denosumab-treatment">Evidence for an association with denosumab treatment</h2>
+      <p>The available data do not support a causal relation between osteonecrosis of the external auditory canal and denosumab. However, this possible risk is being kept under close review, given that denosumab is <a href="https://www.gov.uk/drug-safety-update/denosumab-xgeva-prolia-intravenous-bisphosphonates-osteonecrosis-of-the-jaw-further-measures-to-minimise-risk">known to be associated with osteonecrosis of the jaw</a>.</p>
+
+      <p>Article citation: Drug Safety Update volume 9 issue 5 December 2015: 3.</p>
+
+      <div class="footnotes">
+        <ol>
+          <li id="fn:1">
+            <p>Summaries of Product Characteristics can be found <a rel="external" href="http://www.mhra.gov.uk/spc-pil/index.htm">here on the MHRA website</a> or on the <a rel="external" href="http://www.ema.europa.eu/ema/index.jsp?curl=pages/includes/medicines/medicines_landing_page.jsp">website of the European Medicines Agency</a>, depending whether the medicine has a national or European licence, respectively. <a href="#fnref:1" class="reversefootnote">↩</a></p>
+          </li>
+          <li id="fn:2">
+            <p>Bast F, et al. <a rel="external" href="http://www.ncbi.nlm.nih.gov/pubmed/23202871">Bilateral bisphosphonate-associated osteonecrosis of the external ear canal: a rare case</a>. HNO. 2012; 60: 1127–29 [in German]. <a href="#fnref:2" class="reversefootnote">↩</a></p>
+          </li>
+          <li id="fn:3">
+            <p>Froelich K, et al. <a rel="external" href="http://www.ncbi.nlm.nih.gov/pubmed?term=Froelich+K%5Bauthor%5D+AND+Bisphosphonate&amp;TransSchema=title&amp;cmd=detailssearch">Bisphosphonate-induced osteonecrosis of the external ear canal: a retrospective study</a>. Eur Arch Otorhinolaryngol 2011; 268: 1219–25. <a href="#fnref:3" class="reversefootnote">↩</a></p>
+          </li>
+          <li id="fn:4">
+            <p>Kharazmi M, et al. <a rel="external" href="http://www.ncbi.nlm.nih.gov/pubmed/24220454">Bisphosphonate-associated osteonecrosis of the auditory canal</a>. Br J Oral Maxillofac Surg 2013; 51: e285–87. <a href="#fnref:4" class="reversefootnote">↩</a></p>
+          </li>
+          <li id="fn:5">
+            <p>Polizzotto MN, et al. <a rel="external" href="http://www.ncbi.nlm.nih.gov/pubmed?term=Polizzotto+MN%5Bauthor%5D+AND+Bisphosphonate&amp;TransSchema=title&amp;cmd=detailssearch">Bisphosphonate-associated osteonecrosis of the auditory canal</a>. Br J Haematol 2006; 132: 114. <a href="#fnref:5" class="reversefootnote">↩</a></p>
+          </li>
+          <li id="fn:6">
+            <p>Salzman R, et al. <a rel="external" href="http://www.ncbi.nlm.nih.gov/pubmed/23444468">Osteonecrosis of the external auditory canal associated with oral bisphosphonate therapy: case report and literature review</a>. Otol Neurotol 2013; 34: 209–13. <a href="#fnref:6" class="reversefootnote">↩</a></p>
+          </li>
+          <li id="fn:7">
+            <p>Thorsteinsson AL, et al. <a rel="external" href="http://www.avensonline.org/fulltextarticles/jcmcr-2332-4120-02-0007.html">Bisphosphonate-induced osteonecrosis of the external auditory canal: a case report</a>. J Clin Med Case Reports 2015; 2: 3. <a href="#fnref:7" class="reversefootnote">↩</a></p>
+          </li>
+          <li id="fn:8">
+            <p>Wickham N, et al. <a rel="external" href="http://www.ncbi.nlm.nih.gov/pubmed?term=Wickham%5Bauthor%5D+AND+Bisphosphonate&amp;TransSchema=title&amp;cmd=detailssearch">Bisphosphonate-associated osteonecrosis of the external auditory canal</a>. J Laryngol Otol 2013; 127 (suppl 2): S51–53. <a href="#fnref:8" class="reversefootnote">↩</a></p>
+          </li>
+          <li id="fn:9">
+            <p>Patient reminder cards about the risk of osteonecrosis of the jaw are being introduced for intravenous bisphosphonates and denosumab. The cards will become available at different times for individual products. They are now available for the following products: Prolia (denosumab); Xgeva (denosumab); Aclasta (zoledronic acid); Zometa (zoledronic acid); zoledronic acid 5 mg generics and zoledronic acid 4 mg generics. The cards can be viewed <a href="https://www.gov.uk/drug-safety-update/denosumab-xgeva-prolia-intravenous-bisphosphonates-osteonecrosis-of-the-jaw-further-measures-to-minimise-risk">here</a>. <a href="#fnref:9" class="reversefootnote">↩</a></p>
+          </li>
+        </ol>
+      </div>
+  inline_attachment:
+    content: |
+      <p>testing my attachment <span class="inline-attachment" id="attachment_1399340">
+        <a href="/government/uploads/system/uploads/attachment_data/file/498071/PHE_Payments_over__25k_Jun_15.csv">testing</a>
+        (<span class="type"><abbr title="Comma-separated Values">CSV</abbr></span>, <span class="file-size">65.4KB</span>)</span> works in the middle of copy.
+      </p>
+  block_attachments:
+    content: |
+      <section class="attachment embedded" id="attachment_1399345">
+        <div class="attachment-thumb">
+          <a aria-hidden="true" class="thumbnail" href="https://www.gov.uk/government/publications/minimum-wage-jobs-in-ashfield-local-authority-since-2009"><img alt="" src="https://assets.digital.cabinet-office.gov.uk/government/uploads/system/uploads/attachment_data/file/496127/thumbnail_LPC_FoI_09.12.15_NMW_jobs_Ashfield_LA.pdf.png"></a>
+        </div>
+        <div class="attachment-details">
+          <h2 class="title"><a href="https://www.gov.uk/government/publications/minimum-wage-jobs-in-ashfield-local-authority-since-2009">PDF Attachment</a></h2>
+          <p class="metadata">
+            <span class="type"><abbr title="Portable Document Format">PDF</abbr></span>, <span class="file-size">198KB</span>, <span class="page-length">2 pages</span>
+          </p>
+        </div>
+      </section>
+      <section class="attachment embedded" id="attachment_1399344">
+        <div class="attachment-thumb">
+          <a aria-hidden="true" class="thumbnail" href="https://www.gov.uk/government/world-location-news/294043.es-419"><img alt="" src="https://assets.digital.cabinet-office.gov.uk/government/assets/pub-cover-doc-afe3b0a8a9511beeca890340170aee8b5649413f948e512c9b8ce432d8513d32.png"></a>
+        </div>
+        <div class="attachment-details">
+          <h2 class="title"><a href="https://www.gov.uk/government/world-location-news/294043.es-419">Document attachment</a></h2>
+          <p class="metadata">
+            <span class="type">MS Word Document</span>, <span class="file-size">24.2KB</span>
+          </p>
+        </div>
+      </section>
+      <section class="attachment embedded" id="attachment_1105176">
+        <div class="attachment-thumb">
+          <a aria-hidden="true" class="thumbnail" href="https://www.gov.uk/government/publications/post-legislative-memorandum-the-equality-act-2010"><img alt="" src="https://assets.digital.cabinet-office.gov.uk/government/uploads/system/uploads/attachment_data/file/441838/thumbnail_Memo_to_Women_Equalities.pdf.png"></a>
+        </div>
+        <div class="attachment-details">
+          <h2 class="title"><a href="https://www.gov.uk/government/publications/post-legislative-memorandum-the-equality-act-2010">File attachment with additional metadata</a></h2>
+          <p class="metadata">
+            <span class="references">
+            Ref: ISBN <span class="isbn">9781474121767</span>, <span class="command_paper_number">CM 9101</span>
+            </span>
+            <span class="type"><abbr title="Portable Document Format">PDF</abbr></span>, <span class="file-size">2.02MB</span>, <span class="page-length">86 pages</span>
+          </p>
+          <p>
+            <a class="order_url" title="Order a copy of the publication" href="https://www.gov.uk/how-to-buy-printed-copies-of-official-documents%20">Order a copy</a>
+          </p>
+        </div>
+      </section>
+      <section class="attachment embedded" id="attachment_1399348">
+        <div class="attachment-thumb">
+          <img alt="" src="https://assets.digital.cabinet-office.gov.uk/government/assets/pub-cover-spreadsheet-471052e0d03e940bbc62528a05ac204a884b553e4943e63c8bffa6b8baef8967.png">
+        </div>
+        <div class="attachment-details">
+          <h2 class="title">Previewable online example</h2>
+          <p class="metadata">
+            <span class="preview">
+            <strong>
+            <a href="https://www.gov.uk/government/publications/phe-spend-over-25000-june-2015">View online</a>
+            </strong>
+            </span>
+            <span class="download">
+            <a href="https://www.gov.uk/government/publications/phe-spend-over-25000-june-2015">
+            <strong>Download CSV</strong>
+            65.4KB
+            </a>
+            </span>
+          </p>
+        </div>
+      </section>
+      <section class="attachment embedded" id="attachment_1243761">
+        <div class="attachment-thumb">
+          <a aria-hidden="true" class="thumbnail" href="https://www.gov.uk/government/statistical-data-sets/env24-fly-tipping-incidents-and-actions-taken-in-england"><img alt="" src="https://assets.digital.cabinet-office.gov.uk/government/assets/pub-cover-spreadsheet-471052e0d03e940bbc62528a05ac204a884b553e4943e63c8bffa6b8baef8967.png"></a>
+        </div>
+        <div class="attachment-details">
+          <h2 class="title"><a aria-describedby="attachment-1243761-accessibility-help" href="https://www.gov.uk/government/statistical-data-sets/env24-fly-tipping-incidents-and-actions-taken-in-england">Fly-tipping incidents and actions reported by local authorities in 2014 to 2015</a></h2>
+          <p class="metadata">
+            <span class="type"><abbr title="OpenDocument Spreadsheet">ODS</abbr></span>, <span class="file-size">173KB</span>
+          </p>
+          <p class="opendocument-help">
+            This file is in an <a rel="external" href="https://en.wikipedia.org/wiki/OpenDocument_software">OpenDocument</a> format
+          </p>
+          <div data-module="toggle" class="accessibility-warning" id="attachment-1243761-accessibility-help">
+            <h2>This file may not be suitable for users of assistive technology.
+              <a class="toggler" href="#attachment-1243761-accessibility-request" data-controls="attachment-1243761-accessibility-request" data-expanded="false">Request a different format.</a>
+            </h2>
+            <p id="attachment-1243761-accessibility-request" class="help-block js-hidden"><span class="arrow"></span>
+              If you use assistive technology and need a version of this document
+              in a more accessible format, please email
+              <a href="mailto:defra.helpline@defra.gsi.gov.uk?body=Details%20of%20document%20required%3A%0A%0A%20%20Title%3A%20Fly-tipping%20incidents%20and%20actions%20reported%20by%20local%20authorities%20in%202014%20to%202015%0A%20%20Original%20format%3A%20ods%0A%0APlease%20tell%20us%3A%0A%0A%20%201.%20What%20makes%20this%20format%20unsuitable%20for%20you%3F%0A%20%202.%20What%20format%20you%20would%20prefer%3F%0A%20%20%20%20%20%20&amp;subject=Request%20for%20%27Fly-tipping%20incidents%20and%20actions%20reported%20by%20local%20authorities%20in%202014%20to%202015%27%20in%20an%20alternative%20format">defra.helpline@defra.gsi.gov.uk</a>.
+              Please tell us what format you need. It will help us if you say what assistive technology you use.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="attachment embedded" id="attachment_1112527">
+        <div class="attachment-thumb">
+          <a aria-hidden="true" class="thumbnail" href="https://www.gov.uk/government/publications/summer-budget-2015/summer-budget-2015"><img alt="" src="https://assets.digital.cabinet-office.gov.uk/government/assets/pub-cover-html-b0465911e56983d98c70f0e25fba24bc206d37e8c83d4addf6421dcf6022c6cd.png"></a>
+        </div>
+        <div class="attachment-details">
+          <h2 class="title"><a href="https://www.gov.uk/government/publications/summer-budget-2015/summer-budget-2015">Summer Budget 2015</a></h2>
+          <p class="metadata">
+            <span class="type">HTML</span>
+          </p>
+        </div>
+      </section>
+      <section class="attachment hosted-externally" id="attachment_1425055">
+        <div class="attachment-thumb">
+          <a aria-hidden="true" class="thumbnail" href="http://example.com"><img alt="" src="//whitehall-admin.integration.publishing.service.gov.uk/government/assets/pub-cover-a380604bb953dc22ac9dcfbf3cc65598327f493c37b09ac497c45148cbaa21b1.png"></a>
+        </div>
+        <div class="attachment-details">
+          <h2 class="title"><a rel="external" href="http://example.com">An external link</a></h2>
+          <p class="metadata">
+            <span class="url">http://example.com</span>
+          </p>
+        </div>
+      </section>
+      <section class="attachment hosted-externally" id="attachment_1425056">
+        <div class="attachment-thumb">
+          <a aria-hidden="true" class="thumbnail" href="http://example.com"><img alt="" src="//whitehall-admin.integration.publishing.service.gov.uk/government/assets/pub-cover-a380604bb953dc22ac9dcfbf3cc65598327f493c37b09ac497c45148cbaa21b1.png"></a>
+        </div>
+        <div class="attachment-details">
+          <h2 class="title"><a rel="external" href="http://example.com">An external link (with all possible metadata)</a></h2>
+          <p class="metadata">
+            <span class="references">
+            Ref: ISBN <span class="isbn">9780605039070</span>, <span class="unique_reference">ABC-12345</span>, <span class="command_paper_number">Cmd.987654321</span>, <span class="house_of_commons_paper_number">HC 0123456789</span> <span class="parliamentary_session">2015-16</span>
+            </span>
+            <span class="url">http://example.com</span>
+          </p>
+          <p>
+            <a class="order_url" title="Order a copy of the publication" href="http://www.example.com">Order a copy</a>
+            (<span class="price">£1.00</span>)
+          </p>
+        </div>
+      </section>
+      <section class="attachment embedded" id="attachment_1398523">
+        <div class="attachment-thumb">
+          <a aria-hidden="true" class="thumbnail" href="https://www.gov.uk/government/consultations/environmental-permitting-updating-the-standards-for-petrol-vapour-recovery-at-service-stations"><img alt="" src="https://assets.digital.cabinet-office.gov.uk/government/uploads/system/uploads/attachment_data/file/498443/thumbnail_petrol-vapour-recovery-consult-sum-resp.pdf.png"></a>
+        </div>
+        <div class="attachment-details">
+          <h2 class="title"><a href="https://www.gov.uk/government/consultations/environmental-permitting-updating-the-standards-for-petrol-vapour-recovery-at-service-stations">Consultation outcome with published date</a></h2>
+          <p class="metadata">
+            <span class="changed">Published: <time class="date" datetime="2016-02-08"> 8 February 2016</time></span>
+            <span class="type"><abbr title="Portable Document Format">PDF</abbr></span>, <span class="file-size">106KB</span>, <span class="page-length">7 pages</span>
+          </p>
+        </div>
+      </section>
+  block_attachment_rtl:
+    direction: rtl
+    content: |
+      <section class="attachment embedded" id="attachment_514218">
+        <div class="attachment-thumb">
+          <a aria-hidden="true" class="thumbnail" href="https://www.gov.uk/government/publications/future-of-food-and-farming.ar"><img alt="" src="https://assets-origin.integration.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/288236/thumbnail_11-924-future-of-food-and-farming-summary-arabic.pdf.png"></a>
+        </div>
+        <div class="attachment-details">
+          <h2 class="title"><a aria-describedby="attachment-514218-accessibility-help" href="https://www.gov.uk/government/publications/future-of-food-and-farming.ar">مستقبل الغذاء والزراعة: موجز تنفيذي</a></h2>
+          <p class="metadata">
+            <span class="references">
+            إشارة: <span class="unique_reference">BIS/11/924</span>
+            </span>
+            <span class="type"><abbr title="Portable Document Format">PDF</abbr></span>, <span class="file-size">906KB</span>, <span class="page-length">44 pages</span>
+          </p>
+          <div data-module="toggle" class="accessibility-warning" id="attachment-514218-accessibility-help">
+            <h2>هذا المف قد لا يكون مناسبا لمستخدمي التكنولوجيا المساعدة على القراءة
+              <a class="toggler" href="#attachment-514218-accessibility-request" data-controls="attachment-514218-accessibility-request" data-expanded="false" role="button" aria-controls="attachment-514218-accessibility-request" aria-expanded="false">طلب الوثيقة بشكل آخر</a>
+            </h2>
+            <p id="attachment-514218-accessibility-request" class="js-hidden" aria-live="polite" role="region">
+              لاستلام وثيقة مكتوبة بشكل آخر، كلغة بريل أو وثيقة صوتية أو أي نوع آخر من الوثائق، يرجى إرسال رسالة إلكترونية إلى <a href="mailto:enquiries@bis.gsi.gov.uk?body=Details%20of%20document%20required%3A%0A%0A%20%20Title%3A%20%D9%85%D8%B3%D8%AA%D9%82%D8%A8%D9%84%20%D8%A7%D9%84%D8%BA%D8%B0%D8%A7%D8%A1%20%D9%88%D8%A7%D9%84%D8%B2%D8%B1%D8%A7%D8%B9%D8%A9%3A%20%D9%85%D9%88%D8%AC%D8%B2%20%D8%AA%D9%86%D9%81%D9%8A%D8%B0%D9%8A%0A%20%20Original%20format%3A%20pdf%0A%20%20Unique%20reference%3A%20BIS%2F11%2F924%0A%0APlease%20tell%20us%3A%0A%0A%20%201.%20What%20makes%20this%20format%20unsuitable%20for%20you%3F%0A%20%202.%20What%20format%20you%20would%20prefer%3F%0A%20%20%20%20%20%20&amp;subject=Request%20for%20%27%D9%85%D8%B3%D8%AA%D9%82%D8%A8%D9%84%20%D8%A7%D9%84%D8%BA%D8%B0%D8%A7%D8%A1%20%D9%88%D8%A7%D9%84%D8%B2%D8%B1%D8%A7%D8%B9%D8%A9%3A%20%D9%85%D9%88%D8%AC%D8%B2%20%D8%AA%D9%86%D9%81%D9%8A%D8%B0%D9%8A%27%20in%20an%20alternative%20format">enquiries@bis.gsi.gov.uk</a> مع كتابة عنوانك ورقم هاتفك إلى جانب عنوان الوثيقة المطلوبة ("{title}"), and its reference (Unique reference: BIS/11/924)
+            </p>
+          </div>
+        </div>
+      </section>
+  example:
+    content: |
+      <div class="example">
+        <p>
+          <strong>Example</strong>
+          This is an indented example block.<br/>
+          It may span multiple lines, <a href="#">contain links</a>.
+        </p>
+        <p>
+          It may even span multiple paragraphs.
+        </p>
+      </div>
+  call_to_action:
+    content: |
+      <div class="call-to-action">
+        <p>Call to action</p>
+      </div>
+  information_callout:
+    content: |
+      <div class="application-notice info-notice">
+        <p>
+          If you drilled a tunnel straight through the Earth and jumped in, it would take
+          you exactly 42 minutes and 12 seconds to get to the other side.
+        </p>
+      </div>
+  warning_callout:
+    content: |
+      <div class="application-notice help-notice">
+        <p>
+          The water in the mouth of a blue whale weighs more than its body.
+        </p>
+      </div>

@@ -1,0 +1,31 @@
+name: "Taxonomy sidebar"
+description: "Sidebar navigation for displaying on pages tagged to the GOV.UK taxonomy."
+body: |
+  Accepts an array of items. These items are typically the list of taxons the current
+  content page is tagged to.
+
+  Each item is a hash with a title, url, description, and list of related content
+  associated with that item.
+fixtures:
+  default:
+    items:
+      - title: "School curriculum"
+        url: /education/school-curriculum
+        description: |
+          Early years, key stages 1 to 5, GCSE and AS and A level reforms, tests,
+          exams and assessments, PSHE and SMSC.
+        related_content:
+          - title: "The national curriculum"
+            link: /national-curriculum
+      - title: "Tests (key stage 1)"
+        url: /key-stage-1-tests
+        description: |
+          Key dates, sample and test materials, administration, moderation,
+          assessing and reporting, statistics, frameworks.
+        related_content:
+          - title: "Key stage 1 teacher assessment"
+            link: /government/collections/key-stage-1-teacher-assessment
+          - title: "Primary assessments: information and resources for 2017"
+            link: /government/publications/primary-assessments-information-and-resources-for-2017
+
+

@@ -1,0 +1,26 @@
+<% if local_assigns.include?(:next_page) || local_assigns.include?(:previous_page) %>
+<nav
+  class="govuk-previous-and-next-navigation"
+  role="navigation"
+  aria-label="<%= t("govuk_component.previous_and_next_navigation.pagination", default: "Pagination") %>"
+>
+  <ul class="group">
+    <% if local_assigns.include?(:previous_page) %>
+      <li class="previous-page">
+        <a href="<%= previous_page[:url] %>" rel="prev" >
+          <span class="pagination-part-title"><%= previous_page[:title] %></span>
+          <span class="pagination-label"><%= previous_page[:label] %></span>
+        </a>
+      </li>
+    <% end %>
+    <% if local_assigns.include?(:next_page) %>
+      <li class="next-page">
+        <a href="<%= next_page[:url] %>" rel="next">
+          <span class="pagination-part-title"><%= next_page[:title] %></span>
+          <span class="pagination-label"><%= next_page[:label] %></span>
+        </a>
+      </li>
+    <% end %>
+  </ul>
+</nav>
+<% end %>

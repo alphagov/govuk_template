@@ -1,0 +1,12 @@
+<div class="govuk-beta-label">
+  <p>
+    <strong class="phase-tag">Beta</strong>
+    <span>
+      <% if local_assigns.include?(:message) %>
+        <%= raw message %>
+      <% else %>
+        This part of GOV.UK is being rebuilt &ndash; <a href="/help/beta">find out what this means</a>
+      <% end %>
+    </span>
+  </p>
+</div>

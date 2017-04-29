@@ -1,0 +1,21 @@
+name: Page title
+description: A page title with optional context label
+body: |
+  This contains an optional parameter for average title length. The two valid
+  values for this parameter are 'medium' or 'long'. Medium titles are titles
+  where the average is around 30 characters or less. Long titles would have
+  an average length of nearer 50 characters or more.
+
+  On average the titles on government bits of content are 50 characters. The
+  average for bits of general guidance are nearer 27 characters long.
+fixtures:
+  default:
+    title: My page title
+  with_context:
+    context: Publication
+    title: My page title
+  long_title_with_context:
+    context: Publication
+    title: My page title which is often really long and verbose and has lots of extra
+      words it doesn't need
+    average_title_length: long

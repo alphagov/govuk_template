@@ -1,0 +1,53 @@
+<% if local_assigns[:sections] && !sections.blank? %>
+  <aside class="govuk-related-items" data-module="track-click" role="complementary">
+    <% sections.each_with_index do |section, section_index| %>
+      <h2
+        <% if section[:id] %>id="<%= section[:id] %>"<% end %>
+      >
+        <%= section[:title] %>
+      </h2>
+      <nav role="navigation" <% if section[:id] %>aria-labelledby="<%= section[:id] %>"<% end %>>
+        <ul>
+          <% section[:items].each_with_index do |item, item_index| %>
+            <li>
+              <%= link_to(
+                item[:title],
+                item[:url],
+                data: {
+                  track_category: 'relatedLinkClicked',
+                  track_action: "#{section_index + 1}.#{item_index + 1}",
+                  track_label: item[:url],
+                  track_dimension: item[:title],
+                  track_dimension_index: 29,
+                },
+                rel: item[:rel],
+              ) %>
+            </li>
+          <% end %>
+          <% if section[:url] %>
+            <li class="related-items-more">
+              <%= link_to(
+                section[:url],
+                data: {
+                  track_category: 'relatedLinkClicked',
+                  track_action: "#{section_index + 1}.#{section[:items].size + 1}",
+                  track_label: section[:url],
+                  track_dimension: 'More',
+                  track_dimension_index: 29,
+                },
+              ) do %>
+                <%= t("govuk_component.related_items.more", default: "More") %>
+                <% if section[:title] %>
+                  <span class="visuallyhidden">
+                    <%= t("govuk_component.related_items.in", default: "in") %>
+                    <%= section[:title] %>
+                  </span>
+                <% end %>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      </nav>
+    <% end %>
+  </aside>
+<% end %>

@@ -1,0 +1,244 @@
+name: "Govspeak content (HTML Publications)"
+description: "To display long form text with numbered parts, which has been converted from Govspeak"
+body: |
+  This component calls the standard [Govspeak component](/components/govspeak), and layers a set of overriding styles on top. Styles for numbered parts are added, and heading sizes are increased.
+
+  Requires Slimmer >= 9.1.0 for nested component support.
+fixtures:
+  basic_content:
+    content: |
+      <p>This is a Budget that puts security first. It ensures economic security for working people by putting the public finances in order and setting out a bold plan for a more productive, balanced economy.</p>
+  heading_level_2:
+    content: |
+      <h2>
+        <span class="number">1. </span>Executive summary
+      </h2>
+      <p>This is a Budget that puts security first. It ensures economic security for working people by putting the public finances in order and setting out a bold plan for a more productive, balanced economy.</p>
+  heading_level_3:
+    content: |
+      <h3>
+        <span class="number">1.1 </span>Fixing the public finances and running a surplus
+      </h3>
+      <p>The government’s long-term economic plan has laid the foundations for a stronger economy, and the UK’s recovery is now well established. The labour market remains strong, and in the 3 months to April 2015, employment was around record levels at 31.1 million.</p>
+  numbered_content:
+    content: |
+      <h2 id="executive-summary">
+        <span class="number">1. </span>Executive summary
+      </h2>
+      <p>This is a Budget that puts security first. It ensures economic security for working people by putting the public finances in order and setting out a bold plan for a more productive, balanced economy.</p>
+      <h3 id="fixing-the-public-finances-and-running-a-surplus">
+        <span class="number">1.1 </span>Fixing the public finances and running a surplus
+      </h3>
+      <p>The government’s long-term economic plan has laid the foundations for a stronger economy, and the UK’s recovery is now well established. The labour market remains strong, and in the 3 months to April 2015, employment was around record levels at 31.1 million.</p>
+      <h3 id="economic-forecast">
+        <span class="number">1.2 </span>Economic forecast
+      </h3>
+      <p>The Office for Budget Responsibility (OBR) forecasts GDP growth of 2.4% in 2015, 2.3% in 2016, and 2.4% for the remainder of the forecast period.</p>
+      <h2 id="the-uk-economy-and-public-finances">
+        <span class="number">2. </span>The UK economy and public finances
+      </h2>
+      <h3 id="uk-economy">
+        <span class="number">2.1 </span>UK economy
+      </h3>
+      <p>The government’s long‑term economic plan has secured the recovery. The government’s fiscal responsibility has allowed monetary activism to support demand in the economy alongside repair of the financial sector. This has been supported by supply-side reform to deliver sustainable increases in standards of living.</p>
+  right_to_left:
+    direction: 'rtl'
+    content: |
+      <h2>
+        <span class="number">1. </span>Executive summary
+      </h2>
+      <p>This is a Budget that puts security first. It ensures economic security for working people by putting the public finances in order and setting out a bold plan for a more productive, balanced economy.</p>
+      <h3>
+        <span class="number">1.1 </span>Fixing the public finances and running a surplus
+      </h3>
+      <p>The government’s long-term economic plan has laid the foundations for a stronger economy, and the UK’s recovery is now well established. The labour market remains strong, and in the 3 months to April 2015, employment was around record levels at 31.1 million.</p>
+      <h3>
+        <span class="number">1.2 </span>Economic forecast
+      </h3>
+      <p>The Office for Budget Responsibility (OBR) forecasts GDP growth of 2.4% in 2015, 2.3% in 2016, and 2.4% for the remainder of the forecast period.</p>
+      <h2>
+        <span class="number">2. </span>The UK economy and public finances
+      </h2>
+      <h3>
+        <span class="number">2.1 </span>UK economy
+      </h3>
+      <p>The government’s long‑term economic plan has secured the recovery. The government’s fiscal responsibility has allowed monetary activism to support demand in the economy alongside repair of the financial sector. This has been supported by supply-side reform to deliver sustainable increases in standards of living.</p>
+  sticky_footer_html:
+    sticky_footer_html: '<a href="#contents">Contents</a>'
+    content: |
+      <aside class="stat-headline">
+      <p><em>£6bn</em>
+      Total Departmental Expenditure Limit (<abbr title="Departmental Expenditure Limit">DEL</abbr>) in financial year 2015 to 2016</p>
+      </aside>
+
+      <p>This includes £5.8 billion Resource <abbr title="Departmental Expenditure Limit">DEL</abbr> and £0.2 billion Capital <abbr title="Departmental Expenditure Limit">DEL</abbr>. In addition, <abbr title="Department for Work and Pensions">DWP</abbr> Annually Managed Expenditure (<abbr title="Annually Managed Expenditure">AME</abbr>) in financial year 2015 to 2016 is £170.5 billion, as forecast by the Office for Budget Responsibility. </p>
+
+      <p>Source: <a href="/government/topical-events/autumn-statement-and-spending-review-2015">Spending Review and Autumn Statement 2015</a></p>
+
+      <p>Source: <a rel="external" href="http://cdn.budgetresponsibility.independent.gov.uk/EFO_November__2015.pdf">Office for Budget Responsibility Economic and Fiscal Outlook 2015</a></p>
+
+      <h2 id="vision">Vision</h2>
+
+      <p>Everything we do in the Department for Work and Pensions is about providing security, extending opportunity, and giving people the support they need to transform their lives.</p>
+
+      <p>We are helping the most vulnerable people in our society by addressing the root causes of disadvantage and supporting them to turn their lives around. </p>
+
+      <p>We are ensuring that everyone who is able to work is given all the support they need to do so, while those who cannot are - quite rightly - protected.</p>
+
+      <p>Through Universal Credit we are delivering a benefit system that provides the right incentives, ensures work always pays, and which supports people both to get a job and then to progress in employment. </p>
+
+      <p>We are giving people greater security, choice and dignity in retirement with a safe and sustainable state pension, and the independence of a well earned private pension.</p>
+
+      <p><a href="/government/organisations/department-for-work-pensions">Our ministers and management</a></p>
+
+      <h2 id="objectives">Objectives</h2>
+
+      <ol>
+        <li>
+          <p><a href="/government/publications/dwp-single-departmental-plan-2015-to-2020#run-an-effective-welfare-system-that-enables-people-to-achieve-financial-independence-by-providing-assistance-and-guidance-into-employment">Run an effective welfare system that enables people to achieve financial independence by providing assistance and guidance into employment</a></p>
+        </li>
+        <li>
+          <p><a href="/government/publications/dwp-single-departmental-plan-2015-to-2020#increase-saving-for-and-security-in-later-life">Increase saving for, and security in, later life</a></p>
+        </li>
+        <li>
+          <p><a href="/government/publications/dwp-single-departmental-plan-2015-to-2020#create-a-fair-and-affordable-welfare-system-which-improves-the-life-chances-of-children-and-of-adults">Create a fair and affordable welfare system which improves the life chances of children and of adults</a></p>
+        </li>
+        <li>
+          <p><a href="/government/publications/dwp-single-departmental-plan-2015-to-2020#deliver-outstanding-services-to-our-customers-and-claimants">Deliver outstanding services to our customers and claimants</a></p>
+        </li>
+        <li>
+          <p><a href="/government/publications/dwp-single-departmental-plan-2015-to-2020#transforming-the-way-we-deliver-our-services-to-reduce-costs-and-increas-efficiency">Delivering Efficiently: transforming the way we deliver our services to reduce costs and increase efficiency</a></p>
+        </li>
+      </ol>
+
+      <p><a href="/government/publications/permanent-secretaries-objectives-2015-to-2016">Our Permanent Secretary’s objectives</a></p>
+
+      <p>Progress against this plan will be measured in the Mid Year Report to Parliament and Annual Report and Accounts. </p>
+
+      <h2 id="run-an-effective-welfare-system-that-enables-people-to-achieve-financial-independence-by-providing-assistance-and-guidance-into-employment">
+      <span class="number">1. </span> Run an effective welfare system that enables people to achieve financial independence by providing assistance and guidance into employment</h2>
+
+      <p>Lead minister: <a href="/government/people/priti-patel">Rt Hon Priti Patel MP, Minister of State for Employment</a></p>
+
+      <p>Lead official: <a href="/government/people/jeremy-moore">Jeremy Moore, Director General, Strategy, Policy and Analysis</a></p>
+
+      <h3 id="what-dwp-is-doing">
+      <span class="number">1.1 </span> What <abbr title="Department for Work and Pensions">DWP</abbr> is doing</h3>
+
+      <p>We are transforming people’s life chances by supporting them to become sustainably employed and increase their earnings. This is key to our ambition to have the highest employment rate in the G7.
+      We are pursuing this by:</p>
+
+      <ul>
+        <li>continuing to roll out <a href="https://www.gov.uk/government/publications/universal-credit-and-other-benefits-quick-guide">Universal Credit</a> through to financial year 2020 to 2021 and extending job search conditionality to a further 1.3 million claimants to ensure that work always pays  </li>
+        <li>continuing to provide a range of employment support through Jobcentre Plus, the Work Programme (until 2017) and the new Work and Health Programme from 2017</li>
+        <li>supporting people to become self-employed (New Enterprise Allowance)</li>
+        <li>offering working families on Universal Credit support of up to 85% of their eligible childcare costs (where the lone parent or both parents in a couple are in work)</li>
+        <li>helping parents understand the government’s childcare offer </li>
+      </ul>
+  financial_table:
+    content: |
+      <table class="financial-data">
+        <caption>Table 1.6: Total Managed Expenditure (as produced by the <a href="https://alphagov.github.io/table-editor/financial-tables.html">financial table editor</a>)</caption>
+        <thead>
+          <tr>
+            <td></td>
+            <th class="numeric">2015-16</th>
+            <th class="numeric">2016-17</th>
+            <th class="numeric">2017-18</th>
+            <th class="numeric">2018-19</th>
+            <th class="numeric">2019-20</th>
+            <th class="numeric">2020-21</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="section-heading">
+            <th colspan="7">Current Expenditure</th>
+          </tr>
+          <tr>
+            <th>Resource AME</th>
+            <td class="numeric">345.3</td>
+            <td class="numeric">353.3</td>
+            <td class="numeric">365.9</td>
+            <td class="numeric">378.4</td>
+            <td class="numeric">391.8</td>
+            <td class="numeric">403.9</td>
+          </tr>
+          <tr>
+            <th>Resource DEL excluding depreciation</th>
+            <td class="numeric">315.1</td>
+            <td class="numeric">320.8</td>
+            <td class="numeric">322.9</td>
+            <td class="numeric">325.2</td>
+            <td class="numeric">328.3</td>
+            <td class="numeric">341.2</td>
+          </tr>
+          <tr>
+            <th>Ring-fenced depreciation</th>
+            <td class="numeric">21.9</td>
+            <td class="numeric">21.9</td>
+            <td class="numeric">21.9</td>
+            <td class="numeric">21.9</td>
+            <td class="numeric">21.9</td>
+            <td class="numeric">21.9</td>
+          </tr>
+          <tr class="subtotal">
+            <th>Public Sector Current Expenditure</th>
+            <td class="numeric">682.3</td>
+            <td class="numeric">696.0</td>
+            <td class="numeric">710.7</td>
+            <td class="numeric">725.5</td>
+            <td class="numeric">742.0</td>
+            <td class="numeric">767.0</td>
+          </tr>
+          <tr class="section-heading">
+            <th colspan="7">Capital Expenditure</th>
+          </tr>
+          <tr>
+            <th>Capital AME</th>
+            <td class="numeric">31.7</td>
+            <td class="numeric">33.4</td>
+            <td class="numeric">31.7</td>
+            <td class="numeric">30.7</td>
+            <td class="numeric">31.7</td>
+            <td class="numeric">34.5</td>
+          </tr>
+          <tr>
+            <th>Capital DEL</th>
+            <td class="numeric">41.7</td>
+            <td class="numeric">44.0</td>
+            <td class="numeric">45.0</td>
+            <td class="numeric">45.0</td>
+            <td class="numeric">47.3</td>
+            <td class="numeric">55.7</td>
+          </tr>
+          <tr class="subtotal">
+            <th>Public Sector Gross Investment</th>
+            <td class="numeric">73.4</td>
+            <td class="numeric">77.4</td>
+            <td class="numeric">76.7</td>
+            <td class="numeric">75.7</td>
+            <td class="numeric">79.0</td>
+            <td class="numeric">90.2</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr class="total">
+            <th>Total Managed Expenditure</th>
+            <td class="numeric">755.7</td>
+            <td class="numeric">773.3</td>
+            <td class="numeric">787.5</td>
+            <td class="numeric">801.2</td>
+            <td class="numeric">821.0</td>
+            <td class="numeric">857.2</td>
+          </tr>
+          <tr>
+            <th>Total Managed Expenditure (% GDP)</th>
+            <td class="numeric">39.7%</td>
+            <td class="numeric">39.1%</td>
+            <td class="numeric">38.1%</td>
+            <td class="numeric">37.2%</td>
+            <td class="numeric">36.5%</td>
+            <td class="numeric">36.4%</td>
+          </tr>
+        </tfoot>
+      </table>

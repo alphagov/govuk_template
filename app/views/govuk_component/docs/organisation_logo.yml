@@ -1,0 +1,118 @@
+name: "Organisation logo"
+description: "Organisation text with crest and branded border colour"
+body: |
+  Organisation name must be provided with pre-formatted line breaks.
+  These cannot be inferred from the name alone.
+
+  Alternatively a custom organisation logo can be provided as an image.
+fixtures:
+  default:
+    organisation:
+      name: 'Organisation<br>Name'
+      url: 'http://www.gov.uk'
+  single_identity:
+    organisation:
+      name: 'Single Identity'
+      url: 'http://www.gov.uk'
+      crest: 'single-identity'
+  attorney_generals_office:
+    organisation:
+      name: 'Attorney <br>General’s <br>Office'
+      url: '/government/organisations/attorney-generals-office'
+      brand: 'attorney-generals-office'
+      crest: 'single-identity'
+  department_for_business_innovation_and_skills:
+    organisation:
+      name: 'Department <br>for Business<br>Innovation &amp; Skills'
+      url: '/government/organisations/department-for-business-innovation-skills'
+      brand: 'department-for-business-innovation-skills'
+      crest: 'bis'
+  department_for_international_trade:
+    organisation:
+      name: 'Department for<br>International Trade'
+      url: '/government/organisations/department-for-international-trade'
+      brand: 'department-for-international-trade'
+      crest: 'dit'
+  executive_office:
+    organisation:
+      name: Prime Minister's Office, 10 Downing Street
+      url: '/government/organisations/prime-ministers-office-10-downing-street'
+      brand: 'executive-office'
+      crest: 'eo'
+  home_office:
+    organisation:
+      name: 'Home Office'
+      url: '/government/organisations/home-office'
+      brand: 'home-office'
+      crest: 'ho'
+  ministry_of_defence:
+    organisation:
+      name: 'Ministry<br>of Defence'
+      url: '/government/organisations/ministry-of-defence'
+      brand: 'ministry-of-defence'
+      crest: 'mod'
+  office_of_the_advocate_general_for_scotland:
+    organisation:
+      name: 'Office of the<br>Advocate General<br>for Scotland'
+      url: '/government/organisations/office-of-the-advocate-general-for-scotland'
+      brand: 'office-of-the-advocate-general-for-scotland'
+      crest: 'so'
+  office_of_the_leader_of_the_house_of_commons:
+    organisation:
+      name: 'Office of the <br>Leader of the <br>House of Commons'
+      url: '/government/organisations/the-office-of-the-leader-of-the-house-of-commons'
+      brand: 'the-office-of-the-leader-of-the-house-of-commons'
+      crest: 'portcullis'
+  wales_office:
+    organisation:
+      name: 'Wales Office<br>Swyddfa Cymru'
+      url: '/government/organisations/wales-office'
+      brand: 'wales_office'
+      crest: 'wales'
+  uk_atomic_energy_authority:
+    organisation:
+      name: 'UK Atomic <br>Energy <br>Authority'
+      url: '/government/organisations/uk-atomic-energy-authority'
+      brand: 'department-for-business-innovation-skills'
+      crest: 'ukaea'
+  wales_office:
+    organisation:
+      name: 'Wales Office<br>Swyddfa Cymru'
+      url: '/government/organisations/wales-office'
+      brand: 'wales_office'
+      crest: 'wales'
+  hm_revenue_customs:
+    organisation:
+      name: 'HM Revenue<br>&amp; Customs'
+      url: '/government/organisations/hm-revenue-customs'
+      brand: 'hm-revenue-customs'
+      crest: 'hmrc'
+  bona_vacantia:
+    organisation:
+      name: 'Bona Vacantia'
+      url: '/government/organisations/bona-vacantia'
+      brand: 'attorney-generals-office'
+      crest: 'org'
+  treasury_solicitors_office:
+    organisation:
+      name: 'Treasury <br>Solicitor’s <br>Department'
+      url: '/government/organisations/treasury-solicitor-s-department'
+      brand: 'attorney-generals-office'
+      crest: 'org'
+  land_registry:
+    organisation:
+      name: 'Land Registry'
+      url: '/government/organisations/land-registry'
+      brand: 'department-for-business-innovation-skills'
+      crest: null
+      image:
+        url: 'https://assets.publishing.service.gov.uk/government/uploads/system/uploads/organisation/logo/69/LR_logo_265.png'
+        alt_text: 'Land Registry'
+  hm_prison_service:
+    organisation:
+      name: 'HM Prison Service'
+      url: '/government/organisations/hm-prison-service'
+      brand: 'ministry-of-justice'
+      image:
+        url: 'https://assets.publishing.service.gov.uk/government/uploads/system/uploads/organisation/logo/321/HMPS.jpg'
+        alt_text: 'HM Prison Service'

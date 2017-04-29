@@ -1,0 +1,46 @@
+name: "Related items"
+description: "Headed sections of related items."
+body: |
+  Accepts an array of sections. Each section can have a title, url, id and a list of related items.
+
+  Each item is a hash with a title and url. If the url is external, a rel value can also be provided.
+fixtures:
+  default:
+    sections:
+    - title: "Travel Abroad"
+      url: "/"
+      id: "related-travel-abroad"
+      items:
+      - title: "Link A"
+        url: /
+      - title: "Link B"
+        url: /
+    - title: "Travel"
+      id: "related-travel"
+      items:
+      - title: "Link 1"
+        url: /
+      - title: "Link 2"
+        url: /
+  external_links:
+    sections:
+      - title: "Elsewhere on the web"
+        id: "related-elsewhere-on-the-web"
+        items:
+        - title: "Wikivorce"
+          url: "http://www.wikivorce.com"
+          rel: external
+  real_example:
+    # from https://www.gov.uk/register-birth
+    sections:
+    - title: "Pregnancy and birth"
+      url: /browse/childcare-parenting/pregnancy-birth
+      id: "related-pregnancy-and-birth"
+      items:
+      - title: "Register a birth"
+        url: /register-birth
+    - title: "Elsewhere on GOV.UK"
+      id: "related-elsewhere-on-govuk"
+      items:
+      - title: "Check if you're a British citizen"
+        url: /check-british-citizen

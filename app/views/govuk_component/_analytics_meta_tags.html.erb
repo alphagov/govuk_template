@@ -1,0 +1,38 @@
+<%
+  # We have to call deep_symbolize_keys because we're often dealing with a
+  # parsed JSON document which will have string keys by default, but our
+  # components use symbol keys and we want consistency.
+  content_item_hash = content_item.to_h.deep_symbolize_keys
+  links_hash = content_item_hash[:links] || {}
+  details_hash = content_item_hash[:details] || {}
+  meta_tags = {}
+
+  meta_tags["govuk:format"] = content_item_hash[:document_type] if content_item_hash[:document_type]
+
+  organisations = []
+  organisations += links_hash[:organisations] || []
+  organisations += links_hash[:worldwide_organisations] || []
+  organisations_content = organisations.map { |link| "<#{link[:analytics_identifier]}>" }.uniq.join
+  meta_tags["govuk:analytics:organisations"] = organisations_content if organisations.any?
+
+  world_locations = links_hash[:world_locations] || []
+  world_locations_content = world_locations.map { |link| "<#{link[:analytics_identifier]}>" }.join
+  meta_tags["govuk:analytics:world-locations"] = world_locations_content if world_locations.any?
+
+  if details_hash.key?(:political) && details_hash.key?(:government)
+    political_status = "non-political"
+    if details_hash[:political]
+      political_status = details_hash[:government][:current] ? "political" : "historic"
+    end
+
+    meta_tags["govuk:political-status"] = political_status
+    meta_tags["govuk:publishing-government"] = details_hash[:government][:slug]
+  end
+
+  user_journey_stage = content_item_hash[:user_journey_document_supertype]
+  meta_tags["govuk:user-journey-stage"] = user_journey_stage if user_journey_stage
+
+%>
+<% meta_tags.each do |name, content| %>
+  <meta name="<%= name %>" content="<%= content %>">
+<% end %>

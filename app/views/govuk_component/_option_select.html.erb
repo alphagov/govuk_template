@@ -1,0 +1,30 @@
+<div class="govuk-option-select" <% if local_assigns.include?(:closed_on_load) && closed_on_load %>data-closed-on-load="true"<% end %>>
+  <div class="container-head js-container-head">
+    <div class='option-select-label'><%= title %></div>
+  </div>
+  <div class='options-container' id='<%= options_container_id %>'>
+    <div class='js-auto-height-inner'>
+      <% options.each do | option |%>
+      <label for='<%= key %>-<%= option[:id] %>'>
+        <input
+        name="<%= key %>[]"
+        value="<%= option[:value]%>"
+        id="<%= key %>-<%= option[:id]%>"
+        type="checkbox"
+
+        <% if local_assigns.include?(:aria_controls_id) %>
+          aria-controls="<%= aria_controls_id %>"
+        <% end %>
+
+        <% if option[:checked].present? %>
+          checked="checked"
+        <% end %>
+
+        >
+        <%= option[:label] %>
+        </label>
+      <% end %>
+    </div>
+
+  </div>
+</div>

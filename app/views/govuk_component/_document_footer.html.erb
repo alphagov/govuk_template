@@ -1,0 +1,99 @@
+<%
+  from ||= []
+  from = Array(from)
+
+  part_of ||= []
+  part_of = Array(part_of)
+
+  history ||= []
+  history = Array(history)
+
+  other ||= nil
+
+  other_dates ||= nil
+
+  direction_class = ""
+  direction_class = " direction-#{direction}" if local_assigns.include?(:direction)
+%>
+<div class="govuk-document-footer<%= direction_class %>">
+  <h2 class="visuallyhidden">
+    <%= t("govuk_component.document_footer.document_information", default: "Document information") %>
+  </h2>
+  <div class="history-information" id="history">
+    <% if local_assigns.include?(:published) && published %>
+      <p>
+        <%= t("govuk_component.document_footer.published", default: "Published") %>:
+        <span class="published definition"><%= published %></span>
+      </p>
+    <% end %>
+    <% if local_assigns.include?(:updated) && updated %>
+      <p>
+        <%= t("govuk_component.document_footer.updated", default: "Updated") %>:
+        <span class="updated definition"><%= updated %></span>
+      </p>
+    <% end %>
+    <% if other_dates.present? %>
+      <% other_dates.each do |title, date| %>
+        <p><%= title %>: <span class="other-date definition"><%= date %></span></p>
+      <% end %>
+    <% end %>
+    <% if history.any? %>
+      <div class="change-notes" data-module="toggle">
+        <p>
+          <a href="#full-history" data-controls="full-history" data-expanded="false">
+            + <%= t("govuk_component.document_footer.full_page_history", default: "full page history") %>
+          </a>
+        </p>
+        <div class="js-hidden" id="full-history"><span class="arrow"></span>
+          <ol>
+            <% history.each do |change| %>
+              <li>
+                <time datetime="<%= change[:timestamp] %>" class="timestamp"><%= change[:display_time] %></time>
+                <%= change[:note] %>
+              </li>
+            <% end %>
+          </ol>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="related-information">
+    <% if from.any? %>
+      <p>From: <span class="from">
+        <% from.each do |definition| %>
+          <span class="definition">
+            <%= definition.html_safe %>
+          </span>
+        <% end %>
+      </p>
+    <% end %>
+    <% if part_of.any? %>
+      <p>
+        <%= t("govuk_component.document_footer.part_of", default: "Part of") %>:
+        <span class="part-of">
+        <% part_of.each do |definition| %>
+        <span class="definition">
+          <%= definition.html_safe %>
+        </span>
+        <% end %>
+      </p>
+    <% end %>
+    <% if other.present? %>
+      <% other.each do |title, definitions| %>
+        <%
+          definitions ||= []
+          definitions = Array(definitions)
+        %>
+        <% if definitions.any? %>
+          <p><%= title %>: <span class="other">
+            <% definitions.each do |definition| %>
+              <span class="definition">
+                <%= definition.html_safe %>
+              </span>
+            <% end %>
+          </span></p>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

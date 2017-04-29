@@ -1,0 +1,19 @@
+<%
+  govspeak_locals = { content: content }
+  govspeak_locals[:direction] = local_assigns.fetch(:direction) if local_assigns.include?(:direction)
+  govspeak_locals[:rich_govspeak] = local_assigns.fetch(:rich_govspeak) if local_assigns.include?(:rich_govspeak)
+  sticky_footer_html = local_assigns.fetch(:sticky_footer_html) if local_assigns.include?(:sticky_footer_html)
+  direction_class = ""
+  direction_class = " direction-#{govspeak_locals[:direction]}" if govspeak_locals[:direction]
+%>
+<div
+  class="govuk-govspeak-html-publication<%= direction_class %>"
+  <%= "data-module=sticky-element-container" if sticky_footer_html %>
+>
+  <%= render file: 'govuk_component/govspeak.raw', locals: govspeak_locals %>
+  <% if sticky_footer_html %>
+    <div data-sticky-element class="sticky-element">
+      <%= raw sticky_footer_html %>
+    </div>
+  <% end %>
+</div>

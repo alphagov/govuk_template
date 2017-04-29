@@ -1,0 +1,37 @@
+<%
+  breadcrumbs ||= []
+%>
+<div class="govuk-breadcrumbs" data-module="track-click">
+  <ol>
+  <% breadcrumbs.each_with_index do |crumb, index| %>
+    <li>
+      <%
+        is_link = crumb[:url].present? || crumb[:is_current_page]
+        path = crumb[:is_current_page] ? '#content' : crumb[:url]
+        aria_current = crumb[:is_current_page] ? 'page' : 'false'
+        css_class = crumb[:is_current_page] ? 'breadcrumb-for-current-page' : ''
+
+        if is_link
+      %>
+        <%= link_to(
+          crumb[:title],
+          path,
+          data: {
+            track_category: 'breadcrumbClicked',
+            track_action: index + 1,
+            track_label: path,
+            track_dimension: crumb[:title],
+            track_dimension_index: 29,
+          },
+          class: css_class,
+          aria: {
+            current: aria_current,
+          }
+        ) %>
+      <% else %>
+        <%= crumb[:title] %>
+      <% end %>
+    </li>
+  <% end %>
+  </ol>
+</div>

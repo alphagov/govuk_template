@@ -1,0 +1,8 @@
+name: Alpha Banner
+description: A banner that indicates content is in an alpha phase with an optional
+  explanation
+fixtures:
+  default: {}
+  with_message:
+    message: This is an optional different message to explain what Alpha means in
+      this context which can take <a href='https://www.gov.uk'>HTML</a>

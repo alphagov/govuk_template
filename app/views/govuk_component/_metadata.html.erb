@@ -1,0 +1,54 @@
+<%
+  from ||= []
+  from = Array(from)
+
+  part_of ||= []
+  part_of = Array(part_of)
+
+  other ||= nil
+
+  direction_class = ""
+  direction_class = " direction-#{direction}" if local_assigns.include?(:direction)
+%>
+<div class="govuk-metadata<%= direction_class %>">
+  <dl>
+    <% if from.any? %>
+      <dt><%= t("govuk_component.metadata.from", default: "From") %>:</dt>
+      <dd><%= from.to_sentence.html_safe %></dd>
+    <% end %>
+    <% if part_of.any? %>
+      <dt><%= t("govuk_component.metadata.part_of", default: "Part of") %>:</dt>
+      <dd><%= part_of.to_sentence.html_safe %></dd>
+    <% end %>
+    <% if local_assigns.include?(:history) %>
+      <dt><%= t("govuk_component.metadata.history", default: "History") %>:</dt>
+      <dd><%= history %></dd>
+    <% end %>
+    <% if local_assigns.include?(:first_published) && first_published %>
+      <dt><%= t("govuk_component.metadata.first_published", default: "First published") %>:</dt>
+      <dd><%= first_published %></dd>
+    <% end %>
+    <% if local_assigns.include?(:last_updated) && last_updated %>
+      <dt><%= t("govuk_component.metadata.last_updated", default: "Last updated") %>:</dt>
+      <dd>
+        <%= last_updated %><% if local_assigns.include?(:see_updates_link) %>,
+          <a href="#history">
+            <%= t("govuk_component.metadata.see_all_updates", default: "see all updates") %>
+          </a>
+        <% end %>
+      </dd>
+    <% end %>
+    <% if other.present? %>
+      <% other.each do |title, definition| %>
+        <%
+          definition ||= []
+          definition = Array(definition)
+        %>
+        <% if definition.any? %>
+          <dt><%= title %>:</dt>
+          <dd><%= definition.to_sentence.html_safe %></dd>
+        <% end %>
+      <% end %>
+    <% end %>
+  </dl>
+</div>

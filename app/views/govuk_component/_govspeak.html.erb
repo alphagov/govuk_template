@@ -1,0 +1,11 @@
+<%
+  direction_class = ""
+  direction_class = " direction-#{direction}" if local_assigns.include?(:direction)
+%>
+<%
+  rich_govspeak = false
+  rich_govspeak = local_assigns.fetch(:rich_govspeak) if local_assigns.include?(:rich_govspeak)
+%>
+<div class="govuk-govspeak<%= direction_class %><%= ' rich-govspeak' if rich_govspeak %>">
+  <%= raw content %>
+</div>

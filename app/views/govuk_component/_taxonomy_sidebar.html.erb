@@ -1,0 +1,58 @@
+<% if local_assigns[:items] && !items.blank? %>
+  <aside class='govuk-taxonomy-sidebar' data-module='track-click' role='complementary'>
+    <% items.each_with_index do |item, item_index| %>
+
+      <div class="sidebar-taxon">
+        <h2>More about <%= item[:title] %></h2>
+
+        <p>
+          <%= item[:description] %>
+        </p>
+
+        <% item[:related_content] ||= [] %>
+        <% if item[:related_content].any? %>
+          <nav role='navigation'>
+            <ul class="related-content">
+              <% item[:related_content].each_with_index do |related_item, related_content_index| %>
+                <li class="related-content-item">
+                  <%=
+                    link_to(
+                      related_item[:title],
+                      related_item[:link],
+                      data: {
+                          track_category: 'relatedLinkClicked',
+                          track_action: "#{item_index + 1}.#{related_content_index + 1}",
+                          track_label: related_item[:link],
+                          track_dimension: related_item[:title],
+                          track_dimension_index: 29,
+                      },
+                      class: 'related-link',
+                    )
+                  %>
+                </li>
+              <% end %>
+            </ul>
+          </nav>
+        <% end %>
+
+        <p>
+          <%=
+            link_to(
+                "See everything in #{item[:title]}",
+                item[:url],
+                data: {
+                    track_category: 'relatedLinkClicked',
+                    track_action: "#{item_index + 1}.#{item[:related_content].length + 1}",
+                    track_label: item[:url],
+                    track_dimension: item[:title],
+                    track_dimension_index: 29,
+                },
+                class: 'taxon-link',
+            )
+          %>
+        </p>
+      </div>
+
+    <% end %>
+  </aside>
+<% end %>

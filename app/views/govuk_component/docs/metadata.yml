@@ -1,0 +1,38 @@
+name: Metadata block
+description: To display relevant metadata about organisations and tags for a document
+fixtures:
+  from_only:
+    from: <a href='/government/organisations/ministry-of-defence'>Ministry of Defence</a>
+  part_of_only:
+    part_of: <a href='/government/topics/environment'>Environment</a>
+  history_only:
+    history: Updated 2 weeks ago
+  published_and_updated:
+    first_published: 14 June 2014
+    last_updated: 10 September 2015
+  updated_with_links_to_see_details:
+    last_updated: 10 September 2015
+    see_updates_link: true
+  extensive:
+    from:
+    - <a href='/government/organisations/ministry-of-defence'>Ministry of Defence</a>
+    - <a href='/government/organisations/cabinet-office'>Cabinet Office</a>
+    history: Updated 2 weeks ago
+    part_of:
+    - <a href='/government/topics/energy'>Energy</a>
+    - <a href='/government/topics/environment'>Environment</a>
+    other:
+      Related topics:
+      - <a href='/government/topics/arts-and-culture'>Arts and culture</a>
+      - <a href='/government/topics/sports-and-leisure'>Sports and leisure</a>
+      Applies to: England
+  basic_rtl:
+    direction: rtl
+    from: <a href='/government/organisations/cabinet-office'>Cabinet Office</a>
+    history: Updated 2 weeks ago
+    part_of: <a href='/government/topics/environment'>Environment</a>
+  external_link:
+    from: <a href='/government/organisations/cabinet-office'>Cabinet Office</a>
+    first_published: 14 June 2014
+    other:
+      Applies to: England, Scotland, and Wales (see detailed guidance for <a href="http://www.dardni.gov.uk/news-dard-pa022-a-13-new-procedure-for" rel="external">Northern Ireland</a>)

@@ -1,0 +1,71 @@
+name: Document footer metadata
+description: A metadata block to be displayed below the document
+fixtures:
+  from_only:
+    from:
+    - <a href='/government/organisations/ministry-of-defence'>Ministry of Defence</a>
+    - <a href='/government/organisations/cabinet-office'>Cabinet Office</a>
+  part_of_only:
+    from:
+    - <a href='/government/organisations/ministry-of-defence'>Ministry of Defence</a>
+    - <a href='/government/organisations/cabinet-office'>Cabinet Office</a>
+    part_of:
+    - <a href='/government/topics/energy'>Energy</a>
+    - <a href='/government/topics/environment'>Environment</a>
+  with_other_metadata:
+    from:
+    - <a href='/government/organisations/ministry-of-defence'>Ministry of Defence</a>
+    - <a href='/government/organisations/cabinet-office'>Cabinet Office</a>
+    other:
+      Consultation type: <a href='/government/publications'>Open</a>
+  with_other_dates:
+    published: 20 January 2012
+    other_dates:
+      Date opened: 1 February 2012
+      Date closed: 1 March 2013
+  non_link_metadata_only:
+    other:
+      Registration number: '01234'
+      Another thing: This other thing
+  updated:
+    published: 20 January 2012
+    updated: 24 January 2012
+    history:
+    - display_time: 22 January 2012
+      timestamp: 22-01-2012Z14:19:00T
+      note: We updated the document
+    - display_time: 24 January 2012
+      timestamp: 24-01-2012Z14:19:00T
+      note: We updated the document again
+  extensive:
+    published: 20 January 2012
+    updated: 24 January 2012
+    history:
+    - display_time: 22 January 2012
+      timestamp: 22-01-2012Z14:19:00T
+      note: We updated the document
+    - display_time: 24 January 2012
+      timestamp: 24-01-2012Z14:19:00T
+      note: We updated the document again
+    from:
+    - <a href='/government/organisations/ministry-of-defence'>Ministry of Defence</a>
+    - <a href='/government/organisations/cabinet-office'>Cabinet Office</a>
+    part_of:
+    - <a href='/government/topics/energy'>Energy</a>
+    - <a href='/government/topics/environment'>Environment</a>
+    other:
+      Registration number: '01234'
+      Another thing: This other thing
+  many_items_and_long:
+    part_of:
+    - <a href='#'>Buying and managing government goods and services more efficiently
+      and effectively</a>
+    - '<a href=''#''>Promoting social action: encouraging and enabling people to play
+      a more active part in society</a>'
+    - <a href='#'>Improving the transparency and accountability of government and
+      its services</a>
+  basic_rtl:
+    direction: rtl
+    published: 20 January 2012
+    from: <a href='/government/organisations/ministry-of-defence'>Ministry of Defence</a>
+    part_of: <a href='/government/topics/energy'>Energy</a>

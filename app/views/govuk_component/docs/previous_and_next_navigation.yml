@@ -1,0 +1,40 @@
+name: Previous and next navigation
+description: Navigational links that allow users navigate within a series of pages
+  or elements.
+body: |
+  This component accepts 2 optional parameters, previous and next.
+
+  Each optional parameter accepts:
+
+  - an URL for the link
+  - a title for the URL
+  - a label that can add extra info (ie page number) that will be displayed under the title
+
+  If one of the 2 parameters is nil, no link will appear.
+fixtures:
+  only_previous:
+    previous_page:
+      url: previous-page
+      title: Previous page
+      label: 1 of 3
+  only_next:
+    next_page:
+      url: next-page
+      title: Next page
+      label: Tax disc
+  both_previous_and_next:
+    previous_page:
+      url: previous-page
+      title: Previous page
+      label: 1 of 3
+    next_page:
+      url: next-page
+      title: Next page
+      label: 3 of 3
+  both_previous_and_next_no_labels:
+    previous_page:
+      url: previous-page
+      title: Previous page
+    next_page:
+      url: next-page
+      title: Next page
