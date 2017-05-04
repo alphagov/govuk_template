@@ -164,9 +164,8 @@ module Compiler
     end
 
     def generate_integrity_attribute file
-      attribute = 'sha256-'
-      attribute << Digest::SHA256.hexdigest(file.to_s)
-      attribute
+      sha256 = Digest::SHA256.file(file.path)
+      Sprockets::DigestUtils.integrity_uri(sha256)
     end
   end
 end

@@ -6,11 +6,11 @@
     <meta charset="utf-8" />
     <title><%= content_for?(:page_title) ? yield(:page_title) : "GOV.UK - The best place to find government services and information" %></title>
 
-    <!--[if gt IE 8]><!--><link href="<%= asset_path "govuk-template.css" %>" media="screen" rel="stylesheet" integrity="" /><!--<![endif]-->
+    <!--[if gt IE 8]><!--><link href="<%= asset_path "govuk-template.css" %>" media="screen" rel="stylesheet" integrity="" crossorigin="anonymous" /><!--<![endif]-->
     <!--[if IE 6]><link href="<%= asset_path "govuk-template-ie6.css" %>" media="screen" rel="stylesheet" /><![endif]-->
     <!--[if IE 7]><link href="<%= asset_path "govuk-template-ie7.css" %>" media="screen" rel="stylesheet" /><![endif]-->
     <!--[if IE 8]><link href="<%= asset_path "govuk-template-ie8.css" %>" media="screen" rel="stylesheet" /><![endif]-->
-    <link href="<%= asset_path "govuk-template-print.css" %>" integrity="" media="print" rel="stylesheet" />
+    <link href="<%= asset_path "govuk-template-print.css" %>" integrity="" media="print" rel="stylesheet" crossorigin="anonymous" />
 
     <!--[if IE 8]><link href="<%= asset_path "fonts-ie8.css" %>" media="all" rel="stylesheet" /><![endif]-->
     <!--[if gte IE 9]><!--><link href="<%= asset_path "fonts.css" %>" media="all" rel="stylesheet" /><!--<![endif]-->
@@ -104,7 +104,7 @@
 
     <div id="global-app-error" class="app-error hidden"></div>
 
-    <script src="<%= asset_path "govuk-template.js" %>" integrity=""></script>
+    <script src="<%= asset_path "govuk-template.js" %>" integrity="" crossorigin="anonymous"></script>
 
     <%= yield :body_end %>
 
