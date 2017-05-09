@@ -1,5 +1,5 @@
 module Packager
-  class GemPackager
+  class ErbPackager
     def self.build
       new.build
     end

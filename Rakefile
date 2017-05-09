@@ -26,8 +26,8 @@ namespace :build do
   desc "Build govuk_template-#{GovukTemplate::VERSION}.gem into the pkg directory"
   task :gem => :compile do
     puts "Building pkg/govuk_template-#{GovukTemplate::VERSION}.gem"
-    require 'packager/gem_packager'
-    Packager::GemPackager.build
+    require 'packager/erb_packager'
+    Packager::ErbPackager.build
   end
 
   desc "Build govuk_template-#{GovukTemplate::VERSION}.tgz into the pkg directory"
