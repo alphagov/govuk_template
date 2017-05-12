@@ -38,3 +38,21 @@ Or to add content to `<head>`, for stylesheets or similar:
 ```
 
 Check out the [full list of blocks](template-blocks.md) you can use to customise the template.
+
+## SRI
+
+`govuk_template` >= 20.0.0 can be used together with `sprockets-rails` >= 3.0.0 in order to make use of the SRI
+
+You can read more about SRI [here](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity).
+
+SRI will add an `integrity` attribute on your script tags:
+
+`<script src="https://example.com/example.css"
+integrity="sha384oqVuAfXRKap7fdgcCY5uykM6+R9GqQ8K/uxy9rx7HNQlGYl1kPzQho1wx4JwY8w"
+crossorigin="anonymous"></script>`
+
+The example above is generated automatically by sprockets-rails in your project if the integrity option is set to true:
+
+`<%= stylesheet_script_tag 'example', integrity: true %>`
+
+There is [a bug in Firefox versions less than 52](https://bug623317.bugzilla.mozilla.org/show_bug.cgi?id=1269241) which means it interprets the SRI hash incorrectly for CSS files that start with [the UTF8 byte order mark (BOM)](https://en.wikipedia.org/wiki/Byte_order_mark#UTF-8).  Sprockets-rails will include a UTF8 BOM in the compiled CSS file if any of the source stylesheets have UTF8 characters in them and this means Firefox < 52 will refuse to load these assets.  To avoid this we developed the [asset_bom_removal-rails](https://github.com/alphagov/asset_bom_removal-rails) gem to strip the UTF8 BOM from compiled CSS assets as part of the rails asset pipeline.

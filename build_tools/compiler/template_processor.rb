@@ -42,7 +42,7 @@ module Compiler
     end
 
     def stylesheet_link_tag(*sources)
-      options = sources.extract_options!.stringify_keys
+      options = extract_options_excluding_sri_fields(sources)
       sources.uniq.map { |source|
         link_options = {
             "rel" => "stylesheet",
@@ -54,7 +54,7 @@ module Compiler
     end
 
     def javascript_include_tag(*sources)
-      options = sources.extract_options!.stringify_keys
+      options = extract_options_excluding_sri_fields(sources)
       sources.uniq.map { |source|
         script_options = {
             "src" => asset_path(source)
@@ -64,6 +64,11 @@ module Compiler
     end
 
   private
+
+    def extract_options_excluding_sri_fields(sources)
+      sources.extract_options!.stringify_keys.except("integrity", "crossorigin")
+    end
+
     def tag_options(options)
       return if options.empty?
       output = "".dup
