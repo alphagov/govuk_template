@@ -1,4 +1,6 @@
 require 'erb'
+require 'active_support/core_ext/hash'
+require 'active_support/core_ext/array'
 
 module Compiler
   class TemplateProcessor
@@ -41,7 +43,7 @@ module Compiler
     end
 
     def stylesheet_link_tag(*sources)
-      options = stringify_keys(extract_options!(sources))
+      options = exclude_sri_fields(sources.extract_options!)
       sources.uniq.map { |source|
         link_options = {
             "rel" => "stylesheet",
@@ -53,7 +55,7 @@ module Compiler
     end
 
     def javascript_include_tag(*sources)
-      options = stringify_keys(extract_options!(sources))
+      options = exclude_sri_fields(sources.extract_options!)
       sources.uniq.map { |source|
         script_options = {
             "src" => asset_path(source)
@@ -62,32 +64,16 @@ module Compiler
       }.join("\n")
     end
 
+    def exclude_sri_fields(options)
+      options.stringify_keys.except("integrity", "crossorigin")
+    end
+
     def content_tag(name, options = nil)
       "<#{name}#{options}></#{name}>"
     end
 
     def tag(name, options)
       "<#{name}#{options}/>"
-    end
-
-    def extract_options!(options)
-      if options.last.is_a?(Hash) && extractable_options?(options.last)
-        options.pop
-      else
-        {}
-      end
-    end
-
-    def extractable_options?(options)
-      options.instance_of?(Hash)
-    end
-
-    def stringify_keys(options)
-      result = {}
-      options.each_key do |key|
-        result[key.to_s] = options[key]
-      end
-      result
     end
 
     def tag_options(options)
