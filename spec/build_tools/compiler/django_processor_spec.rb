@@ -26,6 +26,7 @@ describe Compiler::DjangoProcessor do
   let(:file) {"some/file.erb"}
   subject {described_class.new(file)}
 
+  it_behaves_like "a processor"
 
   describe "#handle_yield" do
     valid_sections.each do |key, content|
