@@ -1,4 +1,6 @@
 require 'erb'
+require 'active_support/core_ext/hash'
+require 'active_support/core_ext/array'
 
 module Compiler
   class TemplateProcessor
@@ -38,5 +40,42 @@ module Compiler
     def method_missing(name, *args)
       puts "#{name} #{args.inspect}"
     end
+
+    def stylesheet_link_tag(*sources)
+      options = sources.extract_options!.stringify_keys
+      sources.uniq.map { |source|
+        link_options = {
+            "rel" => "stylesheet",
+            "media" => "screen",
+            "href" => asset_path(source)
+        }.merge!(options)
+        "<link#{tag_options(link_options)}/>"
+      }.join("\n")
+    end
+
+    def javascript_include_tag(*sources)
+      options = sources.extract_options!.stringify_keys
+      sources.uniq.map { |source|
+        script_options = {
+            "src" => asset_path(source)
+        }.merge!(options)
+        "<script#{tag_options(script_options)}></script>"
+      }.join("\n")
+    end
+
+  private
+    def tag_options(options)
+      return if options.empty?
+      output = "".dup
+      sep    = " "
+      options.each_pair do |key, value|
+        if !value.nil?
+          output << sep
+          output << %(#{key}="#{value}")
+        end
+      end
+      output unless output.empty?
+    end
+
   end
 end
