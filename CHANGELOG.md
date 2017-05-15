@@ -1,3 +1,7 @@
+# 0.20.1
+- Fix invalid html from Apple touch icons syntax ([PR #300]https://github.com/alphagov/govuk_template/pull/300) and
+update icon sizes to match Apple specs
+
 # 0.20.0
 
 - Fix EJS template ([PR #270](https://github.com/alphagov/govuk_template/pull/270))
