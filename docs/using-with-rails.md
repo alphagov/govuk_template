@@ -38,3 +38,20 @@ Or to add content to `<head>`, for stylesheets or similar:
 ```
 
 Check out the [full list of blocks](template-blocks.md) you can use to customise the template.
+
+## SRI 
+
+`govuk_template` >= 20.0.0 can be used together with `sprockets-rails` >= 3.0.0 in order to make use of the SRI 
+
+You can read more about SRI [here](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity).
+
+SRI will add an `integrity` attribute on your script tags:
+
+`<script src="https://example.com/example.css" 
+integrity="sha384oqVuAfXRKap7fdgcCY5uykM6+R9GqQ8K/uxy9rx7HNQlGYl1kPzQho1wx4JwY8w" 
+crossorigin="anonymous"></script>`
+
+The example above is generated automatically by sprockets-rails in your project if the integrity option is set to true:
+
+`<%= stylesheet_script_tag 'example', integrity: true %>`
+

@@ -1,3 +1,7 @@
+# Development
+
+- Adds SRI to js and css assets ([PR #301](https://github.com/alphagov/govuk_template/pull/301)). This requires `sprockets-rails` >= 3.0 in the projects using this gem.
+
 # 0.20.1
 - Fix invalid html from Apple touch icons syntax ([PR #300]https://github.com/alphagov/govuk_template/pull/300) and
 update icon sizes to match Apple specs
