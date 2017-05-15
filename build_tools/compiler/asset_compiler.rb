@@ -1,6 +1,7 @@
 require 'yaml'
 require 'open3'
 require 'sprockets'
+require 'digest'
 
 module Compiler
   class AssetCompiler
@@ -20,6 +21,7 @@ module Compiler
       @manifests = YAML.load_file(@repo_root.join('manifests.yml'))
       @stylesheet_assets = []
       @static_assets = []
+      @integrity_attributes = {}
     end
 
     def compile
@@ -27,6 +29,7 @@ module Compiler
       compile_javascripts
       compile_stylesheets
       copy_views
+      add_integrity_to_views
       copy_static_assets
       copy_needed_toolkit_assets
     end
@@ -41,7 +44,10 @@ module Compiler
         abort "Asset #{javascript} not found" unless asset
         target_file = @build_dir.join('assets', 'javascripts', asset.logical_path)
         target_file.dirname.mkpath
-        File.open(target_file, 'w') {|f| f.write asset.to_s }
+        File.open(target_file, 'w') do |f|
+          @integrity_attributes[asset.logical_path] = generate_integrity_attribute f
+          f.write asset.to_s
+        end
       end
     end
 
@@ -62,7 +68,10 @@ module Compiler
         asset = env.find_asset(stylesheet)
 
         abort "Asset #{stylesheet} not found" unless asset
-        File.open(@build_dir.join('assets', 'stylesheets', "#{asset.logical_path}.erb"), 'w') {|f| f.write asset.to_s }
+        File.open(@build_dir.join('assets', 'stylesheets', "#{asset.logical_path}.erb"), 'w') do |f|
+          @integrity_attributes[asset.logical_path] = generate_integrity_attribute f
+          f.write asset.to_s
+        end
       end
       @stylesheet_assets = stylesheet_assets.uniq
     end
@@ -82,6 +91,25 @@ module Compiler
         end
 
         abort "Error copying views:\n#{output}" if status.exitstatus > 0
+      end
+    end
+
+    def add_integrity_to_views
+      Dir.chdir @repo_root.join("app", "views") do
+        Dir.glob("**/*") do |file|
+          next if File.directory?(file)
+          original = File.open(file)
+          modified = File.open(original.path + '.tmp', 'w')
+          contents = original.read
+          @integrity_attributes.each do |key, value|
+            asset_expression = Regexp.new "#{key}(.*?integrity=\")(\".*?)>"
+            contents.gsub! asset_expression, "#{key}\\1#{value}\\2>"
+          end
+          modified.puts contents
+          modified.close
+          File.delete(file)
+          File.rename(modified, file)
+        end
       end
     end
 
@@ -133,6 +161,11 @@ module Compiler
       @build_dir.join('assets', 'stylesheets').mkpath
       @build_dir.join('assets', 'javascripts').mkpath
       @build_dir.join('views').mkpath
+    end
+
+    def generate_integrity_attribute file
+      sha256 = Digest::SHA256.file(file.path)
+      Sprockets::DigestUtils.integrity_uri(sha256)
     end
   end
 end
