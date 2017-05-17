@@ -1,7 +1,6 @@
 require 'govuk_template/version'
 require 'tmpdir'
 require 'open3'
-require "gem_publisher"
 
 module Publisher
   class ErbPublisher
@@ -11,12 +10,11 @@ module Publisher
 
     def initialize(version = GovukTemplate::VERSION)
       @version = version
-      @p = GemPublisher::Publisher.new('govuk_template.gemspec')
     end
 
     def publish
       puts "Pushing govuk_template-#{GovukTemplate::VERSION}"
-      @p.pusher.push "pkg/govuk_template-#{GovukTemplate::VERSION}.gem", :rubygems
+      run "gem push pkg/govuk_template-#{GovukTemplate::VERSION}.gem"
       Dir.mktmpdir("govuk_template_erb") do |dir|
         run "git clone -q #{GIT_URL.shellescape} #{dir.shellescape}"
         Dir.chdir(dir) do
@@ -27,7 +25,8 @@ module Publisher
     end
 
     def version_released?
-      @p.version_released?
+      output = run "git ls-remote --tags #{GIT_URL.shellescape}"
+      return !! output.match(/v#{@version}/)
     end
 
     private
