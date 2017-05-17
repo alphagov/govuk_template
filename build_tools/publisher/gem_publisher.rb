@@ -3,7 +3,7 @@ require 'tmpdir'
 require 'open3'
 
 module Publisher
-  class ErbPublisher
+  class GemPublisher
     attr_accessor :version
 
     GIT_URL = "https://#{ENV['GITHUB_TOKEN']}@github.com/alphagov/govuk_template.git"
@@ -15,7 +15,7 @@ module Publisher
     def publish
       puts "Pushing govuk_template-#{GovukTemplate::VERSION}"
       run "gem push pkg/govuk_template-#{GovukTemplate::VERSION}.gem"
-      Dir.mktmpdir("govuk_template_erb") do |dir|
+      Dir.mktmpdir("govuk_template_gem") do |dir|
         run "git clone -q #{GIT_URL.shellescape} #{dir.shellescape}"
         Dir.chdir(dir) do
           run "git tag v#{@version}"

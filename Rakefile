@@ -1,7 +1,6 @@
 $:.unshift File.expand_path('../lib', __FILE__)
 $:.unshift File.expand_path('../build_tools', __FILE__)
 require "govuk_template/version"
-require "gem_publisher"
 
 desc "Compile template and assets from ./source into ./app"
 task :compile do
@@ -26,8 +25,8 @@ namespace :build do
   desc "Build govuk_template-#{GovukTemplate::VERSION}.gem into the pkg directory"
   task :gem => :compile do
     puts "Building pkg/govuk_template-#{GovukTemplate::VERSION}.gem"
-    require 'packager/erb_packager'
-    Packager::ErbPackager.build
+    require 'packager/gem_packager'
+    Packager::GemPackager.build
   end
 
   desc "Build govuk_template-#{GovukTemplate::VERSION}.tgz into the pkg directory"
@@ -95,7 +94,7 @@ namespace :build do
 
   desc "Build and release gem if version has been updated"
   task :and_release_if_updated => :build do
-    p = Publisher::ErbPublisher.new
+    p = Publisher::GemPublisher.new
     if p.version_released?
       puts "govuk_template-#{GovukTemplate::VERSION} already released.  Not pushing."
     else
