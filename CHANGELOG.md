@@ -1,3 +1,7 @@
+# 0.21.1
+
+- Adds new Apple touch icons to precompile list for Rails apps [PR 305](https://github.com/alphagov/govuk_template/pull/305)
+
 # 0.21.0
 
 - Adds SRI to js and css assets ([PR #301](https://github.com/alphagov/govuk_template/pull/301)). This requires `sprockets-rails` >= 3.0 in the projects using this gem.
