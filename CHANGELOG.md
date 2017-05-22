@@ -1,5 +1,6 @@
-# Development
+# 0.22.0
 
+- Adds new Apple touch icons to precompile list for Rails apps [PR #305](https://github.com/alphagov/govuk_template/pull/305)
 - Revert SRI to avoid breaking the site for Firefox users on versions less than 52 [PR #308](https://github.com/alphagov/govuk_template/pull/301)
 
 # 0.21.0
