@@ -32,12 +32,6 @@ class UsesOfYieldInTemplate
   def method_missing(name, *args)
     puts "#{name} #{args.inspect}"
   end
-
-  def stylesheet_link_tag(*sources)
-  end
-
-  def javascript_include_tag(*sources)
-  end
 end
 
 # return an array of unique values passed to yield in the templates

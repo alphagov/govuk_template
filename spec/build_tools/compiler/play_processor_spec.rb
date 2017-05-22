@@ -34,8 +34,6 @@ end
 describe Compiler::PlayProcessor do
   subject { described_class.new("dummy filename") }
 
-  it_behaves_like "a processor"
-
   describe "top_of_page" do
     it "declares all of the template parameters" do
       expected_parameter_names.each do |parameter_name|

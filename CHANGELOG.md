@@ -1,3 +1,7 @@
+# Development
+
+- Revert SRI to avoid breaking the site for Firefox users on versions less than 52 [PR #308](https://github.com/alphagov/govuk_template/pull/301)
+
 # 0.21.0
 
 - Adds SRI to js and css assets ([PR #301](https://github.com/alphagov/govuk_template/pull/301)). This requires `sprockets-rails` >= 3.0 in the projects using this gem.

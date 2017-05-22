@@ -6,16 +6,15 @@
     <meta charset="utf-8" />
     <title><%= content_for?(:page_title) ? yield(:page_title) : "GOV.UK - The best place to find government services and information" %></title>
 
-    <!--[if gt IE 8]><!--><%= stylesheet_link_tag "govuk-template.css", integrity: true, crossorigin: "anonymous" %><!--<![endif]-->
+    <!--[if gt IE 8]><!--><link href="<%= asset_path "govuk-template.css" %>" media="screen" rel="stylesheet" /><!--<![endif]-->
     <!--[if IE 6]><link href="<%= asset_path "govuk-template-ie6.css" %>" media="screen" rel="stylesheet" /><![endif]-->
     <!--[if IE 7]><link href="<%= asset_path "govuk-template-ie7.css" %>" media="screen" rel="stylesheet" /><![endif]-->
     <!--[if IE 8]><link href="<%= asset_path "govuk-template-ie8.css" %>" media="screen" rel="stylesheet" /><![endif]-->
-    <%= stylesheet_link_tag "govuk-template-print.css", media: "print", integrity: true, crossorigin: "anonymous" %>
+    <link href="<%= asset_path "govuk-template-print.css" %>" media="print" rel="stylesheet" />
 
     <!--[if IE 8]><link href="<%= asset_path "fonts-ie8.css" %>" media="all" rel="stylesheet" /><![endif]-->
-    <!--[if gte IE 9]><!--><%= stylesheet_link_tag "fonts.css", media: "all", integrity: true, crossorigin: "anonymous" %><!--<![endif]-->
-    <!--[if gte IE 9]><!--><%= stylesheet_link_tag "fonts.css", media: "all", integrity: true, crossorigin: "anonymous" %><!--<![endif]-->
-    <!--[if lt IE 9]><%= javascript_include_tag "ie.js", integrity: true, crossorigin: "anonymous" %><![endif]-->
+    <!--[if gte IE 9]><!--><link href="<%= asset_path "fonts.css" %>" media="all" rel="stylesheet" /><!--<![endif]-->
+    <!--[if lt IE 9]><script src="<%= asset_path "ie.js" %>"></script><![endif]-->
 
     <link rel="shortcut icon" href="<%= asset_path 'favicon.ico' %>" type="image/x-icon" />
     <%# the colour used for mask-icon is the standard palette $black from
