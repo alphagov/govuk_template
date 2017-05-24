@@ -46,6 +46,7 @@
       </div>
     </div>
 
+    <% unless @omit_cookie_message %>
     <div id="global-cookie-message">
       <% if content_for?(:cookie_message) %>
         <%= yield :cookie_message %>
@@ -53,6 +54,7 @@
         <p>GOV.UK uses cookies to make the site simpler. <a href="https://www.gov.uk/help/cookies">Find out more about cookies</a></p>
       <% end %>
     </div>
+    <% end %>
 
     <% unless @omit_header %>
     <header role="banner" id="global-header" class="<%= yield(:header_class) %>">
