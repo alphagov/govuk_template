@@ -1,4 +1,5 @@
 require 'govuk_template/version'
+require_relative '../helpers'
 require 'tmpdir'
 require 'open3'
 require 'mustache'
@@ -6,6 +7,7 @@ require 'yaml'
 
 module Publisher
   class DocsPublisher
+    include Helpers
     GIT_URL = "https://#{ENV['GITHUB_TOKEN']}@github.com/alphagov/govuk_template.git"
 
     def initialize(version = GovukTemplate::VERSION)
@@ -48,14 +50,6 @@ module Publisher
           run "git push origin gh-pages"
         end
       end
-    end
-
-  private
-
-    def run(command)
-      output, status = Open3.capture2e(command)
-      abort "Error running #{command}: exit #{status.exitstatus}\n#{output}" if status.exitstatus > 0
-      output
     end
   end
 end

@@ -1,4 +1,5 @@
 require 'govuk_template/version'
+require_relative '../helpers'
 require 'tmpdir'
 require 'open3'
 
@@ -25,19 +26,6 @@ module Publisher
           run "npm publish ./"
         end
       end
-    end
-
-    def version_released?
-      output = run("git ls-remote --tags #{GIT_URL.shellescape}")
-      return !! output.match(/v#{@version}/)
-    end
-
-  private
-
-    def run(command)
-      output, status = Open3.capture2e(command)
-      abort "Error running #{command}: exit #{status.exitstatus}\n#{output}" if status.exitstatus > 0
-      output
     end
   end
 end

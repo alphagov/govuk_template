@@ -1,5 +1,9 @@
+require_relative '../helpers'
+
 module Packager
   class GemPackager
+    include Helpers
+
     def self.build
       new.build
     end
@@ -17,13 +21,5 @@ module Packager
         FileUtils.mv(gem, "pkg")
       end
     end
-
-  private
-
-    def run(command)
-      output, status = Open3.capture2e(command)
-      abort "Error running #{command}: exit #{status.exitstatus}\n#{output}" if status.exitstatus > 0
-      output
-    end    
   end
 end
