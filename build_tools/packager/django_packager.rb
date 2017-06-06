@@ -66,7 +66,7 @@ module Packager
       end
     end
 
-    private
+  private
 
     def generated_file_name(file_path)
       if file_path.include? "govuk_template"

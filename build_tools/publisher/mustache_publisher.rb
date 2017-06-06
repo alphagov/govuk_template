@@ -32,7 +32,7 @@ module Publisher
       return !! output.match(/v#{@version}/)
     end
 
-    private
+  private
 
     def run(command)
       output, status = Open3.capture2e(command)

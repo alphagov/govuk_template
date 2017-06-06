@@ -38,7 +38,7 @@ module Packager
       end
     end
 
-    private
+  private
 
     def generated_file_name(file_path)
       File.basename(file_path, File.extname(file_path))

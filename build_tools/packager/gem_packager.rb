@@ -18,7 +18,7 @@ module Packager
       end
     end
 
-    private
+  private
 
     def run(command)
       output, status = Open3.capture2e(command)
