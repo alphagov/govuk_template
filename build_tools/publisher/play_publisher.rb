@@ -6,7 +6,8 @@ require 'open3'
 module Publisher
   class PlayPublisher
     include Helpers
-    GIT_URL = "https://#{ENV['GITHUB_TOKEN']}@github.com/alphagov/govuk_template_play.git"
+    GIT_REPO = "github.com/alphagov/govuk_template_play.git"
+    GIT_URL = "https://#{ENV['GITHUB_TOKEN']}@#{GIT_REPO}"
 
     def initialize(version = GovukTemplate::VERSION)
       @version = version
@@ -16,7 +17,8 @@ module Publisher
 
     def publish
       Dir.mktmpdir("govuk_template_play") do |dir|
-        run "git clone -q #{GIT_URL.shellescape} #{dir.shellescape}"
+        run("git clone -q #{GIT_URL.shellescape} #{dir.shellescape}",
+            "Error running `git clone` on #{GIT_REPO}")
         Dir.chdir(dir) do
           run "ls -1 | grep -v 'README.md' | xargs -I {} rm -rf {}"
           run "cp -r #{@source_dir.to_s.shellescape}/* ."
