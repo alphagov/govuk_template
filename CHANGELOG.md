@@ -1,3 +1,7 @@
+# 0.22.1
+
+- This release is just to check that the automated downstream packages are now being released correctly. It does not include any changes to the template itself.
+
 # 0.22.0
 
 - Adds new Apple touch icons to precompile list for Rails apps [PR #305](https://github.com/alphagov/govuk_template/pull/305)
