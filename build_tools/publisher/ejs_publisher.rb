@@ -5,6 +5,7 @@ require 'open3'
 
 module Publisher
   class EJSPublisher
+    include Helpers
     GIT_REPO = "github.com/alphagov/govuk_template_ejs.git"
     GIT_URL = "https://#{ENV['GITHUB_TOKEN']}@#{GIT_REPO}"
 
