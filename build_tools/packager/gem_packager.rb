@@ -1,5 +1,9 @@
+require_relative '../helpers'
+
 module Packager
   class GemPackager
+    include Helpers
+
     def self.build
       new.build
     end
@@ -10,7 +14,8 @@ module Packager
 
     def build
       Dir.chdir @repo_root do
-        gem = GemPublisher::Builder.new.build('govuk_template.gemspec')
+        stdout_str = run('gem build govuk_template.gemspec')
+        gem = stdout_str[/File:\s+(.+)/, 1]
 
         @repo_root.join('pkg').mkpath
         FileUtils.mv(gem, "pkg")

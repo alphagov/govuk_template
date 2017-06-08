@@ -1,10 +1,12 @@
 require 'govuk_template/version'
+require_relative '../helpers'
 require 'tmpdir'
 require 'open3'
 
 module Publisher
   class EJSPublisher
-    GIT_URL = "https://#{ENV['GITHUB_TOKEN']}@github.com/alphagov/govuk_template_ejs.git"
+    GIT_REPO = "github.com/alphagov/govuk_template_ejs.git"
+    GIT_URL = "https://#{ENV['GITHUB_TOKEN']}@#{GIT_REPO}"
 
     def initialize(version = GovukTemplate::VERSION)
       @version = version
@@ -14,7 +16,8 @@ module Publisher
 
     def publish
       Dir.mktmpdir("govuk_template_ejs") do |dir|
-        run "git clone -q #{GIT_URL.shellescape} #{dir.shellescape}"
+        run("git clone -q #{GIT_URL.shellescape} #{dir.shellescape}",
+            "Error running `git clone` on #{GIT_REPO}")
         Dir.chdir(dir) do
           run "ls -1 | grep -v 'README.md' | xargs -I {} rm -rf {}"
           run "cp -r #{@source_dir.to_s.shellescape}/* ."
@@ -25,19 +28,6 @@ module Publisher
           run "npm publish ./"
         end
       end
-    end
-
-    def version_released?
-      output = run("git ls-remote --tags #{GIT_URL.shellescape}")
-      return !! output.match(/v#{@version}/)
-    end
-
-    private
-
-    def run(command)
-      output, status = Open3.capture2e(command)
-      abort "Error running #{command}: exit #{status.exitstatus}\n#{output}" if status.exitstatus > 0
-      output
     end
   end
 end

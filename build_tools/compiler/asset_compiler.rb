@@ -125,7 +125,7 @@ module Compiler
       end
     end
 
-    private
+  private
 
     def prepare_build_dir
       @build_dir.rmtree if @build_dir.exist?

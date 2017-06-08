@@ -1,4 +1,5 @@
 require 'govuk_template/version'
+require_relative '../helpers'
 require 'tmpdir'
 require 'open3'
 require 'mustache'
@@ -6,7 +7,9 @@ require 'yaml'
 
 module Publisher
   class DocsPublisher
-    GIT_URL = "https://#{ENV['GITHUB_TOKEN']}@github.com/alphagov/govuk_template.git"
+    include Helpers
+    GIT_REPO = "github.com/alphagov/govuk_template.git"
+    GIT_URL = "https://#{ENV['GITHUB_TOKEN']}@#{GIT_REPO}"
 
     def initialize(version = GovukTemplate::VERSION)
       @version = version
@@ -17,7 +20,8 @@ module Publisher
 
     def publish
       Dir.mktmpdir("govuk_template_docs") do |dir|
-        run "git clone -q #{GIT_URL.shellescape} #{dir.shellescape} --branch gh-pages"
+        run("git clone -q #{GIT_URL.shellescape} #{dir.shellescape} --branch gh-pages",
+            "Error running `git clone` on #{GIT_REPO}")
         Dir.chdir(dir) do
           # Remove old assets
           FileUtils.rm_r("assets", force: true)
@@ -48,14 +52,6 @@ module Publisher
           run "git push origin gh-pages"
         end
       end
-    end
-
-    private
-
-    def run(command)
-      output, status = Open3.capture2e(command)
-      abort "Error running #{command}: exit #{status.exitstatus}\n#{output}" if status.exitstatus > 0
-      output
     end
   end
 end

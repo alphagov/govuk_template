@@ -1,7 +1,6 @@
 $:.unshift File.expand_path('../lib', __FILE__)
 $:.unshift File.expand_path('../build_tools', __FILE__)
 require "govuk_template/version"
-require "gem_publisher"
 
 desc "Compile template and assets from ./source into ./app"
 task :compile do
@@ -95,13 +94,12 @@ namespace :build do
 
   desc "Build and release gem if version has been updated"
   task :and_release_if_updated => :build do
-    p = GemPublisher::Publisher.new('govuk_template.gemspec')
+    p = Publisher::GemPublisher.new
     if p.version_released?
       puts "govuk_template-#{GovukTemplate::VERSION} already released.  Not pushing."
     else
       puts "Pushing govuk_template-#{GovukTemplate::VERSION}"
-      p.pusher.push "pkg/govuk_template-#{GovukTemplate::VERSION}.gem", :rubygems
-      p.git_remote.add_tag "v#{GovukTemplate::VERSION}"
+      p.publish
       puts "Done."
 
       require 'publisher/docs_publisher'

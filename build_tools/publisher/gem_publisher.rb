@@ -4,26 +4,23 @@ require 'tmpdir'
 require 'open3'
 
 module Publisher
-  class PlayPublisher
+  class GemPublisher
     include Helpers
-    GIT_REPO = "github.com/alphagov/govuk_template_play.git"
+
+    GIT_REPO = "github.com/alphagov/govuk_template.git"
     GIT_URL = "https://#{ENV['GITHUB_TOKEN']}@#{GIT_REPO}"
 
     def initialize(version = GovukTemplate::VERSION)
       @version = version
-      @repo_root = Pathname.new(File.expand_path('../../..', __FILE__))
-      @source_dir = @repo_root.join('pkg', "play_govuk_template-#{@version}")
     end
 
     def publish
-      Dir.mktmpdir("govuk_template_play") do |dir|
+      puts "Pushing govuk_template-#{GovukTemplate::VERSION}"
+      run "gem push pkg/govuk_template-#{GovukTemplate::VERSION}.gem"
+      Dir.mktmpdir("govuk_template_gem") do |dir|
         run("git clone -q #{GIT_URL.shellescape} #{dir.shellescape}",
             "Error running `git clone` on #{GIT_REPO}")
         Dir.chdir(dir) do
-          run "ls -1 | grep -v 'README.md' | xargs -I {} rm -rf {}"
-          run "cp -r #{@source_dir.to_s.shellescape}/* ."
-          run "git add -A ."
-          run "git commit -q -m 'deploying GOV.UK Play templates #{@version}'"
           run "git tag v#{@version}"
           run "git push --tags origin master"
         end
