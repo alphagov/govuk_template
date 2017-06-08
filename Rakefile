@@ -94,6 +94,7 @@ namespace :build do
 
   desc "Build and release gem if version has been updated"
   task :and_release_if_updated => :build do
+    require 'publisher/gem_publisher'
     p = Publisher::GemPublisher.new
     if p.version_released?
       puts "govuk_template-#{GovukTemplate::VERSION} already released.  Not pushing."
