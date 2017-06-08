@@ -86,7 +86,8 @@ fieldset {
   padding: 0; }
 
 a:link {
-  color: #005ea5; }
+  color: #005ea5;
+  text-decoration-skip: ink; }
 
 a:visited {
   color: #4c2c92; }
@@ -208,6 +209,10 @@ a:focus {
   background-color: #ffbf47;
   outline: 3px solid #ffbf47; }
 
+/* Make links slightly darker when focused to improve contrast. */
+a:link:focus {
+  color: #005798; }
+
 /* Make skiplinks visible when they are tabbed to */
 .skiplink {
   position: absolute;
@@ -299,10 +304,10 @@ button:focus {
     text-decoration: none;
     text-rendering: optimizeLegibility;
     border-bottom: 1px solid transparent;
-    background: url(images/gov.uk_logotype_crown.png?0.19.2) no-repeat;
+    background: url(images/gov.uk_logotype_crown.png?0.20.0) no-repeat;
     background-size: 36px 32px;
     background-position: 0 0;
-    background-image: url(images/gov.uk_logotype_crown-1x.png?0.19.2); }
+    background-image: url(images/gov.uk_logotype_crown-1x.png?0.20.0); }
     #global-header #logo img {
       margin: 2px 1px 0 0;
       vertical-align: bottom;
@@ -326,6 +331,8 @@ button:focus {
       text-decoration: none; }
     #global-header .header-proposition a#proposition-name:hover {
       text-decoration: underline; }
+    #global-header .header-proposition a#proposition-name:focus {
+      color: #0b0c0c; }
     #global-header .header-proposition a.menu {
       font-family: "nta", Arial, sans-serif;
       font-weight: 400;
@@ -511,10 +518,10 @@ button:focus {
             height: 17px;
             overflow: hidden;
             text-indent: -999em;
-            background: url(images/open-government-licence.png?0.19.2) 0 0 no-repeat; }
+            background: url(images/open-government-licence.png?0.20.0) 0 0 no-repeat; }
             @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
               #footer .footer-meta .footer-meta-inner .open-government-licence .logo a {
-                background-image: url(images/open-government-licence_2x.png?0.19.2);
+                background-image: url(images/open-government-licence_2x.png?0.20.0);
                 background-size: 41px 17px; } }
         #footer .footer-meta .footer-meta-inner .open-government-licence p {
           font-family: "nta", Arial, sans-serif;
@@ -544,7 +551,7 @@ button:focus {
       margin-top: 0; }
       #footer .footer-meta .copyright a {
         display: block;
-        background-image: url(images/govuk-crest.png?0.19.2);
+        background-image: url(images/govuk-crest.png?0.20.0);
         background-repeat: no-repeat;
         background-position: 50% 0%;
         background-position: 100% 0%;
@@ -554,5 +561,5 @@ button:focus {
         padding: 115px 0 0 0; }
         @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
           #footer .footer-meta .copyright a {
-            background-image: url(images/govuk-crest-2x.png?0.19.2);
+            background-image: url(images/govuk-crest-2x.png?0.20.0);
             background-size: 125px 102px; } }
