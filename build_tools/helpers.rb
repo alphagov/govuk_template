@@ -1,9 +1,4 @@
 module Helpers
-  def version_released?
-    output = run("git ls-remote --tags #{GIT_URL.shellescape}")
-    return !! output.match(/v#{@version}/)
-  end
-
   def run(command, custom_error=nil)
     output, status = Open3.capture2e(command)
     unless status.success?

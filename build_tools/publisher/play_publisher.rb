@@ -29,5 +29,10 @@ module Publisher
         end
       end
     end
+
+    def version_released?
+      output = run("git ls-remote --tags #{GIT_URL.shellescape}")
+      return !! output.match(/v#{@version}/)
+    end
   end
 end
