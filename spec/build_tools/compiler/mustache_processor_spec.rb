@@ -7,6 +7,7 @@ def valid_sections
     page_title: "{{ pageTitle }}",
     head: "{{{ head }}}",
     body_classes: "{{ bodyClasses }}",
+    body_attributes: "{{{ bodyAttributes }}}",
     content: "{{{ content }}}",
     body_end: "{{{ bodyEnd }}}",
     top_of_page: "{{{ topOfPage }}}",

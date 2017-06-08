@@ -7,6 +7,7 @@ def valid_sections
     page_title: "<%- partial('partials/_page_title') %>",
     head: "<%- partial('partials/_head') %>",
     body_classes: "<%= bodyClasses %>",
+    body_attributes: "<%= bodyAttributes %>",
     content: "<%- partial('partials/_content') %>",
     body_end: "<%- partial('partials/_body_end') %>",
     footer_top: "<%- partial('partials/_footer_top') %>",
