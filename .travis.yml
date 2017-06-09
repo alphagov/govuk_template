@@ -5,6 +5,11 @@ env:
   global:
   - secure: BP1+2SDhPKzEIJIkBPMWvxql5SSQ6Br5TwR4VcqwXovRRBMFiu9/mEASmYtZ5+MinOskt7YHgXFM6PT1LRoGsC+E+TghMZWw9j4zaM8OXR7hQAxrvkFMWIcD71ndxMzmXnQnWIi95l9nUaLJ05EYaZy5k79pugLYzMT1ZzIjesM=
 before_install:
+# Travis CI installs Node v0.10.36 with NPM v1.4.28 which is really old and 
+# doesn't support using authentication tokens from ~/.npmrc, so we need to
+# install something newer. Using 6.x as the latest LTS release.
+- nvm install 6.11
+- nvm use 6.11
 - rm -f Gemfile.lock
 - git clean -fdx
 script:
