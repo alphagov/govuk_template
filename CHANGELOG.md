@@ -1,3 +1,7 @@
+# 0.22.2
+
+- Revert ([PR #281](https://github.com/alphagov/govuk_template/pull/281)) add `text-decoration-skip: ink` to all links on GOV.UK. Chrome does a poor job of rendering underlines resulting in potentially confusing underlines that look like punctuation ([PR #316](https://github.com/alphagov/govuk_template/pull/316)).
+
 # 0.22.1
 
 - This release is just to check that the automated downstream packages are now being released correctly. It does not include any changes to the template itself.
