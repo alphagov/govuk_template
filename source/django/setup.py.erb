@@ -3,6 +3,7 @@ from setuptools import setup
 setup(
   name = 'govuk_template_<%= template_abbreviation %>',
   packages = ['govuk_template'],
+  include_package_data=True,
   version = '<%= GovukTemplate::VERSION %>',
   license = 'MIT',
   description = '<%= template_name %> packaged version of the GOV.UK template',
