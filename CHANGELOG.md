@@ -1,3 +1,7 @@
+# 0.22.3
+
+- Fix the Django package – ensure setuptools uses the MANIFEST.in by setting the include_package_data flag to True, and fix a broken download link ([PR #319](https://github.com/alphagov/govuk_template/pull/319)).
+
 # 0.22.2
 
 - Revert ([PR #281](https://github.com/alphagov/govuk_template/pull/281)) add `text-decoration-skip: ink` to all links on GOV.UK. Chrome does a poor job of rendering underlines resulting in potentially confusing underlines that look like punctuation ([PR #316](https://github.com/alphagov/govuk_template/pull/316)).
