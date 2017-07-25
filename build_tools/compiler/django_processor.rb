@@ -31,6 +31,7 @@ module Compiler
       proposition_header:   block_for(:proposition_header),
       top_of_page:          "{% load staticfiles %}" + block_for(:top_of_page),
       skip_link_message:    statement_tag_for(:skip_link_message, 'Skip to main content'),
+      skip_link_target:     statement_tag_for(:skip_link_target, 'content'),
       logo_link_title:      statement_tag_for(:logo_link_title, 'Go to the GOV.UK homepage'),
       licence_message:      block_for(:licence_message, '<p>All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated</p>'),
       crown_copyright_message: statement_tag_for(:crown_copyright_message, '&copy; Crown copyright'),

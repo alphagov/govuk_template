@@ -88,6 +88,10 @@ describe "HTML rendered by each integration testing app" do
         expect(subject).to have_tag("#skiplink-container", text: "Custom skip link text")
       end
 
+      it "should support a skip_link_target" do
+        expect(subject).to have_tag("#skiplink-container a", with: { href: "#custom" })
+      end
+
       it "should support a logo_link_title" do
         expect(subject).to have_tag(".header-logo a", with: { title: "Custom logo link title text" })
       end

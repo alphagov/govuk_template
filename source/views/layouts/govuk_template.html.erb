@@ -42,7 +42,7 @@
 
     <div id="skiplink-container">
       <div>
-        <a href="#content" class="skiplink"><%= content_for?(:skip_link_message) ? yield(:skip_link_message) : "Skip to main content" %></a>
+        <a href="#<%= content_for?(:skip_link_target) ? yield(:skip_link_target) : "content" %>" class="skiplink"><%= content_for?(:skip_link_message) ? yield(:skip_link_message) : "Skip to main content" %></a>
       </div>
     </div>
 

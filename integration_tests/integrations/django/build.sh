@@ -9,7 +9,7 @@ mkdir -p vendor/django_govuk_template
 # TODO: Pick the latest, not every matching tgz file!
 tar -zxf ../../../pkg/django_govuk_template-*.tgz -C vendor/django_govuk_template --strip-components 1
 
-# --user param allows installing without sudo: 
+# --user param allows installing without sudo:
 pip install virtualenv --user
 virtualenv .env
 source .env/bin/activate
