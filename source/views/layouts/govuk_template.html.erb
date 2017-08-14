@@ -12,8 +12,9 @@
     <!--[if IE 8]><link href="<%= asset_path "govuk-template-ie8.css" %>" media="screen" rel="stylesheet" /><![endif]-->
     <link href="<%= asset_path "govuk-template-print.css" %>" media="print" rel="stylesheet" />
 
-    <!--[if IE 8]><link href="<%= asset_path "fonts-ie8.css" %>" media="all" rel="stylesheet" /><![endif]-->
-    <!--[if gte IE 9]><!--><link href="<%= asset_path "fonts.css" %>" media="all" rel="stylesheet" /><!--<![endif]-->
+    <% if content_for?(:fonts_stylesheets) %>
+      <%= yield(:fonts_stylesheets) %>
+    <% end %>
     <!--[if lt IE 9]><script src="<%= asset_path "ie.js" %>"></script><![endif]-->
 
     <link rel="shortcut icon" href="<%= asset_path 'favicon.ico' %>" type="image/x-icon" />

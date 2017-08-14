@@ -19,6 +19,8 @@ module Compiler
       footer_top:           tag_for(:footerTop),
       homepage_url:         tag_for(:homepageUrl, "https://www.gov.uk/"),
       global_header_text:   tag_for(:globalHeaderText, "GOV.UK"),
+      fonts_stylesheets:    tag_for(:fontsStylesheets, '<!--[if IE 8]><link href="{{{ assetPath }}}stylesheets/fonts-ie8.css?0.22.3" media="all" rel="stylesheet" /><![endif]-->
+          <!--[if gte IE 9]><!--><link href="{{{ assetPath }}}stylesheets/fonts.css?0.22.3" media="all" rel="stylesheet" /><!--<![endif]-->'),
       head:                 tag_for(:head),
       header_class:         tag_for(:headerClass),
       html_lang:            tag_for(:htmlLang, "en"),

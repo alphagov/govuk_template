@@ -19,6 +19,8 @@ module Compiler
       footer_top:           partial_for(:footer_top),
       homepage_url:         "<% if (homepageUrl) { %><%= homepageUrl %><% } else { %>https://www.gov.uk/<% } %>",
       global_header_text:   "<% if (globalHeaderText) { %><%= globalHeaderText %><% } %>",
+      fonts_stylesheets:    '<% if (fonts_stylesheets) { %><%= fonts_stylesheets %><% } else { %><!--[if IE 8]><link href="<%= govukTemplateAssetPath %>stylesheets/fonts-ie8.css?0.22.3" media="all" rel="stylesheet" /><![endif]-->
+          <!--[if gte IE 9]><!--><link href="<%= govukTemplateAssetPath %>stylesheets/fonts.css?0.22.3" media="all" rel="stylesheet" /><!--<![endif]--><% } %>',
       head:                 partial_for(:head),
       header_class:         "<% if (headerClass) { %><%= headerClass %><% } %>",
       html_lang:            "<% if (htmlLang) { %><%= htmlLang %><% } else { %>en<% } %>",

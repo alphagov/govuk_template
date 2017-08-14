@@ -19,6 +19,7 @@ module Compiler
       footer_top:           include_for(:footer_top),
       homepage_url:         "{% if page.homepage_url %}{{ page.homepage_url }}{% else %}https://www.gov.uk/{% endif %}",
       global_header_text:   "{% if page.global_header_text %}{{ page.global_header_text }}{% endif %}",
+      fonts_stylesheets:    '{% if page.fonts_stylesheets %}{{ page.fonts_stylesheets }}{% else %}<!--[if IE 8]><link href="{{ site.govuk_template_assets }}/stylesheets/fonts-ie8.css?0.22.3" media="all" rel="stylesheet" /><![endif]--><!--[if gte IE 9]><!--><link href="{{ site.govuk_template_assets }}stylesheets/fonts.css?0.22.3" media="all" rel="stylesheet" /><!--<![endif]-->{% endif %}',
       head:                 include_for(:head),
       header_class:         "{% if page.header_class %}{{ page.header_class }}{% endif %}",
       html_lang:            "{% if page.html_lang %}{{ page.html_lang }}{% else %}en{% endif %}",

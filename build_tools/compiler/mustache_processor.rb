@@ -23,6 +23,8 @@ module Compiler
       footer_top:           unescaped_html_tag_for(:footerTop),
       homepage_url:         unescaped_html_tag_for(:homepageUrl),
       global_header_text:   unescaped_html_tag_for(:globalHeaderText),
+      fonts_stylesheets:    '<!--[if IE 8]><link href="{{{ assetPath }}}stylesheets/fonts-ie8.css?0.22.3" media="all" rel="stylesheet" /><![endif]-->
+          <!--[if gte IE 9]><!--><link href="{{{ assetPath }}}stylesheets/fonts.css?0.22.3" media="all" rel="stylesheet" /><!--<![endif]-->',
       head:                 unescaped_html_tag_for(:head),
       header_class:         unescaped_html_tag_for(:headerClass),
       html_lang:            tag_for(:htmlLang),
