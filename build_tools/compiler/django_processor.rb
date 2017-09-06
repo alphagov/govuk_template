@@ -23,6 +23,7 @@ module Compiler
       footer_top:           block_for(:footer_top),
       homepage_url:         statement_tag_for(:homepage_url, 'https://www.gov.uk'),
       global_header_text:   statement_tag_for(:global_header_text, 'GOV.UK'),
+      fonts_stylesheets:    statement_tag_for(:fonts_stylesheets, '<!--[if IE 8]><link href="{% static \"fonts-ie8.css\" %}" media="all" rel="stylesheet" /><![endif]--><!--[if gte IE 9]><!--><link href="{% static \"fonts.css\" %}" media="all" rel="stylesheet" /><!--<![endif]-->'),
       head:                 block_for(:head),
       header_class:         block_for(:header_class),
       html_lang:            statement_tag_for(:html_lang, 'en'),
