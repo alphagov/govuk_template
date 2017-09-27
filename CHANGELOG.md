@@ -1,6 +1,6 @@
-# Development
+# 0.23.0
 
-- Re-adds SRI for js and css assets removed in 0.22.0
+- Re-adds SRI for js and css assets removed in 0.22.0 [PR #323](https://github.com/alphagov/govuk_template/pull/323)
 
 # 0.22.3
 
