@@ -3,7 +3,7 @@
 ## GitHub
 
 For publishing packages to GitHub, we are using a GitHub token belonging to
-[govuk-patterns-and-tools-ci](https://github.com/govuk-patterns-and-tools-ci).
+[govuk-design-system-ci](https://github.com/govuk-design-system-ci).
 
 This is provided as an environment variable which is encrypted in travis.yml
 
