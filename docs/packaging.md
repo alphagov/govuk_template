@@ -10,7 +10,7 @@ At present this generates 9 output formats:
 6. a tarball containing Jinja templates
 7. a tarball containing plain HTML and assets
 8. a tarball containing EJS (Embedded JavaScript) templates
-9. a JAR file containing assets (but no templates) structured as per [WebJars](http://www.webjars.org/)
+9. a JAR file containing assets (but no templates) structured as per [WebJars](https://www.webjars.org/)
 10. a tarball containing Django templates
 
 ## Gem version
