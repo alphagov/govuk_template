@@ -9,11 +9,11 @@ Packages are available for [RubyGems](https://rubygems.org/gems/govuk_template),
 
 ## Previewing the template
 
-You can [view a collection of auto-generated examples](http://alphagov.github.io/govuk_template/) of the current govuk_template release, which show how you can use the template.
+You can [view a collection of auto-generated examples](https://alphagov.github.io/govuk_template/) of the current govuk_template release, which show how you can use the template.
 
 ## Requirements
 
-The Ruby language (1.9.3+), the build tool [Rake](http://rake.rubyforge.org/) & the dependancy management tool [Bundler](http://bundler.io/)
+The Ruby language (1.9.3+), the build tool [Rake](https://github.com/ruby/rake) & the dependancy management tool [Bundler](https://bundler.io/)
 
 ## Detailed Docs
 
