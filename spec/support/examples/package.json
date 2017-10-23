@@ -9,6 +9,6 @@
   "main": "views/layouts/govuk_template.html",
   "repository": {
     "type": "git",
-    "url": "https://github.com/alphagov/govuk_template_mustache.git"
+    "url": "http://github.com/alphagov/govuk_template_mustache.git"
   }
 }
