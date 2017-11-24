@@ -26,11 +26,11 @@ module Compiler
       footer_support_links: '@footerLinks',
       homepage_url: '@homepageUrl.getOrElse("https://www.gov.uk/")',
       global_header_text: '@globalHeaderText.getOrElse("GOV.UK")',
-      cookie_message: '@cookieMessage.getOrElse("<p>GOV.UK uses cookies to make the site simpler. <a href=\"https://www.gov.uk/help/cookies\">Find out more about cookies</a></p>")',
+      cookie_message: '@cookieMessage.getOrElse(Html("<p>GOV.UK uses cookies to make the site simpler. <a href=\"https://www.gov.uk/help/cookies\">Find out more about cookies</a></p>"))',
       skip_link_message: '@skipLinkMessage.getOrElse("Skip to main content")',
       logo_link_title: '@logoLinkTitle.getOrElse("Go to the GOV.UK homepage")',
       licence_message: '@licenceMessage',
-      crown_copyright_message: '@crownCopyrightMessage.getOrElse("&copy; Crown copyright")',
+      crown_copyright_message: '@crownCopyrightMessage.getOrElse(Html("&copy; Crown copyright"))',
     }
 
     def render_erb
