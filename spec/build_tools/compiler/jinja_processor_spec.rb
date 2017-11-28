@@ -5,6 +5,7 @@ def valid_sections
   {
     after_header: "{% block after_header %}{% endblock %}",
     body_classes: "{% block body_classes %}{% endblock %}",
+    body_attributes: "{% block body_attributes %}{% endblock %}",
     body_end: "{% block body_end %}{% endblock %}",
     content: "{% block content %}{% endblock %}",
     cookie_message: "{% block cookie_message %}{% endblock %}",
