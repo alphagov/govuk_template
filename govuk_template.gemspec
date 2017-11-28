@@ -19,13 +19,13 @@ Gem::Specification.new do |spec|
   spec.add_dependency "rails", ">= 3.1"
 
   spec.add_development_dependency 'rake'
-  spec.add_development_dependency 'sprockets', '2.10.0'
-  spec.add_development_dependency 'sass', '3.2.9'
-  spec.add_development_dependency 'govuk_frontend_toolkit', '5.2.0'
-  spec.add_development_dependency 'rspec', '3.5.0'
-  spec.add_development_dependency 'rspec-html-matchers', '0.8.1'
-  spec.add_development_dependency 'mustache', '0.99.7'
-  spec.add_development_dependency 'nokogiri', '1.6.6.2'
-  spec.add_development_dependency 'octokit', '3.4.2'
+  spec.add_development_dependency 'sprockets', '~> 2.10.2'
+  spec.add_development_dependency 'sass', '~> 3.2.9'
+  spec.add_development_dependency 'govuk_frontend_toolkit', '~> 5.2.0'
+  spec.add_development_dependency 'rspec', '~> 3.5.0'
+  spec.add_development_dependency 'rspec-html-matchers', '~> 0.8.1'
+  spec.add_development_dependency 'mustache', '~> 0.99.7'
+  spec.add_development_dependency 'nokogiri', '~> 1.6.6.2'
+  spec.add_development_dependency 'octokit', '~> 3.4.2'
   spec.add_development_dependency 'pry'
 end
