@@ -21,7 +21,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rake'
   spec.add_development_dependency 'sprockets', '~> 2.10.2'
   spec.add_development_dependency 'sass', '~> 3.2.9'
-  spec.add_development_dependency 'govuk_frontend_toolkit', '~> 5.2.0'
+  spec.add_development_dependency 'govuk_frontend_toolkit', '~> 7.2.0'
   spec.add_development_dependency 'rspec', '~> 3.5.0'
   spec.add_development_dependency 'rspec-html-matchers', '~> 0.8.1'
   spec.add_development_dependency 'mustache', '~> 0.99.7'
