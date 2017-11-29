@@ -58,10 +58,7 @@ a {
 a:focus {
   background-color: $focus-colour;
   outline: 3px solid $focus-colour;
-}
-
-/* Make links slightly darker when focused to improve contrast. */
-a:link:focus {
+  /* Make links slightly darker when focused to improve contrast. */
   color: darken( $link-colour, 2.5%)
 }
 
