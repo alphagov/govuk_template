@@ -13,13 +13,11 @@ This resulting app directory is included in the gem and hooked in as a Rails eng
 You will need a 'test website' to manually verify changes. If you're only modifying the existing assets, you can do this with NodeJS.
 
 ```
-npm install -g http-server node-sass
-
 # Serve all the assets in the current directory
-http-server -c-1
+npx http-server -c-1
 
 # Auto-compile all the SASS to CSS
-node-sass --recursive source/assets/stylesheets --output app/assets/stylesheets --include-path ../govuk_frontend_toolkit/stylesheets --watch
+npx node-sass --recursive source/assets/stylesheets --output app/assets/stylesheets --include-path ../govuk_frontend_toolkit/stylesheets --watch
 ```
 
 Then create a skeleton `test.html` file in the `app` directory (so git ignores it) using the following template.
