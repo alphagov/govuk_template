@@ -117,13 +117,17 @@
     a#proposition-name:focus {
       color: $text-colour;
     }
-    a.menu {
+    .menu {
       @include core-16;
       color: $white;
       display: block;
       float: right;
       text-decoration: none;
-      padding-top: 6px;
+      font-weight: bold;
+      padding: 2px 6px 1px;
+      font-size: 13px !important;
+      background-color: $black;
+      border-radius: 3px;
       @include media(desktop){
         display: none;
       }

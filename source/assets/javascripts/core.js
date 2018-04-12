@@ -27,6 +27,8 @@
         } else {
           this.setAttribute('class', sourceClass + " js-visible");
         }
+        this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') !== "true");
+        target.setAttribute('aria-hidden', target.getAttribute('aria-hidden') === "false");
       });
     }
   }

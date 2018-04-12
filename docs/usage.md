@@ -14,10 +14,10 @@ You can get a propositional title and navigation by setting the content for `hea
 
     <div class="header-proposition">
       <div class="content">
-        <a href="#proposition-links" class="js-header-toggle menu">Menu</a>
+        <a href="/" id="proposition-name">Service Name</a>
+        <button href="#proposition-links" class="js-header-toggle menu" aria-controls="navigation" aria-label="Show or hide Top Level Navigation">Menu</button>
         <nav id="proposition-menu">
-          <a href="/" id="proposition-name">Service Name</a>
-          <ul id="proposition-links">
+          <ul id="proposition-links" aria-label="Top Level Navigation">
             <li><a href="url-to-page-1" class="active">Navigation item #1</a></li>
             <li><a href="url-to-page-2">Navigation item #2</a></li>
           </ul>
@@ -31,8 +31,8 @@ For menus with only one item, the collapsible functionality is not necessary, it
 
     <div class='header-proposition'>
       <div class='content'>
-        <nav id='proposition-menu'>
-          <a href='/' id='proposition-name'>Service Name</a>
+        <a href='/' id='proposition-name'>Service Name</a>
+        <nav id='proposition-menu' aria-label="Top Level Navigation">
           <p id='proposition-link'>
             <a href='url-to-page-1'>Navigation item #1</a>
           </p>
