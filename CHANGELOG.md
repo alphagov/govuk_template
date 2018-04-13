@@ -1,3 +1,7 @@
+# 0.23.1
+
+- Fix accessibility issue with proposition menu. The menu link will now show even when expanded to avoid permanent focus when using VoiceOver ([PR #343](https://github.com/alphagov/govuk_template/pull/343)).
+
 # 0.23.0
 
 - Re-adds SRI for js and css assets removed in 0.22.0 [PR #323](https://github.com/alphagov/govuk_template/pull/323)
