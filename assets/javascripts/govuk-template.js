@@ -98,11 +98,13 @@
         } else {
           target.setAttribute('class', targetClass + " js-visible");
         }
-        if(sourceClass.indexOf('js-hidden') !== -1){
-          this.setAttribute('class', sourceClass.replace(/(^|\s)js-hidden(\s|$)/, ''));
+        if(sourceClass.indexOf('js-visible') !== -1){
+          this.setAttribute('class', sourceClass.replace(/(^|\s)js-visible(\s|$)/, ''));
         } else {
-          this.setAttribute('class', sourceClass + " js-hidden");
+          this.setAttribute('class', sourceClass + " js-visible");
         }
+        this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') !== "true");
+        target.setAttribute('aria-hidden', target.getAttribute('aria-hidden') === "false");
       });
     }
   }
