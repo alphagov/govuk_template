@@ -10,10 +10,10 @@ pageTitle: "GOV.UK - The best place to find government services and information"
 propositionHeader: |
     <div class='header-proposition'>
       <div class='content'>
-        <a href='#proposition-links' class='js-header-toggle menu'>Menu</a>
+        <a href='/govuk_template/' id='proposition-name'>Service Name</a>
+        <a role='button' href='#proposition-links' class='js-header-toggle menu' aria-controls='navigation' aria-label='Show or hide Top Level Navigation'>Menu</a>
         <nav id='proposition-menu'>
-          <a href='/govuk_template/' id='proposition-name'>Service Name</a>
-          <ul id='proposition-links'>
+          <ul id='proposition-links' aria-label='Top Level Navigation'>
             <li><a href='url-to-page-1' class='active'>Navigation item #1</a></li>
             <li><a href='url-to-page-2'>Navigation item #2</a></li>
           </ul>
