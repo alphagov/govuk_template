@@ -15,7 +15,7 @@ You can get a propositional title and navigation by setting the content for `hea
     <div class="header-proposition">
       <div class="content">
         <a href="/" id="proposition-name">Service Name</a>
-        <button href="#proposition-links" class="js-header-toggle menu" aria-controls="navigation" aria-label="Show or hide Top Level Navigation">Menu</button>
+        <a role="button" href="#proposition-links" class="js-header-toggle menu" aria-controls="navigation" aria-label="Show or hide Top Level Navigation">Menu</a>
         <nav id="proposition-menu">
           <ul id="proposition-links" aria-label="Top Level Navigation">
             <li><a href="url-to-page-1" class="active">Navigation item #1</a></li>
