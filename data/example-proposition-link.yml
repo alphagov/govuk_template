@@ -10,8 +10,8 @@ pageTitle: "GOV.UK - The best place to find government services and information"
 propositionHeader: |-
     <div class='header-proposition'>
       <div class='content'>
-        <nav id='proposition-menu'>
-          <a href='/govuk_template/' id='proposition-name'>Service Name</a>
+        <a href='/govuk_template/' id='proposition-name'>Service Name</a>
+        <nav id='proposition-menu' aria-label='Top Level Navigation'>
           <p id='proposition-link'>
             <a href='url-to-page-1' class='active'>Navigation item #1</a>
           </p>
