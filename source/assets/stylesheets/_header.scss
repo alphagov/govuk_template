@@ -138,7 +138,7 @@
         vertical-align: middle;
         content: " \25BC";
       }
-      &.js-hidden:after {
+      &.js-visible:after {
         content: " \25B2";
       }
     }
