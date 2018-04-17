@@ -14,7 +14,7 @@
 
 /* Hide for both screenreaders and browsers */
 .hidden,
-.js-hidden {
+.js-enabled .js-hidden {
   display: none;
   visibility: hidden;
 }
