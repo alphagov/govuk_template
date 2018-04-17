@@ -13,7 +13,8 @@
 }
 
 /* Hide for both screenreaders and browsers */
-.hidden {
+.hidden,
+.js-hidden {
   display: none;
   visibility: hidden;
 }
