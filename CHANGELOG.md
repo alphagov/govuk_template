@@ -1,3 +1,7 @@
+# 0.23.2
+
+- Fix missing js-hidden class. This class is still used by downstream projects and should be kept for backwards compatibility.
+
 # 0.23.1
 
 - Fix accessibility issue with proposition menu. The menu link will now show even when expanded to avoid permanent focus when using VoiceOver ([PR #343](https://github.com/alphagov/govuk_template/pull/343)).
