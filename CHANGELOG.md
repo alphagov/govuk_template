@@ -1,5 +1,7 @@
 # Unreleased
 
+# 0.23.3
+
 - Make sure that if a custom `og:image` meta tag is set in the `:head` block,
   this image has priority over the default image.
 
