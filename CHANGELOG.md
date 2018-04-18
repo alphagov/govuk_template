@@ -1,3 +1,8 @@
+# Unreleased
+
+- Make sure that if a custom `og:image` meta tag is set in the `:head` block,
+  this image has priority over the default image.
+
 # 0.23.2
 
 - Fix missing js-hidden class. This class is still used by downstream projects and should be kept for backwards compatibility.
