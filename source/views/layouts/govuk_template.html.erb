@@ -30,9 +30,11 @@
     <meta name="theme-color" content="#0b0c0c" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta property="og:image" content="<%= asset_path "opengraph-image.png" %>">
 
     <%= yield :head %>
+
+    <%# The default og:image is added below :head so that scrapers see any custom metatags first, and this is just a fallback %>
+    <meta property="og:image" content="<%= asset_path "opengraph-image.png" %>">
   </head>
 
   <body<%= content_for?(:body_classes) ? raw(" class=\"#{yield(:body_classes)}\"") : '' %>>
