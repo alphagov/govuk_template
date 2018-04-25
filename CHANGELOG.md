@@ -1,4 +1,6 @@
-# Unreleased
+# 0.24.0
+
+- Change font delivery method from Base64 encoded strings to WOFF and EOT files. This has been successfully tested as a more network efficient way to deliver fonts.
 
 # 0.23.3
 
