@@ -86,7 +86,7 @@ module Compiler
     end
 
     def copy_static_assets
-      excluded_extensions = %w(.js .css .scss .erb)
+      excluded_extensions = %w(.js .css .scss .erb .md .sh)
 
       Dir.chdir @repo_root.join("source", "assets") do
         files = []
