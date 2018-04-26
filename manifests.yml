@@ -6,7 +6,6 @@ stylesheets:
 - govuk-template-ie7
 - govuk-template-ie6
 - govuk-template-print
-- fonts
 javascripts:
 - govuk-template
 - ie

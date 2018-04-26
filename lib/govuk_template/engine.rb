@@ -4,7 +4,6 @@ module GovukTemplate
       app.config.assets.precompile += %w(
         favicon.ico
         govuk-template*.css
-        fonts*.css
         govuk-template.js
         ie.js
         apple-touch-icon-180x180.png
