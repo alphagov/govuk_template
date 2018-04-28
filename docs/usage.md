@@ -1,12 +1,12 @@
 # Usage
 
-## To customise the GOV.UK template
+## To customise the ID-SK template
 
 Refer to the table of [template blocks](./docs/template-blocks.md) and their default values.
 
 ## Skip link
 
-The [govuk_template sets a skip link](https://github.com/alphagov/govuk_template/blob/master/source/views/layouts/govuk_template.html.erb#L64-L68) to `#content`, but doesn't provide an element with `id="content"`. You'll need to add `id="content"` to your main content area, to ensure the skip link will work.
+The [idsk_template sets a skip link](https://github.com/id-sk/idsk_template/blob/master/source/views/layouts/idsk_template.html.erb#L64-L68) to `#content`, but doesn't provide an element with `id="content"`. You'll need to add `id="content"` to your main content area, to ensure the skip link will work.
 
 ## Propositional title and navigation
 
