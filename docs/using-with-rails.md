@@ -2,10 +2,10 @@
 
 ## Add to Gemfile
 
-Add `govuk_template` to your app's `Gemfile`:
+Add `idsk_template` to your app's `Gemfile`:
 
 ```ruby
-gem 'govuk_template'
+gem 'idsk_template'
 ```
 
 (In a production system you'll want to pin a more specific version for stability)
@@ -15,14 +15,14 @@ gem 'govuk_template'
 Add this line to the bottom of your application layout view (usually in `app/views/layouts/application.html.erb`):
 
 ```erb
-<%= render file: 'layouts/govuk_template' %>
+<%= render file: 'layouts/idsk_template' %>
 ```
 
 ## Customise the template
 
-`govuk_template` provides blocks you can insert content into, to customise the basic layout.
+`idsk_template` provides blocks you can insert content into, to customise the basic layout.
 
-For example, to set a `<title>` for your page you can set content for the `:page_title` block, and it will be inserted into the `govuk_template` layout.:
+For example, to set a `<title>` for your page you can set content for the `:page_title` block, and it will be inserted into the `idsk_template` layout.:
 
 ```
 <% content_for :page_title, "My page title" %>
@@ -41,7 +41,7 @@ Check out the [full list of blocks](template-blocks.md) you can use to customise
 
 ## SRI
 
-`govuk_template` >= 20.0.0 can be used together with `sprockets-rails` >= 3.0.0 in order to make use of the SRI
+`idsk_template` >= 20.0.0 can be used together with `sprockets-rails` >= 3.0.0 in order to make use of the SRI
 
 You can read more about SRI [here](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity).
 

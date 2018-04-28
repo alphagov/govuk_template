@@ -17,7 +17,7 @@ You will need a 'test website' to manually verify changes. If you're only modify
 npx http-server -c-1
 
 # Auto-compile all the SASS to CSS
-npx node-sass --recursive source/assets/stylesheets --output app/assets/stylesheets --include-path ../govuk_frontend_toolkit/stylesheets --watch
+npx node-sass --recursive source/assets/stylesheets --output app/assets/stylesheets --include-path ../idsk_frontend_toolkit/stylesheets --watch
 ```
 
 Then create a skeleton `test.html` file in the `app` directory (so git ignores it) using the following template.
@@ -25,13 +25,13 @@ Then create a skeleton `test.html` file in the `app` directory (so git ignores i
 ```
 <html>
   <head>
-    <link rel="stylesheet" href="assets/css/govuk-template.css"/>
+    <link rel="stylesheet" href="assets/css/idsk-template.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body class="js-enabled">
     YOUR TEST CODE HERE
   </body>
-  <script type="text/javascript" src="../source/assets/javascripts/govuk-template.js"></script>
+  <script type="text/javascript" src="../source/assets/javascripts/idsk-template.js"></script>
 </html>
   </body>
 </html>

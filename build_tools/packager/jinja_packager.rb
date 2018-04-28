@@ -1,5 +1,5 @@
 require 'open3'
-require 'govuk_template/version'
+require 'idsk_template/version'
 require_relative 'tar_packager'
 require_relative '../compiler/jinja_processor'
 
@@ -7,7 +7,7 @@ module Packager
   class JinjaPackager < TarPackager
     def initialize
       super
-      @base_name = "jinja_govuk_template-#{GovukTemplate::VERSION}"
+      @base_name = "jinja_idsk_template-#{IdskTemplate::VERSION}"
     end
 
     def build

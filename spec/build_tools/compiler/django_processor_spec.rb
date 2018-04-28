@@ -43,7 +43,7 @@ describe Compiler::DjangoProcessor do
         subject.instance_variable_set(:@is_stylesheet, true)
       end
       it "should return the file" do
-        expect(subject.asset_path(asset_file)).to eql("#{asset_file}?#{GovukTemplate::VERSION}")
+        expect(subject.asset_path(asset_file)).to eql("#{asset_file}?#{IdskTemplate::VERSION}")
       end
     end
     context "if not stylesheet" do

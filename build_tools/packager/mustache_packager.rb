@@ -1,5 +1,5 @@
 require 'open3'
-require 'govuk_template/version'
+require 'idsk_template/version'
 require_relative 'tar_packager'
 require_relative '../compiler/mustache_processor'
 
@@ -7,7 +7,7 @@ module Packager
   class MustachePackager < TarPackager
     def initialize
       super
-      @base_name = "mustache_govuk_template-#{GovukTemplate::VERSION}"
+      @base_name = "mustache_idsk_template-#{IdskTemplate::VERSION}"
     end
 
     def build

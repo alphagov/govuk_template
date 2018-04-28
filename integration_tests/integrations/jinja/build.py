@@ -1,7 +1,7 @@
 from jinja2 import Environment, FileSystemLoader
 
 env = Environment(loader=FileSystemLoader([
-    'vendor/jinja_govuk_template/views/layouts',
+    'vendor/jinja_idsk_template/views/layouts',
     'templates'
 ]))
 template = env.get_template('test_template.html')

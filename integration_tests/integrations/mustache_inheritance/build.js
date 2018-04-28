@@ -1,7 +1,7 @@
 var Hogan = require('hogan.js'),
     fs = require('fs'),
     path = require('path'),
-    layoutSource = path.normalize(__dirname + '/vendor/mustache_inheritance_govuk_template/views/layouts/govuk_template.mustache'),
+    layoutSource = path.normalize(__dirname + '/vendor/mustache_inheritance_idsk_template/views/layouts/idsk_template.mustache'),
     destination = path.normalize(__dirname + '/../../html_for_testing/mustache_inheritance_integration_test_app.html'),
     govukLayout,
     compiledLayout,

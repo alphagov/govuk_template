@@ -40,11 +40,11 @@ module Compiler
       return file if @is_stylesheet
       case File.extname(file)
       when '.css'
-        "{{ site.govuk_template_assets }}/stylesheets/#{file}"
+        "{{ site.idsk_template_assets }}/stylesheets/#{file}"
       when '.js'
-        "{{ site.govuk_template_assets }}/javascripts/#{file}"
+        "{{ site.idsk_template_assets }}/javascripts/#{file}"
       else
-        "{{ site.govuk_template_assets }}/images/#{file}"
+        "{{ site.idsk_template_assets }}/images/#{file}"
       end
     end
   end

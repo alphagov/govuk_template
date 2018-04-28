@@ -48,7 +48,7 @@ module Compiler
     def compile_stylesheets
       env = Sprockets::Environment.new(@repo_root)
       env.append_path "source/assets/stylesheets"
-      env.append_path File.join(Gem.loaded_specs["govuk_frontend_toolkit"].full_gem_path, 'app', 'assets', 'stylesheets')
+      env.append_path File.join(Gem.loaded_specs["idsk_frontend_toolkit"].full_gem_path, 'app', 'assets', 'stylesheets')
 
       stylesheet_assets = [] # This has to be a local variable so that it's in scope for the asset_path method
       env.context_class.class_eval do
@@ -112,7 +112,7 @@ module Compiler
       needed_assets = @stylesheet_assets - @static_assets
 
       env = Sprockets::Environment.new(@repo_root)
-      env.append_path File.join(Gem.loaded_specs["govuk_frontend_toolkit"].full_gem_path, 'app', 'assets', 'images')
+      env.append_path File.join(Gem.loaded_specs["idsk_frontend_toolkit"].full_gem_path, 'app', 'assets', 'images')
 
       needed_assets.each do |asset_name|
         asset = env.find_asset(asset_name)

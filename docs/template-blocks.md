@@ -1,4 +1,4 @@
-## GOV.UK template blocks and their default values
+## ID-SK template blocks and their default values
 
 | Template block name       |  Location / Information                         |   Default template values
 |---                        |---                                              |---

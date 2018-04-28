@@ -5,7 +5,7 @@ var nunjucks = require('nunjucks'),
 
 env = new nunjucks.Environment(new nunjucks.FileSystemLoader([
   path.normalize(__dirname + '/templates/'),
-  path.normalize(__dirname + '/vendor/jinja_govuk_template/views/layouts/')
+  path.normalize(__dirname + '/vendor/jinja_idsk_template/views/layouts/')
 ]));
 
 fs.writeFileSync(

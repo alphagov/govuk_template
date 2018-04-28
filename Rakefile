@@ -1,6 +1,6 @@
 $:.unshift File.expand_path('../lib', __FILE__)
 $:.unshift File.expand_path('../build_tools', __FILE__)
-require "govuk_template/version"
+require "idsk_template/version"
 
 desc "Compile template and assets from ./source into ./app"
 task :compile do
@@ -22,72 +22,72 @@ task :build => ["build:gem",
                 "build:django"]
 
 namespace :build do
-  desc "Build govuk_template-#{GovukTemplate::VERSION}.gem into the pkg directory"
+  desc "Build idsk_template-#{IdskTemplate::VERSION}.gem into the pkg directory"
   task :gem => :compile do
-    puts "Building pkg/govuk_template-#{GovukTemplate::VERSION}.gem"
+    puts "Building pkg/idsk_template-#{IdskTemplate::VERSION}.gem"
     require 'packager/gem_packager'
     Packager::GemPackager.build
   end
 
-  desc "Build govuk_template-#{GovukTemplate::VERSION}.tgz into the pkg directory"
+  desc "Build idsk_template-#{IdskTemplate::VERSION}.tgz into the pkg directory"
   task :tar => :compile do
-    puts "Building pkg/govuk_template-#{GovukTemplate::VERSION}.tgz"
+    puts "Building pkg/idsk_template-#{IdskTemplate::VERSION}.tgz"
     require 'packager/tar_packager'
     Packager::TarPackager.build
   end
 
-  desc "Build play_govuk_template-#{GovukTemplate::VERSION}.tgz into the pkg directory"
+  desc "Build play_idsk_template-#{IdskTemplate::VERSION}.tgz into the pkg directory"
   task :play => :compile do
-    puts "Building pkg/play_govuk_template-#{GovukTemplate::VERSION}.tgz"
+    puts "Building pkg/play_idsk_template-#{IdskTemplate::VERSION}.tgz"
     require 'packager/play_packager'
     Packager::PlayPackager.build
   end
 
-  desc "Build mustache_govuk_template-#{GovukTemplate::VERSION} into the pkg directory"
+  desc "Build mustache_idsk_template-#{IdskTemplate::VERSION} into the pkg directory"
   task :mustache => :compile do
-    puts "Building pkg/mustache_govuk_template-#{GovukTemplate::VERSION}"
+    puts "Building pkg/mustache_idsk_template-#{IdskTemplate::VERSION}"
     require 'packager/mustache_packager'
     Packager::MustachePackager.build
   end
 
-  desc "Build liquid_govuk_template-#{GovukTemplate::VERSION} into the pkg directory"
+  desc "Build liquid_idsk_template-#{IdskTemplate::VERSION} into the pkg directory"
   task :liquid => :compile do
-    puts "Building pkg/liquid_govuk_template-#{GovukTemplate::VERSION}"
+    puts "Building pkg/liquid_idsk_template-#{IdskTemplate::VERSION}"
     require 'packager/liquid_packager'
     Packager::LiquidPackager.build
   end
 
-  desc "Build mustache_inheritance_govuk_template-#{GovukTemplate::VERSION} into the pkg directory"
+  desc "Build mustache_inheritance_idsk_template-#{IdskTemplate::VERSION} into the pkg directory"
   task :mustache_inheritance => :compile do
-    puts "Building pkg/mustache_inheritance_govuk_template-#{GovukTemplate::VERSION}"
+    puts "Building pkg/mustache_inheritance_idsk_template-#{IdskTemplate::VERSION}"
     require 'packager/mustache_inheritance_packager'
     Packager::MustacheInheritancePackager.build
   end
 
-  desc "Build jinja_govuk_template-#{GovukTemplate::VERSION} into the pkg directory"
+  desc "Build jinja_idsk_template-#{IdskTemplate::VERSION} into the pkg directory"
   task :jinja => :compile do
-    puts "Building pkg/jinja_govuk_template-#{GovukTemplate::VERSION}"
+    puts "Building pkg/jinja_idsk_template-#{IdskTemplate::VERSION}"
     require 'packager/jinja_packager'
     Packager::JinjaPackager.build
   end
 
-  desc "Build django_govuk_template-#{GovukTemplate::VERSION} into the pkg directory"
+  desc "Build django_idsk_template-#{IdskTemplate::VERSION} into the pkg directory"
   task :django => :compile do
-    puts "Building pkg/django_govuk_template-#{GovukTemplate::VERSION}"
+    puts "Building pkg/django_idsk_template-#{IdskTemplate::VERSION}"
     require 'packager/django_packager'
     Packager::DjangoPackager.build
   end
 
-  desc "Build ejs_govuk_template-#{GovukTemplate::VERSION} into the pkg directory"
+  desc "Build ejs_idsk_template-#{IdskTemplate::VERSION} into the pkg directory"
   task :ejs => :compile do
-    puts "Building pkg/ejs_govuk_template-#{GovukTemplate::VERSION}"
+    puts "Building pkg/ejs_idsk_template-#{IdskTemplate::VERSION}"
     require 'packager/ejs_packager'
     Packager::EJSPackager.build
   end
   
-  desc "Build govuk_template-#{GovukTemplate::VERSION}.jar into the pkg directory"
+  desc "Build idsk_template-#{IdskTemplate::VERSION}.jar into the pkg directory"
   task :webjar => :compile do
-    puts "Building pkg/govuk_template-#{GovukTemplate::VERSION}.jar"
+    puts "Building pkg/idsk_template-#{IdskTemplate::VERSION}.jar"
     require 'packager/webjar_packager'
     Packager::WebJarPackager.build
   end
@@ -97,15 +97,15 @@ namespace :build do
     require 'publisher/gem_publisher'
     p = Publisher::GemPublisher.new
     if p.version_released?
-      puts "govuk_template-#{GovukTemplate::VERSION} already released.  Not pushing."
+      puts "idsk_template-#{IdskTemplate::VERSION} already released.  Not pushing."
     else
-      puts "Pushing govuk_template-#{GovukTemplate::VERSION}"
+      puts "Pushing idsk_template-#{IdskTemplate::VERSION}"
       p.publish
       puts "Done."
 
       require 'publisher/docs_publisher'
       q = Publisher::DocsPublisher.new
-      puts "Pushing docs #{GovukTemplate::VERSION} to git repo"
+      puts "Pushing docs #{IdskTemplate::VERSION} to git repo"
       q.publish
       puts "Done."
     end
@@ -113,45 +113,45 @@ namespace :build do
     require 'publisher/release_publisher'
     q = Publisher::ReleasePublisher.new
     if q.version_released?
-      puts "Github release v#{GovukTemplate::VERSION} already released. Not pushing."
+      puts "Github release v#{IdskTemplate::VERSION} already released. Not pushing."
     else
-      puts "Pushing Github release v#{GovukTemplate::VERSION}"
+      puts "Pushing Github release v#{IdskTemplate::VERSION}"
       q.publish
     end
 
     require 'publisher/play_publisher'
     q = Publisher::PlayPublisher.new
     if q.version_released?
-      puts "govuk_template_play #{GovukTemplate::VERSION} already released. Not pushing."
+      puts "idsk_template_play #{IdskTemplate::VERSION} already released. Not pushing."
     else
-      puts "Pushing govuk_template_play #{GovukTemplate::VERSION} to git repo"
+      puts "Pushing idsk_template_play #{IdskTemplate::VERSION} to git repo"
       q.publish
     end
 
     require 'publisher/mustache_publisher'
     q = Publisher::MustachePublisher.new
     if q.version_released?
-      puts "govuk_template_mustache #{GovukTemplate::VERSION} already released. Not pushing."
+      puts "idsk_template_mustache #{IdskTemplate::VERSION} already released. Not pushing."
     else
-      puts "Pushing govuk_template_mustache #{GovukTemplate::VERSION} to git repo"
+      puts "Pushing idsk_template_mustache #{IdskTemplate::VERSION} to git repo"
       q.publish
     end
 
     require 'publisher/ejs_publisher'
     q = Publisher::EJSPublisher.new
     if q.version_released?
-      puts "govuk_template_ejs #{GovukTemplate::VERSION} already released. Not pushing."
+      puts "idsk_template_ejs #{IdskTemplate::VERSION} already released. Not pushing."
     else
-      puts "Pushing govuk_template_ejs #{GovukTemplate::VERSION} to git repo"
+      puts "Pushing idsk_template_ejs #{IdskTemplate::VERSION} to git repo"
       q.publish
     end
 
     require 'publisher/jinja_publisher'
     q = Publisher::JinjaPublisher.new
     if q.version_released?
-      puts "govuk_template_jinja #{GovukTemplate::VERSION} already released. Not pushing."
+      puts "idsk_template_jinja #{IdskTemplate::VERSION} already released. Not pushing."
     else
-      puts "Pushing govuk_template_jinja #{GovukTemplate::VERSION} to git repo"
+      puts "Pushing idsk_template_jinja #{IdskTemplate::VERSION} to git repo"
       q.publish
     end
   end

@@ -1,14 +1,14 @@
 {
-  "name": "govuk_template_mustache",
-  "version": "<%= GovukTemplate::VERSION %>",
-  "description": "{{ mustache }} packaged version of the GOV.UK template",
-  "keywords": ["alphagov", "govuk", "mustache", "template"],
-  "bugs": "https://github.com/alphagov/govuk_template_mustache/issues",
+  "name": "idsk_template_mustache",
+  "version": "<%= IdskTemplate::VERSION %>",
+  "description": "{{ mustache }} packaged version of the ID-SK template",
+  "keywords": ["alphagov", "id-sk", "mustache", "template"],
+  "bugs": "https://github.com/id-sk/idsk_template_mustache/issues",
   "license": "MIT",
   "author": "Government Digital Service developers (https://gds.blog.gov.uk/)",
-  "main": "views/layouts/govuk_template.html",
+  "main": "views/layouts/idsk_template.html",
   "repository": {
     "type": "git",
-    "url": "https://github.com/alphagov/govuk_template_mustache.git"
+    "url": "https://github.com/id-sk/idsk_template_mustache.git"
   }
 }

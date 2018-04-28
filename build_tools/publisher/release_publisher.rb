@@ -1,11 +1,11 @@
-require 'govuk_template/version'
+require 'idsk_template/version'
 require 'octokit'
 
 module Publisher
   class ReleasePublisher
-    GITHUB_REPO = 'alphagov/govuk_template'
+    GITHUB_REPO = 'id-sk/idsk_template'
 
-    def initialize(version = GovukTemplate::VERSION)
+    def initialize(version = IdskTemplate::VERSION)
       @version = version
       @pkg_dir = Pathname.new(File.expand_path('../../..', __FILE__)).join('pkg')
       @github_client = Octokit::Client.new(access_token: ENV['GITHUB_TOKEN'])

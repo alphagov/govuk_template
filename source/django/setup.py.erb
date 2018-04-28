@@ -1,14 +1,14 @@
 from setuptools import setup
 
 setup(
-  name = 'govuk_template_<%= template_abbreviation %>',
-  packages = ['govuk_template'],
+  name = 'idsk_template_<%= template_abbreviation %>',
+  packages = ['idsk_template'],
   include_package_data=True,
-  version = '<%= GovukTemplate::VERSION %>',
+  version = '<%= IdskTemplate::VERSION %>',
   license = 'MIT',
-  description = '<%= template_name %> packaged version of the GOV.UK template',
+  description = '<%= template_name %> packaged version of the ID-SK template',
   author = 'Government Digital Service developers',
-  url = 'https://github.com/alphagov/govuk_template',
-  download_url = 'https://github.com/alphagov/govuk_template/releases/download/v<%= GovukTemplate::VERSION %>/<%= template_abbreviation %>_govuk_template-<%= GovukTemplate::VERSION %>.tgz',
-  keywords = ["alphagov", "govuk", "<%= template_abbreviation %>", "template"],
+  url = 'https://github.com/id-sk/idsk_template',
+  download_url = 'https://github.com/id-sk/idsk_template/releases/download/v<%= IdskTemplate::VERSION %>/<%= template_abbreviation %>_idsk_template-<%= IdskTemplate::VERSION %>.tgz',
+  keywords = ["alphagov", "id-sk", "<%= template_abbreviation %>", "template"],
 )

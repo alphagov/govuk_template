@@ -3,8 +3,8 @@ require File.join(PROJECT_ROOT, 'build_tools/compiler/asset_compiler.rb')
 require File.join(PROJECT_ROOT, 'build_tools/packager/mustache_packager.rb')
 
 describe Packager::MustachePackager do
-  let(:generated_directory_path) {File.join(PROJECT_ROOT, "pkg/mustache_govuk_template-#{GovukTemplate::VERSION}")}
-  let(:generated_template_path) {File.join(generated_directory_path, "views/layouts/govuk_template.html")}
+  let(:generated_directory_path) {File.join(PROJECT_ROOT, "pkg/mustache_idsk_template-#{IdskTemplate::VERSION}")}
+  let(:generated_template_path) {File.join(generated_directory_path, "views/layouts/idsk_template.html")}
   let(:generated_package_json_path) {File.join(generated_directory_path, "package.json")}
   subject {described_class.new}
 
@@ -21,7 +21,7 @@ describe Packager::MustachePackager do
 
         generated_template = File.read(generated_template_path)
         expect(generated_template).to match(%r[\A{{{ topOfPage }}}])
-        expect(generated_template).to match(%r[href="{{{ assetPath }}}stylesheets/govuk-template\.css\?#{Regexp.escape(GovukTemplate::VERSION)}"])
+        expect(generated_template).to match(%r[href="{{{ assetPath }}}stylesheets/idsk-template\.css\?#{Regexp.escape(IdskTemplate::VERSION)}"])
 
         expect(File.read(generated_package_json_path)).to eql(example_package_json)
       end

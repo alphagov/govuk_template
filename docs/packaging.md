@@ -17,13 +17,13 @@ At present this generates 9 output formats:
 
 This is available on rubygems.org.  To use it, add this line to your application's Gemfile:
 
-    gem 'govuk_template'
+    gem 'idsk_template'
 
 And then execute:
 
     $ bundle
 
-You can then use the `govuk_template` layout in your app.  If you need to extend the layout you can use [nested layouts](http://guides.rubyonrails.org/layouts_and_rendering.html#using-nested-layouts).
+You can then use the `idsk_template` layout in your app.  If you need to extend the layout you can use [nested layouts](http://guides.rubyonrails.org/layouts_and_rendering.html#using-nested-layouts).
 
 ## Play version
 

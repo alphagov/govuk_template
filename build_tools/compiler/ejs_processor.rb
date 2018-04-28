@@ -38,15 +38,15 @@ module Compiler
     end
 
     def asset_path(file, options={})
-      query_string = GovukTemplate::VERSION
+      query_string = IdskTemplate::VERSION
       return "#{file}?#{query_string}" if @is_stylesheet
       case File.extname(file)
       when '.css'
-        "<%= govukTemplateAssetPath %>stylesheets/#{file}?#{query_string}"
+        "<%= idskTemplateAssetPath %>stylesheets/#{file}?#{query_string}"
       when '.js'
-        "<%= govukTemplateAssetPath %>javascripts/#{file}?#{query_string}"
+        "<%= idskTemplateAssetPath %>javascripts/#{file}?#{query_string}"
       else
-        "<%= govukTemplateAssetPath %>images/#{file}?#{query_string}"
+        "<%= idskTemplateAssetPath %>images/#{file}?#{query_string}"
       end
     end
   end

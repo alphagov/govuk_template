@@ -1,5 +1,5 @@
 require 'open3'
-require 'govuk_template/version'
+require 'idsk_template/version'
 require 'packager/tar_packager'
 require 'compiler/play_processor'
 
@@ -7,7 +7,7 @@ module Packager
   class PlayPackager < TarPackager
     def initialize
       super
-      @base_name = "play_govuk_template-#{GovukTemplate::VERSION}"
+      @base_name = "play_idsk_template-#{IdskTemplate::VERSION}"
     end
 
     def build

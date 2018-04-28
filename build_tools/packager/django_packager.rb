@@ -1,6 +1,6 @@
 require 'open3'
 require 'fileutils'
-require 'govuk_template/version'
+require 'idsk_template/version'
 require_relative 'tar_packager'
 require_relative '../compiler/django_processor'
 
@@ -8,7 +8,7 @@ module Packager
   class DjangoPackager < TarPackager
     def initialize
       super
-      @base_name = "django_govuk_template-#{GovukTemplate::VERSION}"
+      @base_name = "django_idsk_template-#{IdskTemplate::VERSION}"
     end
 
     def build
@@ -33,11 +33,11 @@ module Packager
     end
 
     def parse_folders
-      package_dir = @target_dir.join('govuk_template')
+      package_dir = @target_dir.join('idsk_template')
       package_dir.mkpath
       File.rename @target_dir.join('assets'), package_dir.join('static')
       File.rename @target_dir.join('views'), package_dir.join('templates')
-      File.rename package_dir.join('templates', 'layouts'), package_dir.join('templates', 'govuk_template')
+      File.rename package_dir.join('templates', 'layouts'), package_dir.join('templates', 'idsk_template')
     end
 
     def generate_setup_py
@@ -54,7 +54,7 @@ module Packager
       files.each do |f|
         FileUtils.cp(f, @target_dir)
       end
-      File.new(@target_dir.join("govuk_template", "__init__.py"), "w").close
+      File.new(@target_dir.join("idsk_template", "__init__.py"), "w").close
     end
 
     def create_tarball
@@ -69,7 +69,7 @@ module Packager
   private
 
     def generated_file_name(file_path)
-      if file_path.include? "govuk_template"
+      if file_path.include? "idsk_template"
         "base.html"
       else
         File.basename(file_path, File.extname(file_path))

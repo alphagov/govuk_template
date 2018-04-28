@@ -1,5 +1,5 @@
 require 'open3'
-require 'govuk_template/version'
+require 'idsk_template/version'
 require 'tmpdir'
 require_relative '../compiler/plain_processor'
 
@@ -15,13 +15,13 @@ module Packager
 
     def initialize
       @repo_root = Pathname.new(File.expand_path('../../..', __FILE__))
-      @base_name = "govuk_template-#{GovukTemplate::VERSION}"
+      @base_name = "idsk_template-#{IdskTemplate::VERSION}"
     end
 
     def build
-      Dir.mktmpdir("govuk_template") do |dir|
+      Dir.mktmpdir("idsk_template") do |dir|
         @target_dir = Pathname.new(dir).join('META-INF')
-        @internal_dir = Pathname.new(@target_dir).join("resources/webjars/govuk_template/#{GovukTemplate::VERSION}/")
+        @internal_dir = Pathname.new(@target_dir).join("resources/webjars/idsk_template/#{IdskTemplate::VERSION}/")
         @internal_dir.mkpath
         prepare_contents
         create_jar
@@ -40,7 +40,7 @@ module Packager
           end
         end
       end
-      File.open(@target_dir.join('VERSION'), 'w') {|f| f.write "#{GovukTemplate::VERSION}\n" }
+      File.open(@target_dir.join('VERSION'), 'w') {|f| f.write "#{IdskTemplate::VERSION}\n" }
     end
     
     def process_template(file)

@@ -1,10 +1,10 @@
 #! /bin/bash
 set -e
 
-rm -rf vendor/mustache_govuk_template/*
+rm -rf vendor/mustache_idsk_template/*
 
 # TODO: Pick the latest, not every matching tgz file!
-tar -zxvf ../../../pkg/mustache_govuk_template-*.tgz -C vendor/
+tar -zxvf ../../../pkg/mustache_idsk_template-*.tgz -C vendor/
 
 bundle install --path vendor/bundle
 
