@@ -21,7 +21,7 @@ describe Packager::MustachePackager do
 
         generated_template = File.read(generated_template_path)
         expect(generated_template).to match(%r[\A{{{ topOfPage }}}])
-        expect(generated_template).to match(%r[href="{{{ assetPath }}}stylesheets/govuk-template\.css\?#{Regexp.escape(IdskTemplate::VERSION)}"])
+        expect(generated_template).to match(%r[href="{{{ assetPath }}}stylesheets/idsk-template\.css\?#{Regexp.escape(IdskTemplate::VERSION)}"])
 
         expect(File.read(generated_package_json_path)).to eql(example_package_json)
       end

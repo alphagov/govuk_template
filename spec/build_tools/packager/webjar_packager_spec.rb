@@ -15,7 +15,7 @@ describe Packager::WebJarPackager do
       it "should output the correct template files" do
         subject.build
         
-        output, status = Open3.capture2e("jar -tvf #{generated_jar} | grep META-INF/resources/webjars/idsk_template/#{IdskTemplate::VERSION}/stylesheets/govuk-template.css")
+        output, status = Open3.capture2e("jar -tvf #{generated_jar} | grep META-INF/resources/webjars/idsk_template/#{IdskTemplate::VERSION}/stylesheets/idsk-template.css")
         expect(status.exitstatus).to eql(0)
         
         output, status = Open3.capture2e("jar -tvf #{generated_jar} | grep META-INF/resources/webjars/idsk_template/#{IdskTemplate::VERSION}/images/opengraph-image.png")

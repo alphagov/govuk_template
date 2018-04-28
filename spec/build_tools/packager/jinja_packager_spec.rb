@@ -19,7 +19,7 @@ describe Packager::JinjaPackager do
 
         generated_template = File.read(generated_template_path)
         expect(generated_template).to match(%r[\A{% block top_of_page %}{% endblock %}])
-        expect(generated_template).to match(%r[href="{{ asset_path }}stylesheets/govuk-template\.css\?#{Regexp.escape(IdskTemplate::VERSION)}"])
+        expect(generated_template).to match(%r[href="{{ asset_path }}stylesheets/idsk-template\.css\?#{Regexp.escape(IdskTemplate::VERSION)}"])
       end
 
     end
