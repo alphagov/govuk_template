@@ -47,20 +47,20 @@ describe Compiler::EJSProcessor do
       context "if css file path passed in" do
         let(:css_asset_file) {"a/file.css"}
         it "should return the correct path for a stylesheet" do
-          expect(subject.asset_path(css_asset_file)).to eql("<%= govukTemplateAssetPath %>stylesheets/#{css_asset_file}?#{IdskTemplate::VERSION}")
+          expect(subject.asset_path(css_asset_file)).to eql("<%= idskTemplateAssetPath %>stylesheets/#{css_asset_file}?#{IdskTemplate::VERSION}")
         end
       end
       context "if javascript file path passed in" do
         let(:js_asset_file) {"a/file.js"}
         #up for debate - whole project is js
         it "should return the correct path for a javascript file" do
-          expect(subject.asset_path(js_asset_file)).to eql("<%= govukTemplateAssetPath %>javascripts/#{js_asset_file}?#{IdskTemplate::VERSION}")
+          expect(subject.asset_path(js_asset_file)).to eql("<%= idskTemplateAssetPath %>javascripts/#{js_asset_file}?#{IdskTemplate::VERSION}")
         end
       end
       context "if other file path passed in" do
         let(:other_asset_file) {"a/file.png"}
         it "should return the correct path for an image" do
-          expect(subject.asset_path(other_asset_file)).to eql("<%= govukTemplateAssetPath %>images/#{other_asset_file}?#{IdskTemplate::VERSION}")
+          expect(subject.asset_path(other_asset_file)).to eql("<%= idskTemplateAssetPath %>images/#{other_asset_file}?#{IdskTemplate::VERSION}")
         end
       end
     end

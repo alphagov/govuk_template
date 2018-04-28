@@ -42,11 +42,11 @@ module Compiler
       return "#{file}?#{query_string}" if @is_stylesheet
       case File.extname(file)
       when '.css'
-        "<%= govukTemplateAssetPath %>stylesheets/#{file}?#{query_string}"
+        "<%= idskTemplateAssetPath %>stylesheets/#{file}?#{query_string}"
       when '.js'
-        "<%= govukTemplateAssetPath %>javascripts/#{file}?#{query_string}"
+        "<%= idskTemplateAssetPath %>javascripts/#{file}?#{query_string}"
       else
-        "<%= govukTemplateAssetPath %>images/#{file}?#{query_string}"
+        "<%= idskTemplateAssetPath %>images/#{file}?#{query_string}"
       end
     end
   end
