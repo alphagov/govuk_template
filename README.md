@@ -1,6 +1,6 @@
 # ID-SK Template
 
-This provides a template containing the ID-SK header and footer, and associated assets. It provides a consistent ID-SK brand experience across `www.gov.uk` and all services running under the `service.gov.uk` domain.
+This provides a template containing the ID-SK header and footer, and associated assets. It provides a consistent ID-SK brand experience across government services in Slovakia.
 
 The template is built from [`source`](source/) files, and multiple packages are generated to support different languages and frameworks.
 
