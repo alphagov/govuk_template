@@ -6,11 +6,11 @@
     <meta charset="utf-8" />
     <title><%= content_for?(:page_title) ? yield(:page_title) : "GOV.UK - The best place to find government services and information" %></title>
 
-    <!--[if gt IE 8]><!--><%= stylesheet_link_tag "govuk-template.css", integrity: true, crossorigin: "anonymous" %><!--<![endif]-->
-    <!--[if IE 6]><%= stylesheet_link_tag "govuk-template-ie6.css" %><![endif]-->
-    <!--[if IE 7]><%= stylesheet_link_tag "govuk-template-ie7.css" %><![endif]-->
-    <!--[if IE 8]><%= stylesheet_link_tag "govuk-template-ie8.css" %><![endif]-->
-    <%= stylesheet_link_tag "govuk-template-print.css", media: "print", integrity: true, crossorigin: "anonymous" %>
+    <!--[if gt IE 8]><!--><%= stylesheet_link_tag "idsk-template.css", integrity: true, crossorigin: "anonymous" %><!--<![endif]-->
+    <!--[if IE 6]><%= stylesheet_link_tag "idsk-template-ie6.css" %><![endif]-->
+    <!--[if IE 7]><%= stylesheet_link_tag "idsk-template-ie7.css" %><![endif]-->
+    <!--[if IE 8]><%= stylesheet_link_tag "idsk-template-ie8.css" %><![endif]-->
+    <%= stylesheet_link_tag "idsk-template-print.css", media: "print", integrity: true, crossorigin: "anonymous" %>
 
     <%= stylesheet_link_tag "fonts.css", media: "all", integrity: true, crossorigin: "anonymous" %>
     <!--[if lt IE 9]><%= javascript_include_tag "ie.js", integrity: true, crossorigin: "anonymous" %><![endif]-->
@@ -105,7 +105,7 @@
 
     <div id="global-app-error" class="app-error hidden"></div>
 
-    <%= javascript_include_tag "govuk-template.js", integrity: true, crossorigin: "anonymous" %>
+    <%= javascript_include_tag "idsk-template.js", integrity: true, crossorigin: "anonymous" %>
 
     <%= yield :body_end %>
 
