@@ -14,11 +14,11 @@ module Packager
 
     def initialize
       @repo_root = Pathname.new(File.expand_path('../../..', __FILE__))
-      @base_name = "govuk_template-#{GovukTemplate::VERSION}"
+      @base_name = "idsk_template-#{GovukTemplate::VERSION}"
     end
 
     def build
-      Dir.mktmpdir("govuk_template") do |dir|
+      Dir.mktmpdir("idsk_template") do |dir|
         @target_dir = Pathname.new(dir).join(@base_name)
         @target_dir.mkpath
         prepare_contents

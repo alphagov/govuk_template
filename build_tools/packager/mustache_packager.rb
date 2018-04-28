@@ -7,7 +7,7 @@ module Packager
   class MustachePackager < TarPackager
     def initialize
       super
-      @base_name = "mustache_govuk_template-#{GovukTemplate::VERSION}"
+      @base_name = "mustache_idsk_template-#{GovukTemplate::VERSION}"
     end
 
     def build

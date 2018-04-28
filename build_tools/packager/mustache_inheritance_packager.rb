@@ -7,7 +7,7 @@ module Packager
   class MustacheInheritancePackager < TarPackager
     def initialize
       super
-      @base_name = "mustache_inheritance_govuk_template-#{GovukTemplate::VERSION}"
+      @base_name = "mustache_inheritance_idsk_template-#{GovukTemplate::VERSION}"
     end
 
     def process_template(file)

@@ -7,7 +7,7 @@ module Packager
   class PlayPackager < TarPackager
     def initialize
       super
-      @base_name = "play_govuk_template-#{GovukTemplate::VERSION}"
+      @base_name = "play_idsk_template-#{GovukTemplate::VERSION}"
     end
 
     def build

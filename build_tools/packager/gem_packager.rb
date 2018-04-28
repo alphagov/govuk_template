@@ -14,7 +14,7 @@ module Packager
 
     def build
       Dir.chdir @repo_root do
-        stdout_str = run('gem build govuk_template.gemspec')
+        stdout_str = run('gem build idsk_template.gemspec')
         gem = stdout_str[/File:\s+(.+)/, 1]
 
         @repo_root.join('pkg').mkpath

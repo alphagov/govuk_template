@@ -7,7 +7,7 @@ module Packager
   class LiquidPackager < TarPackager
     def initialize
       super
-      @base_name = "liquid_govuk_template-#{GovukTemplate::VERSION}"
+      @base_name = "liquid_idsk_template-#{GovukTemplate::VERSION}"
     end
 
     def process_template(file)
