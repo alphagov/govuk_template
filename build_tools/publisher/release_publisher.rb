@@ -3,7 +3,7 @@ require 'octokit'
 
 module Publisher
   class ReleasePublisher
-    GITHUB_REPO = 'alphagov/govuk_template'
+    GITHUB_REPO = 'id-sk/idsk_template'
 
     def initialize(version = IdskTemplate::VERSION)
       @version = version
