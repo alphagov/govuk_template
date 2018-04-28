@@ -1,4 +1,4 @@
-require 'govuk_template/version'
+require 'idsk_template/version'
 require_relative '../helpers'
 require 'tmpdir'
 require 'open3'
@@ -10,13 +10,13 @@ module Publisher
     GIT_REPO = "github.com/alphagov/govuk_template.git"
     GIT_URL = "https://#{ENV['GITHUB_TOKEN']}@#{GIT_REPO}"
 
-    def initialize(version = GovukTemplate::VERSION)
+    def initialize(version = IdskTemplate::VERSION)
       @version = version
     end
 
     def publish
-      puts "Pushing govuk_template-#{GovukTemplate::VERSION}"
-      run "gem push pkg/govuk_template-#{GovukTemplate::VERSION}.gem"
+      puts "Pushing govuk_template-#{IdskTemplate::VERSION}"
+      run "gem push pkg/govuk_template-#{IdskTemplate::VERSION}.gem"
       Dir.mktmpdir("govuk_template_gem") do |dir|
         run("git clone -q #{GIT_URL.shellescape} #{dir.shellescape}",
             "Error running `git clone` on #{GIT_REPO}")

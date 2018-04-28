@@ -1,4 +1,4 @@
-require 'govuk_template/version'
+require 'idsk_template/version'
 require_relative '../helpers'
 require 'tmpdir'
 require 'open3'
@@ -8,10 +8,10 @@ require 'yaml'
 module Publisher
   class DocsPublisher
     include Helpers
-    GIT_REPO = "github.com/alphagov/govuk_template.git"
+    GIT_REPO = "github.com/id-sk/idsk_template.git"
     GIT_URL = "https://#{ENV['GITHUB_TOKEN']}@#{GIT_REPO}"
 
-    def initialize(version = GovukTemplate::VERSION)
+    def initialize(version = IdskTemplate::VERSION)
       @version = version
       @repo_root = Pathname.new(File.expand_path('../../..', __FILE__))
       @pkg_dir = @repo_root.join('pkg')

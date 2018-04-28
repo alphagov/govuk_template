@@ -1,6 +1,6 @@
 {
   "name": "govuk_template_mustache",
-  "version": "<%= GovukTemplate::VERSION %>",
+  "version": "<%= IdskTemplate::VERSION %>",
   "description": "{{ mustache }} packaged version of the GOV.UK template",
   "keywords": ["alphagov", "govuk", "mustache", "template"],
   "bugs": "https://github.com/alphagov/govuk_template_mustache/issues",

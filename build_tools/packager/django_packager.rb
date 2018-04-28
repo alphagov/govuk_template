@@ -1,6 +1,6 @@
 require 'open3'
 require 'fileutils'
-require 'govuk_template/version'
+require 'idsk_template/version'
 require_relative 'tar_packager'
 require_relative '../compiler/django_processor'
 
@@ -8,7 +8,7 @@ module Packager
   class DjangoPackager < TarPackager
     def initialize
       super
-      @base_name = "django_idsk_template-#{GovukTemplate::VERSION}"
+      @base_name = "django_idsk_template-#{IdskTemplate::VERSION}"
     end
 
     def build

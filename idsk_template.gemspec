@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'govuk_template/version'
+require 'idsk_template/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "idsk_template"
-  spec.version       = GovukTemplate::VERSION
+  spec.version       = IdskTemplate::VERSION
   spec.authors       = ["Ernest Walzel", "Alex Tomlins"]
   spec.email         = ["ernest.walzel@slovensko.digital", "alex.tomlins@digital.cabinet-office.gov.uk"]
   spec.summary       = %q{Rails engine supplying the ID-SK header/footer template}

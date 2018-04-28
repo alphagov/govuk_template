@@ -41,7 +41,7 @@ module Compiler
     end
 
     def asset_path(file, options={})
-      query_string = GovukTemplate::VERSION
+      query_string = IdskTemplate::VERSION
       return "#{file}?#{query_string}" if @is_stylesheet
       case File.extname(file)
       when '.css'

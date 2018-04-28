@@ -1,4 +1,4 @@
-require 'govuk_template/version'
+require 'idsk_template/version'
 require_relative '../helpers'
 require 'tmpdir'
 require 'open3'
@@ -9,7 +9,7 @@ module Publisher
     GIT_REPO = "github.com/alphagov/govuk_template_play.git"
     GIT_URL = "https://#{ENV['GITHUB_TOKEN']}@#{GIT_REPO}"
 
-    def initialize(version = GovukTemplate::VERSION)
+    def initialize(version = IdskTemplate::VERSION)
       @version = version
       @repo_root = Pathname.new(File.expand_path('../../..', __FILE__))
       @source_dir = @repo_root.join('pkg', "play_govuk_template-#{@version}")

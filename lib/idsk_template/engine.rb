@@ -1,11 +1,11 @@
-module GovukTemplate
+module IdskTemplate
   class Engine < ::Rails::Engine
-    initializer "govuk_template.assets.precompile" do |app|
+    initializer "idsk_template.assets.precompile" do |app|
       app.config.assets.precompile += %w(
         favicon.ico
-        govuk-template*.css
+        idsk-template*.css
         fonts*.css
-        govuk-template.js
+        idsk-template.js
         ie.js
         apple-touch-icon-180x180.png
         apple-touch-icon-167x167.png
