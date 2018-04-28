@@ -4,7 +4,7 @@ require 'bundler'
 Bundler.require
 
 # We don't want to hard-code the version number, so have to use a glob pattern
-path_to_template = Dir.glob("vendor/mustache_govuk_template-*/views/layouts/govuk_template.html").last
+path_to_template = Dir.glob("vendor/mustache_idsk_template-*/views/layouts/idsk_template.html").last
 
 parameters = {
   htmlLang: 'rb',

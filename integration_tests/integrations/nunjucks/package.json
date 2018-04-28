@@ -1,6 +1,6 @@
 {
   "name": "nunjucks_integration_test_app",
-  "description": "govuk_template integration test app for nunjucks",
+  "description": "idsk_template integration test app for nunjucks",
   "version": "0.0.1",
   "private": true,
   "engines": {
