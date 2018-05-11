@@ -2,7 +2,7 @@
 
 ## To customise the GOV.UK template
 
-Refer to the table of [template blocks](./docs/template-blocks.md) and their default values.
+Refer to the table of [template blocks](./template-blocks.md) and their default values.
 
 ## Skip link
 
