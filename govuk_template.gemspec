@@ -6,8 +6,8 @@ require 'govuk_template/version'
 Gem::Specification.new do |spec|
   spec.name          = "govuk_template"
   spec.version       = GovukTemplate::VERSION
-  spec.authors       = ["Alex Tomlins"]
-  spec.email         = ["alex.tomlins@digital.cabinet-office.gov.uk"]
+  spec.authors       = ["GOV.UK Dev"]
+  spec.email         = ["govuk-dev@digital.cabinet-office.gov.uk"]
   spec.summary       = %q{Rails engine supplying the GOV.UK header/footer template}
   spec.description   = spec.summary
   spec.homepage      = "https://github.com/alphagov/govuk_template"
