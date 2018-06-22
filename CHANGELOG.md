@@ -1,3 +1,7 @@
+# Unreleased
+
+- Update the link to the crown copyright page on The National Archives website.
+
 # 0.24.0
 
 - Change font delivery method from Base64 encoded strings to WOFF2, WOFF and EOT files. This has been successfully tested as a more network efficient way to deliver fonts. You need to modify your build scripts to copy the font files to a place where they can be served.
