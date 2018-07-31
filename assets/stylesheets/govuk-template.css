@@ -620,3 +620,21 @@ button:focus {
         @media (min-width: 641px) {
           #footer .footer-meta .copyright a {
             text-align: right; } }
+/* deprecation notice */
+.notification-summary {
+  border: 4px solid #005ea5;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 15px 10px;
+}
+@media (min-width: 641px) {
+  .notification-summary {
+    border: 5px solid #005ea5;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 20px 15px 15px;
+  }
+}
+.notification-summary p {
+    max-width: 38em;
+}
