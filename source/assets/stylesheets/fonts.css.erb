@@ -1,47 +1,67 @@
 /* The below comment needs a ! so that the copyright message doesn't get removed during the minification step. See: http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#comments */
-
 /*! Copyright (c) 2011 by Margaret Calvert & Henrik Kubel. All rights reserved. The font has been customised for exclusive use on gov.uk. This cut is not commercially available. */
 
+/* V2 */
 @font-face {
-  font-family: 'nta';
-  src: url('<%= asset_path "fonts/v1-2c037cf7e1-light.eot" %>');
-  src: url('<%= asset_path "fonts/v1-2c037cf7e1-light.eot" %>?#iefix') format('embedded-opentype'),
-    url('<%= asset_path "fonts/v1-f38ad40456-light.woff2" %>') format('woff2'),
-    url('<%= asset_path "fonts/v1-458f8ea81c-light.woff" %>') format('woff');
+  font-family: 'nta2';
+  src: url('<%= asset_path "fonts/v2/light-68f0c84f0e-v2.woff2" %>') format('woff2'),
+    url('<%= asset_path "fonts/v2/light-222368e53d-v2.woff" %>') format('woff');
   font-weight: normal;
   font-style: normal;
-  font-display: fallback;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'nta2';
+  src: url('<%= asset_path "fonts/v2/bold-9561e2d007-v2.woff2" %>') format('woff2'),
+    url('<%= asset_path "fonts/v2/bold-5d3836b441-v2.woff" %>') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+/* V1 */
+@font-face {
+  font-family: 'nta';
+  src: url('<%= asset_path "fonts/v1/light-2c037cf7e1-v1.eot" %>');
+  src: url('<%= asset_path "fonts/v1/light-2c037cf7e1-v1.eot" %>?#iefix') format('embedded-opentype'),
+    url('<%= asset_path "fonts/v1/light-f38ad40456-v1.woff2" %>') format('woff2'),
+    url('<%= asset_path "fonts/v1/light-458f8ea81c-v1.woff" %>') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'nta';
-  src: url('<%= asset_path "fonts/v1-fb2676462a-bold.eot" %>');
-  src: url('<%= asset_path "fonts/v1-fb2676462a-bold.eot" %>?#iefix') format('embedded-opentype'),
-    url('<%= asset_path "fonts/v1-a2452cb66f-bold.woff2" %>') format('woff2'),
-    url('<%= asset_path "fonts/v1-f38c792ac2-bold.woff" %>') format('woff');
+  src: url('<%= asset_path "fonts/v1/bold-fb2676462a-v1.eot" %>');
+  src: url('<%= asset_path "fonts/v1/bold-fb2676462a-v1.eot" %>?#iefix') format('embedded-opentype'),
+    url('<%= asset_path "fonts/v1/bold-a2452cb66f-v1.woff2" %>') format('woff2'),
+    url('<%= asset_path "fonts/v1/bold-f38c792ac2-v1.woff" %>') format('woff');
   font-weight: bold;
   font-style: normal;
-  font-display: fallback;
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'ntatabularnumbers';
-  src: url('<%= asset_path "fonts/v1-498ea8ffe2-tabular-light.eot" %>');
-  src: url('<%= asset_path "fonts/v1-498ea8ffe2-tabular-light.eot" %>?#iefix') format('embedded-opentype'),
-    url('<%= asset_path "fonts/v1-851b10ccdd-tabular-light.woff2" %>') format('woff2'),
-    url('<%= asset_path "fonts/v1-62cc6f0a28-tabular-light.woff" %>') format('woff');
+  src: url('<%= asset_path "fonts/v1/light-tabular-498ea8ffe2-v1.eot" %>');
+  src: url('<%= asset_path "fonts/v1/light-tabular-498ea8ffe2-v1.eot" %>?#iefix') format('embedded-opentype'),
+    url('<%= asset_path "fonts/v1/light-tabular-851b10ccdd-v1.woff2" %>') format('woff2'),
+    url('<%= asset_path "fonts/v1/light-tabular-62cc6f0a28-v1.woff" %>') format('woff');
   font-weight: normal;
   font-style: normal;
-  font-display: fallback;
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'ntatabularnumbers';
-  src: url('<%= asset_path "fonts/v1-357fdfbcc3-tabular-bold.eot" %>');
-  src: url('<%= asset_path "fonts/v1-357fdfbcc3-tabular-bold.eot" %>?#iefix') format('embedded-opentype'),
-    url('<%= asset_path "fonts/v1-b89238d840-tabular-bold.woff2" %>') format('woff2'),
-    url('<%= asset_path "fonts/v1-784c21afb8-tabular-bold.woff" %>') format('woff');
+  src: url('<%= asset_path "fonts/v1/bold-tabular-357fdfbcc3-v1.eot" %>');
+  src: url('<%= asset_path "fonts/v1/bold-tabular-357fdfbcc3-v1.eot" %>?#iefix') format('embedded-opentype'),
+    url('<%= asset_path "fonts/v1/bold-tabular-b89238d840-v1.woff2" %>') format('woff2'),
+    url('<%= asset_path "fonts/v1/bold-tabular-784c21afb8-v1.woff" %>') format('woff');
   font-weight: bold;
   font-style: normal;
-  font-display: fallback;
+  font-display: swap;
 }
