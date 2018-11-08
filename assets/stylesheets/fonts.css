@@ -5,10 +5,10 @@
 
 @font-face {
   font-family: 'nta';
-  src: url('fonts/v1-2c037cf7e1-light.eot?0.24.1');
-  src: url('fonts/v1-2c037cf7e1-light.eot?0.24.1?#iefix') format('embedded-opentype'),
-    url('fonts/v1-f38ad40456-light.woff2?0.24.1') format('woff2'),
-    url('fonts/v1-458f8ea81c-light.woff?0.24.1') format('woff');
+  src: url('fonts/v1-2c037cf7e1-light.eot?0.25.0');
+  src: url('fonts/v1-2c037cf7e1-light.eot?0.25.0?#iefix') format('embedded-opentype'),
+    url('fonts/v1-f38ad40456-light.woff2?0.25.0') format('woff2'),
+    url('fonts/v1-458f8ea81c-light.woff?0.25.0') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: fallback;
@@ -16,10 +16,10 @@
 
 @font-face {
   font-family: 'nta';
-  src: url('fonts/v1-fb2676462a-bold.eot?0.24.1');
-  src: url('fonts/v1-fb2676462a-bold.eot?0.24.1?#iefix') format('embedded-opentype'),
-    url('fonts/v1-a2452cb66f-bold.woff2?0.24.1') format('woff2'),
-    url('fonts/v1-f38c792ac2-bold.woff?0.24.1') format('woff');
+  src: url('fonts/v1-fb2676462a-bold.eot?0.25.0');
+  src: url('fonts/v1-fb2676462a-bold.eot?0.25.0?#iefix') format('embedded-opentype'),
+    url('fonts/v1-a2452cb66f-bold.woff2?0.25.0') format('woff2'),
+    url('fonts/v1-f38c792ac2-bold.woff?0.25.0') format('woff');
   font-weight: bold;
   font-style: normal;
   font-display: fallback;
@@ -27,10 +27,10 @@
 
 @font-face {
   font-family: 'ntatabularnumbers';
-  src: url('fonts/v1-498ea8ffe2-tabular-light.eot?0.24.1');
-  src: url('fonts/v1-498ea8ffe2-tabular-light.eot?0.24.1?#iefix') format('embedded-opentype'),
-    url('fonts/v1-851b10ccdd-tabular-light.woff2?0.24.1') format('woff2'),
-    url('fonts/v1-62cc6f0a28-tabular-light.woff?0.24.1') format('woff');
+  src: url('fonts/v1-498ea8ffe2-tabular-light.eot?0.25.0');
+  src: url('fonts/v1-498ea8ffe2-tabular-light.eot?0.25.0?#iefix') format('embedded-opentype'),
+    url('fonts/v1-851b10ccdd-tabular-light.woff2?0.25.0') format('woff2'),
+    url('fonts/v1-62cc6f0a28-tabular-light.woff?0.25.0') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: fallback;
@@ -38,10 +38,10 @@
 
 @font-face {
   font-family: 'ntatabularnumbers';
-  src: url('fonts/v1-357fdfbcc3-tabular-bold.eot?0.24.1');
-  src: url('fonts/v1-357fdfbcc3-tabular-bold.eot?0.24.1?#iefix') format('embedded-opentype'),
-    url('fonts/v1-b89238d840-tabular-bold.woff2?0.24.1') format('woff2'),
-    url('fonts/v1-784c21afb8-tabular-bold.woff?0.24.1') format('woff');
+  src: url('fonts/v1-357fdfbcc3-tabular-bold.eot?0.25.0');
+  src: url('fonts/v1-357fdfbcc3-tabular-bold.eot?0.25.0?#iefix') format('embedded-opentype'),
+    url('fonts/v1-b89238d840-tabular-bold.woff2?0.25.0') format('woff2'),
+    url('fonts/v1-784c21afb8-tabular-bold.woff?0.25.0') format('woff');
   font-weight: bold;
   font-style: normal;
   font-display: fallback;
