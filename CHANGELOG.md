@@ -1,3 +1,7 @@
+# Unreleased
+
+- Add event tracking to the GOV.UK logo, in order to measure user engagement with this element.
+
 # 0.24.1
 
 - Update the link to the crown copyright page on The National Archives website.
