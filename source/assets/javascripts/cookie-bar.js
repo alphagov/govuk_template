@@ -5,11 +5,28 @@
 
   GOVUK.addCookieMessage = function () {
     var message = document.getElementById('global-cookie-message'),
-        hasCookieMessage = (message && GOVUK.cookie('seen_cookie_message') === null);
+        hasCookieMessage = (message && GOVUK.cookie('seen_cookie_message') !== 'true');
 
     if (hasCookieMessage) {
       message.style.display = 'block';
-      GOVUK.cookie('seen_cookie_message', 'yes', { days: 28 });
+
+      var hideAnchor = document.querySelector("a[data-hide]")
+      if(hideAnchor) {
+        hideAnchor.addEventListener("click", function(event) {
+          event.preventDefault()
+          GOVUK.hideCookieMessage()
+        })
+      }
     }
+  };
+
+  GOVUK.hideCookieMessage = function () {
+    var message = document.getElementById('global-cookie-message')
+
+    if (message) {
+      message.style.display = 'none';
+      GOVUK.cookie('seen_cookie_message', 'true');
+    }
+
   };
 }).call(this);
