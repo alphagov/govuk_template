@@ -51,7 +51,7 @@
       <% if content_for?(:cookie_message) %>
         <%= yield :cookie_message %>
       <% else %>
-        <p>GOV.UK uses cookies to make the site simpler. <a href="https://www.gov.uk/help/cookies">Find out more about cookies</a></p>
+        <p>GOV.UK uses cookies to make the site simpler. <a href="https://www.gov.uk/help/cookies" data-module="track-click" data-track-category="cookieBanner" data-track-action="Cookie banner clicked">Find out more about cookies</a></p>
       <% end %>
     </div>
 

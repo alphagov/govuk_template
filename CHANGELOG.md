@@ -1,3 +1,7 @@
+# Unreleased
+
+- Add event tracking to the GOV.UK cookie banner
+
 # 0.25.0
 
 - Add event tracking to the GOV.UK logo, in order to measure user engagement with this element.
