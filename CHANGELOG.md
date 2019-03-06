@@ -1,4 +1,4 @@
-# Unreleased
+# 0.26.0
 
 - Add event tracking to the GOV.UK cookie banner
 
