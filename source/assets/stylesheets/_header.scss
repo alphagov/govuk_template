@@ -240,11 +240,12 @@
   display: none; /* shown with JS, always on for non-JS */
 }
 
-#global-cookie-message {
+.gem-c-cookie-banner#global-cookie-message {
   width: 100%;
   background-color: $light-blue-25;
   padding-top: 10px;
   padding-bottom: 10px;
+
   p {
     @extend %site-width-container;
     @include core-16;
