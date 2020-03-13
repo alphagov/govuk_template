@@ -1,13 +1,45 @@
+globalHeaderText: GOV.UK
+crownCopyrightMessage: "© Crown copyright"
+licenceMessage: "<p>All content is available under the <a href=\"https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/\" rel=\"license\">Open Government Licence v3.0</a>, except where otherwise stated</p>"
 assetPath: /govuk_template/assets/
 head: >
   <style>
-    main { max-width: 960px; margin: 0 15px; }
-    @media (min-width: 641px) { main { margin: 0 30px; } }
-    @media (min-width: 1020px) { main { margin: 0 auto; } }
+    main { max-width: 960px; margin: 30px 15px; }
+    @media (min-width: 641px) { main { margin: 30px 30px; } }
+    @media (min-width: 1020px) { main { margin: 30px auto; } }
+
+    .notification-summary {
+      border: 4px solid #005ea5;
+      margin-top: 15px;
+      margin-bottom: 15px;
+      padding: 15px 10px;
+    }
+    .notification-summary h2 {
+      margin: 0 0 0.83333em 0;
+      font-size: 24px;
+      line-height: 1.25;
+    }
+    .notification-summary p {
+      max-width: 38em;
+    }
+    @media (min-width: 641px) {
+      .notification-summary {
+        border: 5px solid #005ea5;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        padding: 20px 15px 15px;
+      }
+    }
   </style>
 content: >
   <main role="main">
-    <h1>govuk_template</h1>
+    <h1>GOV.UK Template</h1>
+
+    <div class="notification-summary">
+      <h2>GOV.UK Template has now been replaced by the GOV.UK Design System</h2>
+      <p>GOV.UK Template will remain available in case you are currently using it, but is no longer maintained. The Government Digital Service will only carry out major bug fixes and security patches.</p>
+      <p>The <a href="https://www.gov.uk/design-system">GOV.UK Design System</a> will be updated to ensure the things it contains meet level AA of WCAG 2.1, but Elements will not. <a href="https://design-system.service.gov.uk/accessibility/">Read more about accessibility of the GOV.UK Design System</a>.</p>
+    </div>
 
     <h2>Examples</h2>
 
