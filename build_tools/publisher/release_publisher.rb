@@ -15,7 +15,7 @@ module Publisher
       release = @github_client.create_release(GITHUB_REPO, "v#{@version}", name: "Version #{@version}")
       Dir["#{@pkg_dir}/*#{@version}.tgz"].each do |tarball|
         puts "- Uploading #{tarball} to github release"
-        @github_client.upload_asset(release[:url], tarball)
+        @github_client.upload_asset(release[:url], tarball, content_type: 'application/x-gtar')
       end
     end
 
